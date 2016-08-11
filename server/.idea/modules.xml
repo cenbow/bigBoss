@@ -2,7 +2,6 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/bootstrap/bootstrap.iml" filepath="$PROJECT_DIR$/bootstrap/bootstrap.iml" />
       <module fileurl="file://$PROJECT_DIR$/erp-assist/erp-assist.iml" filepath="$PROJECT_DIR$/erp-assist/erp-assist.iml" />
       <module fileurl="file://$PROJECT_DIR$/erp-domain/erp-domain.iml" filepath="$PROJECT_DIR$/erp-domain/erp-domain.iml" />
       <module fileurl="file://$PROJECT_DIR$/erp-facade/erp-facade.iml" filepath="$PROJECT_DIR$/erp-facade/erp-facade.iml" />
