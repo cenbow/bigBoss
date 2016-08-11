@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>com.junyi</groupId>
+		<artifactId>ecommerce-base</artifactId>
+		<version>1.0.9</version>
+	</parent>
+
+	<groupId>com.junyi</groupId>
+	<artifactId>erp-server</artifactId>
+	<packaging>pom</packaging>
+	<version>1.0.0</version>
+	<name>erp-server</name>
+
+	<modules>
+		<module>erp-domain</module>
+		<module>erp-service</module>
+		<module>erp-assist</module>
+		<module>erp-facade</module>
+
+		<module>erp-gds</module>
+
+
+
+	</modules>
+
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<erp.internal.version>1.0.0</erp.internal.version>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>junyi-repo</id>
+			<name>Junyi Repository</name>
+			<url>http://junyi-svn:8081/nexus/content/groups/public/</url>
+			<layout>default</layout>
+			<releases>
+				<enabled>true</enabled>
+			</releases>
+			<snapshots>
+				<enabled>true</enabled>
+			</snapshots>
+		</repository>
+	</repositories>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>com.junyi.erp</groupId>
+				<artifactId>erp-domain</artifactId>
+				<version>${erp.internal.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.junyi.erp</groupId>
+				<artifactId>erp-service</artifactId>
+				<version>${erp.internal.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.junyi.erp</groupId>
+				<artifactId>erp-assist</artifactId>
+				<version>${erp.internal.version}</version>
+			</dependency>
+			<dependency>
+				<groupId>com.junyi.erp</groupId>
+				<artifactId>erp-gds-rpc</artifactId>
+				<version>${erp.internal.version}</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+</project>

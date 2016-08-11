@@ -1,0 +1,18 @@
+<% include('common/begin') %>
+<link rel="stylesheet" type="text/css" href="css/app.css"/>
+<% include('common/header') %>
+
+<!-- loading mask -->
+<div id="loading-mask" style="z-index: 20000;left: 0px;top: 0px;position: absolute;width: 100%;height: 100%;opacity: 0.5;filter:alpha(opacity=50);background-color:#DFE8F6;"></div>
+<div id="loading" style="z-index: 20001; left: 48%; top: 38%; position: absolute;">
+  <img width="100" height="100" src="images/wheel.gif"><div style="margin-left: -25px;font-size:13px;">正在加载数据，请稍候...</div>
+</div>
+
+<% include('common/footer') %>
+<script type="text/javascript">
+_USER = <%=#userJsonStr%>;
+_APPID = "<%=#appId%>";
+</script>
+<script type="text/javascript" src="js/common/overrides.js"></script>
+<script type="text/javascript" src="js/app/<%=#appId%>/app.js"></script>
+<% include('common/end') %>

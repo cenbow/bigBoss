@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- status=debug 可以查看log4j的装配过程 -->
+<configuration status="debug" monitorInterval="1800">
+    <properties>
+        <property name="LOG_HOME">/log/erp/</property>
+        <!-- 日志备份目录 -->
+        <property name="BACKUP_HOME">${LOG_HOME}/backup</property>
+        <property name="PREFIX_BASE">erp-facade</property>
+        <property name="PREFIX_SQL_LOG">${PREFIX_BASE}-sql</property>
+        <property name="PREFIX_CACHE_LOG">${PREFIX_BASE}-cache</property>
+        <property name="PREFIX_RPC_LOG">${PREFIX_BASE}-rpc</property>
+    </properties>
+    <appenders>
+        <!-- 定义控制台输出 -->
+        <Console name="Console" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n"/>
+        </Console>
+
+        <!-- 调试日志 -->
+        <RollingRandomAccessFile name="DebugLog"
+                                 fileName="${LOG_HOME}/${PREFIX_BASE}.log"
+                                 filePattern="${BACKUP_HOME}/$${date:yyyy-MM}/${PREFIX_BASE}-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+
+        <!-- SQL日志 -->
+        <RollingRandomAccessFile name="SqlLog"
+                                 fileName="${LOG_HOME}/${PREFIX_SQL_LOG}.log"
+                                 filePattern="${BACKUP_HOME}/$${date:yyyy-MM}/${PREFIX_SQL_LOG}-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+
+        <!-- 缓存Cache日志 -->
+        <RollingRandomAccessFile name="CacheLog"
+                                 fileName="${LOG_HOME}/${PREFIX_CACHE_LOG}.log"
+                                 filePattern="${BACKUP_HOME}/$${date:yyyy-MM}/${PREFIX_CACHE_LOG}-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+
+        <!-- 远程调用RPC日志 -->
+        <RollingRandomAccessFile name="RpcLog"
+                                 fileName="${LOG_HOME}/${PREFIX_RPC_LOG}.log"
+                                 filePattern="${BACKUP_HOME}/$${date:yyyy-MM}/${PREFIX_RPC_LOG}-%d{yyyy-MM-dd}-%i.log.gz">
+            <PatternLayout pattern="%date{yyyy-MM-dd HH:mm:ss.SSS} %level [%thread][%file:%line] - %msg%n"/>
+            <Policies>
+                <TimeBasedTriggeringPolicy/>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+            </Policies>
+            <DefaultRolloverStrategy max="20"/>
+        </RollingRandomAccessFile>
+
+        <!-- 日志存入数据库 -->
+        <JDBC name="DbLog" tableName="my_mon.system_log">
+            <ConnectionFactory class="com.junyi.erp.util.Log4j2DataSourceUtil" method="getConnection" />
+            <Column name="TARGET" pattern="${PREFIX_BASE}" />
+            <Column name="CREATE_DATE" isEventTimestamp="true" />
+            <Column name="LEVEL" pattern="%level" />
+            <Column name="LOGGER" pattern="%logger" />
+            <Column name="MESSAGE" pattern="%message" />
+            <Column name="THROWABLE" pattern="%ex{full}" />
+            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
+        </JDBC>
+    </appenders>
+
+    <loggers>
+        <!-- customized logger -->
+        <logger name="org.springframework.core" level="info"></logger>
+        <logger name="org.springframework.beans" level="info"></logger>
+        <logger name="org.springframework.context" level="info"></logger>
+        <logger name="org.springframework.web" level="info"></logger>
+        <logger name="org.jboss.netty" level="warn"></logger>
+        <logger name="org.apache.http" level="warn"></logger>
+        <logger name="org.quartz" level="info"></logger>
+        <logger name="org.apache.zookeeper" level="warn"></logger>
+        <logger name="com.alibaba.dubbo" level="info"></logger>
+
+        <logger name="org.mybatis" level="debug" additivity="false">
+            <appender-ref ref="SqlLog"/>
+            <appender-ref ref="DbLog"/>
+        </logger>
+
+        <logger name="org.springframework.jdbc" level="debug" additivity="false">
+            <appender-ref ref="SqlLog"/>
+            <appender-ref ref="DbLog"/>
+        </logger>
+
+        <logger name="com.junyi.erp.domain" level="debug" additivity="false">
+            <appender-ref ref="SqlLog"/>
+            <appender-ref ref="DbLog"/>
+        </logger>
+
+        <logger name="CACHE_LOGGER" level="debug" additivity="false">
+            <appender-ref ref="CacheLog"/>
+            <appender-ref ref="DbLog"/>
+        </logger>
+
+        <logger name="RPC_LOGGER" level="debug" additivity="false">
+            <appender-ref ref="RpcLog"/>
+            <appender-ref ref="DbLog"/>
+        </logger>
+
+        <!-- Root Logger -->
+        <root level="debug">
+            <appender-ref ref="DebugLog"/>
+            <appender-ref ref="Console"/>
+            <appender-ref ref="DbLog"/>
+        </root>
+    </loggers>
+</configuration>

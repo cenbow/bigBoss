@@ -1,0 +1,23 @@
+{
+  "logDir": "/var/log/erp-web",
+  "servers": {
+    "facade": [
+      "http://172.16.30.134:8080/facade"
+    ],
+    "redis": [
+      {
+        "host": "172.16.30.132",
+        "port": 6379
+      }
+    ]
+  },
+  "web": {
+    "name": "电商ERP Admin(QA)",
+    "uriAppendix": ".html"
+  },
+  "sessionKey": "_sid",
+  "sessionTTL": 1800,
+  "cookie": {
+    "secret": "MAYI!234^qa"
+  }
+}

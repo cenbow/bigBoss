@@ -1,0 +1,86 @@
+.x-form-edit-trigger{background-image: url(../images/form_edit_trigger.png);}
+.x-form-ellipsis-trigger{background-image: url(../images/form_ellipsis_trigger.png);}
+.btn-edit{background-image: url(../images/edit.png);}
+.chart_pie{background-image: url(../images/chart_pie.png);}
+.house{background-image: url(../images/house.png);}
+.btn-password-edit{background-image: url(../images/password_edit.png);}
+.btn-permission{background-image: url(../images/permission.png);}
+.btn-delete{background-image: url(../images/delete.png);}
+.btn-add{background-image:url(../images/add.png);background-repeat: no-repeat;}
+.btn-cost{background-image: url(../images/cost.png);}
+.btn-download{background-image:url(../images/download.png);background-repeat: no-repeat;}
+.btn-printer{background-image:url(../images/printer.png);background-repeat: no-repeat;}
+.btn-form-add{background-image:url(../images/form_add.png);background-repeat: no-repeat;}
+.btn-select{background-image:url(../images/select.png);background-repeat: no-repeat;}
+.btn-batch-import{background-image:url(../images/batch_import.png);background-repeat: no-repeat;}
+.btn-search{background-image:url(../images/search.png);background-repeat: no-repeat;}
+.btn-clear{background-image:url(../images/clear.png);background-repeat: no-repeat;}
+.btn-link{background-image: url(../images/link.png);}
+.page-add{background-image: url(../images/page_add.png);}
+.page-excel{background-image: url(../images/page_excel.png);}
+.page-forward{background-image: url(../images/page_forward.png);background-repeat: no-repeat;}
+.link{background-image: url(../images/link.png);}
+.pencil{
+    width: 12px;
+    height: 12px;
+    display: inline-block;
+    background-image: url(../images/pencil.png);
+}
+.with-btngroup .x-grid-cell-inner{padding:5px 6px 6px}
+
+.btngroup .x-grid-cell-inner{padding:1px 6px}
+.productmgmt-center .x-grid-cell-special{border-left-width: 1px;}
+.x-window-header-title-default > .x-title-icon-wrap-default > .x-title-icon-default{opacity: 1;}
+.btn-save{background-image:url(../images/save.png);}
+.btn-cancel{background-image: url(../images/delete.png);}
+.btn-db{background-image: url(../images/db.png);}
+.btn-completed{background-image:url(../images/completed.png);background-repeat: no-repeat;}
+td.grid-switch .x-grid-cell-inner {
+    padding: 2px 0px 0px 2px;
+    cursor: pointer;
+}
+
+.x-grid-subtable {
+    border-collapse: collapse
+}
+
+tr.x-grid-subtable-row {
+    background-color: #fff
+}
+
+.x-grid-subtable-header {
+    border: 1px solid #d0d0d0;
+    color: #404040;
+    font: 400 13px/19px 'Open Sans', 'Helvetica Neue', helvetica, arial, verdana, sans-serif;
+    background-image: none;
+    background-color: #fff;
+    padding: 6px 10px 5px 10px;
+    text-overflow: ellipsis
+}
+
+.x-grid-subtable-cell {
+    border-top: 1px solid #e9e9e9;
+    border-right: 1px solid #e9e9e9;
+    border-bottom: 1px solid #e9e9e9;
+    border-left: 1px solid #e9e9e9
+}
+.btn-fill{background-image: url(../images/icon_fill.png);}
+.btn-virtual-dist{background-image: url(../images/icon_virtual_dist.png);}
+.permission_inline_checkbox{
+    word-break:break-all;
+}
+.titleAlign{text-align: center}
+.btn-review-pass{background-image: url(../images/review_pass.png);}
+.btn-review-lock{background-image: url(../images/review_lock.png);}
+.btn-review-locked{background-image: url(../images/review_locked.png);}
+.btn-review-cancel-locked{background-image: url(../images/review_cancel_locked.png);}
+.btn-order-concat-slice{background-image: url(../images/order_concat_slice.png);}
+.btn-order-concat{background-image: url(../images/order_concat.png);}
+.btn-order-slice{background-image: url(../images/order_slice.png);}
+.btn-order-revert{background-image: url(../images/order_revert.png);}
+.btn-order-urgent{background-image: url(../images/order_urgent.png);}
+.btn-order-urgented{background-image: url(../images/order_urgented.png);}
+.btn-order-cancel-urgented{background-image: url(../images/order_cancel_urgented.png);}
+.btn-order-batch-update{background-image: url(../images/order_batch_update.png);}
+.win-tips-error{background-image: url(../images/error.png);}
+.win-tips-ok{background-image: url(../images/ok.png);}

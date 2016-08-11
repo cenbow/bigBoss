@@ -1,0 +1,41 @@
+{
+  "logDir": "/var/log/erp-web",
+  "servers": {
+    "facade": [
+      "http://172.16.30.134:8080/facade"
+    ],
+    "gds": [
+      "http://172.16.30.134:8081/gds"
+    ],
+    "wms": [
+      "http://172.16.30.134:8080/wms"
+    ],
+    "redis": [
+      {
+        "host": "172.16.30.132",
+        "port": 6379
+      }
+    ],
+    "zk": [
+      "172.16.30.131:2181"
+    ]
+  },
+  "web": {
+    "name": "电商ERP(QA)",
+    "uriAppendix": ".html"
+  },
+  "sessionKey": "_sid",
+  "sessionTTL": 1800,
+  "cookie": {
+    "secret": "MAYI!234^qa",
+    "rememberMe": {
+      "key": "_rid",
+      "options": {
+        "path": "/",
+        "httpOnly": true,
+        "secure": false,
+        "maxAge": 1209600000
+      }
+    }
+  }
+}

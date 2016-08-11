@@ -1,0 +1,37 @@
+{
+  "logDir": "/log/erp/erp-web",
+  "servers": {
+    "facade": [
+      "http://127.0.0.1:8080/facade"
+    ],
+    "gds": [
+      "http://127.0.0.1:8080/gds"
+    ],
+    "wms": [
+      "http://127.0.0.1:8080/wms"
+    ],
+    "redis": [
+      {
+        "host": "172.16.30.115",
+        "port": 6379
+      }
+    ],
+    "zk": [
+      "172.16.30.115:2181"
+    ],
+  },
+  "sessionKey": "_sid",
+  "sessionTTL": 1800,
+  "cookie": {
+    "secret": "MAYI!234^dev",
+    "rememberMe": {
+      "key": "_rid",
+      "options": {
+        "path": "/",
+        "httpOnly": true,
+        "secure": false,
+        "maxAge": 1209600000
+      }
+    }
+  }
+}

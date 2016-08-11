@@ -1,0 +1,435 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.junyi.erp.domain.user.User">
+	<resultMap id="UserMap" type="User">
+		<id property="id" column="ID" jdbcType="NUMERIC" />
+		<result property="companyId" column="COMPANY_ID" jdbcType="NUMERIC" />
+		<result property="mobile" column="MOBILE" jdbcType="VARCHAR" />
+		<result property="name" column="NAME" jdbcType="VARCHAR" />
+		<result property="login" column="LOGIN" jdbcType="VARCHAR" />
+		<result property="lowerLogin" column="LOWER_LOGIN" jdbcType="VARCHAR" />
+		<result property="email" column="EMAIL" jdbcType="VARCHAR" />
+		<result property="lowerEmail" column="LOWER_EMAIL" jdbcType="VARCHAR" />
+		<result property="password" column="PASSWORD" jdbcType="CHAR" />
+		<result property="memo" column="MEMO" jdbcType="VARCHAR" />
+		<result property="emailVerified" column="EMAIL_VERIFIED" jdbcType="CHAR" />
+		<result property="mobileVerified" column="MOBILE_VERIFIED" jdbcType="CHAR" />
+		<result property="lastLoginDate" column="LAST_LOGIN_DATE" jdbcType="TIMESTAMP" />
+		<result property="locked" column="LOCKED" jdbcType="CHAR" />
+		<result property="lastLockDate" column="LAST_LOCK_DATE" jdbcType="TIMESTAMP" />
+		<result property="branchId" column="BRANCH_ID" jdbcType="NUMERIC" />
+		<result property="deptId" column="DEPT_ID" jdbcType="NUMERIC" />
+		<result property="positionId" column="POSITION_ID" jdbcType="NUMERIC" />
+		<result property="isAdmin" column="IS_ADMIN" jdbcType="CHAR" />
+		<result property="isDeleted" column="IS_DELETED" jdbcType="CHAR" />
+		<result property="createBy" column="CREATE_BY" jdbcType="NUMERIC" />
+		<result property="createDate" column="CREATE_DATE" jdbcType="TIMESTAMP" />
+		<result property="updateBy" column="UPDATE_BY" jdbcType="NUMERIC" />
+		<result property="updateDate" column="UPDATE_DATE" jdbcType="TIMESTAMP" />
+	</resultMap>
+
+	<sql id="sql_User_FullFields">  
+		ID, COMPANY_ID, MOBILE, NAME, LOGIN, LOWER_LOGIN, EMAIL, LOWER_EMAIL, PASSWORD, MEMO, EMAIL_VERIFIED, MOBILE_VERIFIED, LAST_LOGIN_DATE, LOCKED, LAST_LOCK_DATE, BRANCH_ID, DEPT_ID, POSITION_ID, IS_ADMIN, IS_DELETED, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE
+	</sql>
+
+	<insert id="insertUser" parameterType="User" useGeneratedKeys="true" keyProperty="id" >
+		insert into
+		USER (COMPANY_ID, MOBILE, NAME, LOGIN, LOWER_LOGIN, EMAIL, LOWER_EMAIL, PASSWORD, MEMO, EMAIL_VERIFIED, MOBILE_VERIFIED, LAST_LOGIN_DATE, LOCKED, LAST_LOCK_DATE, BRANCH_ID, DEPT_ID, POSITION_ID, IS_ADMIN, IS_DELETED, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE)
+		values
+		(
+			#{companyId,jdbcType=NUMERIC},
+			#{mobile,jdbcType=VARCHAR},
+			#{name,jdbcType=VARCHAR},
+			#{login,jdbcType=VARCHAR},
+			#{lowerLogin,jdbcType=VARCHAR},
+			#{email,jdbcType=VARCHAR},
+			#{lowerEmail,jdbcType=VARCHAR},
+			#{password,jdbcType=CHAR},
+			#{memo,jdbcType=VARCHAR},
+			#{emailVerified,jdbcType=CHAR},
+			#{mobileVerified,jdbcType=CHAR},
+			#{lastLoginDate,jdbcType=TIMESTAMP},
+			#{locked,jdbcType=CHAR},
+			#{lastLockDate,jdbcType=TIMESTAMP},
+			#{branchId,jdbcType=NUMERIC},
+			#{deptId,jdbcType=NUMERIC},
+			#{positionId,jdbcType=NUMERIC},
+			#{isAdmin,jdbcType=CHAR},
+			#{isDeleted,jdbcType=CHAR},
+			#{createBy,jdbcType=NUMERIC},
+			#{createDate,jdbcType=TIMESTAMP},
+			#{updateBy,jdbcType=NUMERIC},
+			#{updateDate,jdbcType=TIMESTAMP}
+		)
+	</insert>
+
+	<insert id="insertUserSelective" parameterType="User" useGeneratedKeys="true" keyProperty="id" >
+		insert into USER
+		<trim prefix="(" suffix=")" suffixOverrides=",">
+			<if test="companyId != null">
+				COMPANY_ID,
+			</if>
+			<if test="mobile != null">
+				MOBILE,
+			</if>
+			<if test="name != null">
+				NAME,
+			</if>
+			<if test="login != null">
+				LOGIN,
+			</if>
+			<if test="lowerLogin != null">
+				LOWER_LOGIN,
+			</if>
+			<if test="email != null">
+				EMAIL,
+			</if>
+			<if test="lowerEmail != null">
+				LOWER_EMAIL,
+			</if>
+			<if test="password != null">
+				PASSWORD,
+			</if>
+			<if test="memo != null">
+				MEMO,
+			</if>
+			<if test="emailVerified != null">
+				EMAIL_VERIFIED,
+			</if>
+			<if test="mobileVerified != null">
+				MOBILE_VERIFIED,
+			</if>
+			<if test="lastLoginDate != null">
+				LAST_LOGIN_DATE,
+			</if>
+			<if test="locked != null">
+				LOCKED,
+			</if>
+			<if test="lastLockDate != null">
+				LAST_LOCK_DATE,
+			</if>
+			<if test="branchId != null">
+				BRANCH_ID,
+			</if>
+			<if test="deptId != null">
+				DEPT_ID,
+			</if>
+			<if test="positionId != null">
+				POSITION_ID,
+			</if>
+			<if test="isAdmin != null">
+				IS_ADMIN,
+			</if>
+			<if test="isDeleted != null">
+				IS_DELETED,
+			</if>
+			<if test="createBy != null">
+				CREATE_BY,
+			</if>
+			<if test="createDate != null">
+				CREATE_DATE,
+			</if>
+			<if test="updateBy != null">
+				UPDATE_BY,
+			</if>
+			<if test="updateDate != null">
+				UPDATE_DATE,
+			</if>
+		</trim>
+		<trim prefix="values (" suffix=")" suffixOverrides=",">
+			<if test="companyId != null">
+				#{companyId,jdbcType=NUMERIC},
+			</if>
+			<if test="mobile != null">
+				#{mobile,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				#{name,jdbcType=VARCHAR},
+			</if>
+			<if test="login != null">
+				#{login,jdbcType=VARCHAR},
+			</if>
+			<if test="lowerLogin != null">
+				#{lowerLogin,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				#{email,jdbcType=VARCHAR},
+			</if>
+			<if test="lowerEmail != null">
+				#{lowerEmail,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				#{password,jdbcType=CHAR},
+			</if>
+			<if test="memo != null">
+				#{memo,jdbcType=VARCHAR},
+			</if>
+			<if test="emailVerified != null">
+				#{emailVerified,jdbcType=CHAR},
+			</if>
+			<if test="mobileVerified != null">
+				#{mobileVerified,jdbcType=CHAR},
+			</if>
+			<if test="lastLoginDate != null">
+				#{lastLoginDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="locked != null">
+				#{locked,jdbcType=CHAR},
+			</if>
+			<if test="lastLockDate != null">
+				#{lastLockDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="branchId != null">
+				#{branchId,jdbcType=NUMERIC},
+			</if>
+			<if test="deptId != null">
+				#{deptId,jdbcType=NUMERIC},
+			</if>
+			<if test="positionId != null">
+				#{positionId,jdbcType=NUMERIC},
+			</if>
+			<if test="isAdmin != null">
+				#{isAdmin,jdbcType=CHAR},
+			</if>
+			<if test="isDeleted != null">
+				#{isDeleted,jdbcType=CHAR},
+			</if>
+			<if test="createBy != null">
+				#{createBy,jdbcType=NUMERIC},
+			</if>
+			<if test="createDate != null">
+				#{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateBy != null">
+				#{updateBy,jdbcType=NUMERIC},
+			</if>
+			<if test="updateDate != null">
+				#{updateDate,jdbcType=TIMESTAMP},
+			</if>
+		</trim>
+	</insert>
+
+	<update id="updateUser" parameterType="User">
+		update USER
+		<set>
+			<if test="companyId != null">
+				COMPANY_ID = #{companyId,jdbcType=NUMERIC},
+			</if>
+			<if test="mobile != null">
+				MOBILE = #{mobile,jdbcType=VARCHAR},
+			</if>
+			<if test="name != null">
+				NAME = #{name,jdbcType=VARCHAR},
+			</if>
+			<if test="login != null">
+				LOGIN = #{login,jdbcType=VARCHAR},
+			</if>
+			<if test="lowerLogin != null">
+				LOWER_LOGIN = #{lowerLogin,jdbcType=VARCHAR},
+			</if>
+			<if test="email != null">
+				EMAIL = #{email,jdbcType=VARCHAR},
+			</if>
+			<if test="lowerEmail != null">
+				LOWER_EMAIL = #{lowerEmail,jdbcType=VARCHAR},
+			</if>
+			<if test="password != null">
+				PASSWORD = #{password,jdbcType=CHAR},
+			</if>
+			<if test="memo != null">
+				MEMO = #{memo,jdbcType=VARCHAR},
+			</if>
+			<if test="emailVerified != null">
+				EMAIL_VERIFIED = #{emailVerified,jdbcType=CHAR},
+			</if>
+			<if test="mobileVerified != null">
+				MOBILE_VERIFIED = #{mobileVerified,jdbcType=CHAR},
+			</if>
+			<if test="lastLoginDate != null">
+				LAST_LOGIN_DATE = #{lastLoginDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="locked != null">
+				LOCKED = #{locked,jdbcType=CHAR},
+			</if>
+			<if test="lastLockDate != null">
+				LAST_LOCK_DATE = #{lastLockDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="branchId != null">
+				BRANCH_ID = #{branchId,jdbcType=NUMERIC},
+			</if>
+			<if test="deptId != null">
+				DEPT_ID = #{deptId,jdbcType=NUMERIC},
+			</if>
+			<if test="positionId != null">
+				POSITION_ID = #{positionId,jdbcType=NUMERIC},
+			</if>
+			<if test="isAdmin != null">
+				IS_ADMIN = #{isAdmin,jdbcType=CHAR},
+			</if>
+			<if test="isDeleted != null">
+				IS_DELETED = #{isDeleted,jdbcType=CHAR},
+			</if>
+			<if test="createBy != null">
+				CREATE_BY = #{createBy,jdbcType=NUMERIC},
+			</if>
+			<if test="createDate != null">
+				CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+			</if>
+			<if test="updateBy != null">
+				UPDATE_BY = #{updateBy,jdbcType=NUMERIC},
+			</if>
+			<if test="updateDate != null">
+				UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP}
+			</if>
+		</set>
+		where ID = #{id,jdbcType=NUMERIC}
+	</update>
+
+	<update id="updateUserNullable" parameterType="User">
+		update USER
+		<set>
+			COMPANY_ID = #{companyId,jdbcType=NUMERIC},
+			MOBILE = #{mobile,jdbcType=VARCHAR},
+			NAME = #{name,jdbcType=VARCHAR},
+			LOGIN = #{login,jdbcType=VARCHAR},
+			LOWER_LOGIN = #{lowerLogin,jdbcType=VARCHAR},
+			EMAIL = #{email,jdbcType=VARCHAR},
+			LOWER_EMAIL = #{lowerEmail,jdbcType=VARCHAR},
+			PASSWORD = #{password,jdbcType=CHAR},
+			MEMO = #{memo,jdbcType=VARCHAR},
+			EMAIL_VERIFIED = #{emailVerified,jdbcType=CHAR},
+			MOBILE_VERIFIED = #{mobileVerified,jdbcType=CHAR},
+			LAST_LOGIN_DATE = #{lastLoginDate,jdbcType=TIMESTAMP},
+			LOCKED = #{locked,jdbcType=CHAR},
+			LAST_LOCK_DATE = #{lastLockDate,jdbcType=TIMESTAMP},
+			BRANCH_ID = #{branchId,jdbcType=NUMERIC},
+			DEPT_ID = #{deptId,jdbcType=NUMERIC},
+			POSITION_ID = #{positionId,jdbcType=NUMERIC},
+			IS_ADMIN = #{isAdmin,jdbcType=CHAR},
+			IS_DELETED = #{isDeleted,jdbcType=CHAR},
+			CREATE_BY = #{createBy,jdbcType=NUMERIC},
+			CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+			UPDATE_BY = #{updateBy,jdbcType=NUMERIC},
+			UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP}
+		</set>
+		where ID = #{id,jdbcType=NUMERIC}
+	</update>
+	
+	<update id="updateCompanyRelatedByUser" parameterType="User">
+		update USER
+		<set>
+			<if test="branchId != null">
+				BRANCH_ID = null,
+			</if>
+			<if test="deptId != null">
+				DEPT_ID = null,
+			</if>
+			<if test="positionId != null">
+				POSITION_ID = null,
+			</if>
+		</set>
+		where COMPANY_ID = #{companyId,jdbcType=NUMERIC} 
+		<if test="branchId != null and branchId != ''">
+			and BRANCH_ID = #{branchId,jdbcType=NUMERIC}
+		</if>
+		<if test="deptId != null and deptId != ''">
+			and DEPT_ID = #{deptId,jdbcType=NUMERIC}
+		</if>
+		<if test="positionId != null and positionId != ''">
+			and POSITION_ID = #{positionId,jdbcType=NUMERIC}
+		</if>
+	</update>
+
+	<select id="selectUserAll" resultMap="UserMap">  
+		select <include refid="sql_User_FullFields"/>
+		from USER
+	</select>
+
+	<select id="selectUserByFiltersPage" resultMap="UserMap" parameterType="Map">
+		select <include refid="sql_User_FullFields"/>
+		from USER 
+		<where> 
+			COMPANY_ID = #{companyId,jdbcType=NUMERIC} AND IS_DELETED = 'N' 
+			<if test="text != null and text != ''">
+				AND (NAME LIKE CONCAT ('%', #{text,jdbcType=VARCHAR}, '%') 
+					or MOBILE LIKE CONCAT ('%', #{text,jdbcType=VARCHAR}, '%') 
+					or LOWER_LOGIN LIKE CONCAT ('%', #{lowerText,jdbcType=VARCHAR}, '%') 
+					or LOWER_EMAIL LIKE CONCAT ('%', #{lowerText,jdbcType=VARCHAR}, '%') 
+				)
+			</if>
+		</where>
+		order by LOWER_LOGIN asc
+	</select>
+	
+	<select id="selectUserByPk" resultMap="UserMap" parameterType="Integer">  
+		select <include refid="sql_User_FullFields"/>
+		from USER
+		where ID = #{id,jdbcType=NUMERIC}
+	</select>
+	
+	<select id="selectUserIdAndLoginByIdList" resultMap="UserMap" parameterType="List">  
+		select ID, LOGIN
+		from USER
+		<where>
+			<if test="list!=null and list.size()>0">
+                ID in
+                <foreach item="item" collection="list" separator="," open="(" close=")" index="">
+                    #{item, jdbcType=NUMERIC}
+                </foreach>
+        	</if>
+		</where>
+	</select>
+
+	<delete id="deleteUserByPk" parameterType="Integer">
+		delete from USER where ID = #{id,jdbcType=NUMERIC}
+	</delete>
+	
+	<select id="selectUserByMobileAndLoginAndEmail" resultMap="UserMap" parameterType="Map">
+		select
+		<include refid="sql_User_FullFields"/>
+		from USER
+		<where>
+			COMPANY_ID = #{companyId,jdbcType=NUMERIC} AND IS_DELETED = 'N'
+			<if test="mobile!=null and mobile!=''">
+				AND MOBILE = #{mobile,jdbcType=VARCHAR} 
+			</if>
+			<if test="lowerLogin!=null and lowerLogin!=''">
+				AND LOWER_LOGIN = #{lowerLogin,jdbcType=VARCHAR}
+			</if>
+			<if test="lowerEmail!= null and lowerEmail!=''">
+				AND LOWER_EMAIL = #{lowerEmail,jdbcType=VARCHAR}
+			</if>
+		</where>
+	</select>
+
+	<select id="selectUserByCompanyIdAndLogin" resultMap="UserMap" parameterType="Map">
+		select
+		<include refid="sql_User_FullFields"/>
+		from USER
+		where
+		COMPANY_ID = #{companyId, jdbcType=NUMERIC} and NAME = #{login,jdbcType=VARCHAR} limit 1
+		UNION
+		select
+		<include refid="sql_User_FullFields"/>
+		from USER
+		where
+		COMPANY_ID = #{companyId, jdbcType=NUMERIC} and LOGIN = #{login,jdbcType=VARCHAR} limit 1
+	</select>
+	
+	<select id="selectUserListByCompanyId" resultMap="UserMap" parameterType="Integer">  
+		select <include refid="sql_User_FullFields"/>
+		from USER
+		where COMPANY_ID = #{companyId,jdbcType=NUMERIC}
+		and IS_ADMIN = 'N' and IS_DELETED = 'N'
+		order by LOWER_LOGIN asc
+	</select>
+
+	<select id="findUserByLogin" resultMap="UserMap" parameterType="Map">
+		select <include refid="sql_User_FullFields"/>
+		from USER
+		where COMPANY_ID = #{companyId,jdbcType=NUMERIC}
+		and LOWER_LOGIN LIKE CONCAT ('%', #{lowerLogin,jdbcType=VARCHAR}, '%')
+	</select>
+</mapper>

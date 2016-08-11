@@ -1,0 +1,139 @@
+{
+	"accountMgmt": {
+		"name": "账号管理",
+		"permissions": []
+	},
+	"shopMgmt": {
+		"name": "店铺授权",
+		"permissions": []
+	},
+	"expressMgmt": {
+		"name": "物流管理",
+		"permissions": []
+	},
+	"customerMgmt": {
+		"name": "会员管理",
+		"permissions": []
+	},
+	"printTemplate": {
+		"name": "打印模板",
+		"permissions": []
+	},
+	"supplierMgmt": {
+		"name": "供应商",
+		"permissions": []
+	},
+	"companySetting": {
+    "name": "基础设置",
+    "permissions": []
+  },
+
+	"productMgmt": {
+		"name": "商品资料",
+		"permissions": []
+	},
+	"productRecycled": {
+		"name": "回收站",
+		"permissions": []
+	},
+
+	"shopOrderList": {
+		"name": "平台订单",
+		"permissions": []
+	},
+	"orderReview": {
+		"name": "订单客审",
+		"permissions": []
+	},
+	"orderFinancialReview": {
+		"name": "订单财审",
+		"permissions": []
+	},
+	"orderQuery": {
+		"name": "订单查询",
+		"permissions": []
+	},
+	"orderManually": {
+		"name": "手工开单",
+		"permissions": []
+	},
+    "orderHold":{
+      "name":"异常订单",
+      "permissions":[]
+    },
+	"afterSaleMgmt": {
+		"name": "售后单查询",
+		"permissions": []
+	},
+
+	"whsMgmt": {
+		"name": "仓库管理",
+		"permissions": []
+	},
+	"pickLocation": {
+		"name": "库位管理",
+		"permissions": []
+	},
+	"stockTransfer": {
+		"name": "库存调拨",
+		"permissions": []
+	},
+	"goodsReceipt": {
+		"name": "杂项入库",
+		"permissions": []
+	},
+	"goodsIssue": {
+		"name": "杂项出库",
+		"permissions": []
+	},
+	"purchaseReceipt": {
+		"name": "采购收货",
+		"permissions": []
+	},
+	"purchaseReturn": {
+		"name": "采购退货",
+		"permissions": []
+	},
+	"stockTaking": {
+		"name": "库存盘点",
+		"permissions": []
+	},
+	"productSummary": {
+		"name": "商品资料统计报表",
+		"permissions": []
+	},
+	"salesSummary": {
+		"name": "销售订单统计报表",
+		"permissions": []
+	},
+	"stockSummary": {
+		"name": "出入库统计报表",
+		"permissions": []
+	},
+	"stockJournalSummary": {
+		"name": "出入库明细报表",
+		"permissions": []
+	},
+	"stockInvoicingSummary": {
+		"name": "进销存统计报表",
+		"permissions": []
+	},
+
+	"purchaseMgmt": {
+		"name": "采购管理",
+		"permissions": []
+	},
+	"purchaseOrder": {
+		"name": "采购订单",
+		"permissions": []
+	},
+	"purchasePayment": {
+		"name": "采购付款",
+		"permissions": []
+	},
+
+	"customsSetting": {
+		"name": "海关备案设置",
+		"permissions": []
+	}
+}

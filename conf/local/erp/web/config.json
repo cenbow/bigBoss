@@ -1,0 +1,44 @@
+{
+  "logDir": "C:\\log\\erp\\web",
+  "servers": {
+    "facade": [
+      "http://127.0.0.1:8080/facade"
+    ],
+    "gds": [
+      "http://172.16.30.151:8081/gds"
+    ],
+    "report": [
+      "http://127.0.0.1:8082/report"
+    ],
+	"wms": [
+      "http://127.0.0.1:8081/wms"
+    ],
+    "redis": [
+      {
+        "host": "172.16.30.115",
+        "port": 6379
+      }
+    ],
+    "zk": [
+      "172.16.30.115:2181"
+    ]
+  },
+  "web": {
+    "name": "电商ERP(DEV)",
+    "uriAppendix": ".html"
+  },
+  "sessionKey": "_sid",
+  "sessionTTL": 1800,
+  "cookie": {
+    "secret": "MAYI!234^dev",
+    "rememberMe": {
+      "key": "_rid",
+      "options": {
+        "path": "/",
+        "httpOnly": true,
+        "secure": false,
+        "maxAge": 1209600000
+      }
+    }
+  }
+}

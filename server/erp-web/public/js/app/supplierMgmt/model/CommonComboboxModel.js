@@ -1,0 +1,12 @@
+Ext.define('SupplierMgmt.model.CommonComboboxModel', {
+    extend: 'Ext.data.Model',
+
+    fields: [
+        {
+            name: 'id', mapping: 'id'
+        },
+        {
+            name: 'name', mapping: 'name'
+        }
+    ]
+});

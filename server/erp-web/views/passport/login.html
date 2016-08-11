@@ -1,0 +1,29 @@
+<% include('../common/begin_simple') %>
+<link rel="stylesheet" href="css/style.css" type="text/css"/>
+<% include('../common/header') %>
+<body>
+	<div class="content">
+		<div class="lgFrame">
+			<dl class="formDl">
+				<dd>
+					<p class="clearfix"><span class="lgico1"></span><input type="text" value="" name="" placeholder="公司名称" id="js_company" autocomplete="off" tabIndex="1" /></p>
+				</dd>
+				<dd>
+					<p class="clearfix"><span class="lgico2"></span><input type="text" value="" name="" placeholder="登录名" id="js_username" autocomplete="off" tabIndex="1" /></p>
+				</dd>
+				<dd>
+					<p class="clearfix">
+						<span class="lgico3"></span>
+						<input type="password" placeholder="密码" tabindex="2" id="js_password" value="" />
+					</p>
+				</dd>
+			</dl>
+			<p class="lh22"><span id="js_toggleRememberMe"><em class="choose"></em>两周内自动登录</span><span class="lg-error">提供的用户名或密码不正确</span></p>
+			<input type="submit" value="登&nbsp;&nbsp;&nbsp;&nbsp;录" name="" id="js_btnLogin">
+		</div>
+	</div>
+
+<% include('../common/footer_simple') %>
+<script type="text/javascript" src="js/jquery.min.1.9.1.js"></script>
+<script type="text/javascript" src="js/login.js"></script>
+<% include('../common/end') %>

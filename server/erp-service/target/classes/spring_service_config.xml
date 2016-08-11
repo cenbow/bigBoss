@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	   xmlns:tx="http://www.springframework.org/schema/tx"
+	   xmlns:aop="http://www.springframework.org/schema/aop"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans
+	http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+    http://www.springframework.org/schema/tx
+    http://www.springframework.org/schema/tx/spring-tx-3.0.xsd
+	http://www.springframework.org/schema/aop
+	http://www.springframework.org/schema/aop/spring-aop-3.0.xsd">
+
+	<!-- 配置数据库连接 -->
+	<bean id="dataSource" class="com.alibaba.druid.pool.DruidDataSource" init-method="init" destroy-method="close">
+		<!-- 基本属性 url、user、password -->
+		<property name="driverClassName" value="${jdbc-0.druid.driver-class}" />
+		<property name="url"             value="${jdbc-0.druid.driver-url}" />
+		<property name="username"        value="${jdbc-0.user}" />
+		<property name="password"        value="${jdbc-0.password}" />
+
+		<!-- 配置初始化大小、最小、最大 -->
+		<property name="initialSize" value="${jdbc-0.druid.connection-initial-size}" />
+		<property name="minIdle"     value="${jdbc-0.druid.connection-minimum-size}" />
+		<property name="maxActive"   value="${jdbc-0.druid.connection-maximum-size}" />
+
+		<!-- 配置获取连接等待超时的时间 -->
+		<property name="maxWait"     value="${jdbc-0.druid.connection-maxwait-time}" />
+
+		<!-- 配置间隔多久才进行一次检测，检测需要关闭的空闲连接，单位是毫秒 -->
+		<property name="timeBetweenEvictionRunsMillis" value="${jdbc-0.druid.connection-maxactive-time}"/>
+
+		<!-- 配置一个连接在池中最小生存的时间，单位是毫秒 -->
+		<property name="minEvictableIdleTimeMillis"    value="${jdbc-0.druid.connection-minlive-time}" />
+
+		<property name="validationQuery" value="${jdbc-0.druid.connection-test-sql}" />
+		<property name="testWhileIdle"   value="${jdbc-0.druid.test-while-idle}" />
+		<property name="testOnBorrow"    value="${jdbc-0.druid.test-on-borrow}" />
+		<property name="testOnReturn"    value="${jdbc-0.druid.test-on-return}" />
+
+		<!-- 打开PSCache，并且指定每个连接上PSCache的大小 -->
+		<property name="poolPreparedStatements" value="${jdbc-0.druid.pool-prepared-statements}" />
+		<!-- property name="maxPoolPreparedStatementPerConnectionSize" value="20" /-->
+
+		<!-- 数据库密码是否加密 -->
+		<property name="connectionProperties" value="config.decrypt=${jdbc-0.druid.config.decrypt}" />
+		<!-- 配置监控统计拦截的filters -->
+		<property name="filters" value="stat,config"/>
+	</bean>
+
+	<bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"/>
+		<property name="configLocation" value="classpath:sql_map_service_config.xml"/>
+	</bean>
+
+	<bean id="transactionManager"
+		  class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+		<property name="dataSource" ref="dataSource"/>
+	</bean>
+
+	<!-- 我们使用基于注解的Transaction管理, 参考http://www.cnblogs.com/xusir/p/3650522.html -->
+	<tx:annotation-driven transaction-manager="transactionManager"/>
+	<!--
+	<bean id="nameMatch"
+		class="org.springframework.transaction.interceptor.NameMatchTransactionAttributeSource">
+		<property name="properties">
+			<props>
+				<prop key="*">PROPAGATION_REQUIRED,-Exception</prop>
+			</props>
+		</property>
+	</bean>
+
+	<bean id="transactionInterceptor" class="org.springframework.transaction.interceptor.TransactionInterceptor">
+		<property name="transactionManager">
+			<ref local="transactionManager" />
+		</property>
+		<property name="transactionAttributeSource">
+			<ref local="nameMatch" />
+		</property>
+	</bean>
+
+	<bean id="autoProxyCreator" class="org.springframework.aop.framework.autoproxy.BeanNameAutoProxyCreator">
+		<property name="beanNames">
+			<list>
+				<value>*Service</value>
+			</list>
+		</property>
+		<property name="interceptorNames">
+			<list>
+				<idref local="transactionInterceptor" />
+				<idref local="methodCallLogInterceptor"/>
+			</list>
+		</property>
+	</bean>
+	-->
+
+	<!-- enable method call log -->
+	<bean id="methodCallLogInterceptor" class="com.junyi.ecommerce.core.spring.interceptor.MethodCallLogInterceptor">
+		<property name="simpleLogElapse" value="50"/>
+		<property name="stackTrackLogElapse" value="80"/>
+	</bean>
+
+	<bean id="afterCommitExecutorService" class="com.junyi.ecommerce.core.spring.tx.AfterCommitExecutorService">
+	</bean>
+
+	<aop:config>
+		<aop:pointcut id="servicePointcut" expression="execution(* com.junyi.erp.service..*.*(..))" />
+		<aop:advisor advice-ref="methodCallLogInterceptor" pointcut-ref="servicePointcut"/>
+	</aop:config>
+
+	<!-- redis configuration -->
+	<!--<bean id="jedisPoolConfig" class="redis.clients.jedis.JedisPoolConfig">
+		<property name="maxActive" value="${redis.pool.maxWait}"></property>
+		<property name="maxIdle" value="${redis.pool.maxIdle}"></property>
+		<property name="maxWait" value="${redis.pool.maxWait}"></property>
+		<property name="minEvictableIdleTimeMillis" value="${redis.pool.minEvictableIdleTimeMillis}"></property>
+		<property name="numTestsPerEvictionRun" value="${redis.pool.numTestsPerEvictionRun}"></property>
+		<property name="timeBetweenEvictionRunsMillis" value="${redis.pool.timeBetweenEvictionRunsMillis}"></property>
+		<property name="whenExhaustedAction" value="${redis.pool.whenExhaustedAction}"></property>
+	</bean>-->
+
+	<!--<bean id="jedisConnectionFactory" class="org.springframework.data.redis.connection.jedis.JedisConnectionFactory"
+		  destroy-method="destroy">
+		<property name="poolConfig" ref="jedisPoolConfig"></property>
+		<property name="hostName" value="${redis.host}"></property>
+		<property name="port" value="${redis.port}"></property>
+		&lt;!&ndash; <property name="password" value="0123456"></property> &ndash;&gt;
+		<property name="timeout" value="${redis.timeout}"></property>
+		<property name="usePool" value="${redis.usePool}"></property>
+	</bean>-->
+
+	<!--<bean id="redisTemplate" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory" ref="jedisConnectionFactory"></property>
+		<property name="keySerializer">
+			<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+		</property>
+		<property name="hashKeySerializer">
+			<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+		</property>
+		<property name="valueSerializer">
+			<bean class="org.springframework.data.redis.serializer.JdkSerializationRedisSerializer"/>
+		</property>
+		<property name="hashValueSerializer">
+			<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+		</property>
+	</bean>-->
+
+	<!-- pub/sub based on redis -->
+	<!--<bean id="redisTemplateForPubSub" class="org.springframework.data.redis.core.RedisTemplate">
+		<property name="connectionFactory" ref="jedisConnectionFactory"></property>
+		<property name="keySerializer">
+			<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+		</property>
+		<property name="valueSerializer">
+			<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>
+		</property>
+	</bean>-->
+
+	<!--<bean id="eventRouter" class="com.junyi.ecommerce.core.event.EventRouter">
+		<constructor-arg value="ecommerce::event-router"/>
+		<property name="redisTemplate" ref="redisTemplateForPubSub"></property>
+	</bean>-->
+
+	<bean id="springContextBridge" class="com.junyi.ecommerce.core.spring.adapter.SpringContextBridge"></bean>
+
+	<!-- 如果eventRouter需要监听事件，拷贝下面的配置到applicationContext.xml里
+	<bean id="redisMessageListenerDelegate" class="com.junyi.ecommerce.core.event.RedisMessageListenerDelegate">
+		<property name="eventRouter" ref="eventRouter"/>
+	</bean>
+
+	<bean id="redisMessageListener" class="org.springframework.data.redis.listener.adapter.MessageListenerAdapter">
+	    <constructor-arg ref="redisMessageListenerDelegate"/>
+   		<property name="serializer">  
+        	<bean class="org.springframework.data.redis.serializer.StringRedisSerializer"/>  
+        </property>
+	</bean>
+
+	<bean id="redisMessageListenerContainer" class="org.springframework.data.redis.listener.RedisMessageListenerContainer">
+	    <property name="connectionFactory" ref="jedisConnectionFactory"/>
+	    <property name="messageListeners">
+	      <map>
+	        <entry key-ref="redisMessageListener">
+	            <bean class="org.springframework.data.redis.listener.ChannelTopic">
+	               <constructor-arg value="ecommerce::event-router"/>
+	            </bean>
+	        </entry>
+	      </map>
+	    </property>
+	</bean>
+	-->
+
+	<!-- MQ -->
+	<!--
+    <bean id="targetConnectionFactory" class="org.apache.activemq.ActiveMQConnectionFactory">  
+        <property name="brokerURL" value="${sms.mq.url}"/>  
+    </bean>
+    <bean id="connectionFactory" class="org.springframework.jms.connection.SingleConnectionFactory">  
+        <property name="targetConnectionFactory" ref="targetConnectionFactory"/>  
+    </bean>   
+    <bean id="jmsTemplate" class="org.springframework.jms.core.JmsTemplate">  
+        <property name="connectionFactory" ref="connectionFactory"/>  
+    </bean>  
+    <bean id="smsQueueDestination" class="org.apache.activemq.command.ActiveMQQueue">  
+        <constructor-arg>  
+            <value>sms.request.queue</value>  
+        </constructor-arg>  
+    </bean>
+    -->
+</beans>

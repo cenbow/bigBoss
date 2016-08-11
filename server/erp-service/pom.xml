@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<artifactId>erp-server</artifactId>
+		<groupId>com.junyi</groupId>
+		<version>1.0.0</version>
+	</parent>
+
+	<groupId>com.junyi.erp</groupId>
+	<artifactId>erp-service</artifactId>
+	<version>${erp.internal.version}</version>
+	<name>erp-service</name>
+	<packaging>jar</packaging>
+
+	<dependencies>
+		<!-- Ourself jar -->
+		<dependency>
+			<groupId>com.junyi.base</groupId>
+			<artifactId>ecommerce-core</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>com.junyi.erp</groupId>
+			<artifactId>erp-domain</artifactId>
+		</dependency>
+
+		<!-- Unit Test -->
+		<dependency>
+			<groupId>junit</groupId>
+			<artifactId>junit</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework</groupId>
+			<artifactId>spring-test</artifactId>
+		</dependency>
+
+		<dependency>
+			<groupId>org.apache.curator</groupId>
+			<artifactId>curator-recipes</artifactId>
+			<exclusions>
+			 	<exclusion>
+			 		<artifactId>netty</artifactId>
+			 		<groupId>io.netty</groupId>
+			 	</exclusion>
+			</exclusions>
+		</dependency>
+		<!-- netty is excluded from curator, use below -->
+		<dependency>
+			<groupId>io.netty</groupId>
+			<artifactId>netty</artifactId>
+		</dependency>
+
+		<!-- elasticsearch scope:provided -->
+		<dependency>
+			<groupId>org.elasticsearch</groupId>
+			<artifactId>elasticsearch</artifactId>
+			<scope>provided</scope>
+		</dependency>
+		<!-- redisson scope:provided -->
+		<dependency>
+   			<groupId>org.redisson</groupId>
+   			<artifactId>redisson</artifactId>
+			<scope>provided</scope>
+		</dependency>
+	</dependencies>
+
+	<build>
+		<finalName>erp-service-${erp.internal.version}</finalName>
+		<plugins>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-source-plugin</artifactId>
+				<version>2.4</version>
+				<executions>
+					<execution>
+						<id>attach-sources</id>
+						<goals>
+							<goal>jar</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+
+</project>

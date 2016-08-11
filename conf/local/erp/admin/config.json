@@ -1,0 +1,26 @@
+{
+  "logDir": "C:\\log\\erp\\admin",
+  "servers": {
+    "facade": [
+      "http://127.0.0.1:8080/facade"
+    ],
+    "report": [
+      "http://127.0.0.1:8082/report"
+    ],
+    "redis": [
+      {
+        "host": "172.16.30.115",
+        "port": 6379
+      }
+    ]
+  },
+  "web": {
+    "name": "电商ERP Admin(DEV)",
+    "uriAppendix": ".html"
+  },
+  "sessionKey": "admin_sid",
+  "sessionTTL": 1800,
+  "cookie": {
+    "secret": "MAYI!234^dev"
+  }
+}
