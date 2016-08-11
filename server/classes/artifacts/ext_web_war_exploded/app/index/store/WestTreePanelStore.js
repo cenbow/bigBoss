@@ -23,51 +23,10 @@ Ext.define('Index.store.WestTreePanelStore', {
               {
                 text: '账号管理',
                 qtip: '账号管理',
-                url: 'app-accountMgmt.html',
+                url: 'html/app/accountMgmt.html',
                 id: 'accountMgmt',
                 leaf: true
-              },
-              /*{
-                text: '店铺授权',
-                qtip: '店铺授权',
-                url: 'app-shopMgmt.html',
-                id: 'shopMgmt',
-                leaf: true
-              },
-              {
-                text: '物流管理',
-                qtip: '物流管理',
-                url: 'app-expressMgmt.html',
-                id: 'expressMgmt',
-                leaf: true
-              },{
-                text:'会员管理',
-                qtip:'会员管理',
-                url:'app-customerMgmt.html',
-                id:'customerMgmt',
-                leaf:'true'
-              },
-              {
-                text: '供应商',
-                qtip: '供应商',
-                url: 'app-supplierMgmt.html',
-                id: 'supplierMgmt',
-                leaf: true
-              },
-              {
-                text: '打印模板',
-                qtip: '打印模板',
-                url: 'app-printTemplate.html',
-                id: 'printTemplate',
-                leaf: true
-              },
-              {
-                text: '基础设置',
-                qtip: '基础设置',
-                url: 'app-companySetting.html',
-                id: 'companySetting',
-                leaf: true
-              }*/
+              }
             ]
           },
           {
