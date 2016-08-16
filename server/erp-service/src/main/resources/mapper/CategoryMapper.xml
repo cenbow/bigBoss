@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.junyi.erp.domain.Category" >
+  <resultMap id="CategoryMap" type="Category" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="NAME" property="name" jdbcType="VARCHAR" />
+    <result column="COLUMN_ID" property="columnId" jdbcType="INTEGER" />
+    <result column="UP_CLASS_ID" property="upClassId" jdbcType="INTEGER" />
+    <result column="STATUS" property="status" jdbcType="INTEGER" />
+    <result column="CREATE_BY" property="createBy" jdbcType="INTEGER" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+    <result column="UPDATE_BY" property="updateBy" jdbcType="INTEGER" />
+    <result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP" />
+    <result column="LEAF" property="leaf" jdbcType="INTEGER" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    ID, NAME, COLUMN_ID, UP_CLASS_ID, STATUS, CREATE_BY, CREATE_DATE, UPDATE_BY, UPDATE_DATE, LEAF
+  </sql>
+
+  <select id="selectCategoryByPK" resultMap="CategoryMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from category
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+
+
+  <delete id="deleteCategoryByPK" parameterType="java.lang.Integer" >
+    delete from category
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+
+
+  <insert id="insertCategory" parameterType="Category" >
+    insert into category (ID, NAME, COLUMN_ID,
+      UP_CLASS_ID, STATUS, CREATE_BY, 
+      CREATE_DATE, UPDATE_BY, UPDATE_DATE, LEAF
+      )
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{columnId,jdbcType=INTEGER}, 
+      #{upClassId,jdbcType=INTEGER}, #{status,jdbcType=INTEGER}, #{createBy,jdbcType=INTEGER}, 
+      #{createDate,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=INTEGER}, #{updateDate,jdbcType=TIMESTAMP},
+      #{leaf,jdbcType=INTEGER}
+      )
+  </insert>
+
+
+  <update id="updateCategory" parameterType="Category" >
+    update category
+    <set >
+      <if test="name != null" >
+        NAME = #{name,jdbcType=VARCHAR},
+      </if>
+      <if test="columnId != null" >
+        COLUMN_ID = #{columnId,jdbcType=INTEGER},
+      </if>
+      <if test="upClassId != null" >
+        UP_CLASS_ID = #{upClassId,jdbcType=INTEGER},
+      </if>
+      <if test="status != null" >
+        STATUS = #{status,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="updateBy != null" >
+        UPDATE_BY = #{updateBy,jdbcType=INTEGER},
+      </if>
+      <if test="updateDate != null" >
+        UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="leaf != null" >
+        LEAF = #{leaf,jdbcType=INTEGER},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="Category" >
+    update category
+    set NAME = #{name,jdbcType=VARCHAR},
+      COLUMN_ID = #{columnId,jdbcType=INTEGER},
+      UP_CLASS_ID = #{upClassId,jdbcType=INTEGER},
+      STATUS = #{status,jdbcType=INTEGER},
+      CREATE_BY = #{createBy,jdbcType=INTEGER},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      UPDATE_BY = #{updateBy,jdbcType=INTEGER},
+      UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+      LEAF = #{leaf,jdbcType=INTEGER},
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+
+  <select id="selectCategoryByColumnId" resultMap="CategoryMap" parameterType="java.lang.Integer" >
+    select
+    <include refid="Base_Column_List" />
+    from category
+    where COLUMN_ID = #{columnId,jdbcType=INTEGER}
+  </select>
+
+</mapper>

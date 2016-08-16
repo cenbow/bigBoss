@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!-- status=debug 可以查看log4j的装配过程 -->
 <configuration status="debug" monitorInterval="1800">
     <properties>
@@ -65,16 +65,7 @@
         </RollingRandomAccessFile>
 
         <!-- 日志存入数据库 -->
-        <JDBC name="DbLog" tableName="my_mon.system_log">
-            <ConnectionFactory class="com.junyi.erp.util.Log4j2DataSourceUtil" method="getConnection" />
-            <Column name="TARGET" pattern="${PREFIX_BASE}" />
-            <Column name="CREATE_DATE" isEventTimestamp="true" />
-            <Column name="LEVEL" pattern="%level" />
-            <Column name="LOGGER" pattern="%logger" />
-            <Column name="MESSAGE" pattern="%message" />
-            <Column name="THROWABLE" pattern="%ex{full}" />
-            <ThresholdFilter level="error" onMatch="ACCEPT" onMismatch="DENY"/>
-        </JDBC>
+        
     </appenders>
 
     <loggers>

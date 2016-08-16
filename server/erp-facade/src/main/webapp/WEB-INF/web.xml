@@ -37,7 +37,7 @@
 
 	<context-param>
 		<param-name>log4jConfig</param-name>
-		<param-value>file:///${ERP_CONFIG}/erp/facade/log4j2.xml</param-value>
+		<param-value>file:///${BIGBOSS_CONFIG}/erp/facade/log4j2.xml</param-value>
 	</context-param>
 	<filter>
 		<filter-name>log4jServletFilter</filter-name>

@@ -3,8 +3,8 @@ Ext.Loader.setConfig({
   disableCaching: false,
   enabled: true,
   paths: {
-    'Common': 'js/common',
-    'Ext': 'js/extjs'
+    'Common': './common',
+    'Ext': '../extjs'
   }
 });
 

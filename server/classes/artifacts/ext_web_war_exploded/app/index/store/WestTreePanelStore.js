@@ -15,38 +15,8 @@ Ext.define('Index.store.WestTreePanelStore', {
         expanded: true,
         children: [
           {
-            text: '账号管理',
-            qtip: '账号管理',
-            leaf: false,
-            expanded: true,
-            children: [
-              {
-                text: '账号管理',
-                qtip: '账号管理',
-                url: 'html/app/accountMgmt.html',
-                id: 'accountMgmt',
-                leaf: true
-              }
-            ]
-          },
-          {
-            text: '公司管理',
-            qtip: '公司管理',
-            leaf: false,
-            expanded: true,
-            children: [
-              {
-                text: '公司管理',
-                qtip: '公司管理',
-                url: 'app-productMgmt.html',
-                id: 'companyMgmt',
-                leaf: true
-              }
-            ]
-          },
-          {
-            text: '分类管理',
-            qtip: '分类管理',
+            text: '信息管理',
+            qtip: '信息管理',
             leaf: false,
             expanded: true,
             children: [
@@ -81,21 +51,71 @@ Ext.define('Index.store.WestTreePanelStore', {
             ]
           },
           {
-            text: '信息管理',
-            qtip: '信息管理',
+            text: '公司管理',
+            qtip: '公司管理',
             leaf: false,
             expanded: true,
             children: [
               {
-                text: '信息管理',
-                qtip: '信息管理',
+                text: '公司信息',
+                qtip: '公司信息',
                 url: 'app-productMgmt.html',
-                id: 'infoMgmt',
+                id: 'companyInfo',
+                leaf: true
+              },
+              {
+                text: '新增公司',
+                qtip: '新增公司',
+                url: 'app-productMgmt.html',
+                id: 'addCompany',
                 leaf: true
               }
             ]
-          }
-
+          },
+          {
+            text: '分类管理',
+            qtip: '分类管理',
+            leaf: false,
+            expanded: true,
+            children: [
+              {
+                text: '分类信息',
+                qtip: '分类信息',
+                url: 'app-productMgmt.html',
+                id: 'categoryInfo',
+                leaf: true
+              },
+              {
+                text: '新增分类',
+                qtip: '新增分类',
+                url: 'app-productMgmt.html',
+                id: 'addCategory',
+                leaf: true
+              }
+            ]
+          },
+          {
+            text: '账号管理',
+            qtip: '账号管理',
+            leaf: false,
+            expanded: true,
+            children: [
+              {
+                text: '账号管理',
+                qtip: '账号管理',
+                url: 'html/app/accountMgmt.html',
+                id: 'accountInfo',
+                leaf: true
+              },
+              {
+                text: '账号管理',
+                qtip: '账号管理',
+                url: 'html/app/accountMgmt.html',
+                id: 'addAccount',
+                leaf: true
+              }
+            ]
+          },
         ]
       },
       fields: [

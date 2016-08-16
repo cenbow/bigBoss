@@ -11,8 +11,11 @@
 
 	<typeAliases>
 		<typeAlias type="com.junyi.erp.domain.user.User" alias="User" />
-
-
+		<typeAlias type="com.junyi.erp.domain.Account" alias="Account" />
+		<typeAlias type="com.junyi.erp.domain.Category" alias="Category" />
+		<typeAlias type="com.junyi.erp.domain.Column" alias="Column" />
+		<typeAlias type="com.junyi.erp.domain.Company" alias="Company" />
+		<typeAlias type="com.junyi.erp.domain.Role" alias="Role" />
 	</typeAliases>
 
 	<plugins>
@@ -22,10 +25,15 @@
 		</plugin>
 	</plugins>
 
+
 	<mappers>
-
 		<mapper resource="mapper/user/user_mapper.xml" />
-
-
+		<mapper resource="mapper/AccountMapper.xml" />
+		<mapper resource="mapper/CategoryMapper.xml" />
+		<mapper resource="mapper/ColumnMapper.xml" />
+		<mapper resource="mapper/CompanyMapper.xml" />
+		<mapper resource="mapper/RoleMapper.xml" />
 	</mappers>
+
+
 </configuration>

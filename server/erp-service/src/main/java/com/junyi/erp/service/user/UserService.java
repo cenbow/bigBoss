@@ -1,12 +1,6 @@
 package com.junyi.erp.service.user;
 
-import java.util.List;
-import java.util.Map;
-
-import com.junyi.ecommerce.core.mybatis.page.Page;
-import com.junyi.ecommerce.core.mybatis.page.PageRequest;
 import com.junyi.erp.domain.user.User;
-import com.junyi.erp.domain.user.UserRememberMeLogin;
 
 public interface UserService {
 

@@ -17,33 +17,50 @@ Ext.define('AccountMgmt.model.MainViewportGridModel', {
   extend: 'Ext.data.Model',
 
   fields: [
-    'id', 'companyId', 'companyName',
-    'mobile', 'name', 'login',
-    'email', 'memo', 'lastLoginDate',
-    'branchId', 'branchName',
-    'deptId', 'deptName',
-    'positionId', 'positionName',
-    'isDeleted',
     {
-      type: 'boolean',
-      name: 'locked',
-      convert: function (value) {
-        return (value == 'Y' ? true : false);
-      }
+      name: 'id'
     },
     {
-      type: 'boolean',
-      name: 'isAdmin',
-      convert: function (value) {
-        return (value == 'Y' ? true : false);
-      }
+      name: 'name'
     },
     {
-      type: 'date',
-      name: 'lastLoginDate',
-      convert: function (value) {
-        return value ? new Date(Number(value)) : "";
-      }
+      name: 'post'
+    },
+    {
+      name: 'phoneNum'
+    },
+    {
+      name: 'companyId'
+    },
+    {
+      name: 'companyName'
+    },
+    {
+      name: 'companyCode'
+    },
+    {
+      name: 'roleId'
+    },
+    {
+      name: 'roleName'
+    },
+    {
+      name: 'createBy'
+    },
+    {
+      name: 'createDate'
+    },
+    {
+      name: 'status'
+    },
+    {
+      name: 'remark'
+    },
+    {
+      name: 'userName'
+    },
+    {
+      name: 'password'
     }
   ]
 });

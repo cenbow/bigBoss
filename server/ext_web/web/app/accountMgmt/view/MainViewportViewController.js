@@ -18,9 +18,7 @@ Ext.define('AccountMgmt.view.MainViewportViewController', {
   alias: 'controller.mainviewport',
 
   requires: [
-    'AccountMgmt.view.InfoDialog',
-    'AccountMgmt.view.PermissionDialog',
-    'AccountMgmt.view.PasswordResetDialog'
+
   ],
 
   init: function() {
@@ -31,30 +29,21 @@ Ext.define('AccountMgmt.view.MainViewportViewController', {
    * 添加用户
    */
   onAddUserButtonClick: function (btn) {
-    var viewCtr = this,
-        dialog = Ext.create('AccountMgmt.view.InfoDialog');
 
-    dialog.getViewModel().set('addFlag', true);
-    dialog.getViewModel().set('mainViewportController', viewCtr);
-    dialog.show();
   },
 
   /**
    * 快速搜索
    */
   onFastQueryButtonClick: function (field, trigger, e) {
-    var viewCtr = this;
-    viewCtr._onFastSearchFn();
+
   },
 
   /**
    * 快速搜索回车
    */
   onFastSearchTextFieldSpecialKey: function(field, e, options){
-    var viewCtr = this;
-    if (e.getKey() === e.ENTER) {
-      viewCtr._onFastSearchFn();
-    }
+
   },
 
   /**
@@ -68,23 +57,7 @@ Ext.define('AccountMgmt.view.MainViewportViewController', {
    * 主页命令行操作
    */
   onCommandColumnClick: function (btn, event) {
-    var viewCtr = this,
-        command = btn.command,
-        grid = viewCtr.lookupReference('accountMgmtGrid'),
-        record = btn.ownerCt.getWidgetRecord();
 
-    event.stopEvent();
-    grid.getSelectionModel().select(record);
-
-    if (command == 'Update') {
-      viewCtr._openInfoDialog(record);
-    } else if (command == 'Permission') {
-      viewCtr._openPermissionDialog(record);
-    } else if (command == 'Reset') {
-      viewCtr._loadPasswordReset(record);
-    } else if (command == 'Delete') {
-      viewCtr._deleteRecord(record);
-    }
   },
 
   /**private***********************/
@@ -95,34 +68,7 @@ Ext.define('AccountMgmt.view.MainViewportViewController', {
    * @private
    */
   _openInfoDialog: function (record) {
-	  var viewCtr = this,
-        dialog = Ext.create('AccountMgmt.view.InfoDialog',{}),
-        dialogViewModel = dialog.getViewModel();
 
-	  dialogViewModel.set('addFlag', false);
-	  dialogViewModel.set('mainViewportController', viewCtr);
-
-	  Ext.Ajax.request({
-	    url: '/api/general/user/view/'+record.getData().id,
-	    method : 'GET',
-	    success: function(response){
-	      var formData = dialogViewModel.get('formData');
-	      var editData = Ext.decode(response.responseText).data;
-	      if (formData) {
-	        for (property in editData) {
-	          if (formData[property] !== undefined) {
-	            formData[property] = editData[property];
-	          }
-	        }
-	        dialog.lookupReference('locked').setValue(formData.locked == 'Y' ? true : false);
-	        dialog.lookupReference('isAdmin').setValue(formData.isAdmin == 'Y' ? true : false);
-	        formData.userId = record.get('id')
-	      }
-	      dialog.getViewModel().set('formData', formData);//数据回现
-	    }
-	  });
-	
-	  dialog.show();
   },
 
   /**
@@ -131,16 +77,7 @@ Ext.define('AccountMgmt.view.MainViewportViewController', {
    * @private
    */
   _openPermissionDialog: function (record) {
-    if (record && record.get('id')) {
-      var dialog = Ext.create('AccountMgmt.view.PermissionDialog'),
-          viewModel = dialog.getViewModel();
 
-      viewModel.set('pkId', record.get('id'));
-      Ext.defer(function() {
-        dialog.show();
-      }, 20);
-
-    }
   },
 
   /**
@@ -150,13 +87,6 @@ Ext.define('AccountMgmt.view.MainViewportViewController', {
    */
   _loadPasswordReset: function (record) {
 
-    if (record && record.get('id')) {
-      var dialog = Ext.create('AccountMgmt.view.PasswordResetDialog'),
-          viewModel = dialog.getViewModel();
-
-      viewModel.set('pkId', record.get('id'));
-      dialog.show();
-    }
 
 
   },
@@ -167,27 +97,7 @@ Ext.define('AccountMgmt.view.MainViewportViewController', {
    * @private
    */
   _deleteRecord: function (record) {
-    var viewCtr = this;
 
-    if (record && record.get('id')) {
-      if (record.get('id') == '1') {
-        alert('test用户不能删除');
-        return ;
-      }
-
-      DoActionUtil.deleteOneRecord(
-        'POST',
-        '/api/general/user/delete/' + record.get('id'),
-        function(result) {
-          if (result.success) {
-            viewCtr.onFastQueryButtonClick();
-            TipsUtil.showTips('提示', result.data, TipsUtil.INFO);
-          } else {
-            TipsUtil.showTips('提示', result.error.message, TipsUtil.WARING);
-          }
-        }
-      );
-    }
   },
 
   /**
@@ -195,10 +105,6 @@ Ext.define('AccountMgmt.view.MainViewportViewController', {
    * @private
    */
   _onFastSearchFn: function() {
-    var viewCtr = this,
-      viewModel = viewCtr.getViewModel();
 
-    //console.info(viewModel.getView().down('grid').getView().getColumnManager().columns[1].getView());
-    viewModel.getStore('gridstore').load();
   }
 });

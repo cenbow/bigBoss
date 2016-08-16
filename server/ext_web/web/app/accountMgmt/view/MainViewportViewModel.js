@@ -25,19 +25,13 @@ Ext.define('AccountMgmt.view.MainViewportViewModel', {
     mainViewportController: {} // 窗口保存回调
   },
 
-  formulas: {
-    addButonDisabled: function (get) {
-      return !Ext.Array.contains(_USER.permissions, 'accountMgmt:edit');
-    }
-  },
-
   stores: {
     gridstore: {
       type: 'mainviewportgridstore',
       autoLoad: true,
       proxy: {
         type: 'ajax',
-        url: '/api/general/user/filter',
+        url: FACADE_URL+'/account/filter',
         extraParams: {
           text: '{searchData.text}'
         },

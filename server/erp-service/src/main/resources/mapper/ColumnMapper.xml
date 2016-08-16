@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.junyi.erp.domain.Column" >
+  <resultMap id="ColumnMap" type="Column" >
+    <id column="ID" property="id" jdbcType="INTEGER" />
+    <result column="COLUMN_CODE" property="columnCode" jdbcType="VARCHAR" />
+    <result column="COLUMN_NAME" property="columnName" jdbcType="VARCHAR" />
+    <result column="COMPANY_ID" property="companyId" jdbcType="INTEGER" />
+    <result column="CREATE_BY" property="createBy" jdbcType="INTEGER" />
+    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
+  </resultMap>
+
+  <sql id="Base_Column_List" >
+    ID, COLUMN_CODE, COLUMN_NAME, COMPANY_ID, CREATE_BY, CREATE_DATE
+  </sql>
+
+  <select id="selectColumnByPK" resultMap="ColumnMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from `column`
+    where ID = #{id,jdbcType=INTEGER}
+  </select>
+
+  <delete id="deleteColumnByPK" parameterType="java.lang.Integer" >
+    delete from `column`
+    where ID = #{id,jdbcType=INTEGER}
+  </delete>
+
+  <insert id="insertClass" parameterType="Column" >
+    insert into `column` (ID, COLUMN_CODE, COLUMN_NAME,
+      COMPANY_ID, CREATE_BY, CREATE_DATE
+      )
+    values (#{id,jdbcType=INTEGER}, #{columnCode,jdbcType=VARCHAR}, #{columnName,jdbcType=VARCHAR}, 
+      #{companyId,jdbcType=INTEGER}, #{createBy,jdbcType=INTEGER}, #{createDate,jdbcType=TIMESTAMP}
+      )
+  </insert>
+
+  <update id="updateClass" parameterType="Column" >
+    update `column`
+    <set >
+      <if test="columnCode != null" >
+        COLUMN_CODE = #{columnCode,jdbcType=VARCHAR},
+      </if>
+      <if test="columnName != null" >
+        COLUMN_NAME = #{columnName,jdbcType=VARCHAR},
+      </if>
+      <if test="companyId != null" >
+        COMPANY_ID = #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="createBy != null" >
+        CREATE_BY = #{createBy,jdbcType=INTEGER},
+      </if>
+      <if test="createDate != null" >
+        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+
+  <update id="updateByPrimaryKey" parameterType="Column" >
+    update `column`
+    set COLUMN_CODE = #{columnCode,jdbcType=VARCHAR},
+      COLUMN_NAME = #{columnName,jdbcType=VARCHAR},
+      COMPANY_ID = #{companyId,jdbcType=INTEGER},
+      CREATE_BY = #{createBy,jdbcType=INTEGER},
+      CREATE_DATE = #{createDate,jdbcType=TIMESTAMP}
+    where ID = #{id,jdbcType=INTEGER}
+  </update>
+
+
+  <select id="selectColumnByCode" resultMap="ColumnMap" parameterType="String" >
+    select <include refid="Base_Column_List" />
+    from `column`
+    where COLUMN_CODE = #{code,jdbcType=VARCHAR}
+    limit 1
+  </select>
+</mapper>
