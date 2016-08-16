@@ -129,6 +129,8 @@ public class AccountController extends ErpBaseController {
         Account account = accountService.selectByUNAndPs(map);
         if(account == null){
             error(response,"账号或密码错误，请重试");
+        } else if(account.getStatus()!= 1){
+            error(response,"账号已被禁用，请联系管理员");
         }else {
             HttpSession session = request.getSession();
             session.setAttribute("userId", account.getId());

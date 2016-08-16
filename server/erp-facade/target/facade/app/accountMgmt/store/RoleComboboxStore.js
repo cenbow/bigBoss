@@ -36,11 +36,11 @@ Ext.define('AccountMgmt.store.RoleComboboxStore', {
           value: '超级管理员'
         },*/
         {
-          type: '0002',
+          type: 2,
           value: '普通管理员'
         },
         {
-          type: '0003',
+          type: 3,
           value: '普通用户'
         }
       ],

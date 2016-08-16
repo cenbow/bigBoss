@@ -91,7 +91,7 @@ $(function () {
                 }
 
             }else{
-                $(".lg-error").html('登录名或者密码错误');
+                $(".lg-error").html(result.error.message);
                 $(".lg-error").show();
                 $username.focus();
             }

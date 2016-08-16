@@ -72,8 +72,60 @@ Ext.define('AccountMgmt.view.MainViewport', {
                 xtype: 'rownumberer',
                 align: 'center',
                 width: 37
+            }, {
+                xtype: 'gridcolumn',
+                dataIndex: 'userName',
+                text: '用户名'
+            }, {
+                xtype: 'gridcolumn',
+                dataIndex: 'name',
+                text: '姓名'
+            }, {
+                xtype: 'gridcolumn',
+                dataIndex: 'roleName',
+                text: '用户角色'
             },
                 {
+                    xtype: 'gridcolumn',
+                    tdCls: 'grid-switch',
+                    align: 'center',
+                    dataIndex: 'status',
+                    text: '是否启用',
+                    width: 200,
+                    renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
+                        if (value === 1) {
+                            return '<img src="../../images/SwitchOn.png" />';
+                        } else {
+                            return '<img src="../../images/SwitchOff.png" />';
+                        }
+                    }
+                },
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'companyCode',
+                    text: '公司代码',
+                    width: 170
+                },
+
+
+                 {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'companyName',
+                    text: '公司名称',
+                    width: 270
+                },  {
+                    xtype: 'gridcolumn',
+                    width: 160,
+                    dataIndex: 'createDate',
+                    formatter: 'date("Y/m/d H:i:s")',
+                    align: 'center',
+                    text: '创建日期'
+                }, {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'remark',
+                    text: '备注',
+                    flex: 1
+                },{
                     text: '操作',
                     xtype: 'widgetcolumn',
                     width: 300,
@@ -105,55 +157,6 @@ Ext.define('AccountMgmt.view.MainViewport', {
                             text: "删除"
                         }]
                     }
-                },
-                {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'companyCode',
-                    text: '公司代码',
-                    width: 170
-                }, {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'companyName',
-                    text: '公司名称',
-                    width: 270
-                }, {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'userName',
-                    text: '用户名'
-                }, {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'name',
-                    text: '姓名'
-                }, {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'roleName',
-                    text: '用户角色'
-                }, {
-                    xtype: 'gridcolumn',
-                    tdCls: 'grid-switch',
-                    align: 'center',
-                    dataIndex: 'status',
-                    text: '是否启用',
-                    width: 200,
-                    renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
-                        if (value === 1) {
-                            return '<img src="../../images/SwitchOn.png" />';
-                        } else {
-                            return '<img src="../../images/SwitchOff.png" />';
-                        }
-                    }
-                }, {
-                    xtype: 'gridcolumn',
-                    width: 160,
-                    dataIndex: 'createDate',
-                    formatter: 'date("Y/m/d H:i:s")',
-                    align: 'center',
-                    text: '创建日期'
-                }, {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'remark',
-                    text: '备注',
-                    flex: 1
                 }]
         },
         listeners: {
