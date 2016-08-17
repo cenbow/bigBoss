@@ -10,12 +10,12 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service("columnService")
 @Transactional
 public class ColumnServiceImpl implements ColumnService {
-
 
 	@Autowired
  	private MyBatisDAO myBatisDAO;
@@ -45,4 +45,10 @@ public class ColumnServiceImpl implements ColumnService {
 	public Column selectByCode(String code) {
 		return myBatisDAO.findForObject("selectColumnByCode", code);
 	}
+
+	@Override
+	public List<Column> listAll() {
+		return myBatisDAO.findForList("listAllColumns");
+	}
+
 }

@@ -8,6 +8,7 @@ import com.junyi.erp.domain.Category;
 import com.junyi.erp.domain.Column;
 import com.junyi.erp.domain.Company;
 import com.junyi.erp.param.AccountSearchParam;
+import com.junyi.erp.param.CategorySearchParam;
 import com.junyi.erp.service.user.AccountService;
 import com.junyi.erp.service.user.CategoryService;
 import com.junyi.erp.service.user.ColumnService;
@@ -74,82 +75,55 @@ public class CategoryController extends ErpBaseController {
 
     @RequestMapping(value = "/add",method = RequestMethod.POST)
     public void addCategory(CategoryVO vo,HttpServletRequest request,HttpServletResponse response){
-        Category category = new Category();
-        if(vo != null){
-            category = vo.convertVOToPO();
+        String voName = vo.getName();
+        String nameList[] = voName.split(";");
+        vo.setName("");
+        for(String name : nameList){
+            Category category = new Category();
+            if(vo != null){
+                category = vo.convertVOToPO();
+                category.setName(name);
+
+                //todo createBy 从前台获取
+                category.setCreateBy(1);
+                category.setCreateDate(new Date());
+                if(vo.getColumnCode()!=null){
+                    Column column = columnService.selectByCode(vo.getColumnCode());
+                    category.setColumnId(column.getId());
+                }
+                //查重
+                int exist =  categoryService.selectIsExistName(name,category.getColumnId());
+                if(exist > 0){
+                    error(response,"分类名重复");
+                    return;
+                }
+                if(category.getUpClassId()!=null && category.getUpClassId()!=0){
+                    category.setLeaf(2);
+                }else {
+                    category.setLeaf(1);
+                }
+                category.setStatus(1);
+
+                categoryService.insert(category);
+            }
         }
-        //todo createBy 从前台获取
-//        category.setCreateBy(1);
-        category.setCreateDate(new Date());
-        if(vo.getColumnCode()!=null){
-            Column column = columnService.selectByCode(vo.getColumnCode());
-            category.setColumnId(column.getId());
-        }
-        if(category.getUpClassId()!=null && category.getUpClassId()!=0){
-            category.setLeaf(2);
-        }else {
-            category.setLeaf(1);
-        }
-        category.setStatus(1);
-        categoryService.insert(category);
+
+
         success(response, "新增成功");
     }
 
-    /*@RequestMapping(value = "/filter", method = RequestMethod.POST)
+
+    @RequestMapping(value = "/filter", method = RequestMethod.POST)
     public void filter(
-            AccountSearchParam param,
+            CategorySearchParam param,
             HttpServletRequest request,
             HttpServletResponse response
     ) {
 
         PageRequest pageRequest = param.toPageRequest();
-        Page<Account> pages = accountService.selectAccountByFiltersPage(pageRequest);
-        PageVO<AccountVO> resultPageVO = PageVO.create(pages, AccountVO.class);
+        Page<Category> pages = categoryService.selectCategoryByFiltersPage(pageRequest);
+        PageVO<CategoryVO> resultPageVO = PageVO.create(pages, CategoryVO.class);
         success(response, resultPageVO);
 
     }
-
-    @RequestMapping(value = "/view/{accountId}", method = RequestMethod.GET)
-    public void viewAccount(
-            @PathVariable int accountId,
-            HttpServletRequest request,
-            HttpServletResponse response
-    ) {
-        Account account = accountService.selectByPk(accountId);
-        if (account  == null) {
-            error(response,"该账号不存在");
-            return;
-        }
-
-        AccountVO vo = new AccountVO();
-        vo.convertPOToVO(account);
-        success(response, vo);
-    }
-
-    @RequestMapping(value = "/update",method = RequestMethod.POST)
-    public void updateAccount(AccountVO vo,HttpServletRequest request,HttpServletResponse response){
-        Account account = new Account();
-        if(vo != null){
-            account = vo.convertVOToPO();
-        }
-        accountService.update(account);
-        success(response, "更新成功");
-    }
-
-
-
-    @RequestMapping(value = "/delete/{accountId}", method = RequestMethod.GET)
-    public void deleteAccount(
-            @PathVariable int accountId,
-            HttpServletRequest request,
-            HttpServletResponse response
-    ) {
-        if(accountId != 0){
-            accountService.deleteByPk(accountId);
-            success(response,"删除成功");
-        }
-
-
-    }*/
-
 }

@@ -7,6 +7,8 @@ import com.junyi.erp.domain.Category;
  * Created by xww on 2016/8/16.
  */
 public class CategoryVO implements BaseVO {
+    private  int id;
+
     private String name;
 
     private String columnCode;
@@ -18,6 +20,14 @@ public class CategoryVO implements BaseVO {
     private int status;
 
     private int leaf;
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
 
     public String getName() {
         return name;
@@ -71,9 +81,12 @@ public class CategoryVO implements BaseVO {
     public void convertPOToVO(Object o) {
         if(o instanceof Category){
             Category category = (Category) o;
+            this.id = category.getId();
             this.name = category.getName();
             this.columnId = category.getColumnId();
-            this.upClassId = category.getUpClassId();
+            if(category.getUpClassId()!=null){
+                this.upClassId = category.getUpClassId();
+            }
             this.status = category.getStatus();
             this.leaf = category.getLeaf();
         }

@@ -74,4 +74,10 @@
     where COLUMN_CODE = #{code,jdbcType=VARCHAR}
     limit 1
   </select>
+
+  <select id="listAllColumns" resultMap="ColumnMap" parameterType="String" >
+    select <include refid="Base_Column_List" />
+    from `column`
+  </select>
+
 </mapper>

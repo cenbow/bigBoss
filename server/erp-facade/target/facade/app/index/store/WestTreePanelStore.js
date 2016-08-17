@@ -81,7 +81,7 @@ Ext.define('Index.store.WestTreePanelStore', {
               {
                 text: '分类信息',
                 qtip: '分类信息',
-                url: 'app-productMgmt.html',
+                url: 'html/app/categoryMgmt.html',
                 id: 'categoryInfo',
                 leaf: true
               },

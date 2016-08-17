@@ -1,5 +1,7 @@
 package com.junyi.erp.service.user;
 
+import com.junyi.ecommerce.core.mybatis.page.Page;
+import com.junyi.ecommerce.core.mybatis.page.PageRequest;
 import com.junyi.erp.domain.Account;
 import com.junyi.erp.domain.Category;
 
@@ -17,4 +19,7 @@ public interface CategoryService {
 
 	List<Category> listCategoryByColumnCode(Integer columnId);
 
+	int selectIsExistName(String name, int columnId);
+
+	Page<Category> selectCategoryByFiltersPage(PageRequest request);
 }

@@ -97,7 +97,16 @@ Ext.define('addCategory.view.MainWindow', {
             {
               xtype: 'textfield',
               name:'name',
-              fieldLabel: '分类名称'
+              fieldLabel: '分类名称<span style="color:red">*</span>',
+              allowBlank: false
+            },
+            {
+              xtype:'label',
+              text: "可批量添加分类，分类名称请用英文字符分号(;)隔开，如(分类名称1;分类名称2;分类名称3)",
+              style:{
+                color:'red',
+                margin:'30 0 0 0'
+              }
             }
 
 
