@@ -98,9 +98,6 @@ Ext.define('addCategory.view.MainWindow', {
               xtype: 'textfield',
               name:'name',
               fieldLabel: '分类名称'
-            },
-            {
-
             }
 
 
