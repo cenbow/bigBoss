@@ -78,9 +78,9 @@ Ext.define('CompanyMgmt.view.InfoDialog', {
         {
           xtype: 'textfield',
           itemId: "introduce",
-          fieldLabel: '公&nbsp;司&nbsp;介&nbsp;绍&nbsp;',
+          fieldLabel: '公&nbsp;司&nbsp;地&nbsp;址&nbsp;',
           bind: {
-            value: "{formData.introduce}",
+            value: "{formData.address}",
             readOnly:'{isView}'
           }
         },
@@ -100,6 +100,10 @@ Ext.define('CompanyMgmt.view.InfoDialog', {
           height: 76,
           width: 400,
           name:'introduce',
+          bind: {
+            value: "{formData.introduce}",
+            readOnly:'{isView}'
+          },
           fieldLabel: '公&nbsp;司&nbsp;介&nbsp;绍&nbsp;'
         },
         {

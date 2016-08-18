@@ -71,10 +71,35 @@ Ext.define('CompanyMgmt.view.MainViewport', {
                 align: 'center',
                 width: 37
             },
-                {
+              {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'name',
+                    text: '公司名称',
+                    width: 260,
+                    renderer: function (value, metaData, record, rowIndex, colIndex, store, view) {
+                        if(record.data.introduce){
+                            metaData.tdAttr = "data-qtip=' " +
+                            record.data.introduce+" <br> '";
+                        }
+
+                        return value;
+                    }
+
+                }, {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'code',
+                    text: '公司代码',
+                    width: 210
+                }, {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'createDate',
+                    text: '创建日期',
+                    formatter: 'date("Y/m/d")',
+                    width: 210
+                },   {
                     text: '操作',
                     xtype: 'widgetcolumn',
-                    width: 200,
+                    width: 146,
                     tdCls: 'btngroup',
                     dataIndex: 'progress',
                     widget: {
@@ -98,31 +123,6 @@ Ext.define('CompanyMgmt.view.MainViewport', {
                             text: "修改"
                         }]
                     }
-                }, {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'name',
-                    text: '公司名称',
-                    width: 260,
-                    renderer: function (value, metaData, record, rowIndex, colIndex, store, view) {
-                        if(record.data.introduce){
-                            metaData.tdAttr = "data-qtip=' " +
-                            record.data.introduce+" <br> '";
-                        }
-
-                        return value;
-                    }
-
-                }, {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'code',
-                    text: '公司代码',
-                    width: 320
-                }, {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'createDate',
-                    text: '创建日期',
-                    formatter: 'date("Y/m/d")',
-                    width: 320
                 }, {
                     xtype: 'gridcolumn',
                     dataIndex: 'remark',

@@ -96,7 +96,7 @@ Ext.define('MarketInfoMgmt.view.InfoDialog', {
                 {
                     xtype: 'combobox',
                     editable: false,
-                    fieldLabel: '二级分类',
+                    fieldLabel: '二级分类&nbsp;&nbsp;',
                     id:'levelTwo',
                     queryMode: 'local',
                     displayField: 'value',
@@ -115,7 +115,7 @@ Ext.define('MarketInfoMgmt.view.InfoDialog', {
                 },*/
                 {
                     xtype: 'htmleditor',
-                    fieldLabel: '正文',
+                    fieldLabel: '正&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;文&nbsp;',
                     height: 200,
                     name: 'text',
                     bind: {

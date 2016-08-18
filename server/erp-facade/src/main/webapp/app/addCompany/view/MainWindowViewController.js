@@ -33,7 +33,7 @@ Ext.define('addCompany.view.MainWindowViewController', {
         viewModel = this.getViewModel(),
         formCmp = currWin.down("form");
     if (!formCmp.isValid()) {
-      TipsUtil.showTips("提示", "信息填写有误", TipsUtil.WARING);
+      TipsUtil.showTips("提示", "公司信息为空，请重新填写", TipsUtil.WARING);
       return ;
     }
     var formData = formCmp.getForm().getValues();
