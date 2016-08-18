@@ -158,7 +158,6 @@ Ext.define('CategoryMgmt.view.MainViewport', {
                     dataIndex: 'status',
                     text: '是否启用',
                     renderer: function(value,metadata,record,rowIndex,colIndex,store,view) {
-
                         if (value === 1) {
                             return '<img src="../../images/SwitchOn.png" />';
                         } else {
