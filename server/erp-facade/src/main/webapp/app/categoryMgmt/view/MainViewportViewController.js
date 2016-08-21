@@ -14,156 +14,220 @@
  */
 
 Ext.define('CategoryMgmt.view.MainViewportViewController', {
-  extend: 'Ext.app.ViewController',
-  alias: 'controller.mainviewport',
+    extend: 'Ext.app.ViewController',
+    alias: 'controller.mainviewport',
 
-  requires: [
-    'CategoryMgmt.view.InfoDialog'
-  ],
+    requires: [
+        'CategoryMgmt.view.InfoDialog',
+        'CategoryMgmt.store.CategoryComboboxStore'
+    ],
 
-  init: function() {
-    var store = Ext.create('CategoryMgmt.store.ColumnComboboxStore');
+    init: function () {
+        var store = Ext.create('CategoryMgmt.store.ColumnComboboxStore');
 
-  },
+    },
 
-  /**
-   * 添加用户
-   */
-  onAddUserButtonClick: function (btn) {
+    /**
+     * 添加用户
+     */
+    onAddUserButtonClick: function (btn) {
 
-  },
+    },
 
-  /**
-   * 快速搜索
-   */
-  onFastQueryButtonClick: function (field, trigger, e) {
-    var viewCtr = this,
-        viewModel = viewCtr.getViewModel();
-    viewModel.getStore('gridstore').load();
-  },
+    /**
+     * 快速搜索
+     */
+    onFastQueryButtonClick: function (field, trigger, e) {
+        var viewCtr = this,
+            viewModel = viewCtr.getViewModel();
+        viewModel.getStore('gridstore').load();
+    },
 
-  /**
-   * 快速搜索回车
-   */
-  onFastSearchTextFieldSpecialKey: function(field, e, options){
+    /**
+     * 快速搜索回车
+     */
+    onFastSearchTextFieldSpecialKey: function (field, e, options) {
 
-    var viewCtr = this,
-        viewModel = viewCtr.getViewModel();
-    if (e.getKey() === e.ENTER) {
-      viewModel.getStore('gridstore').load();
-    }
-
-  },
-
-  /**
-   * grid记录双击
-   */
-  onGridpanelItemDblClick: function (dataview, record, item, index, e, eOpts) {
-    Ext.Msg.alert('事件触发', 'grid记录双击');
-  },
-
-  /**
-   * 主页命令行操作
-   */
-  onCommandColumnClick: function (btn, event) {
-    var viewCtr = this,
-        command = btn.command,
-        grid = viewCtr.lookupReference("categoryMgmtGrid"),
-        record = btn.ownerCt.getWidgetRecord();
-
-    event.stopEvent();
-    grid.getSelectionModel().select(record);
-
-    if (command == 'Update') {
-      viewCtr._openInfoDialog(record,'update');
-    } else if (command == 'View') {
-      viewCtr._openInfoDialog(record,'view');
-    } else if (command == 'Delete') {
-      viewCtr._deleteRecord(record);
-    }
-  },
-
-  /**private***********************/
-
-  /**
-   * 信息窗口：修改
-   * @param record
-   * @private
-   */
-  _openInfoDialog: function (record,type) {
-    var viewCtr = this,
-        dialog = Ext.create("CategoryMgmt.view.InfoDialog",{}),
-        dialogViewModel = dialog.getViewModel();
-
-    dialogViewModel.set("addFlag", false);
-    dialogViewModel.set("mainViewportController", viewCtr);
-
-    if(type == 'view'){
-      dialogViewModel.set("isView",true);
-    }
-
-    Ext.Ajax.request({
-      url: FACADE_URL + '/category/view/'+record.getData().id,
-      params: {},
-      method : 'GET',
-      success: function(response){
-        var formData = dialogViewModel.get("formData");
-        var editData = Ext.decode(response.responseText).data;
-        if (formData) {
-          for (property in editData) {
-            if (formData[property] !== undefined) {
-              formData[property] = editData[property];
-            }
-          }
+        var viewCtr = this,
+            viewModel = viewCtr.getViewModel();
+        if (e.getKey() === e.ENTER) {
+            viewModel.getStore('gridstore').load();
         }
 
-        dialog.getViewModel().set("formData", formData);//数据回现
-      },
-      failure: function(response,options){
-        Ext.Msg.alert('错误',Ext.util.JSON.decode(response.responseText));
-      }
-    });
+    },
 
-    dialog.show();
-  },
+    /**
+     * grid记录双击
+     */
+    onGridpanelItemDblClick: function (dataview, record, item, index, e, eOpts) {
+        Ext.Msg.alert('事件触发', 'grid记录双击');
+    },
 
-  /**
-   * 权限
-   * @param record  当前选中记录
-   * @private
-   */
-  _openPermissionDialog: function (record) {
+    /**
+     * 主页命令行操作
+     */
+    onCommandColumnClick: function (btn, event) {
+        var viewCtr = this,
+            command = btn.command,
+            grid = viewCtr.lookupReference("categoryMgmtGrid"),
+            record = btn.ownerCt.getWidgetRecord();
 
-  },
+        event.stopEvent();
+        grid.getSelectionModel().select(record);
 
+        if (command == 'Update') {
+            viewCtr._openInfoDialog(record, 'update');
+        } else if (command == 'View') {
+            viewCtr._openInfoDialog(record, 'view');
+        } else if (command == 'Delete') {
+            viewCtr._deleteRecord(record);
+        }
+    },
 
+    /**private***********************/
 
-  /**
-   * 删除一条记录
-   * @param record 当前选中记录
-   * @private
-   */
-  _deleteRecord: function (record) {
-    Ext.Msg.confirm("温馨提示","确定要删除该账号吗?",
-      function(btn){
-        if(btn == 'yes'){
-          Ext.Ajax.request({
-            url: FACADE_URL + '/category/delete/'+record.getData().id,
+    /**
+     * 信息窗口：修改
+     * @param record
+     * @private
+     */
+    _openInfoDialog: function (record, type) {
+        var viewCtr = this,
+            dialog = Ext.create("CategoryMgmt.view.InfoDialog", {}),
+            dialogViewModel = dialog.getViewModel();
+
+        dialogViewModel.set("addFlag", false);
+        dialogViewModel.set("mainViewportController", viewCtr);
+
+        if (type == 'view') {
+            dialogViewModel.set("isView", true);
+        }
+        Ext.Ajax.request({
+            url: FACADE_URL + '/category/view/' + record.getData().id,
             params: {},
-            method : 'GET',
-            success: function(response){
-              var data = Ext.decode(response.responseText).data;
-              TipsUtil.showTips("提示", data, TipsUtil.INFO);
-              Ext.StoreMgr.get('mainViewPortGridStore').load();
-            },
-            failure: function(response,options){
-              Ext.Msg.alert('错误',Ext.util.JSON.decode(response.responseText));
-            }
-          });
-        }
-      }
-    )
+            method: 'GET',
+            success: function (response) {
+                var formData = dialogViewModel.get("formData");
+                var editData = Ext.decode(response.responseText).data;
+                if (formData) {
+                    for (property in editData) {
+                        if (formData[property] !== undefined) {
+                            formData[property] = editData[property];
+                        }
+                    }
+                }
 
-  }
+                var store = Ext.StoreMgr.get('ColumnComboboxStore');
+                var columnName = "";
+                store.each(function (m) {
+                    if (record.data.columnId == m.getData().key) {
+                        columnName = m.getData().value;
+                        return false;
+                    }
+                });
+                formData.columnName = columnName;
+                formData.status = record.data.status;
+                formData.leaf = record.data.leaf;
+                /*var upClassName = "";
+                 if (record.data.upClassId) {
+                 store.each(function (m) {
+                 if (m.id == record.data.upClassId) {
+                 upClassName = m.getData().name;
+                 return false;
+                 }
+                 })
+                 }
+                 formData.upClassName = upClassName;*/
+                var store = dialog.getViewModel().getStore('categorycomboboxstore');
+                if (store) {
+                    store.load({
+                        params: {code: record.data.columnCode}
+                    });
+                }
+
+                dialog.getViewModel().set("formData", formData);//数据回现
+            },
+            failure: function (response, options) {
+                Ext.Msg.alert('错误', Ext.util.JSON.decode(response.responseText));
+            }
+        });
+
+        dialog.show();
+    },
+
+    /**
+     * 权限
+     * @param record  当前选中记录
+     * @private
+     */
+    _openPermissionDialog: function (record) {
+
+    },
+
+    /**
+     * 是否启用
+     */
+    cellclick: function (tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+        if (tableview.getGridColumns()[cellIndex].dataIndex == "status") {
+            Ext.Msg.confirm("温馨提示", "确定要更新分类状态吗?",
+                function (btn) {
+                    if (btn == 'yes') {
+                        Ext.Ajax.request({
+                            url: FACADE_URL + '/category/update',
+                            params: {
+                                id: record.get("id"),
+                                name: record.get("name"),
+                                columnId: record.get("columnId"),
+                                upClassId: record.get("upClassId"),
+                                leaf: record.get("leaf"),
+                                status: record.get("status") === 1 ? 0 : 1
+                            },
+                            method: 'POST',
+                            success: function (response) {
+                                if (response.responseText) {
+                                    var json = Ext.decode(response.responseText);
+                                    if (json.success) {
+                                        record.set('status', record.get("status") === 1 ? 0 : 1);
+                                    } else {
+                                        TipsUtil.showTips("错误", json.error.message || "服务器错误！");
+                                    }
+                                }
+                            }
+                        });
+                    }
+                });
+        }
+
+
+    },
+
+    /**
+     * 删除一条记录
+     * @param record 当前选中记录
+     * @private
+     */
+    _deleteRecord: function (record) {
+        Ext.Msg.confirm("温馨提示", "确定要删除该账号吗?",
+            function (btn) {
+                if (btn == 'yes') {
+                    Ext.Ajax.request({
+                        url: FACADE_URL + '/category/delete/' + record.getData().id,
+                        params: {},
+                        method: 'GET',
+                        success: function (response) {
+                            var data = Ext.decode(response.responseText).data;
+                            TipsUtil.showTips("提示", data, TipsUtil.INFO);
+                            Ext.StoreMgr.get('mainViewPortGridStore').load();
+                        },
+                        failure: function (response, options) {
+                            Ext.Msg.alert('错误', Ext.util.JSON.decode(response.responseText));
+                        }
+                    });
+                }
+            }
+        )
+
+    }
+
 
 });

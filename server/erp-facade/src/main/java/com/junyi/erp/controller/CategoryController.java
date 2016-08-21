@@ -70,6 +70,10 @@ public class CategoryController extends ErpBaseController {
                 }
             }
         }
+        ComboboxVO vo = new ComboboxVO();
+        vo.setKey(null);
+        vo.setValue("无");
+        comboboxVOList.add(vo);
         success(response, comboboxVOList);
     }
 
@@ -124,6 +128,30 @@ public class CategoryController extends ErpBaseController {
         Page<Category> pages = categoryService.selectCategoryByFiltersPage(pageRequest);
         PageVO<CategoryVO> resultPageVO = PageVO.create(pages, CategoryVO.class);
         success(response, resultPageVO);
+
+    }
+
+
+    @RequestMapping(value = "/view/{categoryId}", method = RequestMethod.GET)
+    public void viewCategory(
+            @PathVariable int categoryId,
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
+        Category category = categoryService.selectByPk(categoryId);
+        CategoryVO vo = new CategoryVO();
+        vo.convertPOToVO(category);
+        success(response, vo);
+    }
+
+    @RequestMapping(value = "/update",method = RequestMethod.POST)
+    public void updateCategory(CategoryVO vo,HttpServletRequest request,HttpServletResponse response){
+        Category category = new Category();
+        if(vo != null){
+            category = vo.convertVOToPO();
+        }
+        categoryService.update(category);
+        success(response, "更新成功");
 
     }
 }

@@ -53,6 +53,8 @@ public class Category {
      */
     private int leaf;
 
+    private String columnCode;
+
     public Integer getId() {
         return id;
     }
@@ -131,5 +133,13 @@ public class Category {
 
     public void setLeaf(int leaf) {
         this.leaf = leaf;
+    }
+
+    public String getColumnCode() {
+        return columnCode;
+    }
+
+    public void setColumnCode(String columnCode) {
+        this.columnCode = columnCode;
     }
 }

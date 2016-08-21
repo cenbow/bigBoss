@@ -104,7 +104,11 @@ Ext.define('CompanyMgmt.view.MainViewport', {
                     width: 260,
                     renderer: function (value, metaData, record, rowIndex, colIndex, store, view) {
                         console.log(123)
-                        metaData.tdAttr = "data-qtip='" + value + " <br>  '";
+                        metaData.tdAttr = "data-qtip=' " +
+                        value+" <br>" +
+                        record.data.address+" <br> " +
+                        record.data.phone+" <br> " +
+                        record.data.introduce+" <br> '";
                         return value;
                     }
 

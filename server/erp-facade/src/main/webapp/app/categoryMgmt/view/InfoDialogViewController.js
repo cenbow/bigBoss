@@ -25,12 +25,12 @@ Ext.define('CategoryMgmt.view.InfoDialogViewController', {
     this.getViewModel().set("formData", {
       id:'',
       name:'',
-      code:'',
-      shortName:'',
-      introduce:'',
-      address:'',
-      phone:'',
-      remark:''
+      columnId:'',
+      columnName:'',
+      upClassId:'',
+      upClassName:'',
+      leaf:'',
+      status:''
     });
   },
   /**
@@ -49,6 +49,11 @@ Ext.define('CategoryMgmt.view.InfoDialogViewController', {
 
     var formData = viewModel.get("formData");
     console.info(formData);
+    if(!formData.upClassId || formData.upClassId == 0){
+      formData.leaf = 1;
+    }else{
+      formData.leaf = 2;
+    }
     var requestFormData = Ext.clone(formData);
 
     var url = FACADE_URL+'/category/';
@@ -63,8 +68,10 @@ Ext.define('CategoryMgmt.view.InfoDialogViewController', {
             var json = Ext.decode(request.responseText);
             if (json.success) {
               //console.info(json);
-              currWin.close();
-              Ext.StoreMgr.get('mainViewPortGridStore').load();
+              TipsUtil.showTips("成功", json.data, TipsUtil.INFO, function(){
+                currWin.close();
+                Ext.StoreMgr.get('mainViewPortGridStore').load();
+              });
               //viewModel.getStore("mainviewstore").load();
               return;
             } else {
@@ -88,6 +95,35 @@ Ext.define('CategoryMgmt.view.InfoDialogViewController', {
     var viewCtr = this;
 
     viewCtr.getView().close();
+  },
+
+  onColumnChange:function(field, value){
+    var viewCtr = this,
+        viewModel = viewCtr.getViewModel(),
+        view = viewCtr.getView();
+    var code = "";
+    if(value == '信息披露'){
+      code = "0001";
+    }else if(value == '学习园地'){
+      code = "0002";
+    }else if(value == '市场咨询'){
+      code = "0003";
+    }else if(value == '通知公告'){
+      code = "0004";
+    }else{
+      code = value;
+    }
+    viewModel.set('columnCode',code);
+
+    var store = viewModel.getStore('categorycomboboxstore');
+    if (store) {
+      //store.removeAll();
+      Ext.getCmp('categoryComboxStore').clearValue();
+      store.load({
+        params: {code: code},
+        scope: store
+      });
+    }
   }
 
 });

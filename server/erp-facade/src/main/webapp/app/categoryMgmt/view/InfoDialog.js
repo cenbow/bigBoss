@@ -48,114 +48,45 @@ Ext.define('CategoryMgmt.view.InfoDialog', {
       title: '',
       items: [
         {
-          xtype: 'textfield',
-          itemId: "name",
-          fieldLabel: '公司(团队)名称<span style="color:red">*</span>',
+          xtype: 'combobox',
+          fieldLabel: '所属栏目<span style="color:red">*</span>',
           allowBlank: false,
-          bind: {
-            value: "{formData.name}",
-            readOnly:'{isView}'
+          editable: false,
+          name: 'columnId',
+          queryMode: 'local',
+          displayField: 'value',
+          valueField: 'key',
+          store:'ColumnComboboxStore',
+          listeners:{
+            change:'onColumnChange'
+          },
+          bind:{
+            value: "{formData.columnName}"
+          }
+        },
+        {
+          xtype: 'combobox',
+          editable: false,
+          fieldLabel: '上级分类',
+          queryMode: 'local',
+          displayField: 'value',
+          valueField: 'key',
+          id:'categoryComboxStore',
+          name:'upClassId',
+          bind:{
+            store:'{categorycomboboxstore}',
+            value: '{formData.upClassId}'
           }
         },
         {
           xtype: 'textfield',
-          itemId: "code",
-          fieldLabel: '公司(团队)代码<span style="color:red">*</span>',
-          bind: {
-            value: "{formData.code}",
-            readOnly:'{isView}'
-          }
-        },
-        {
-          xtype: 'textfield',
-          itemId: "shortName",
-          fieldLabel: '公司(团队)简称',
-          bind: {
-            value: "{formData.shortName}",
-            readOnly:'{isView}'
-          }
-        },
-        {
-          xtype: 'textfield',
-          itemId: "introduce",
-          fieldLabel: '公司(团队)介绍',
-          bind: {
-            value: "{formData.introduce}",
-            readOnly:'{isView}'
-          }
-        },
-        {
-          xtype: 'textfield',
-          itemId: "address",
-          fieldLabel: '公司(团队)地址',
-          bind: {
-            value: "{formData.address}",
-            readOnly:'{isView}'
-          }
-        },
-        {
-          xtype: 'textfield',
-          name:'phone',
-          fieldLabel: '公司(团队)电话',
-          //regex: /^1[3|4|5|7|8]\d{9}$/,
-          //regexText:'手机号格式错误',
-          bind: {
-            value: "{formData.phone}",
-            readOnly:'{isView}'
-          }
-        },
-        {
-          xtype: 'textareafield',
-          height: 76,
-          width: 400,
-          name:'remark',
-          fieldLabel: '备注',
-          bind: {
-            value: "{formData.remark}",
-            readOnly:'{isView}'
-          }
-        },
-        /*{
-          xtype: 'textfield',
-          reference: "confirmPassword",
-          name: "confirmPassword",
-          fieldLabel: '再次输入<span style="color:red">*</span>',
-          inputType: 'password',
+          name:'name',
+          fieldLabel: '分类名称<span style="color:red">*</span>',
           allowBlank: false,
-          blankText: "请输入密码",
-          vtype:'repetitionCustom',
-          repetition: {targetName: 'newPassword'},
-          bind: {
-            value: "{formData.confirmPassword}",
-            disabled: "{!addFlag}",
-            hidden: "{!addFlag}"
+          bind:{
+            value: '{formData.name}'
           }
-        },*/
-
-        /*{
-          xtype: 'fieldcontainer',
-          height: 25,
-          fieldLabel: '',
-          items: [
-            {
-              xtype: 'checkboxgroup',
-              width: 115,
-              fieldLabel: '',
-              columns: 2,
-              items: [
-                {
-                  xtype: 'checkboxfield',
-                  boxLabel: '锁定',
-                  reference: "locked"
-                }, {
-                  xtype: 'checkboxfield',
-                  boxLabel: '管理员',
-                  reference: "isAdmin"
-                }
-              ]
-            }
-          ]
-        }*/
+        }
       ]
     }
   ],

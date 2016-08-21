@@ -28,7 +28,7 @@ Ext.define('CategoryMgmt.store.ColumnComboboxStore', {
     me.callParent([Ext.apply({
       storeId:'ColumnComboboxStore',
       fields:['key','value'],
-      autoLoad:true,
+        autoLoad:true,
       proxy: {
         url: FACADE_URL+'/column/comboList',
         type: 'ajax',
@@ -38,34 +38,48 @@ Ext.define('CategoryMgmt.store.ColumnComboboxStore', {
         }
       }
       /*proxy: {
+       type: 'ajax',
+       url: '/api/general/role/related/filter',
+       extraParams: {
+       //type: cfg.comboxType
+       },
+       api: {
+       create  : "/api/general/role/related/add",
+       read    : "/api/general/role/related/filter",
+       update  : "/api/general/role/related/update",
+       destroy : "/api/general/role/related/delete"
+       },
+       reader: {
+       type: 'json',
+       rootProperty: 'data'
+       },
+       headers: {
+       "Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
+       },
+       writer: {
+       type: 'json',
+       transform: {
+       fn: function(data, request) {
+       return Ext.Object.toQueryString(data);
+       },
+       scope: this
+       }
+       }
+       }*/
+    }, cfg)]);
+    /*me.callParent([Ext.apply({
+      storeId:'ColumnComboboxStore',
+      fields:['key','value'],
+      autoLoad:true,
+      proxy: {
+        url: FACADE_URL+'/column/comboList',
         type: 'ajax',
-        url: '/api/general/role/related/filter',
-        extraParams: {
-          //type: cfg.comboxType
-        },
-        api: {
-          create  : "/api/general/role/related/add",
-          read    : "/api/general/role/related/filter",
-          update  : "/api/general/role/related/update",
-          destroy : "/api/general/role/related/delete"
-        },
         reader: {
           type: 'json',
           rootProperty: 'data'
-        },
-        headers: {
-          "Content-Type":"application/x-www-form-urlencoded; charset=UTF-8"
-        },
-        writer: {
-          type: 'json',
-          transform: {
-            fn: function(data, request) {
-              return Ext.Object.toQueryString(data);
-            },
-            scope: this
-          }
         }
-      }*/
-    }, cfg)]);
+      }
+
+    }, cfg)]);*/
   }
 });

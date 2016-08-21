@@ -40,6 +40,9 @@ Ext.define('CategoryMgmt.model.MainViewportGridModel', {
     },
     {
       name: 'remark'
+    },
+    {
+      name: 'columnCode'
     }
   ]
 });

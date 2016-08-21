@@ -7,7 +7,7 @@ import com.junyi.erp.domain.Category;
  * Created by xww on 2016/8/16.
  */
 public class CategoryVO implements BaseVO {
-    private  int id;
+    private int id;
 
     private String name;
 
@@ -89,11 +89,13 @@ public class CategoryVO implements BaseVO {
             }
             this.status = category.getStatus();
             this.leaf = category.getLeaf();
+            this.columnCode = category.getColumnCode();
         }
     }
 
     public Category convertVOToPO(){
         Category po = new Category();
+        po.setId(this.getId());
         po.setName(this.getName());
         po.setColumnId(this.getColumnId());
         po.setStatus(this.getStatus());

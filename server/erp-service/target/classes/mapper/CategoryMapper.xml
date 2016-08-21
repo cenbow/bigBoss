@@ -108,16 +108,17 @@
 
 
   <select id="selectCategoryByFiltersPage" resultMap="CategoryMap" parameterType="Map">
-    select <include refid="Base_Column_List"/>
-    from category
+    select c.* , d.COLUMN_CODE as columnCode
+    from category c
+    LEFT JOIN `column` d on c.COLUMN_ID = d.ID
     <where>
       <if test="text != null and text != ''">
-        NAME LIKE CONCAT ('%', #{text,jdbcType=VARCHAR}, '%')
+        c.NAME LIKE CONCAT ('%', #{text,jdbcType=VARCHAR}, '%')
       </if>
       <if test="columnId != null">
-        AND COLUMN_ID = #{columnId,jdbcType=INTEGER}
+        AND c.COLUMN_ID = #{columnId,jdbcType=INTEGER}
       </if>
     </where>
-    order by ID asc
+    order by c.ID asc
   </select>
 </mapper>
