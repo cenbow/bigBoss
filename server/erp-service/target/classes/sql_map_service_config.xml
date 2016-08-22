@@ -16,6 +16,7 @@
 		<typeAlias type="com.junyi.erp.domain.Column" alias="Column" />
 		<typeAlias type="com.junyi.erp.domain.Company" alias="Company" />
 		<typeAlias type="com.junyi.erp.domain.Role" alias="Role" />
+		<typeAlias type="com.junyi.erp.domain.Information" alias="Information" />
 	</typeAliases>
 
 	<plugins>
@@ -33,6 +34,7 @@
 		<mapper resource="mapper/ColumnMapper.xml" />
 		<mapper resource="mapper/CompanyMapper.xml" />
 		<mapper resource="mapper/RoleMapper.xml" />
+		<mapper resource="mapper/InformationMapper.xml" />
 	</mappers>
 
 

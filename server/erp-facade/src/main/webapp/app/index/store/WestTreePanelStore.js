@@ -23,7 +23,7 @@ Ext.define('Index.store.WestTreePanelStore', {
               {
                 text: '信息披露',
                 qtip: '信息披露',
-                url: 'app-productMgmt.html',
+                url: 'html/app/infoDisclosureMgmt.html',
                 id: 'infoDisclosure',
                 leaf: true
               },
