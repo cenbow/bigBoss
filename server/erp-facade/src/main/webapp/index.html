@@ -10,7 +10,7 @@
   <title>bigBoss-cms</title>
   <!--<script src="js/artTemplate/dist/template-native-debug.js"></script>-->
   <script src="js/extjs/ext-all.js"></script>
-
+  <script type="text/javascript" src="js/jquery.min.1.9.1.js"></script>
 
   <script src="js/extjs/resources/classic/locale/locale-zh_CN.js"></script>
   <script type="text/javascript" src="app/config.js"></script>
@@ -37,16 +37,25 @@
 <div id="js_mainNorthPanel_content" class="x-hidden">
   <div style="height:75px;">
     <div style="float:left;background-image: url('images/banner_left.jpg');width:400px;height:75px;"></div>
-    <div style="position: absolute;right: 170px;top: 30px;cursor:pointer" onclick="changeQianduan()">
+    <div style="position: absolute;right: 153px;top: 17px;cursor:pointer" onclick="">
+      <h3><span id="adminName" >超级管理员：</span></h3>
+    </div>
+    <div style="position: absolute;right: 110px;top: 30px;cursor:pointer" onclick="changeQianduan()">
       <img src="./images/change.png" style="width: 20px;height: 20px;">
     </div>
-    <div style="float:right;background-image: url('images/banner_right.jpg');width:200px;height:75px;">
+   <!-- <div style="float:right;background-image: url('images/banner_right.jpg');width:200px;height:75px;">
       <div style="float:right;margin:18px 30px 0 0;"><a href="javascript:logout()" target="_blank"></a></div>
 
+    </div>-->
+    <div style="position: absolute;right: 80px;top: 30px;cursor:pointer" onclick="logout()">
+      <img src="./images/exit.png" style="width: 20px;height: 20px;">
     </div>
   </div>
 </div>
 <script type="text/javascript">
+  var name = localStorage.getItem("userName");
+  $('#adminName').append(name);
+
   function logout(){
     localStorage.setItem("login",false);
     localStorage.setItem("accountId",null);

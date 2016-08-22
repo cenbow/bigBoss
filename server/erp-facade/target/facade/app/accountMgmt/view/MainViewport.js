@@ -25,7 +25,7 @@ Ext.define('AccountMgmt.view.MainViewport', {
         dockedItems: [{
             xtype: 'toolbar',
             dock: 'top',
-            height:35,
+            height: 35,
             items: [
                 {
                     xtype: 'tbfill'
@@ -83,13 +83,25 @@ Ext.define('AccountMgmt.view.MainViewport', {
                 dataIndex: 'roleName',
                 text: '用户角色'
             },
+
+                {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'companyName',
+                    text: '公司名称',
+                    width: 350
+                }, {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'companyCode',
+                    text: '公司代码',
+                    width: 170
+                },
                 {
                     xtype: 'gridcolumn',
                     tdCls: 'grid-switch',
                     align: 'center',
                     dataIndex: 'status',
-                    text: '是否启用',
-                    width: 200,
+                    text: '是否显示',
+                    width: 120,
                     renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
                         if (value === 1) {
                             return '<img src="../../images/SwitchOn.png" />';
@@ -98,20 +110,9 @@ Ext.define('AccountMgmt.view.MainViewport', {
                         }
                     }
                 },
+
+
                 {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'companyCode',
-                    text: '公司代码',
-                    width: 170
-                },
-
-
-                 {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'companyName',
-                    text: '公司名称',
-                    width: 270
-                },  {
                     xtype: 'gridcolumn',
                     width: 160,
                     dataIndex: 'createDate',
@@ -119,14 +120,9 @@ Ext.define('AccountMgmt.view.MainViewport', {
                     align: 'center',
                     text: '创建日期'
                 }, {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'remark',
-                    text: '备注',
-                    flex: 1
-                },{
                     text: '操作',
                     xtype: 'widgetcolumn',
-                    width: 300,
+                    width: 210,
                     tdCls: 'btngroup',
                     dataIndex: 'progress',
                     widget: {
@@ -155,7 +151,12 @@ Ext.define('AccountMgmt.view.MainViewport', {
                             text: "删除"
                         }]
                     }
-                }]
+                }, {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'remark',
+                    text: '备注',
+                    flex: 1
+                },]
         },
         listeners: {
             cellclick: 'cellclick'

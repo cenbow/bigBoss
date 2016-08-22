@@ -279,7 +279,7 @@ public class InformationController extends ErpBaseController {
                 return;
             }
             int recordId = informationService.insert(information);
-            success(response, information.getId());
+            success(response,"发布成功");
             return;
         } else {
             information.setId(id);

@@ -170,7 +170,7 @@ public class CategoryController extends ErpBaseController {
             HttpServletRequest request,
             HttpServletResponse response
     ) {
-        if (id == null) {
+        if (id == null || id == 0) {
             return;
         }
         List<Category> categories = categoryService.listCategoryByUpClassId(id);
@@ -205,6 +205,7 @@ public class CategoryController extends ErpBaseController {
 
         StringBuffer existStr = new StringBuffer();
         Boolean flag = true;
+        int num = 0;
         for (String name : nameList) {
             Category category = new Category();
             if (vo != null) {
@@ -227,9 +228,7 @@ public class CategoryController extends ErpBaseController {
                         return;
                     }else{
                         existStr.append(exist.getName()+"、");
-//                        error(response, "分类名" + exist.getName() + "重复," + exist.getName() +"之前的分类已为您添加成功");
                     }
-//                    return;
                 } else{
                     if (category.getUpClassId() != null && category.getUpClassId() != 0) {
                         category.setLeaf(2);
@@ -239,6 +238,7 @@ public class CategoryController extends ErpBaseController {
                     category.setStatus(1);
 
                     categoryService.insert(category);
+                    num ++;
                 }
             }
         }
@@ -246,7 +246,12 @@ public class CategoryController extends ErpBaseController {
             success(response, "新增成功");
         }else {
             String str = existStr.substring(0, existStr.length() - 1);
-            error(response, "分类名" + str + "重复,请重新添加，其他分类已添加成功" );
+            if(num == 0){
+                error(response, "分类名" + str + "重复，请重新添加" );
+            }else{
+                error(response, "分类名" + str + "重复，请重新添加，其他分类已添加成功" );
+            }
+
         }
 
     }

@@ -89,7 +89,7 @@ Ext.define('MarketInfoMgmt.view.MainViewportViewController', {
         var href = FACADE_URL + '/generic/web/viewer.html?file=' + FACADE_URL + '/information/download/' + fileName;
         window.open(href, "_blank");
       }else {
-        TipsUtil.showTips('错误', '该记录没有附件');
+        TipsUtil.showTips('错误', '该信息暂无附件');
         return;
       }
     }else if (command == 'Delete') {
@@ -100,7 +100,7 @@ Ext.define('MarketInfoMgmt.view.MainViewportViewController', {
       var id = record.getData().id;
       var fileName = record.get('url');
       if(fileName == null){
-        TipsUtil.showTips('错误', '该记录没有附件');
+        TipsUtil.showTips('错误', '该信息暂无附件');
         return;
       }
       var str = fileName.substr(fileName.indexOf('-')+1)+'.pdf';
@@ -164,6 +164,7 @@ Ext.define('MarketInfoMgmt.view.MainViewportViewController', {
 
     if (type == 'view') {
       dialogViewModel.set("isView", true);
+      dialogViewModel.set("hiddenCompany", false);
       var fileName = record.get('url');
       if(fileName){
         var str = fileName.substr(fileName.indexOf('-')+1)+'.pdf';

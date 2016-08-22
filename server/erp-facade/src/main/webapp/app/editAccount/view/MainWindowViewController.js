@@ -24,7 +24,6 @@ Ext.define('editAccount.view.MainWindowViewController', {
     }
     var viewModel = this.getViewModel();
     viewModel.set('formData',{
-      userName:'admin',
       password:'',
       newPassword:'',
       confirmPassword:''
@@ -42,7 +41,7 @@ Ext.define('editAccount.view.MainWindowViewController', {
         formCmp = currWin.down("form");
 
     var formData = viewModel.get('formData'),
-        userName = formData.userName,
+        //userName = formData.userName,
         password = formData.password,
         newPassword = formData.newPassword,
         confirmPassword = formData.confirmPassword;
@@ -69,7 +68,7 @@ Ext.define('editAccount.view.MainWindowViewController', {
         method: 'POST',
         url: url,
         params: {
-          userName:userName,
+          //userName:userName,
           password:password,
           newPassword:newPassword
         },
@@ -86,6 +85,21 @@ Ext.define('editAccount.view.MainWindowViewController', {
           }
         }
       });
+  },
+
+  onResetClick:function(button, e, eOpts){
+    var viewCtr = this,
+        currWin = viewCtr.getView(),
+        viewModel = this.getViewModel(),
+        formCmp = currWin.down("form");
+
+    formCmp.getForm().reset();
+    /*viewModel.set('formData',{
+      password:'',
+      newPassword:'',
+      confirmPassword:''
+    })*/
+
   },
 
   companyChange:function(field, newValue, oldValue, eOpts){

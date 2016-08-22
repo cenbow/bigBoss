@@ -72,7 +72,8 @@ Ext.define('StudyGardenMgmt.view.InfoDialog', {
                     bind:{
                         store:'{companycomboboxstore}',
                         value: "{formData.companyId}",
-                        readOnly:'{isView}'
+                        readOnly:'{isView}',
+                        hidden:"{hiddenCompany}"
                     }
                 },
                 {

@@ -80,6 +80,79 @@ Ext.define('MarketInfoMgmt.view.MainViewport', {
           width: 37
         },
         {
+          xtype: 'gridcolumn',
+          dataIndex: 'name',
+          text: '信息标题',
+          width: 350
+        },
+        {
+          xtype: 'gridcolumn',
+          dataIndex: 'levelOneName',
+          text: '一级分类',
+          width: 145
+        },
+        {
+          xtype: 'gridcolumn',
+          dataIndex: 'levelTwoName',
+          text: '二级分类',
+          width: 145
+        },
+        {
+          xtype: 'gridcolumn',
+          dataIndex: 'companyCode',
+          text: '公司代码',
+          width: 150
+        },
+        {
+          xtype: 'gridcolumn',
+          dataIndex: 'companyName',
+          text: '公司名称',
+          width: 220
+        },
+        {
+          xtype: 'gridcolumn',
+          dataIndex: 'publishDate',
+          text: '发布日期',
+          width: 120,
+          formatter: 'date("Y/m/d")'
+        },
+        {
+          xtype: 'gridcolumn',
+          dataIndex: 'createName',
+          text: '录入人',
+          width: 80
+        },
+        {
+          xtype: 'gridcolumn',
+          tdCls: 'grid-switch',
+          align: 'center',
+          dataIndex: 'status',
+          text: '是否显示',
+          width: 80,
+          renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
+            if (value === 1) {
+              return '<img src="../../images/SwitchOn.png" />';
+            } else {
+              return '<img src="../../images/SwitchOff.png" />';
+            }
+          }
+        },
+        {
+          xtype: 'gridcolumn',
+          tdCls: 'grid-switch',
+          align: 'center',
+          dataIndex: 'topStatus',
+          text: '是否置顶',
+          width: 80,
+          renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
+            if (value === 1) {
+              return '<img src="../../images/SwitchOn.png" />';
+            } else {
+              return '<img src="../../images/SwitchOff.png" />';
+            }
+          }
+        },
+        {
           text: '操作',
           xtype: 'widgetcolumn',
           width: 464,
@@ -110,11 +183,11 @@ Ext.define('MarketInfoMgmt.view.MainViewport', {
               iconCls: "btn-add",
               text: "添加附件"
             }, {
-                xtype: "button",
-                command: "DeletePDF",
-                iconCls: "btn-delete",
-                text: "删除附件"
-              }, {
+              xtype: "button",
+              command: "DeletePDF",
+              iconCls: "btn-delete",
+              text: "删除附件"
+            }, {
               xtype: "button",
               command: "ViewPDF",
               iconCls: "btn-search",
@@ -123,70 +196,6 @@ Ext.define('MarketInfoMgmt.view.MainViewport', {
           }
         },
         {
-          xtype: 'gridcolumn',
-          dataIndex: 'name',
-          text: '信息标题',
-          width: 380
-        }, {
-          xtype: 'gridcolumn',
-          dataIndex: 'levelOneName',
-          text: '一级分类',
-          width: 200
-        }, {
-          xtype: 'gridcolumn',
-          dataIndex: 'levelTwoName',
-          text: '二级分类',
-          width: 200
-        }, {
-          xtype: 'gridcolumn',
-          dataIndex: 'publishDate',
-          text: '发布日期',
-          width: 200,
-          formatter: 'date("Y/m/d")'
-        }, {
-          xtype: 'gridcolumn',
-          tdCls: 'grid-switch',
-          align: 'center',
-          dataIndex: 'status',
-          text: '是否启用',
-          width: 80,
-          renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
-            if (value === 1) {
-              return '<img src="../../images/SwitchOn.png" />';
-            } else {
-              return '<img src="../../images/SwitchOff.png" />';
-            }
-          }
-        }, {
-          xtype: 'gridcolumn',
-          tdCls: 'grid-switch',
-          align: 'center',
-          dataIndex: 'topStatus',
-          text: '是否置顶',
-          width: 80,
-          renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
-            if (value === 1) {
-              return '<img src="../../images/SwitchOn.png" />';
-            } else {
-              return '<img src="../../images/SwitchOff.png" />';
-            }
-          }
-        },{
-          xtype: 'gridcolumn',
-          dataIndex: 'createName',
-          text: '录入人',
-          width: 150
-        }, {
-          xtype: 'gridcolumn',
-          dataIndex: 'companyName',
-          text: '公司名称',
-          width: 220
-        }, {
-          xtype: 'gridcolumn',
-          dataIndex: 'companyCode',
-          text: '公司代码',
-          width: 150
-        }, {
           xtype: 'gridcolumn',
           dataIndex: 'url',
           hidden: true

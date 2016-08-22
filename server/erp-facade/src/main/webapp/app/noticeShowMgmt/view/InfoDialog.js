@@ -72,7 +72,8 @@ Ext.define('NoticeShowMgmt.view.InfoDialog', {
                     bind:{
                         store:'{companycomboboxstore}',
                         value: "{formData.companyId}",
-                        readOnly:'{isView}'
+                        readOnly:'{isView}',
+                        hiddenCompany:'{hiddenCompany}'
                     }
                 },
                 {

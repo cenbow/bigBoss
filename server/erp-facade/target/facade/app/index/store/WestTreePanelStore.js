@@ -114,8 +114,8 @@ Ext.define('Index.store.WestTreePanelStore', {
                 id: 'addAccount',
                 leaf: true
               },{
-                text: '修改账号',
-                qtip: '修改账号',
+                text: '修改密码',
+                qtip: '修改密码',
                 url: 'html/app/editAccount.html',
                 id: 'editAccount',
                 leaf: true

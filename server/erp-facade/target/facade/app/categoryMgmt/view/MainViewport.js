@@ -197,7 +197,7 @@ Ext.define('CategoryMgmt.view.MainViewport', {
                     tdCls: 'grid-switch',
                     align: 'center',
                     dataIndex: 'status',
-                    text: '是否启用',
+                    text: '是否显示',
                     width:100,
                     renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
                         if (value === 1) {

@@ -19,7 +19,8 @@ Ext.define('MarketInfoMgmt.view.InfoDialogViewModel', {
 
     data: {
         formData: {},
-        isView: false
+        isView: false,
+        hiddenCompany:true
     },
 
     stores: {

@@ -78,7 +78,7 @@ public class AccountController extends ErpBaseController {
 
     @RequestMapping(value = "/updatePassword",method = RequestMethod.POST)
     public void changePassword(
-            String userName,
+//            String userName,
             String password,
             String newPassword
             ,HttpServletRequest request,HttpServletResponse response){
@@ -89,10 +89,10 @@ public class AccountController extends ErpBaseController {
             error(response,"缓存已过期，请重新登录");
             return;
         }
-        if(!account.getUserName().equals(userName)){
+       /* if(!account.getUserName().equals(userName)){
             error(response,"缓存已过期，请重新登录");
             return;
-        }
+        }*/
         if(!account.getPassword().equals(password)){
             error(response,"原密码错误，请重新输入");
             return;

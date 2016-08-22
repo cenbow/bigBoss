@@ -313,7 +313,10 @@ function logout() {
 }
 
 function gotoAccount() {
-    window.location.href = 'account.html';
+    var roleId = JSON.parse(localStorage.getItem("roleId"));
+    if(roleId != 1){
+        window.location.href = 'account.html';
+    }
 }
 
 function changeHoutai() {

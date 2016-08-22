@@ -37,7 +37,7 @@ Ext.define('editAccount.view.MainWindow', {
   height: 550,
   width: 810,
   layout: 'fit',
-  title: '新增账号',
+  title: '修改密码',
   closable:false,
 
   items: [
@@ -67,7 +67,7 @@ Ext.define('editAccount.view.MainWindow', {
           layout: 'column',
           fieldLabel: '',
           items: [
-            {
+           /* {
               xtype: 'textfield',
               name: "userName",
               fieldLabel: '用&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;名&nbsp;',
@@ -77,7 +77,7 @@ Ext.define('editAccount.view.MainWindow', {
               bind:{
                 value:'{formData.userName}'
               }
-            },
+            },*/
             {
               xtype: 'textfield',
               fieldLabel: '原&nbsp;&nbsp;&nbsp;密&nbsp;&nbsp;&nbsp;码<span style="color:red">*</span>',
@@ -150,8 +150,11 @@ Ext.define('editAccount.view.MainWindow', {
           xtype: 'button',
           iconCls: 'btn-cancel',
           text: '重置',
+          listeners: {
+            click: 'onResetClick'
+          },
           handler: function() {
-            this.ownerCt.ownerCt.down('form').getForm().reset()
+            //this.ownerCt.ownerCt.down('form').getForm().reset();
           }
         }
       ]

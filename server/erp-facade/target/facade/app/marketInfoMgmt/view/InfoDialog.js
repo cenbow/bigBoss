@@ -72,7 +72,8 @@ Ext.define('MarketInfoMgmt.view.InfoDialog', {
                     bind:{
                         store:'{companycomboboxstore}',
                         value: "{formData.companyId}",
-                        readOnly:'{isView}'
+                        hidden:"{hiddenCompany}",
+                        readOnly: '{isView}'
                     }
                 },
                 {

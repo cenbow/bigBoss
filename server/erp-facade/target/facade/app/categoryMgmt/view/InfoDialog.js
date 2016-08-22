@@ -61,7 +61,8 @@ Ext.define('CategoryMgmt.view.InfoDialog', {
             change:'onColumnChange'
           },
           bind:{
-            value: "{formData.columnName}"
+            value: "{formData.columnName}",
+            readOnly:true
           }
         },
         {
@@ -75,7 +76,8 @@ Ext.define('CategoryMgmt.view.InfoDialog', {
           name:'upClassId',
           bind:{
             store:'{categorycomboboxstore}',
-            value: '{formData.upClassId}'
+            value: '{formData.upClassId}',
+            readOnly:true
           }
         },
         {

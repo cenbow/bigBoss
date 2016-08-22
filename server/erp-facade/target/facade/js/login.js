@@ -83,6 +83,7 @@ $(function () {
                 localStorage.setItem("accountId",accountId);
                 localStorage.setItem("roleId",roleId);
                 localStorage.setItem("login",true);
+                localStorage.setItem("userName",$.trim($username.val()));
                 if(roleId == 1){
                     window.location.replace(FACADE_URL+'/index.html');
                 }else{
