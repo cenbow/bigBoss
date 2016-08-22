@@ -22,6 +22,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.mail.Session;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -73,6 +74,32 @@ public class AccountController extends ErpBaseController {
         AccountVO vo = new AccountVO();
         vo.convertPOToVO(account);
         success(response, vo);
+    }
+
+    @RequestMapping(value = "/updatePassword",method = RequestMethod.POST)
+    public void changePassword(
+            String userName,
+            String password,
+            String newPassword
+            ,HttpServletRequest request,HttpServletResponse response){
+        HttpSession session = request.getSession();
+        Integer accountId = (Integer) session.getAttribute("userId");
+        Account account = accountService.selectByPk(accountId);
+        if(account==null){
+            error(response,"缓存已过期，请重新登录");
+            return;
+        }
+        if(!account.getUserName().equals(userName)){
+            error(response,"缓存已过期，请重新登录");
+            return;
+        }
+        if(!account.getPassword().equals(password)){
+            error(response,"原密码错误，请重新输入");
+            return;
+        }
+        account.setPassword(newPassword);
+        accountService.update(account);
+        success(response, "更新成功");
     }
 
     @RequestMapping(value = "/update",method = RequestMethod.POST)

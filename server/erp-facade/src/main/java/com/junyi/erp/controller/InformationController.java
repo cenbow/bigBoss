@@ -60,11 +60,11 @@ public class InformationController extends ErpBaseController {
 
         HttpSession session = request.getSession();
         Integer roleId = (Integer) session.getAttribute("roleId");
-        if(roleId == null) {
-            error(response,"session过期，请重新登录!");
+        if (roleId == null) {
+            error(response, "session过期，请重新登录!");
             return;
         }
-        if(roleId!=1){
+        if (roleId != 1) {
             pageRequest.putFilterIfNotNull("status", 1);
             pageRequest.setPageSize(Integer.MAX_VALUE);
         }
@@ -97,38 +97,55 @@ public class InformationController extends ErpBaseController {
         success(response, voList);
     }
 
+    @RequestMapping(value = "/selectById", method = RequestMethod.POST)
+    public void selectById(
+            Integer id,
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
+        Information information = informationService.selectInformationByPK(id);
+        success(response, information);
+    }
+
     @RequestMapping(value = "/searchInfo", method = RequestMethod.POST)
     public void searchInfo(
             String code,
             Integer levelOne,
             Integer levelTwo,
             String name,
+            Integer accountId,
             @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate,
             @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate,
             HttpServletRequest request,
             HttpServletResponse response
     ) {
         Map param = new HashMap();
-        param.put("levelOne", levelOne);
-        Column column = columnService.selectByCode(code);
-        param.put("columnId", column.getId());
+
         param.put("status", 1);
         HttpSession session = request.getSession();
         Integer companyId = (Integer) session.getAttribute("companyId");
-        param.put("companyId", companyId);
-        if(levelTwo!=0){
+        if (levelOne != 0) {
+            param.put("levelOne", levelOne);
+        }
+        if (code != null && code != "") {
+            Column column = columnService.selectByCode(code);
+            param.put("columnId", column.getId());
+        }
+        if (levelTwo != 0) {
             param.put("levelTwo", levelTwo);
         }
-        if(name!=null && !name.isEmpty()){
+        if (name != null && !name.isEmpty()) {
             param.put("name", name);
         }
-        if(startDate!=null){
+        if (startDate != null) {
             param.put("startDate", startDate);
         }
-        if(endDate!=null){
+        if (endDate != null) {
             param.put("endDate", endDate);
         }
-
+        if (accountId != null) {
+            param.put("createBy", accountId);
+        }
         List<Information> informations = informationService.selectByParam(param);
         List<InformationVO> voList = new ArrayList<>();
         if (informations != null && informations.size() > 0) {
@@ -146,13 +163,16 @@ public class InformationController extends ErpBaseController {
     public void upload(
             @RequestParam(value = "file") MultipartFile file,
             Integer id,
+            Integer overWrite,
             HttpServletRequest request,
             HttpServletResponse response) {
         Information information = informationService.selectInformationByPK(id);
-        if (information.getUrl() != null) {
-            error(response, "已存在附件，请先删除附件再上传");
-            return;
-        }
+        /*if(!(overWrite!=null && overWrite ==1)){
+            if (information.getUrl() != null) {
+                error(response, "已存在附件，请先删除附件再上传");
+                return;
+            }
+        }*/
         /**
          * 处理文件上传
          */
@@ -212,7 +232,7 @@ public class InformationController extends ErpBaseController {
             @RequestParam(value = "name") String name,
             @RequestParam(value = "levelOne") Integer levelOne,
             @RequestParam(value = "levelTwo") Integer levelTwo,
-            @RequestParam(value = "companyId") Integer companyId,
+            Integer companyId,
             @RequestParam(value = "text") String text,
             @RequestParam(value = "columnCode") String columnCode,
             Integer id,
@@ -221,15 +241,20 @@ public class InformationController extends ErpBaseController {
         Information information = new Information();
         information.setName(name);
         information.setLevelOne(levelOne);
-        if(levelTwo == null){
+        if (levelTwo == null) {
             levelTwo = 0;
         }
         information.setLevelTwo(levelTwo);
-        information.setCompanyId(companyId);
+        HttpSession session = request.getSession();
+        if (companyId != null) {
+            information.setCompanyId(companyId);
+        } else {
+            companyId = (Integer) session.getAttribute("companyId");
+            information.setCompanyId(companyId);
+        }
         //todo text不能存html代码
         information.setText(text);
         if (id == null || id == 0) {
-            HttpSession session = request.getSession();
             Integer userId = (Integer) session.getAttribute("userId");
             information.setCreateBy(userId);
             Date date = new Date();
@@ -244,12 +269,11 @@ public class InformationController extends ErpBaseController {
                 error(response, "栏目编码不存在");
                 return;
             }
-            informationService.insert(information);
-            success(response, "新增成功");
+            int recordId = informationService.insert(information);
+            success(response, information.getId());
             return;
         } else {
             information.setId(id);
-            HttpSession session = request.getSession();
             Integer userId = (Integer) session.getAttribute("userId");
             information.setUpdateBy(userId);
             information.setUpdateDate(new Date());

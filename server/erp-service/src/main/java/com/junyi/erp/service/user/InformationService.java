@@ -9,7 +9,7 @@ import java.util.Map;
 
 public interface InformationService {
 
-	void insert(Information information);
+	int insert(Information information);
 
 	void update(Information information);
 

@@ -23,8 +23,8 @@ public class InformationServiceImpl implements InformationService {
  	private MyBatisDAO myBatisDAO;
 
 	@Override
-	public void insert(Information information) {
-		myBatisDAO.insert("insertInformation", information);
+	public int insert(Information information) {
+		return myBatisDAO.insert("insertInformation", information);
 	}
 
 	@Override

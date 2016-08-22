@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="Mosaddek">
+    <meta name="keyword" content="FlatLab, Dashboard, Bootstrap, Admin, Template, Theme, Responsive, Fluid, Retina">
+    <link rel="shortcut icon" href="img/favicon.png">
+
+    <title>Big Boss | CMS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/theme.css" rel="stylesheet">
+    <link href="css/bootstrap-reset.css" rel="stylesheet">
+    <!--external css-->
+    <link href="assets/font-awesome/css/font-awesome.css" rel="stylesheet"/>
+    <link rel="stylesheet" href="css/flexslider.css"/>
+    <link href="assets/bxslider/jquery.bxslider.css" rel="stylesheet"/>
+
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/style-responsive.css" rel="stylesheet"/>
+
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
+    <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+    <script src="js/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- 百度 ueditor-->
+    <script type="text/javascript" charset="utf-8" src="js/ueditor.config.js"></script>
+    <script type="text/javascript" charset="utf-8" src="js/ueditor.all.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="lang/zh-cn/zh-cn.js"></script>
+
+
+</head>
+
+<body>
+<!--header start-->
+<header class="header-frontend">
+    <div class="navbar navbar-default navbar-static-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="index.html">BIG&nbsp;&nbsp;BOSS&nbsp;&nbsp;CMS</a>
+            </div>
+        </div>
+    </div>
+</header>
+<!--header end-->
+
+<!--breadcrumbs start-->
+<div class="breadcrumbs">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-sm-4">
+                <h1>编辑信息</h1>
+            </div>
+            <div class="col-lg-8 col-sm-8">
+                <ol class="breadcrumb pull-right">
+                    <li><a href="index.html">首页</a></li>
+                    <li class="active">编辑信息</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!--breadcrumbs end-->
+
+<!--container start-->
+<div class="container">
+
+
+    <div class="row">
+        <div class="col-lg-7 col-sm-7 address">
+            <!--<h4>Send a Message</h4>-->
+
+            <div class="contact-form">
+
+                <div class="form-group">
+                    <label for="title">信息标题<span style="color: red">*</span>：</label>
+                    <input type="text" placeholder="" id="title" class="form-control">
+                </div>
+                <div class="form-group">
+                    <label for="levelOneSelect">一级分类<span style="color: red">*</span>：</label><br>
+                    <select style="width: 167px" id="levelOneSelect"
+                            onchange="changeLevelOne(this.options[this.options.selectedIndex].value)">
+                        <option value=0>无</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="levelTwoSelect">二级分类：</label><br>
+                    <select style="width: 167px" id="levelTwoSelect"
+                            onchange="changeLevelTwo(this.options[this.options.selectedIndex].value)">
+                        <option value=0>无</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="editor">正文：</label><br>
+                    <script id="editor" type="text/plain" style="width:500px;height:250px;"></script>
+                </div>
+                <form id="pageForm">
+                    <label>附件：<span style="color: red;" id="fujian"></span></label><br>
+                    <input name="file" type="file"/>
+                </form>
+
+                <!--<div class="form-group">
+                    <label for="confirm">确认密码</label>
+                    <input type="password" id="confirm" class="form-control">
+                </div>-->
+                <!--<div class="form-group">
+                    <label for="phone">Message</label>
+                    <textarea placeholder="" rows="5" class="form-control"></textarea>
+                </div>-->
+                <button class="btn btn-danger" onclick="save()">确认</button>
+                <div style="height: 200px"></div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+<!--container end-->
+
+<!--footer start-->
+<footer class="footer" style="position:fixed;bottom:0;height: 114px;z-index: 1000">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-3">
+                <h1>bigBoss CMS</h1>
+                <address>
+                    <p></p>
+                </address>
+            </div>
+            <div class="col-lg-5 col-sm-5" style="position: absolute;right: 0;">
+                建议使用浏览器： Chrome、Firefox、IE8+ (标准模式)
+            </div>
+            <div class="col-lg-3 col-sm-3 col-lg-offset-1">
+
+            </div>
+        </div>
+    </div>
+</footer>
+<!--footer end-->
+
+<!-- js placed at the end of the document so the pages load faster -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script type="text/javascript" src="js/hover-dropdown.js"></script>
+<script type="text/javascript" src="assets/bxslider/jquery.bxslider.js"></script>
+<script type="text/javascript" src="js/jquery-form.js"></script>
+
+
+<!--<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&AMP;sensor=false"></script>-->
+
+<!--common script for all pages-->
+<script src="js/common-scripts.js"></script>
+
+<script src="../app/config.js"></script>
+
+
+<script>
+    var levelOne = 0;
+    var levelTwo = 0;
+    var code = "";
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    var ue = UE.getEditor('editor');
+
+    $(function () {
+
+        var recordId = JSON.parse(localStorage.getItem("recordId"));
+        $('#pageForm').append('<input id="id" name="id" value="' + recordId + '" hidden="hidden"/>');
+        $.ajax({
+            url: FACADE_URL + '/information/selectById',
+            data: {
+                id: recordId
+            },
+            type: 'POST',
+            success: function (response) {
+                if (response.success) {
+                    var data = response.data;
+                    $("#title").val(data.name);
+                    if (data.columnId == 1) {
+                        code = "0001"
+                    } else if (data.columnId == 2) {
+                        code = "0002"
+                    } else if (data.columnId == 3) {
+                        code = "0003"
+                    } else if (data.columnId == 4) {
+                        code = "0004"
+                    }
+                    levelOne = data.levelOne;
+                    levelTwo = data.levelTwo;
+                    changeColumn(code);
+                    changeLevelOne(data.levelOne);
+                    //textarea 插入值
+                    setTimeout(function () {
+                        UE.getEditor('editor').setContent(data.text)
+//                        UE.getEditor('editor').execCommand('insertHtml', data.text)
+                    }, 500)
+                    if (data.url) {
+                        var url = data.url;
+                        $("#fujian").append("已存在附件" + url.split("-")[1] + ".pdf,重新上传提交将会覆盖该文件");
+                    }
+                } else {
+                    alert(response.error.message)
+                }
+            },
+            error: function (err) {
+                console.log("error")
+            }
+        })
+    });
+
+    function changeColumn(value) {
+        code = value;
+        var accountId = JSON.parse(localStorage.getItem("accountId"));
+        if (value) {
+            $.ajax({
+                url: FACADE_URL + '/category/listByColumnCode',
+                data: {
+                    code: value,
+                    currentId: accountId
+                },
+                type: 'GET',
+                success: function (response) {
+                    if (response.success) {
+                        var data = response.data;
+                        if (data && data.length > 0) {
+                            var str = '<option value=0>无</option>';
+                            $.each(data, function (i, item) {
+                                if (item.key && item.key != 0) {
+                                    if (item.key == levelOne) {
+                                        str += '<option value="' + item.key + '"  selected = "selected">' + item.value + '</option>'
+                                    } else {
+                                        str += '<option value="' + item.key + '"  >' + item.value + '</option>'
+                                    }
+
+                                }
+                            });
+                            $('#levelOneSelect').html(str);
+                        }
+
+                    }
+
+                },
+                error: function (err) {
+                    console.log("error")
+                }
+            })
+        } else {
+            var str = '<option value=0>无</option>';
+            levelOne = 0;
+            $('#levelOneSelect').html(str);
+            var str1 = '<option value=0>无</option>';
+            levelTwo = 0;
+            $('#levelTwoSelect').html(str1);
+        }
+
+    }
+
+    function changeLevelOne(value) {
+        if (value) {
+            levelOne = value;
+            $.ajax({
+                url: FACADE_URL + '/category/listByUpClassId',
+                data: {
+                    id: value
+                },
+                type: 'GET',
+                success: function (response) {
+                    if (response.success) {
+                        var data = response.data;
+                        if (data && data.length > 0) {
+                            var str = '<option value=0>无</option>';
+                            $.each(data, function (i, item) {
+                                if (item.key && item.key != 0) {
+                                    if (item.key == levelTwo) {
+                                        str += '<option value="' + item.key + '"  selected = "selected">' + item.value + '</option>'
+                                    } else {
+                                        str += '<option value="' + item.key + '"  >' + item.value + '</option>'
+                                    }
+                                }
+                            });
+                            $('#levelTwoSelect').html(str);
+                        }
+                    }
+                },
+                error: function (err) {
+                    console.log("error")
+                }
+            })
+        } else {
+            levelOne = 0;
+            var str1 = '<option value=0>无</option>';
+            levelTwo = 0;
+            $('#levelTwoSelect').html(str1);
+        }
+    }
+
+    function changeLevelTwo(value) {
+        if (value) {
+            levelTwo = value;
+        } else {
+            levelTwo = 0;
+        }
+    }
+
+    function editPassword() {
+        var accountId = JSON.parse(localStorage.getItem("accountId")), password = $('#password').val(), confirm = $('#confirm').val();
+        if (!password) {
+            alert("请输入新密码!")
+            return;
+        }
+        if (!confirm) {
+            alert("请输入确认密码!")
+            return;
+        }
+        if (password != confirm) {
+            alert("新密码和确认密码不一致!")
+            return;
+        }
+
+        $.ajax({
+            url: FACADE_URL + '/account/update',
+            data: {
+                id: accountId,
+                password: password
+            },
+            type: 'POST',
+            success: function (response) {
+                if (response.success) {
+                    var data = response.data;
+                    alert('密码修改成功!');
+                    window.location.href = 'index.html';
+                } else {
+                    alert('网络异常!');
+                }
+
+
+            },
+            error: function (err) {
+                alert('网络异常!');
+            }
+        })
+    }
+
+    function save() {
+
+        var id = JSON.parse(localStorage.getItem("recordId")),
+                name = $("#title").val(),
+                levelOne = $("#levelOneSelect").val(),
+                levelTwo = $("#levelTwoSelect").val(),
+                text = UE.getEditor('editor').getContentTxt(),
+                columnCode = code;
+
+        if(!name){
+            alert("请输入信息标题");
+            return;
+        }
+        if(levelOne == 0){
+            alert("请选择一级分类");
+            return;
+        }
+
+        $.ajax({
+            url: FACADE_URL + '/information/update',
+            data: {
+                id: id,
+                name: name,
+                levelOne: levelOne,
+                levelTwo: levelTwo,
+                text: text,
+                columnCode: columnCode
+            },
+            type: 'POST',
+            success: function (response) {
+                if (response.success) {
+                    if ($(":file").val()) {
+                        $("#pageForm").ajaxSubmit({
+                            type: "POST",
+                            url: FACADE_URL + '/information/upload',
+                            dataType: "json",
+                            success: function (data) {
+                                if (data.success) {
+                                    alert("修改成功");
+                                } else {
+                                    alert(data.error.message);
+                                }
+                            }
+                        });
+                    } else {
+                        alert("修改成功");
+                    }
+
+                } else {
+                    alert(response.error.message)
+                }
+            },
+            error: function (err) {
+                console.log("error")
+            }
+        })
+
+    }
+
+    getContentTxt();
+
+    function getContentTxt() {
+        var arr = [];
+        arr.push("使用editor.getContentTxt()方法可以获得编辑器的纯文本内容");
+        arr.push("编辑器的纯文本内容为：");
+        arr.push(UE.getEditor('editor').getContentTxt());
+        alert(arr.join("\n"));
+    }
+
+</script>
+</body>
+</html>

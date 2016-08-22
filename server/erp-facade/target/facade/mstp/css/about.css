@@ -1,0 +1,94 @@
+.ax_default.table_cell {
+    left: 0px;
+    top: 0px;
+    width: 760px;
+    height: 40px;
+    font-size: 16px;
+    text-align: left;
+    position: relative;
+}
+
+.ax_default {
+    font-family: 'ArialMT', 'Arial';
+    font-weight: 400;
+    font-style: normal;
+    font-size: 13px;
+    color: #333333;
+    text-align: center;
+    line-height: normal;
+}
+
+.ax_default.table_cell .text{
+    left: 2px;
+    top: 9px;
+    width: 756px;
+    word-wrap: break-word;
+    font-size: 16px;
+    color: #999;
+}
+
+
+.mainbody {
+    width: 1024px;
+    margin: 0 auto;
+}
+
+.biaoti {
+    width: 1024px;
+    height: 35px;
+    line-height: 35px;
+    margin: 0 0 5px 0;
+    color: #bc1325;
+    font-weight: bold;
+}
+
+.left {
+    float: left;
+}
+
+.content {
+    width: 1022px;
+    background: url(../images/spray.jpg) right bottom no-repeat;
+    margin: 0 auto;
+    /*border-left: 1px solid #da2131;*/
+    /*border-right: 1px solid #da2131;*/
+    /*border-top: 1px solid #da2131;*/
+}
+
+.co_content {
+    margin: 0 auto;
+    width: 850px;
+    text-align: left;
+    color: #333333;
+}
+
+.other_content {
+    width: 550px;
+    margin: 20px 0 0 0;
+    border: 1px dashed #999999;
+    float: left;
+    margin-left: 100px;
+    display: inline;
+}
+
+.title_title {
+    width: 600px;
+    height: 30px;
+    /*background: #FFCC99;*/
+    line-height: 30px;
+    font-size: 14px;
+    color: #333333;
+    margin: 0 auto;
+    font-weight: bold;
+}
+
+.co_content {
+    margin: 0 auto;
+    width: 850px;
+    text-align: left;
+    color: #333333;
+}
+
+.co_content p {
+    text-indent: 2em;
+}
