@@ -13,11 +13,12 @@
     <result column="UPDATE_BY" property="updateBy" jdbcType="INTEGER" />
     <result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP" />
     <result column="COMPANY_ID" property="companyId" jdbcType="INTEGER" />
+    <result column="COLUMN_ID" property="companyId" jdbcType="INTEGER" />
   </resultMap>
 
   <sql id="Base_Column_List" >
     ID, NAME, LEVEL_ONE, LEVEL_TWO, PUBLISH_DATE, STATUS, CREATE_BY, CREATE_DATE,
-    UPDATE_BY, UPDATE_DATE, COMPANY_ID
+    UPDATE_BY, UPDATE_DATE, COMPANY_ID, COLUMN_ID
   </sql>
 
   <select id="selectInformationByPK" resultMap="InformationMap" parameterType="java.lang.Integer" >
@@ -37,12 +38,13 @@
   <insert id="insertInformation" parameterType="Information" >
     insert into information (ID, NAME, LEVEL_ONE,
       LEVEL_TWO, PUBLISH_DATE, STATUS, CREATE_BY,
-      CREATE_DATE, UPDATE_BY, UPDATE_DATE, COMPANY_ID
+      CREATE_DATE, UPDATE_BY, UPDATE_DATE, COMPANY_ID,
+      COLUMN_ID
       )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{levelOne,jdbcType=INTEGER}, #{levelTwo,jdbcType=INTEGER}
       #{publishDate,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{createBy,jdbcType=INTEGER},
       #{createDate,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=INTEGER}, #{updateDate,jdbcType=TIMESTAMP},
-      #{companyId,jdbcType=INTEGER}
+      #{companyId,jdbcType=INTEGER},#{columnId,jdbcType=INTEGER}
       )
   </insert>
 
@@ -79,6 +81,9 @@
       </if>
       <if test="companyId != null" >
         COMPANY_ID = #{companyId,jdbcType=INTEGER},
+      </if>
+      <if test="columnId != null" >
+        COLUMN_ID = #{columnId,jdbcType=INTEGER},
       </if>
     </set>
     where ID = #{id,jdbcType=VARCHAR}

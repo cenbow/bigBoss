@@ -7,7 +7,6 @@
       <module fileurl="file://$PROJECT_DIR$/erp-facade/erp-facade.iml" filepath="$PROJECT_DIR$/erp-facade/erp-facade.iml" />
       <module fileurl="file://$PROJECT_DIR$/erp-server.iml" filepath="$PROJECT_DIR$/erp-server.iml" />
       <module fileurl="file://$PROJECT_DIR$/erp-service/erp-service.iml" filepath="$PROJECT_DIR$/erp-service/erp-service.iml" />
-      <module fileurl="file://$PROJECT_DIR$/ext_web/ext_web.iml" filepath="$PROJECT_DIR$/ext_web/ext_web.iml" />
     </modules>
   </component>
 </project>

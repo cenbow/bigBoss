@@ -30,10 +30,11 @@ Ext.define('InformationMgmt.view.MainViewport', {
                 xtype: 'button',
                 text: '发布',
                 bind: {
-                    disabled: '{addButonDisabled}'
+
                 },
                 iconCls: "btn-add",
                 listeners: {
+                    click: 'addClick'
                 }
             },
                 {

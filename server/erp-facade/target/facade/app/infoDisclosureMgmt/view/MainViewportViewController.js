@@ -84,6 +84,11 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
         }
     },
 
+    addClick:function(){
+        var dialog = Ext.create("InformationMgmt.view.InfoDialog", {});
+        dialog.show();
+    },
+
     /**private***********************/
 
     /**

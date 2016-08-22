@@ -49,7 +49,7 @@ Ext.define('InformationMgmt.view.InfoDialog', {
       items: [
         {
           xtype: 'combobox',
-          fieldLabel: '所属栏目<span style="color:red">*</span>',
+          fieldLabel: '信息标题<span style="color:red">*</span>',
           allowBlank: false,
           editable: false,
           name: 'columnId',
@@ -67,26 +67,39 @@ Ext.define('InformationMgmt.view.InfoDialog', {
         {
           xtype: 'combobox',
           editable: false,
-          fieldLabel: '上级分类',
+          fieldLabel: '一级分类',
           queryMode: 'local',
           displayField: 'value',
           valueField: 'key',
-          id:'infoDisclosureComboxStore',
-          name:'upClassId',
+          id:'levelOne',
+          name:'levelOne',
           bind:{
             store:'{infoDisclosurecomboboxstore}',
-            value: '{formData.upClassId}'
+            value: '{formData.levelOne}'
           }
         },
         {
-          xtype: 'textfield',
-          name:'name',
-          fieldLabel: '分类名称<span style="color:red">*</span>',
-          allowBlank: false,
+          xtype: 'combobox',
+          editable: false,
+          fieldLabel: '二级分类',
+          queryMode: 'local',
+          displayField: 'value',
+          valueField: 'key',
+          id:'levelTwo',
+          name:'levelTwo',
           bind:{
-            value: '{formData.name}'
+            store:'{infoDisclosurecomboboxstore}',
+            value: '{formData.levelTwo}'
           }
+        },
+        {
+          xtype: 'htmleditor',
+          fieldLabel:'正文',
+          height:200
+
+
         }
+
       ]
     }
   ],
