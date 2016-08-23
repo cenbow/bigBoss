@@ -173,7 +173,7 @@
 <!--container end-->
 
 <!--footer start-->
-<footer class="footer" style="position:fixed;bottom:0;height: 114px">
+<footer class="footer" style="position:fixed;bottom:0;height: 80px;padding: 10px 0">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-3">
@@ -183,7 +183,8 @@
                 </address>
             </div>
             <div class="col-lg-5 col-sm-5" style="position: absolute;right: 0;">
-                建议使用浏览器： Chrome、Firefox、IE8+ (标准模式)
+                Copyright©1999-2015 All Rights Reserved   版权所有，未经授权，禁止转载
+                <br>备案序号:京ICP备05047877号    <br>建议使用浏览器： Chrome、Firefox、IE8+ (标准模式)   分辨率1024*768”
             </div>
             <div class="col-lg-3 col-sm-3 col-lg-offset-1">
 
@@ -275,7 +276,7 @@
                             $('#list').append('<div class="ax_default table_cell"">' +
                                     '<div class="text" style="visibility: visible;"> ' +
                                     '<a href="#" onclick="goToInfoDetail(this)" data-rel="'+ item.id+'">' +
-                                    '<p><span style="color:#8F000B;">■</span><span style="color: #999"> ' + item.name + ' </span></p></a>' +
+                                    '<p><span style="color:#8F000B;">■</span><span style="color: #999"> '+ '&lt;' +item.companyName + '&gt;'+ item.name + '  </span></p></a>' +
                                     '</div><div style="position: absolute;right: 10px;top: 4px">' +
                                     '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
                         } else {
@@ -283,13 +284,13 @@
                                 $('#list').append('<div class="ax_default table_cell">' +
                                         '<div class="text" style="visibility: visible;"> ' +
                                         '<a href=" ' + href + ' " target="_blank">' +
-                                        '<p><span style="color:#8F000B;">■</span><span style="color: #999"> ' + item.name + ' </span><image style="width:20px" src="../images/pdf_pic.jpg"/></p></a>' +
+                                        '<p><span style="color:#8F000B;">■</span><span style="color: #999"> '+ '&lt;' +item.companyName + '&gt;'+ item.name + '  </span><image style="width:20px" src="../images/pdf_pic.jpg"/></p></a>' +
                                         '</div><div style="position: absolute;right: 10px;top: 4px">' +
                                         '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
                             }else{
                                 $('#list').append('<div class="ax_default table_cell">' +
                                         '<div class="text" style="visibility: visible;"> ' +
-                                        '<p><span style="color:#8F000B;">■</span><span style="color: #999"> ' + item.name + ' </span></p>' +
+                                        '<p><span style="color:#8F000B;">■</span><span style="color: #999">'+ '&lt;' +item.companyName + '&gt;'+ item.name + '  </span></p>' +
                                         '</div><div style="position: absolute;right: 10px;top: 4px">' +
                                         '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
                             }

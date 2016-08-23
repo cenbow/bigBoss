@@ -5,10 +5,12 @@ import com.junyi.ecommerce.core.mybatis.page.PageRequest;
 import com.junyi.ecommerce.core.util.vo.PageVO;
 import com.junyi.erp.domain.Account;
 import com.junyi.erp.domain.Column;
+import com.junyi.erp.domain.Company;
 import com.junyi.erp.domain.Information;
 import com.junyi.erp.param.AccountSearchParam;
 import com.junyi.erp.service.user.AccountService;
 import com.junyi.erp.service.user.ColumnService;
+import com.junyi.erp.service.user.CompanyService;
 import com.junyi.erp.service.user.InformationService;
 import com.junyi.erp.vo.InformationVO;
 import org.slf4j.Logger;
@@ -43,6 +45,9 @@ public class InformationController extends ErpBaseController {
 
     @Autowired
     private AccountService accountService;
+
+    @Autowired
+    private CompanyService companyService;
 
     @Autowired
     private ColumnService columnService;
@@ -150,6 +155,10 @@ public class InformationController extends ErpBaseController {
         List<InformationVO> voList = new ArrayList<>();
         if (informations != null && informations.size() > 0) {
             for (Information info : informations) {
+                Company company = companyService.selectByPk(info.getCompanyId());
+                if(company!=null){
+                    info.setCompanyName(company.getName());
+                }
                 InformationVO vo = new InformationVO();
                 vo.convertPOToVO(info);
                 voList.add(vo);

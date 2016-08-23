@@ -78,8 +78,12 @@
             <div class="contact-form">
                 <div class="form-group">
                     <label>账号</label>
-                    <label id="username" class="form-control">account</label>
+                    <label id="username" class="form-control"></label>
                     <!--<input type="text" placeholder="" id="name" class="form-control">-->
+                </div>
+                <div class="form-group">
+                    <label for="oldPassword">原密码</label>
+                    <input type="password" placeholder="" id="oldPassword" class="form-control">
                 </div>
                 <div class="form-group">
                     <label for="password">新密码</label>
@@ -139,8 +143,31 @@
 
 
 <script>
+    $(function(){
+        var accountId = JSON.parse(localStorage.getItem("accountId"))
+        $.ajax({
+            url: FACADE_URL + '/account/view/'+accountId,
+            type: 'GET',
+            success: function (response) {
+                if(response.success){
+                    var data = response.data;
+                    $("#username").append(data.userName);
+                }else{
+                    console.log("error")
+                }
+            },
+            error: function (err) {
+                alert('网络异常!');
+            }
+        })
+    })
+
     function editPassword() {
-        var accountId = JSON.parse(localStorage.getItem("accountId")), password = $('#password').val(), confirm = $('#confirm').val();
+        var accountId = JSON.parse(localStorage.getItem("accountId")), password = $('#password').val(), confirm = $('#confirm').val(), oldPassword = $('#oldPassword').val();
+        if (!oldPassword) {
+            alert("请输入原密码!")
+            return;
+        }
         if (!password) {
             alert("请输入新密码!")
             return;
@@ -155,10 +182,11 @@
         }
 
         $.ajax({
-            url: FACADE_URL + '/account/update',
+            url: FACADE_URL + '/account/updatePassword',
             data: {
-                id: accountId,
-                password: password
+                userName: $("#username").text().trim(),
+                password: oldPassword,
+                newPassword:password
             },
             type: 'POST',
             success: function (response) {
@@ -167,7 +195,7 @@
                     alert('密码修改成功!');
                     window.location.href = 'index.html';
                 }else{
-                    alert('网络异常!');
+                    alert(response.error.message);
                 }
 
 

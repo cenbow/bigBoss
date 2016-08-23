@@ -39,8 +39,13 @@ function loadHead() {
             if (temp.indexOf(item.levelOne) > -1) {
               return;
             }
-            temp.push(item.levelOne);
-            $('#infoDisclosure').append('<li><a onclick="showInfoDisclosure(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+            if(item.levelOne){
+              temp.push(item.levelOne);
+              $('#infoDisclosure').append('<li><a onclick="showInfoDisclosure(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+            }else{
+              $('#infoDisclosure').append('<li><a onclick="showInfoDisclosure(' + 0+ ')" >无</a></li>')
+            }
+
           })
         }
         indexSection(data);
@@ -75,8 +80,14 @@ function loadHead() {
             if (temp.indexOf(item.levelOne) > -1) {
               return;
             }
-            temp.push(item.levelOne);
-            $('#infoStudy').append('<li><a onclick="showInfoStudy(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+
+            if(item.levelOne){
+              temp.push(item.levelOne);
+              $('#infoStudy').append('<li><a onclick="showInfoStudy(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+            }else{
+              $('#infoStudy').append('<li><a onclick="showInfoStudy(' + 0+ ')" >无</a></li>')
+            }
+
           })
         }
       } else {
@@ -107,8 +118,12 @@ function loadHead() {
             if (temp.indexOf(item.levelOne) > -1) {
               return;
             }
-            temp.push(item.levelOne);
-            $('#infoMarket').append('<li><a onclick="showInfoMarket(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+            if(item.levelOne){
+              temp.push(item.levelOne);
+              $('#infoMarket').append('<li><a onclick="showInfoMarket(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+            }else{
+              $('#infoMarket').append('<li><a onclick="showInfoMarket(' + 0+ ')" >无</a></li>')
+            }
           })
         }
         indexSection(data);
@@ -138,8 +153,12 @@ function loadHead() {
             if (temp.indexOf(item.levelOne) > -1) {
               return;
             }
-            temp.push(item.levelOne);
-            $('#infoNotice').append('<li><a onclick="showInfoNotice(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+            if(item.levelOne){
+              temp.push(item.levelOne);
+              $('#infoNotice').append('<li><a onclick="showInfoNotice(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+            }else{
+              $('#infoNotice').append('<li><a onclick="showInfoNotice(' + 0+ ')" >无</a></li>')
+            }
           })
         }
         indexSection(data);
@@ -193,7 +212,7 @@ function indexSection(data) {
 
 function addSection(item){
   var str = '<p class="f-text" style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">' +
-    '<a href="#" onclick="goToDetail(this)" data-rel="'+ item.id+'">'+ item.name +'</a></p>'
+    '<a href="#" onclick="goToDetail(this)" data-rel="'+ item.id+'">'+ '&lt;' +item.companyName + '&gt;'+ item.name + ' </a></p>'
   if(item.columnId == 1){
     $('#about').append(str)
   }else if(item.columnId == 2){
