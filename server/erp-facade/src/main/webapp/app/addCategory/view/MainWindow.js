@@ -35,7 +35,7 @@ Ext.define('addCategory.view.MainWindow', {
   },
   autoShow: true,
   height: 480,
-  width: 460,
+  width: 810,
   layout: 'fit',
   title: '新增分类',
   closable:false,

@@ -50,7 +50,7 @@ Ext.define('CompanyMgmt.view.InfoDialog', {
         {
           xtype: 'textfield',
           itemId: "name",
-          fieldLabel: '公司(团队)名称<span style="color:red">*</span>',
+          fieldLabel: '公&nbsp;司&nbsp;名&nbsp;称<span style="color:red">*</span>',
           allowBlank: false,
           bind: {
             value: "{formData.name}",
@@ -60,7 +60,7 @@ Ext.define('CompanyMgmt.view.InfoDialog', {
         {
           xtype: 'textfield',
           itemId: "code",
-          fieldLabel: '公司(团队)代码<span style="color:red">*</span>',
+          fieldLabel: '公&nbsp;司&nbsp;代&nbsp;码<span style="color:red">*</span>',
           bind: {
             value: "{formData.code}",
             readOnly:'{isView}'
@@ -69,7 +69,7 @@ Ext.define('CompanyMgmt.view.InfoDialog', {
         {
           xtype: 'textfield',
           itemId: "shortName",
-          fieldLabel: '公司(团队)简称',
+          fieldLabel: '公&nbsp;司&nbsp;简&nbsp;称&nbsp;',
           bind: {
             value: "{formData.shortName}",
             readOnly:'{isView}'
@@ -78,7 +78,7 @@ Ext.define('CompanyMgmt.view.InfoDialog', {
         {
           xtype: 'textfield',
           itemId: "introduce",
-          fieldLabel: '公司(团队)介绍',
+          fieldLabel: '公&nbsp;司&nbsp;介&nbsp;绍&nbsp;',
           bind: {
             value: "{formData.introduce}",
             readOnly:'{isView}'
@@ -86,17 +86,8 @@ Ext.define('CompanyMgmt.view.InfoDialog', {
         },
         {
           xtype: 'textfield',
-          itemId: "address",
-          fieldLabel: '公司(团队)地址',
-          bind: {
-            value: "{formData.address}",
-            readOnly:'{isView}'
-          }
-        },
-        {
-          xtype: 'textfield',
           name:'phone',
-          fieldLabel: '公司(团队)电话',
+          fieldLabel: '公&nbsp;司&nbsp;电&nbsp;话&nbsp;',
           //regex: /^1[3|4|5|7|8]\d{9}$/,
           //regexText:'手机号格式错误',
           bind: {
@@ -108,8 +99,15 @@ Ext.define('CompanyMgmt.view.InfoDialog', {
           xtype: 'textareafield',
           height: 76,
           width: 400,
+          name:'introduce',
+          fieldLabel: '公&nbsp;司&nbsp;介&nbsp;绍&nbsp;'
+        },
+        {
+          xtype: 'textareafield',
+          height: 76,
+          width: 400,
           name:'remark',
-          fieldLabel: '备注',
+          fieldLabel: '备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注&nbsp;',
           bind: {
             value: "{formData.remark}",
             readOnly:'{isView}'

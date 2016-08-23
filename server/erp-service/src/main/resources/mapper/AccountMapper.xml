@@ -35,7 +35,7 @@
     select
     <include refid="Base_Column_List" />
     from account
-    where USER_NAME = #{username,jdbcType=VARCHAR} AND PASSWORD = #{password,jdbcType=VARCHAR}
+    where USER_NAME = #{username,jdbcType=VARCHAR} AND PASSWORD = #{password,jdbcType=VARCHAR} AND STATUS = 1
   </select>
 
   <delete id="deleteAccountByPK" parameterType="java.lang.Integer" >
@@ -94,7 +94,7 @@
         STATUS = #{status,jdbcType=INTEGER},
       </if>
       <if test="remark != null" >
-        ROLE_NAME = #{remark,jdbcType=VARCHAR},
+        REMARK = #{remark,jdbcType=VARCHAR},
       </if>
       <if test="userName != null" >
         USER_NAME = #{userName,jdbcType=VARCHAR},
@@ -136,6 +136,7 @@
         or COMPANY_NAME LIKE CONCAT ('%', #{lowerText,jdbcType=VARCHAR}, '%')
         )
       </if>
+      and ROLE_ID != 1
     </where>
     order by ID asc
   </select>

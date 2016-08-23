@@ -31,10 +31,10 @@ Ext.define('AccountMgmt.store.RoleComboboxStore', {
       //model: 'AccountMgmt.model.RoleComboboxModel',
       fields:['key','value'],
       data: [
-        {
+        /*{
           type: '0001',
           value: '超级管理员'
-        },
+        },*/
         {
           type: '0002',
           value: '普通管理员'

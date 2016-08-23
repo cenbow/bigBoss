@@ -26,6 +26,7 @@ Ext.define('CategoryMgmt.view.MainViewport', {
         dockedItems: [{
             xtype: 'toolbar',
             dock: 'top',
+            height:32,
             items: [
                 {
                     xtype: 'tbfill'
@@ -35,6 +36,8 @@ Ext.define('CategoryMgmt.view.MainViewport', {
                     fieldLabel: '快速搜索',
                     labelAlign: 'right',
                     labelWidth: 60,
+                    labelHeight:28,
+                    height:28,
                     emptyText: '输入分类名称',
                     enableKeyEvents: true,
                     listeners: {
@@ -71,35 +74,31 @@ Ext.define('CategoryMgmt.view.MainViewport', {
                     align: 'center',
                     width: 37
                 },
-                {
-                    text: '操作',
-                    xtype: 'widgetcolumn',
-                    width: 80,
-                    tdCls: 'btngroup',
-                    dataIndex: 'progress',
-                    widget: {
-                        xtype: 'buttongroup',
-                        baseCls: "",
-                        layout: {
-                            type: "column"
-                        },
-                        defaults: {
-                            handler: "onCommandColumnClick"
-                        },
-                        items: [{
-                            xtype: "button",
-                            command: "Update",
-                            iconCls: "btn-edit",
-                            text: "修改"
-                        }]
-                    }
-                },
+
                 {
                     xtype: 'gridcolumn',
                     dataIndex: 'name',
                     text: '分类名称',
                     width: 360
                 }, {
+                    xtype: 'gridcolumn',
+                    dataIndex: 'upClassId',
+                    text: '上级分类',
+                    width: 360,
+                    renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
+                        //console.log(1)
+                        var upClassName = "";
+                        if (value) {
+                            store.each(function (record) {
+                                if (record.id == value) {
+                                    upClassName = record.getData().name;
+                                    return false;
+                                }
+                            })
+                        }
+                        return upClassName;
+                    }
+                },{
                     xtype: 'gridcolumn',
                     dataIndex: 'columnId',
                     text: '所属栏目',
@@ -127,24 +126,6 @@ Ext.define('CategoryMgmt.view.MainViewport', {
                             return "二级分类"
                         }
                     }
-                }, {
-                    xtype: 'gridcolumn',
-                    dataIndex: 'upClassId',
-                    text: '上级分类',
-                    width: 360,
-                    renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
-                        //console.log(1)
-                        var upClassName = "";
-                        if (value) {
-                            store.each(function (record) {
-                                if (record.id == value) {
-                                    upClassName = record.getData().name;
-                                    return false;
-                                }
-                            })
-                        }
-                        return upClassName;
-                    }
                 },
 
                 {
@@ -160,6 +141,28 @@ Ext.define('CategoryMgmt.view.MainViewport', {
                         } else {
                             return '<img src="../../images/SwitchOff.png" />';
                         }
+                    }
+                },{
+                    text: '操作',
+                    xtype: 'widgetcolumn',
+                    width: 80,
+                    tdCls: 'btngroup',
+                    dataIndex: 'progress',
+                    widget: {
+                        xtype: 'buttongroup',
+                        baseCls: "",
+                        layout: {
+                            type: "column"
+                        },
+                        defaults: {
+                            handler: "onCommandColumnClick"
+                        },
+                        items: [{
+                            xtype: "button",
+                            command: "Update",
+                            iconCls: "btn-edit",
+                            text: "修改"
+                        }]
                     }
                 },/* {
                     xtype: 'gridcolumn',

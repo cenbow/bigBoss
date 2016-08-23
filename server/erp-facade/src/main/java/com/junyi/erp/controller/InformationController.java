@@ -62,6 +62,7 @@ public class InformationController extends ErpBaseController {
         Integer roleId = (Integer) session.getAttribute("roleId");
         if(roleId == null) {
             error(response,"session过期，请重新登录!");
+            return;
         }
         if(roleId!=1){
             pageRequest.putFilterIfNotNull("status", 1);
@@ -218,6 +219,9 @@ public class InformationController extends ErpBaseController {
         Information information = new Information();
         information.setName(name);
         information.setLevelOne(levelOne);
+        if(levelTwo == null){
+            levelTwo = 0;
+        }
         information.setLevelTwo(levelTwo);
         information.setCompanyId(companyId);
         //todo text不能存html代码
@@ -230,6 +234,7 @@ public class InformationController extends ErpBaseController {
             information.setCreateDate(date);
             information.setPublishDate(date);
             information.setStatus(1);
+            information.setTopStatus(0);
             Column column = columnService.selectByCode(columnCode);
             if (column != null) {
                 information.setColumnId(column.getId());
@@ -268,6 +273,27 @@ public class InformationController extends ErpBaseController {
             return;
         }
         info.setStatus(status);
+        info.setUpdateDate(new Date());
+        HttpSession session = request.getSession();
+        Integer userId = (Integer) session.getAttribute("userId");
+        info.setUpdateBy(userId);
+        informationService.update(info);
+        success(response, "更新成功");
+    }
+
+    @RequestMapping(value = "/changeTopStatus", method = RequestMethod.POST)
+    public void changeTopStatus(
+            @RequestParam(value = "id") Integer id,
+            @RequestParam(value = "topStatus") Integer topStatus,
+            HttpServletRequest request,
+            HttpServletResponse response) {
+        Information info = null;
+        if (id != 0) {
+            info = informationService.selectInformationByPK(id);
+        } else {
+            return;
+        }
+        info.setTopStatus(topStatus);
         info.setUpdateDate(new Date());
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");

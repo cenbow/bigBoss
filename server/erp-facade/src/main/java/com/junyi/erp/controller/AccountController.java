@@ -4,9 +4,11 @@ import com.junyi.ecommerce.core.mybatis.page.Page;
 import com.junyi.ecommerce.core.mybatis.page.PageRequest;
 import com.junyi.ecommerce.core.util.vo.PageVO;
 import com.junyi.erp.domain.Account;
+import com.junyi.erp.domain.Role;
 import com.junyi.erp.domain.user.User;
 import com.junyi.erp.param.AccountSearchParam;
 import com.junyi.erp.service.user.AccountService;
+import com.junyi.erp.service.user.RoleService;
 import com.junyi.erp.service.user.UserService;
 import com.junyi.erp.vo.AccountVO;
 import com.junyi.erp.vo.UserVO;
@@ -18,6 +20,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -36,6 +39,9 @@ public class AccountController extends ErpBaseController {
 
     @Autowired
     private AccountService accountService;
+
+    @Autowired
+    private RoleService roleService;
 
 
     @RequestMapping(value = "/filter", method = RequestMethod.POST)
@@ -75,6 +81,9 @@ public class AccountController extends ErpBaseController {
         if(vo != null){
             account = vo.convertVOToPO();
         }
+        Integer roleId = account.getRoleId();
+        Role role = roleService.selectByPk(roleId);
+        account.setRoleName(role.getRoleName());
         accountService.update(account);
         success(response, "更新成功");
     }
@@ -105,8 +114,6 @@ public class AccountController extends ErpBaseController {
             accountService.deleteByPk(accountId);
             success(response,"删除成功");
         }
-
-
     }
 
     @RequestMapping(value = "/login", method = RequestMethod.POST)
@@ -133,6 +140,26 @@ public class AccountController extends ErpBaseController {
             result.put("companyId",account.getCompanyId());
             success(response, result);
         }
+    }
+
+    @RequestMapping(value = "/changeStatus", method = RequestMethod.POST)
+    public void changeStatus(
+            @RequestParam(value = "id") Integer id,
+            @RequestParam(value = "status") Integer status,
+            HttpServletRequest request,
+            HttpServletResponse response) {
+        Account account = null;
+        if (id != 0) {
+            account = accountService.selectByPk(id);
+        } else {
+            return;
+        }
+        account.setStatus(status);
+        Integer roleId = account.getRoleId();
+        Role role = roleService.selectByPk(roleId);
+        account.setRoleName(role.getRoleName());
+        accountService.update(account);
+        success(response, "更新成功");
     }
 
 }

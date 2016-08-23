@@ -33,6 +33,9 @@ Ext.define('InformationMgmt.model.MainViewportGridModel', {
       name: 'status'
     },
     {
+      name: 'topStatus'
+    },
+    {
       type: 'date',
       name: 'publishDate',
       convert: function (value) {

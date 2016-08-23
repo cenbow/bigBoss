@@ -25,6 +25,7 @@ Ext.define('CompanyMgmt.view.MainViewport', {
         dockedItems: [{
             xtype: 'toolbar',
             dock: 'top',
+            height:32,
             items: [
                 {
                     xtype: 'tbfill'
@@ -34,6 +35,8 @@ Ext.define('CompanyMgmt.view.MainViewport', {
                     fieldLabel: '快速搜索',
                     labelAlign: 'right',
                     labelWidth: 60,
+                    labelHeight:28,
+                    height:28,
                     emptyText: '输入公司名称/公司代码',
                     enableKeyEvents: true,
                     listeners: {
@@ -103,12 +106,11 @@ Ext.define('CompanyMgmt.view.MainViewport', {
                     text: '公司名称',
                     width: 260,
                     renderer: function (value, metaData, record, rowIndex, colIndex, store, view) {
-                        console.log(123)
-                        metaData.tdAttr = "data-qtip=' " +
-                        value+" <br>" +
-                        record.data.address+" <br> " +
-                        record.data.phone+" <br> " +
-                        record.data.introduce+" <br> '";
+                        if(record.data.introduce){
+                            metaData.tdAttr = "data-qtip=' " +
+                            record.data.introduce+" <br> '";
+                        }
+
                         return value;
                     }
 

@@ -82,11 +82,11 @@ $(function () {
                     roleId = result.data.roleId;
                 localStorage.setItem("accountId",accountId);
                 localStorage.setItem("roleId",roleId);
+                localStorage.setItem("login",true);
                 if(roleId == 1){
-                    localStorage.setItem("login",true);
                     window.location.replace(FACADE_URL+'/index.html');
                 }else{
-                    localStorage.setItem("commonLogin",true);
+                    //localStorage.setItem("commonLogin",true);
                     window.location.replace(FACADE_URL+'/mstp/index.html');
                 }
 

@@ -92,6 +92,35 @@ Ext.define('AccountMgmt.view.InfoDialogViewController', {
     var viewCtr = this;
 
     viewCtr.getView().close();
-  }
+  },
 
+  companyChange:function(field, newValue, oldValue, eOpts){
+    var viewModel = this.getViewModel();
+    if(!newValue) return;
+    if(isNaN(newValue)){
+      return;
+    }
+    var url = FACADE_URL+'/company/view/'+newValue;
+    Ext.Ajax.request({
+      method: 'GET',
+      url: url,
+      success: function (request) {
+        if (request.responseText) {
+          var formData = viewModel.get("formData");
+          var json = Ext.decode(request.responseText);
+          if (json.success) {
+            formData.companyCode = json.data.code;
+            formData.companyName = json.data.name;
+            viewModel.set("formData",formData);
+            //formData.set('companyCode',json.data.code);
+            //viewModel.set('companyCode',json.data.code);
+            //viewModel.set('companyName',json.data.name);
+            return;
+          } else {
+            TipsUtil.showTips("错误", json.error.message || "服务器错误！");
+          }
+        }
+      }
+    });
+  }
 });

@@ -95,14 +95,14 @@ Ext.define('Index.store.WestTreePanelStore', {
             ]
           },
           {
-            text: '账号管理',
-            qtip: '账号管理',
+            text: '账号信息',
+            qtip: '账号信息',
             leaf: false,
             expanded: true,
             children: [
               {
-                text: '账号管理',
-                qtip: '账号管理',
+                text: '账号信息',
+                qtip: '账号信息',
                 url: 'html/app/accountMgmt.html',
                 id: 'accountInfo',
                 leaf: true

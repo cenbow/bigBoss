@@ -39,6 +39,8 @@ public class Information {
      */
     private Integer status;
 
+    private Integer topStatus;
+
     /**
      *
      */
@@ -233,5 +235,13 @@ public class Information {
 
     public void setUrl(String url) {
         this.url = url;
+    }
+
+    public Integer getTopStatus() {
+        return topStatus;
+    }
+
+    public void setTopStatus(Integer topStatus) {
+        this.topStatus = topStatus;
     }
 }

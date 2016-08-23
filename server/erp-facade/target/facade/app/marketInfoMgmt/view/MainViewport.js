@@ -25,6 +25,7 @@ Ext.define('MarketInfoMgmt.view.MainViewport', {
     dockedItems: [{
       xtype: 'toolbar',
       dock: 'top',
+      height:32,
       items: [{
         xtype: 'button',
         text: '发布',
@@ -42,6 +43,8 @@ Ext.define('MarketInfoMgmt.view.MainViewport', {
           fieldLabel: '快速搜索',
           labelAlign: 'right',
           labelWidth: 60,
+          labelHeight:28,
+          height:28,
           emptyText: '输入分类名称',
           enableKeyEvents: true,
           listeners: {
@@ -152,6 +155,20 @@ Ext.define('MarketInfoMgmt.view.MainViewport', {
             }
           }
         }, {
+          xtype: 'gridcolumn',
+          tdCls: 'grid-switch',
+          align: 'center',
+          dataIndex: 'topStatus',
+          text: '是否置顶',
+          width: 200,
+          renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
+            if (value === 1) {
+              return '<img src="../../images/SwitchOn.png" />';
+            } else {
+              return '<img src="../../images/SwitchOff.png" />';
+            }
+          }
+        },{
           xtype: 'gridcolumn',
           dataIndex: 'createName',
           text: '录入人',

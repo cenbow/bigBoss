@@ -35,7 +35,7 @@ Ext.define('addAccount.view.MainWindow', {
   },
   autoShow: true,
   height: 550,
-  width: 460,
+  width: 810,
   layout: 'fit',
   title: '新增账号',
   closable:false,
@@ -71,26 +71,26 @@ Ext.define('addAccount.view.MainWindow', {
               xtype: 'textfield',
               name:'name',
               itemId: "name",
-              fieldLabel: '姓名<span style="color:red">*</span>',
+              fieldLabel: '姓&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;名<span style="color:red">*</span>',
               allowBlank: false
             },
             {
               xtype: 'textfield',
               itemId: "post",
               name: "post",
-              fieldLabel: '职务'
+              fieldLabel: '职&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;务&nbsp;&nbsp;'
             },
             {
               xtype: 'textfield',
               itemId: "phoneNum",
               name: "phoneNum",
-              fieldLabel: '手机号',
+              fieldLabel: '手&nbsp;&nbsp;&nbsp;机&nbsp;&nbsp;&nbsp;号&nbsp;',
               regex: /^1[3|4|5|7|8]\d{9}$/,
               regexText:'手机号格式错误'
             },
             {
               xtype:'combobox',
-              fieldLabel: '所属公司(团队)<span style="color:red">*</span>',
+              fieldLabel: '所&nbsp;属&nbsp;公&nbsp;司<span style="color:red">*</span>',
               emptyText: "请选择",
               editable: false,
               allowBlank: false,
@@ -109,7 +109,7 @@ Ext.define('addAccount.view.MainWindow', {
               xtype: 'textfield',
               itemId: "companyCode",
               name: "companyCode",
-              fieldLabel: '公司(团队)代码',
+              fieldLabel: '公&nbsp;司&nbsp;代&nbsp;码&nbsp;&nbsp;',
               readOnly:true,
               bind:{
                 value:'{companyCode}'
@@ -117,7 +117,7 @@ Ext.define('addAccount.view.MainWindow', {
             },
             {
               xtype:'combobox',
-              fieldLabel: '用户角色<span style="color:red">*</span>',
+              fieldLabel: '用&nbsp;户&nbsp;角&nbsp;色<span style="color:red">*</span>',
               emptyText: "请选择",
               editable: false,
               allowBlank: false,
@@ -135,7 +135,7 @@ Ext.define('addAccount.view.MainWindow', {
               xtype: 'textfield',
               itemId: "userName",
               name: "userName",
-              fieldLabel: '用户名<span style="color:red">*</span>',
+              fieldLabel: '用&nbsp;&nbsp;&nbsp;户&nbsp;&nbsp;&nbsp;名<span style="color:red">*</span>',
               allowBlank: false,
               blankText: '该字段必填项',
               regex: /^[a-zA-Z\d_]{4,20}$/i,
@@ -143,7 +143,7 @@ Ext.define('addAccount.view.MainWindow', {
             },
             {
               xtype: 'textfield',
-              fieldLabel: '登录密码<span style="color:red">*</span>',
+              fieldLabel: '登&nbsp;录&nbsp;密&nbsp;码<span style="color:red">*</span>',
               reference: "newPassword",
               //inputType: 'password',
               allowBlank: false,
@@ -158,7 +158,7 @@ Ext.define('addAccount.view.MainWindow', {
               height: 76,
               width: 400,
               name:'remark',
-              fieldLabel: '备注'
+              fieldLabel: '备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注&nbsp;&nbsp;'
             },
 
           ]

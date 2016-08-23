@@ -33,7 +33,7 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
       companyId:'',
       companyName:''
     });
-
+    var store = this.getViewModel().getStore('categorybyupclassidcomboboxstore');
   },
   /**
    * 更新
@@ -82,10 +82,14 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
     var viewCtr = this,
         viewModel = viewCtr.getViewModel(),
         view = viewCtr.getView();
+    //var store = Ext.StoreMgr.get('CategoryByUpClassIdComboboxStore')
     var store = viewModel.getStore('categorybyupclassidcomboboxstore');
     if (store) {
       if(!viewModel.get('isView')){
-        Ext.getCmp('levelTwo').clearValue();
+        console.log(value)
+       /* if(!isNaN(value)){
+          Ext.getCmp('levelTwo').clearValue();
+        }*/
         store.load({
           params: {id: value}
         });

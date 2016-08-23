@@ -166,6 +166,40 @@ Ext.define('AccountMgmt.view.MainViewportViewController', {
       }
     )
 
-  }
+  },
+
+
+  /**
+   * 是否启用
+   */
+  cellclick: function (tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
+    var viewModel = this.getViewModel();
+   if (tableview.getGridColumns()[cellIndex].dataIndex == "status") {
+      Ext.Msg.confirm("温馨提示", "确定要更新状态吗?",
+          function (btn) {
+            if (btn == 'yes') {
+              Ext.Ajax.request({
+                url: FACADE_URL + '/account/changeStatus',
+                params: {
+                  id: record.get("id"),
+                  status: record.get("status") === 1 ? 0 : 1
+                },
+                method: 'POST',
+                success: function (response) {
+                  if (response.responseText) {
+                    var json = Ext.decode(response.responseText);
+                    if (json.success) {
+                      record.set('status', record.get("status") === 1 ? 0 : 1);
+                      viewModel.getStore('gridstore').load();
+                    } else {
+                      TipsUtil.showTips("错误", json.error.message || "服务器错误！");
+                    }
+                  }
+                }
+              });
+            }
+          });
+    }
+  },
 
 });

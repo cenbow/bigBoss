@@ -102,6 +102,7 @@ Ext.define('InformationMgmt.view.InfoDialog', {
                     displayField: 'value',
                     valueField: 'key',
                     name: 'levelTwo',
+                    //store:'CategoryByUpClassIdComboboxStore',
                     bind: {
                         store: '{categorybyupclassidcomboboxstore}',
                         value: '{formData.levelTwo}',

@@ -250,7 +250,7 @@ function goToDetail(el){
 
 function logout() {
   if(confirm("确认要退出登陆吗?")){
-    localStorage.setItem("commonLogin", false);
+    localStorage.setItem("login", false);
     localStorage.setItem("accountId", null);
     localStorage.setItem("roleId", null);
     window.location.replace(FACADE_URL + '/login.html');

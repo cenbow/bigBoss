@@ -79,7 +79,7 @@ Ext.define('AccountMgmt.view.InfoDialog', {
         },
         {
           xtype:'combobox',
-          fieldLabel: '所属公司(团队)<span style="color:red">*</span>',
+          fieldLabel: '所属公司<span style="color:red">*</span>',
           emptyText: "请选择",
           editable: false,
           allowBlank: false,
@@ -91,12 +91,15 @@ Ext.define('AccountMgmt.view.InfoDialog', {
             store:'{companycomboboxstore}',
             value: "{formData.companyName}",
             readOnly:'{isView}'
+          },
+          listeners:{
+            change:'companyChange'
           }
         },
         {
           xtype: 'textfield',
           itemId: "companyCode",
-          fieldLabel: '公司(团队)代码',
+          fieldLabel: '公司代码',
           bind: {
             readOnly:true,
             value: "{formData.companyCode}",

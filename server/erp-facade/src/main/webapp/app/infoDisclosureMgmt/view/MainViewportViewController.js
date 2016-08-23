@@ -23,6 +23,7 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
 
   init: function () {
     var store = Ext.create('InformationMgmt.store.CategoryComboboxStore');
+    //var store = Ext.create('InformationMgmt.store.CategoryByUpClassIdComboboxStore');
     var login = JSON.parse(localStorage.getItem("login"));
     if(!login){
       window.location.replace(FACADE_URL+'/login.html');
@@ -175,12 +176,12 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
     formData.companyId = record.getData().companyId;
     formData.companyName = record.getData().companyName;
     formData.text = record.getData().text;
-    var store = dialog.getViewModel().getStore('categorybyupclassidcomboboxstore');
-    if (store) {
+    //var store = dialog.getViewModel().getStore('categorybyupclassidcomboboxstore');
+    var store = Ext.StoreMgr.get('CategoryByUpClassIdComboboxStore');
       store.load({
         params: {id: record.data.levelOne}
       });
-    }
+
     dialog.getViewModel().set("formData", formData);//数据回现
     dialog.show();
   },
@@ -226,6 +227,31 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
             });
           }
         });
+    }else if(tableview.getGridColumns()[cellIndex].dataIndex == "topStatus"){
+      Ext.Msg.confirm("温馨提示", "确定要更改置顶状态吗?",
+          function (btn) {
+            if (btn == 'yes') {
+              Ext.Ajax.request({
+                url: FACADE_URL + '/information/changeTopStatus',
+                params: {
+                  id: record.get("id"),
+                  topStatus: record.get("topStatus") === 1 ? 0 : 1
+                },
+                method: 'POST',
+                success: function (response) {
+                  if (response.responseText) {
+                    var json = Ext.decode(response.responseText);
+                    if (json.success) {
+                      record.set('topStatus', record.get("topStatus") === 1 ? 0 : 1);
+                      viewModel.getStore('gridstore').load();
+                    } else {
+                      TipsUtil.showTips("错误", json.error.message || "服务器错误！");
+                    }
+                  }
+                }
+              });
+            }
+          });
     }
   },
 

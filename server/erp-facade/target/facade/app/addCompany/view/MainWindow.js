@@ -34,8 +34,8 @@ Ext.define('addCompany.view.MainWindow', {
     type: 'mainwindow'
   },
   autoShow: true,
-  height: 480,
-  width: 460,
+  height: 540,
+  width: 810,
   layout: 'fit',
   title: '新增公司',
   closable:false,
@@ -70,42 +70,44 @@ Ext.define('addCompany.view.MainWindow', {
             {
               xtype: 'textfield',
               name:'name',
-              fieldLabel: '公司(团队)名称<span style="color:red">*</span>',
+              fieldLabel: '公&nbsp;司&nbsp;名&nbsp;称<span style="color:red">*</span>',
               allowBlank: false
             },
             {
               xtype: 'textfield',
               name:'code',
-              fieldLabel: '公司(团队)代码<span style="color:red">*</span>'
+              fieldLabel: '公&nbsp;司&nbsp;代&nbsp;码<span style="color:red">*</span>'
             },
             {
               xtype: 'textfield',
               name:'shortName',
-              fieldLabel: '公司(团队)简称'
+              fieldLabel: '公&nbsp;司&nbsp;简&nbsp;称&nbsp;'
             },
-            {
-              xtype: 'textfield',
-              name:'introduce',
-              fieldLabel: '公司(团队)介绍',
-              allowBlank: false
-            },
+
             {
               xtype: 'textfield',
               name:'address',
-              fieldLabel: '公司(团队)地址'
+              fieldLabel: '公&nbsp;司&nbsp;地&nbsp;址&nbsp;'
             },
             {
               xtype: 'textfield',
               name:'phone',
-              fieldLabel: '公司(团队)电话',
+              fieldLabel: '公&nbsp;司&nbsp;电&nbsp;话&nbsp;',
               //regex: /^1[3|4|5|7|8]\d{9}$/,
               //regexText:'手机号格式错误'
+            },
+            {
+              xtype: 'textareafield',
+              height: 76,
+              width: 400,
+              name:'introduce',
+              fieldLabel: '公&nbsp;司&nbsp;介&nbsp;绍&nbsp;'
             },{
               xtype: 'textareafield',
               height: 76,
               width: 400,
               name:'remark',
-              fieldLabel: '备注'
+              fieldLabel: '备&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;注&nbsp;'
             },
 
           ]

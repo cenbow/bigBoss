@@ -8,6 +8,7 @@
         <result column="LEVEL_TWO" property="levelTwo" jdbcType="INTEGER"/>
         <result column="PUBLISH_DATE" property="publishDate" jdbcType="TIMESTAMP"/>
         <result column="STATUS" property="status" jdbcType="INTEGER"/>
+        <result column="TOP_STATUS" property="topStatus" jdbcType="INTEGER"/>
         <result column="CREATE_BY" property="createBy" jdbcType="INTEGER"/>
         <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP"/>
         <result column="UPDATE_BY" property="updateBy" jdbcType="INTEGER"/>
@@ -19,7 +20,7 @@
     </resultMap>
 
     <sql id="Base_Column_List">
-    ID, NAME, LEVEL_ONE, LEVEL_TWO, PUBLISH_DATE, STATUS, CREATE_BY, CREATE_DATE,
+    ID, NAME, LEVEL_ONE, LEVEL_TWO, PUBLISH_DATE, STATUS,TOP_STATUS, CREATE_BY, CREATE_DATE,
     UPDATE_BY, UPDATE_DATE, COMPANY_ID, COLUMN_ID, TEXT, URL
   </sql>
 
@@ -47,6 +48,9 @@
             <if test="status != null">
                 AND STATUS = #{status,jdbcType=INTEGER}
             </if>
+            <if test="topStatus != null">
+                AND TOP_STATUS = #{topStatus,jdbcType=INTEGER}
+            </if>
             <if test="companyId != null">
                 AND COMPANY_ID = #{companyId,jdbcType=INTEGER}
             </if>
@@ -57,7 +61,7 @@
                 AND PUBLISH_DATE &lt;= #{endDate,jdbcType=TIMESTAMP}
             </if>
         </where>
-
+        order by TOP_STATUS DESC , UPDATE_DATE DESC
     </select>
 
     <delete id="deleteInformationByPK" parameterType="java.lang.Integer">
@@ -68,12 +72,12 @@
 
     <insert id="insertInformation" parameterType="Information">
     insert into information (ID, NAME, LEVEL_ONE,
-      LEVEL_TWO, PUBLISH_DATE, STATUS, CREATE_BY,
+      LEVEL_TWO, PUBLISH_DATE, STATUS, TOP_STATUS, CREATE_BY,
       CREATE_DATE, UPDATE_BY, UPDATE_DATE, COMPANY_ID,
       COLUMN_ID, TEXT, URL
       )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{levelOne,jdbcType=INTEGER}, #{levelTwo,jdbcType=INTEGER},
-      #{publishDate,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{createBy,jdbcType=INTEGER},
+      #{publishDate,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{topStatus,jdbcType=INTEGER} ,#{createBy,jdbcType=INTEGER},
       #{createDate,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=INTEGER}, #{updateDate,jdbcType=TIMESTAMP},
       #{companyId,jdbcType=INTEGER},#{columnId,jdbcType=INTEGER}, #{text,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}
       )
@@ -114,6 +118,9 @@
             </if>
             <if test="status != null">
                 STATUS = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="topStatus != null">
+                TOP_STATUS = #{topStatus,jdbcType=INTEGER},
             </if>
             <if test="createBy != null">
                 CREATE_BY = #{createBy,jdbcType=INTEGER},
