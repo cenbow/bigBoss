@@ -173,7 +173,11 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
      * 是否启用
      */
     cellclick: function (tableview, td, cellIndex, record, tr, rowIndex, e, eOpts) {
-        if (tableview.getGridColumns()[cellIndex].dataIndex == "status") {
+        if(tableview.getGridColumns()[cellIndex].dataIndex == "name"){
+            //下载
+            //window.location.href = "http://localhost:8080/facade/information/download";
+            window.open(FACADE_URL+'/generic/web/viewer.html?file='+ FACADE_URL +'/information/download/许伟伟个人借款','PDF','width:50%;height:50%;top:100;left:100;');
+        }else if (tableview.getGridColumns()[cellIndex].dataIndex == "status") {
             Ext.Msg.confirm("温馨提示", "确定要更新分类状态吗?",
                 function (btn) {
                     if (btn == 'yes') {

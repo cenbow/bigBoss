@@ -43,47 +43,26 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
         formCmp = currWin.down("form");
 
     if (!formCmp.isValid()) {
-      TipsUtil.showTips("提示", "信息填写有误", TipsUtil.WARING);
-      return ;
+      return;
     }
-
-    var formData = viewModel.get("formData");
-    console.info(formData);
-    if(!formData.upClassId || formData.upClassId == 0){
-      formData.leaf = 1;
-    }else{
-      formData.leaf = 2;
-    }
-    var requestFormData = Ext.clone(formData);
-
-    var url = FACADE_URL+'/infoDisclosure/';
-
-    if(formData.id) {
-      Ext.Ajax.request({
-        method: 'POST',
-        url: url+'update',
-        params: requestFormData,
-        success: function (request) {
-          if (request.responseText) {
-            var json = Ext.decode(request.responseText);
-            if (json.success) {
-              //console.info(json);
-              TipsUtil.showTips("成功", json.data, TipsUtil.INFO, function(){
-                currWin.close();
-                Ext.StoreMgr.get('mainViewPortGridStore').load();
-              });
-              //viewModel.getStore("mainviewstore").load();
-              return;
-            } else {
-              TipsUtil.showTips("错误", json.error.message || "服务器错误！");
-            }
-          }
+    formCmp.getForm().submit({
+      url: FACADE_URL+'/information/upload',
+      waitTitle : '提示',//标题
+      waitMsg : '正在提交数据请稍后...',//提示信息
+      success : function(form, action) {
+        var flag=action.result.success;
+        if(flag) {
+          Ext.getStore('GridStore').reload();
+          viewCtr.getView().close();
+        } else {
+          TipsUtil.showTips('错误', json.result.error.message);
         }
-      });
-    } else {
-      url += '/user/add';
-    }
 
+      },
+      failure : function(form,action) {
+        //TipsUtil.showTips('错误', action.result.error.message||'提交失败');
+      }
+    });
 
   },
 

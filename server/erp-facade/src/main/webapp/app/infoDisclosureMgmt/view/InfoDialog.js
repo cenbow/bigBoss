@@ -47,7 +47,7 @@ Ext.define('InformationMgmt.view.InfoDialog', {
       bodyPadding: '10 10 10 15',
       title: '',
       items: [
-        {
+       /* {
           xtype: 'combobox',
           fieldLabel: '信息标题<span style="color:red">*</span>',
           allowBlank: false,
@@ -91,14 +91,19 @@ Ext.define('InformationMgmt.view.InfoDialog', {
             store:'{infoDisclosurecomboboxstore}',
             value: '{formData.levelTwo}'
           }
-        },
+        },*/
         {
+          xtype: 'filefield',
+          fieldLabel: '上传文件',
+          name: 'file',
+        },
+        /*{
           xtype: 'htmleditor',
           fieldLabel:'正文',
-          height:200
+          height:200,
+          name: 'text'
 
-
-        }
+        }*/
 
       ]
     }
