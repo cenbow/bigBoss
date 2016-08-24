@@ -27,8 +27,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.text.SimpleDateFormat;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by xww on 2016/8/13.
@@ -57,56 +56,81 @@ public class InformationController extends ErpBaseController {
 
         PageRequest pageRequest = param.toPageRequest();
         Column column = columnService.selectByCode(code);
-        pageRequest.putFilterIfNotNull("columnId",column.getId());
+        pageRequest.putFilterIfNotNull("columnId", column.getId());
         Page<Information> pages = informationService.selectInformationByFiltersPage(pageRequest);
         PageVO<InformationVO> resultPageVO = PageVO.create(pages, InformationVO.class);
         success(response, resultPageVO);
 
     }
 
+    @RequestMapping(value = "/selectByLevelOne", method = RequestMethod.POST)
+    public void selectByLevelOne(
+            String code,
+            Integer levelOne,
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
+        Map param = new HashMap();
+        param.put("levelOne", levelOne);
+        Column column = columnService.selectByCode(code);
+        param.put("columnId", column.getId());
+        param.put("status", 1);
+        List<Information> informations = informationService.selectByParam(param);
+        List<InformationVO> voList = new ArrayList<>();
+        if (informations != null && informations.size() > 0) {
+            for (Information info : informations) {
+                InformationVO vo = new InformationVO();
+                vo.convertPOToVO(info);
+                voList.add(vo);
+            }
+        }
+        success(response, voList);
+
+    }
+
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public void upload(
-            @RequestParam( value = "file") MultipartFile file,
+            @RequestParam(value = "file") MultipartFile file,
             Integer id,
             HttpServletRequest request,
-            HttpServletResponse response){
+            HttpServletResponse response) {
         Information information = informationService.selectInformationByPK(id);
-        if(information.getUrl()!=null){
-            error(response,"已存在附件，请先删除附件再上传");
+        if (information.getUrl() != null) {
+            error(response, "已存在附件，请先删除附件再上传");
             return;
         }
         /**
          * 处理文件上传
          */
-        if(file == null || file.getSize() == 0){
+        if (file == null || file.getSize() == 0) {
             error(response, "请上传正确的文件");
             return;
         }
         String fileName = file.getOriginalFilename();
         String suffix = fileName.substring(fileName.lastIndexOf("."));
-        if(!suffix.equals(".pdf")){
+        if (!suffix.equals(".pdf")) {
             error(response, "只能上传pdf类型的文件");
             return;
         }
         //时间戳，加到文件名前
         long time = System.currentTimeMillis();
         fileName = String.valueOf(time) + "-" + fileName;
-        String path =  "D:/savePDF/";
+        String path = "D:/savePDF/";
         System.out.print(path);
         File dir = new File(path);
-        if(!dir.exists()){
+        if (!dir.exists()) {
             dir.mkdir();
         }
-        if(file.getSize()>0){
+        if (file.getSize() > 0) {
             try {
-                SaveFileFromInputStream(file.getInputStream(),path,fileName);
+                SaveFileFromInputStream(file.getInputStream(), path, fileName);
             } catch (IOException e) {
                 System.out.println(e.getMessage());
                 error(response, "保存文件异常");
-                return ;
+                return;
             }
         }
-        information.setUrl(fileName.substring(0,fileName.lastIndexOf(".")));
+        information.setUrl(fileName.substring(0, fileName.lastIndexOf(".")));
         informationService.insertUrl(information);
         success(response, "上传成功");
     }
@@ -115,12 +139,12 @@ public class InformationController extends ErpBaseController {
     public void deleteFile(
             Integer id,
             HttpServletRequest request,
-            HttpServletResponse response){
+            HttpServletResponse response) {
         Information information = informationService.selectInformationByPK(id);
         String fileName = information.getUrl();
-        String path =  "D:/savePDF/";
-        File existFile = new File(path+fileName+".pdf");
-        if(existFile.exists()){
+        String path = "D:/savePDF/";
+        File existFile = new File(path + fileName + ".pdf");
+        if (existFile.exists()) {
             existFile.delete();
         }
         informationService.deleteUrl(id);
@@ -129,15 +153,15 @@ public class InformationController extends ErpBaseController {
 
     @RequestMapping(value = "/update", method = RequestMethod.POST)
     public void update(
-            @RequestParam( value = "name")String name,
-            @RequestParam( value = "levelOne")Integer levelOne,
-            @RequestParam( value = "levelTwo")Integer levelTwo,
-            @RequestParam( value = "companyId")Integer companyId,
-            @RequestParam( value = "text")String text,
-            @RequestParam( value = "columnCode")String columnCode,
+            @RequestParam(value = "name") String name,
+            @RequestParam(value = "levelOne") Integer levelOne,
+            @RequestParam(value = "levelTwo") Integer levelTwo,
+            @RequestParam(value = "companyId") Integer companyId,
+            @RequestParam(value = "text") String text,
+            @RequestParam(value = "columnCode") String columnCode,
             Integer id,
             HttpServletRequest request,
-            HttpServletResponse response){
+            HttpServletResponse response) {
         Information information = new Information();
         information.setName(name);
         information.setLevelOne(levelOne);
@@ -145,7 +169,7 @@ public class InformationController extends ErpBaseController {
         information.setCompanyId(companyId);
         //todo text不能存html代码
         information.setText(text);
-        if(id == null || id == 0 ){
+        if (id == null || id == 0) {
             HttpSession session = request.getSession();
             Integer userId = (Integer) session.getAttribute("userId");
             information.setCreateBy(userId);
@@ -154,16 +178,16 @@ public class InformationController extends ErpBaseController {
             information.setPublishDate(date);
             information.setStatus(1);
             Column column = columnService.selectByCode(columnCode);
-            if(column!=null){
+            if (column != null) {
                 information.setColumnId(column.getId());
-            }else {
+            } else {
                 error(response, "栏目编码不存在");
                 return;
             }
             informationService.insert(information);
             success(response, "新增成功");
             return;
-        }else{
+        } else {
             information.setId(id);
             HttpSession session = request.getSession();
             Integer userId = (Integer) session.getAttribute("userId");
@@ -175,21 +199,19 @@ public class InformationController extends ErpBaseController {
         }
 
 
-
-
     }
 
 
-    @RequestMapping(value = "/changeStatus",method = RequestMethod.POST)
+    @RequestMapping(value = "/changeStatus", method = RequestMethod.POST)
     public void changeStatus(
-            @RequestParam(value = "id")Integer id,
-            @RequestParam(value = "status")Integer status,
+            @RequestParam(value = "id") Integer id,
+            @RequestParam(value = "status") Integer status,
             HttpServletRequest request,
-            HttpServletResponse response){
+            HttpServletResponse response) {
         Information info = null;
-        if(id!=0){
+        if (id != 0) {
             info = informationService.selectInformationByPK(id);
-        }else {
+        } else {
             return;
         }
         info.setStatus(status);
@@ -198,30 +220,31 @@ public class InformationController extends ErpBaseController {
         Integer userId = (Integer) session.getAttribute("userId");
         info.setUpdateBy(userId);
         informationService.update(info);
-        success(response,"更新成功");
+        success(response, "更新成功");
     }
 
 
-    public boolean uploadFile(MultipartFile file,Integer id){
+    public boolean uploadFile(MultipartFile file, Integer id) {
         return true;
     }
 
-    /** *//**保存文件
+    /** */
+    /**
+     * 保存文件
+     *
      * @param stream
      * @param path
      * @param filename
      * @throws IOException
      */
-    public void SaveFileFromInputStream(InputStream stream,String path,String filename) throws IOException
-    {
-        FileOutputStream fs=new FileOutputStream( path + "/"+ filename);
-        byte[] buffer =new byte[1024*1024];
+    public void SaveFileFromInputStream(InputStream stream, String path, String filename) throws IOException {
+        FileOutputStream fs = new FileOutputStream(path + "/" + filename);
+        byte[] buffer = new byte[1024 * 1024];
         int bytesum = 0;
         int byteread = 0;
-        while ((byteread=stream.read(buffer))!=-1)
-        {
-            bytesum+=byteread;
-            fs.write(buffer,0,byteread);
+        while ((byteread = stream.read(buffer)) != -1) {
+            bytesum += byteread;
+            fs.write(buffer, 0, byteread);
             fs.flush();
         }
         fs.close();
@@ -234,11 +257,11 @@ public class InformationController extends ErpBaseController {
             HttpServletRequest request,
             HttpServletResponse response
     ) throws IOException {
-        if(fileName == "" || fileName == null){
-            error(response,"没有文件名");
+        if (fileName == "" || fileName == null) {
+            error(response, "没有文件名");
             return;
         }
-        String path =  "D:/savePDF/"+fileName+".pdf";
+        String path = "D:/savePDF/" + fileName + ".pdf";
         File file = new File(path);// path是根据日志路径和文件名拼接出来的
         String filename = file.getName();// 获取日志文件名称
         InputStream fis = new BufferedInputStream(new FileInputStream(path));
@@ -247,7 +270,7 @@ public class InformationController extends ErpBaseController {
         fis.close();
         response.reset();
         // 先去掉文件名称中的空格,然后转换编码格式为utf-8,保证不出现乱码,这个文件名称用于浏览器的下载框中自动显示的文件名
-        response.addHeader("Content-Disposition", "attachment;filename=" + new String(filename.replaceAll(" ", "").getBytes("utf-8"),"iso8859-1"));
+        response.addHeader("Content-Disposition", "attachment;filename=" + new String(filename.replaceAll(" ", "").getBytes("utf-8"), "iso8859-1"));
         response.addHeader("Content-Length", "" + file.length());
         OutputStream os = new BufferedOutputStream(response.getOutputStream());
         response.setContentType("application/octet-stream");
@@ -255,7 +278,6 @@ public class InformationController extends ErpBaseController {
         os.flush();
         os.close();
     }
-
 
 
 }

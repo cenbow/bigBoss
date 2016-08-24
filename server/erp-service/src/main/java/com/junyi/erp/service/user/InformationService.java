@@ -4,6 +4,9 @@ import com.junyi.ecommerce.core.mybatis.page.Page;
 import com.junyi.ecommerce.core.mybatis.page.PageRequest;
 import com.junyi.erp.domain.Information;
 
+import java.util.List;
+import java.util.Map;
+
 public interface InformationService {
 
 	void insert(Information information);
@@ -17,4 +20,6 @@ public interface InformationService {
 	void insertUrl(Information information);
 
 	void deleteUrl(Integer id);
+
+	List<Information> selectByParam(Map param);
 }

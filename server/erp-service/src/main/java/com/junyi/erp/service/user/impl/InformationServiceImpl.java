@@ -52,5 +52,10 @@ public class InformationServiceImpl implements InformationService {
 		myBatisDAO.update("deleteUrl",id);
 	}
 
+	@Override
+	public List<Information> selectByParam(Map param) {
+		return myBatisDAO.findForList("selectInformationByParam",param);
+	}
+
 
 }

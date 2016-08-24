@@ -30,6 +30,53 @@
         where ID = #{id,jdbcType=INTEGER}
     </select>
 
+    <select id="selectInformationByParam" resultMap="InformationMap" parameterType="Map">
+        select
+        <include refid="Base_Column_List"/>
+        from information
+        <where>
+            <if test="name != null">
+                AND NAME = #{name,jdbcType=VARCHAR}
+            </if>
+            <if test="levelOne != null">
+                AND LEVEL_ONE = #{levelOne,jdbcType=INTEGER}
+            </if>
+            <if test="levelTwo != null">
+                AND LEVEL_TWO = #{levelTwo,jdbcType=INTEGER}
+            </if>
+            <if test="publishDate != null">
+                AND PUBLISH_DATE = #{publishDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="status != null">
+                AND STATUS = #{status,jdbcType=INTEGER}
+            </if>
+            <if test="createBy != null">
+                AND CREATE_BY = #{createBy,jdbcType=INTEGER}
+            </if>
+            <if test="createDate != null">
+                AND CREATE_DATE = #{createDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="updateBy != null">
+                AND UPDATE_BY = #{updateBy,jdbcType=INTEGER}
+            </if>
+            <if test="updateDate != null">
+                AND UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP}
+            </if>
+            <if test="companyId != null">
+                AND COMPANY_ID = #{companyId,jdbcType=INTEGER}
+            </if>
+            <if test="columnId != null">
+                AND COLUMN_ID = #{columnId,jdbcType=INTEGER}
+            </if>
+            <if test="url != null">
+                AND URL = #{url,jdbcType=VARCHAR}
+            </if>
+            <if test="text != null">
+                AND TEXT = #{text,jdbcType=VARCHAR}
+            </if>
+        </where>
+
+    </select>
 
     <delete id="deleteInformationByPK" parameterType="java.lang.Integer">
     delete from information
