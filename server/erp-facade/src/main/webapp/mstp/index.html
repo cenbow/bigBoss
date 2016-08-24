@@ -60,7 +60,13 @@
 
                             </ul>
                         </li>
-                        <li><a onclick="getInfoDisclosure()">学习园地</a></li>
+                        <li class="dropdown ">
+                            <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                               data-close-others="false">学习园地 <b class=" icon-angle-down"></b></a>
+                            <ul id="infoStudy" class="dropdown-menu">
+
+                            </ul>
+                        </li>
                         <li class="dropdown ">
                             <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Feature <b class=" icon-angle-down"></b></a>
                             <ul class="dropdown-menu">
@@ -739,6 +745,7 @@
                   var data = response.data.pageData;
                   localStorage.setItem("infoDisclosure",JSON.stringify(data));
                   var temp = [];
+                  $('#infoDisclosure').html("")
                   if(data && data.length > 0){
                       $.each(data,function(i,item){
                           if(temp.indexOf(item.levelOne) > -1){
@@ -755,12 +762,44 @@
               }
           })
 
+          //学习园地
+          $.ajax({
+              url:FACADE_URL+'/information/filter',
+              data:{
+                  code:'0002'
+              },
+              type:'POST',
+              success:function(response){
+                  var data = response.data.pageData;
+                  localStorage.setItem("infoStudy",JSON.stringify(data));
+                  var temp = [];
+                  $('#infoStudy').html("");
+                  if(data && data.length > 0){
+                      $.each(data,function(i,item){
+                          if(temp.indexOf(item.levelOne) > -1){
+                              return;
+                          }
+                          temp.push(item.levelOne);
+                          $('#infoStudy').append('<li><a onclick="showInfoStudy(' + item.levelOne +')" >'+ item.levelOneName +'</a></li>')
+                      })
+                  }
+
+              },
+              error:function(err){
+                  console.log("error")
+              }
+          })
+
       })
 
       function showInfoDisclosure(levelOne){
           localStorage.setItem("infoLevelOne",JSON.stringify(levelOne));
           window.location.href = 'about.html';
+      }
 
+      function showInfoStudy(levelOne){
+          localStorage.setItem("infoLevelOne",JSON.stringify(levelOne));
+          window.location.href = 'study.html';
       }
 
 

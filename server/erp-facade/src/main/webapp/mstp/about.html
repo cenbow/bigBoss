@@ -80,7 +80,13 @@
                         </ul>
                     </li>
                     <!--<li class="active"><a href="about.html"></a></li>-->
-                    <li><a href="services.html">学习园地</a></li>
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                           data-close-others="false">学习园地 <b class=" icon-angle-down"></b></a>
+                        <ul id="infoStudy" class="dropdown-menu">
+
+                        </ul>
+                    </li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
                            data-close-others="false">Feature <b class=" icon-angle-down"></b></a>
@@ -148,7 +154,7 @@
         </div>
         <div class="ax_default table_cell" style="position: relative">
             <div style="" class="text" style="visibility: visible;">
-                <a href="informationDetail.html"><p><span style="color:#8F000B;">■</span><span> 22222 </span></p></a>
+                <a href="informationDetail.html"><p><span style="color:#8F000B;">■</span><span>  </span></p></a>
 
             </div>
 
@@ -254,7 +260,7 @@
                             $('#list').append('<div class="ax_default table_cell"">' +
                                     '<div class="text" style="visibility: visible;"> ' +
                                     '<a onclick="goToInfoDetail(this)" data-rel="'+ item.id+'">' +
-                                    '<p><span style="color:#8F000B;">■</span><span> ' + item.name + ' </span></p></a>' +
+                                    '<p><span style="color:#8F000B;">■</span><span style="color: #999"> ' + item.name + ' </span></p></a>' +
                                     '</div><div style="position: absolute;right: 10px;top: 4px">' +
                                     '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
                         } else {
@@ -262,13 +268,13 @@
                                 $('#list').append('<div class="ax_default table_cell">' +
                                         '<div class="text" style="visibility: visible;"> ' +
                                         '<a href=" ' + href + ' " target="_blank">' +
-                                        '<p><span style="color:#8F000B;">■</span><span> ' + item.name + ' </span></p></a>' +
+                                        '<p><span style="color:#8F000B;">■</span><span style="color: #999"> ' + item.name + ' </span><image style="width:20px" src="../images/pdf_pic.jpg"/></p></a>' +
                                         '</div><div style="position: absolute;right: 10px;top: 4px">' +
                                         '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
                             }else{
                                 $('#list').append('<div class="ax_default table_cell">' +
                                         '<div class="text" style="visibility: visible;"> ' +
-                                        '<p><span style="color:#8F000B;">■</span><span> ' + item.name + ' </span></p>' +
+                                        '<p><span style="color:#8F000B;">■</span><span style="color: #999"> ' + item.name + ' </span></p>' +
                                         '</div><div style="position: absolute;right: 10px;top: 4px">' +
                                         '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
                             }
@@ -318,14 +324,16 @@
             })
         }
 
+        search()
+
         if (list.length > 0) {
             $.each(list, function (i, item) {
                 $('#filters').append('<li data-ref="' + item.levelTwo + '"><a onclick="selectLevelTwo(this)">' + item.levelTwoName + '</a></li>')
 
-                $('#list').append('<div class="ax_default table_cell">' +
+                /*$('#list').append('<div class="ax_default table_cell">' +
                         '<div class="text" style="visibility: visible;"> ' +
                         '<p><span style="color:#8F000B;">■</span>' +
-                        '<span> ' + item.name + '</span></p></div></div>')
+                        '<span> ' + item.name + '</span></p></div></div>')*/
             })
         }
     })
@@ -352,6 +360,90 @@
             }
         });
     });
+
+    $(window).load(function(){
+        Array.prototype.unique = function()
+        {
+            var n = {},r=[]; //n为hash表，r为临时数组
+            for(var i = 0; i < this.length; i++) //遍历当前数组
+            {
+                if (!n[this[i]]) //如果hash表中没有当前项
+                {
+                    n[this[i]] = true; //存入hash表
+                    r.push(this[i]); //把当前数组的当前项push到临时数组里面
+                }
+            }
+            return r;
+        }
+
+
+        //信息披露
+        $.ajax({
+            url:FACADE_URL+'/information/filter',
+            data:{
+                code:'0001'
+            },
+            type:'POST',
+            success:function(response){
+                var data = response.data.pageData;
+                localStorage.setItem("infoDisclosure",JSON.stringify(data));
+                var temp = [];
+                $('#infoDisclosure').html("");
+                if(data && data.length > 0){
+                    $.each(data,function(i,item){
+                        if(temp.indexOf(item.levelOne) > -1){
+                            return;
+                        }
+                        temp.push(item.levelOne);
+                        $('#infoDisclosure').append('<li><a onclick="showInfoDisclosure(' + item.levelOne +')" >'+ item.levelOneName +'</a></li>')
+                    })
+                }
+
+            },
+            error:function(err){
+                console.log("error")
+            }
+        })
+
+        //学习园地
+        $.ajax({
+            url:FACADE_URL+'/information/filter',
+            data:{
+                code:'0002'
+            },
+            type:'POST',
+            success:function(response){
+                var data = response.data.pageData;
+                localStorage.setItem("infoStudy",JSON.stringify(data));
+                var temp = [];
+                $('#infoStudy').html("");
+                if(data && data.length > 0){
+                    $.each(data,function(i,item){
+                        if(temp.indexOf(item.levelOne) > -1){
+                            return;
+                        }
+                        temp.push(item.levelOne);
+                        $('#infoStudy').append('<li><a onclick="showInfoStudy(' + item.levelOne +')" >'+ item.levelOneName +'</a></li>')
+                    })
+                }
+
+            },
+            error:function(err){
+                console.log("error")
+            }
+        })
+
+    })
+
+    function showInfoDisclosure(levelOne){
+        localStorage.setItem("infoLevelOne",JSON.stringify(levelOne));
+        window.location.href = 'about.html';
+    }
+
+    function showInfoStudy(levelOne){
+        localStorage.setItem("infoLevelOne",JSON.stringify(levelOne));
+        window.location.href = 'study.html';
+    }
 
 
 </script>

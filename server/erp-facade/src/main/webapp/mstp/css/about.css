@@ -50,9 +50,9 @@
     width: 1022px;
     background: url(../images/spray.jpg) right bottom no-repeat;
     margin: 0 auto;
-    border-left: 1px solid #da2131;
-    border-right: 1px solid #da2131;
-    border-top: 1px solid #da2131;
+    /*border-left: 1px solid #da2131;*/
+    /*border-right: 1px solid #da2131;*/
+    /*border-top: 1px solid #da2131;*/
 }
 
 .co_content {
