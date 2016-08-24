@@ -14,11 +14,13 @@
     <result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP" />
     <result column="COMPANY_ID" property="companyId" jdbcType="INTEGER" />
     <result column="COLUMN_ID" property="companyId" jdbcType="INTEGER" />
+    <result column="TEXT" property="companyId" jdbcType="VARCHAR" />
+    <result column="URL" property="companyId" jdbcType="VARCHAR" />
   </resultMap>
 
   <sql id="Base_Column_List" >
     ID, NAME, LEVEL_ONE, LEVEL_TWO, PUBLISH_DATE, STATUS, CREATE_BY, CREATE_DATE,
-    UPDATE_BY, UPDATE_DATE, COMPANY_ID, COLUMN_ID
+    UPDATE_BY, UPDATE_DATE, COMPANY_ID, COLUMN_ID, TEXT, URL
   </sql>
 
   <select id="selectInformationByPK" resultMap="InformationMap" parameterType="java.lang.Integer" >
@@ -39,12 +41,12 @@
     insert into information (ID, NAME, LEVEL_ONE,
       LEVEL_TWO, PUBLISH_DATE, STATUS, CREATE_BY,
       CREATE_DATE, UPDATE_BY, UPDATE_DATE, COMPANY_ID,
-      COLUMN_ID
+      COLUMN_ID, TEXT, URL
       )
     values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{levelOne,jdbcType=INTEGER}, #{levelTwo,jdbcType=INTEGER}
       #{publishDate,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{createBy,jdbcType=INTEGER},
       #{createDate,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=INTEGER}, #{updateDate,jdbcType=TIMESTAMP},
-      #{companyId,jdbcType=INTEGER},#{columnId,jdbcType=INTEGER}
+      #{companyId,jdbcType=INTEGER},#{columnId,jdbcType=INTEGER}, #{text,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}
       )
   </insert>
 
@@ -85,16 +87,24 @@
       <if test="columnId != null" >
         COLUMN_ID = #{columnId,jdbcType=INTEGER},
       </if>
+      <if test="url != null" >
+        URL = #{url,jdbcType=VARCHAR},
+      </if>
+      <if test="text != null" >
+        TEXT = #{text,jdbcType=VARCHAR},
+      </if>
     </set>
     where ID = #{id,jdbcType=VARCHAR}
   </update>
 
   <select id="selectInformationByFiltersPage" resultMap="InformationMap" parameterType="Map">
-    select i.*,c.name companyName,c.code companyCode,one.name levelOneName,two.name levelTwoName
+    select i.*,c.name companyName,c.code companyCode,one.name levelOneName,two.name levelTwoName,a.name createName
     from information i
     LEFT JOIN category one on i.LEVEL_ONE = one.id
     LEFT JOIN category two on i.LEVEL_TWO = two.id
     LEFT JOIN company c on i.COMPANY_ID = c.id
+    LEFT JOIN account a on i.CREATE_BY = a.id
+
     <where>
       <if test="text != null and text != ''">
         ( i.NAME LIKE CONCAT ('%', #{text,jdbcType=VARCHAR}, '%')
@@ -103,5 +113,4 @@
     </where>
     order by i.ID asc
   </select>
-
 </mapper>

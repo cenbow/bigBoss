@@ -25,13 +25,13 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
     this.getViewModel().set("formData", {
       id:'',
       name:'',
+      levelOne:'',
+      levelTwo:'',
+      text:'',
       columnId:'',
-      columnName:'',
-      upClassId:'',
-      upClassName:'',
-      leaf:'',
-      status:''
+      columnName: ''
     });
+
   },
   /**
    * 更新
@@ -57,10 +57,9 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
         } else {
           TipsUtil.showTips('错误', json.result.error.message);
         }
-
       },
       failure : function(form,action) {
-        //TipsUtil.showTips('错误', action.result.error.message||'提交失败');
+        TipsUtil.showTips('错误', action.result.error.message||'提交失败');
       }
     });
 
@@ -76,31 +75,15 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
     viewCtr.getView().close();
   },
 
-  onColumnChange:function(field, value){
+  changeLevelOne:function(field, value){
     var viewCtr = this,
         viewModel = viewCtr.getViewModel(),
         view = viewCtr.getView();
-    var code = "";
-    if(value == '信息披露'){
-      code = "0001";
-    }else if(value == '学习园地'){
-      code = "0002";
-    }else if(value == '市场咨询'){
-      code = "0003";
-    }else if(value == '通知公告'){
-      code = "0004";
-    }else{
-      code = value;
-    }
-    viewModel.set('columnCode',code);
-
-    var store = viewModel.getStore('infoDisclosurecomboboxstore');
+    var store = viewModel.getStore('categorybyupclassidcomboboxstore');
     if (store) {
-      //store.removeAll();
-      Ext.getCmp('infoDisclosureComboxStore').clearValue();
+      Ext.getCmp('levelTwo').clearValue();
       store.load({
-        params: {code: code},
-        scope: store
+        params: {id: value}
       });
     }
   }

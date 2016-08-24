@@ -3,8 +3,12 @@ package com.junyi.erp.controller;
 import com.junyi.ecommerce.core.mybatis.page.Page;
 import com.junyi.ecommerce.core.mybatis.page.PageRequest;
 import com.junyi.ecommerce.core.util.vo.PageVO;
+import com.junyi.erp.domain.Account;
+import com.junyi.erp.domain.Column;
 import com.junyi.erp.domain.Information;
 import com.junyi.erp.param.AccountSearchParam;
+import com.junyi.erp.service.user.AccountService;
+import com.junyi.erp.service.user.ColumnService;
 import com.junyi.erp.service.user.InformationService;
 import com.junyi.erp.vo.InformationVO;
 import org.slf4j.Logger;
@@ -21,6 +25,9 @@ import org.springframework.web.multipart.MultipartFile;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.*;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.List;
 
 /**
  * Created by xww on 2016/8/13.
@@ -32,6 +39,12 @@ public class InformationController extends ErpBaseController {
 
     @Autowired
     private InformationService informationService;
+
+    @Autowired
+    private AccountService accountService;
+
+    @Autowired
+    private ColumnService columnService;
 
     @RequestMapping(value = "/filter", method = RequestMethod.POST)
     public void filter(
@@ -50,9 +63,42 @@ public class InformationController extends ErpBaseController {
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public void upload(
             @RequestParam( value = "file") MultipartFile file,
+            @RequestParam( value = "name")String name,
+            @RequestParam( value = "levelOne")Integer levelOne,
+            @RequestParam( value = "levelTwo")Integer levelTwo,
+            @RequestParam( value = "text")String text,
+            @RequestParam( value = "columnCode")String columnCode,
             HttpServletRequest request,
             HttpServletResponse response){
-        if(file == null){
+        Information information = new Information();
+        information.setName(name);
+        information.setLevelOne(levelOne);
+        information.setLevelTwo(levelTwo);
+        //todo createBy
+        information.setCreateBy(1);
+        Date date = new Date();
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+        simpleDateFormat.format(date.getTime());
+        information.setCreateDate(date);
+
+        information.setPublishDate(date);
+        information.setStatus(1);
+        //todo company
+        information.setCompanyId(1);
+        Column column = columnService.selectByCode(columnCode);
+        if(column!=null){
+            information.setColumnId(column.getId());
+        }else {
+            error(response, "栏目编码不存在");
+            return;
+        }
+        //todo text不能存html代码
+        information.setText(text);
+
+        /**
+         * 处理文件上传
+         */
+        if(file == null || file.getSize() == 0){
             error(response, "请上传正确的文件");
             return;
         }
@@ -62,6 +108,9 @@ public class InformationController extends ErpBaseController {
             error(response, "只能上传pdf类型的文件");
             return;
         }
+        //时间戳，加到文件名前
+        long time = System.currentTimeMillis();
+        fileName = String.valueOf(time) + fileName;
         String path =  "D:/savePDF/";
         System.out.print(path);
         File dir = new File(path);
@@ -77,7 +126,8 @@ public class InformationController extends ErpBaseController {
                 return ;
             }
         }
-
+        information.setUrl(fileName);
+        informationService.insert(information);
         success(response, "上传成功");
     }
 

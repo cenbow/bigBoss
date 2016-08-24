@@ -23,8 +23,7 @@ Ext.application({
     ],
     stores: [
         'MainViewportGridStore',
-        'InformationMgmt.store.InformationComboboxStore',
-        'InformationMgmt.store.RoleComboboxStore',
+        'InformationMgmt.store.CategoryComboboxStore'
     ],
     views: [
         'MainViewport'

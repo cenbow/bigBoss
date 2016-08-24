@@ -50,6 +50,11 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	@Override
+	public List<Category> listCategoryByUpClassId(Integer id) {
+		return myBatisDAO.findForList("listCategoryByUpClassId",id);
+	}
+
+	@Override
 	public int selectIsExistName(String name, int columnId) {
 		Map map = new HashMap();
 		map.put("name",name);

@@ -1,5 +1,7 @@
 package com.junyi.erp.domain;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 import java.util.Date;
 
 /**
@@ -29,6 +31,7 @@ public class Information {
     /**
      *发布日期
      */
+//    @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date publishDate;
 
     /**
@@ -41,9 +44,12 @@ public class Information {
      */
     private Integer createBy;
 
+    private String createName;
+
     /**
      *
      */
+//    @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date createDate;
 
     /**
@@ -54,12 +60,17 @@ public class Information {
     /**
      *
      */
+//    @DateTimeFormat(pattern = "yyyy/MM/dd")
     private Date updateDate;
 
     /**
      *
      */
     private Integer companyId;
+
+    private String text;
+
+    private String url;
 
     private String companyCode;
 
@@ -68,6 +79,8 @@ public class Information {
     private String levelOneName;
 
     private String levelTwoName;
+
+    private Integer columnId;
 
 
     public Integer getId() {
@@ -188,5 +201,37 @@ public class Information {
 
     public void setLevelTwoName(String levelTwoName) {
         this.levelTwoName = levelTwoName;
+    }
+
+    public String getCreateName() {
+        return createName;
+    }
+
+    public void setCreateName(String createName) {
+        this.createName = createName;
+    }
+
+    public Integer getColumnId() {
+        return columnId;
+    }
+
+    public void setColumnId(Integer columnId) {
+        this.columnId = columnId;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    public String getUrl() {
+        return url;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
     }
 }

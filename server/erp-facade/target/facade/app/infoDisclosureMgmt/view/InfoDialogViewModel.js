@@ -14,18 +14,18 @@
  */
 
 Ext.define('InformationMgmt.view.InfoDialogViewModel', {
-  extend: 'Ext.app.ViewModel',
-  alias: 'viewmodel.infodialog',
+    extend: 'Ext.app.ViewModel',
+    alias: 'viewmodel.infodialog',
 
-  data: {
-    formData: {},
-    isView:false
-  },
+    data: {
+        formData: {},
+        isView: false
+    },
 
-  stores: {
-    infoDisclosurecomboboxstore: {
-      type: 'infoDisclosurecomboboxstore',
-      autoLoad: true
+    stores: {
+        categorybyupclassidcomboboxstore: {
+            type: 'categorybyupclassidcomboboxstore',
+            autoLoad: true
+        }
     }
-  }
 });

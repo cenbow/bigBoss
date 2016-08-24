@@ -9,6 +9,7 @@ import com.junyi.erp.param.CategorySearchParam;
 import com.junyi.erp.service.user.CategoryService;
 import com.junyi.erp.service.user.ColumnService;
 import com.junyi.erp.vo.CategoryVO;
+import com.junyi.erp.vo.ComboboxStringVO;
 import com.junyi.erp.vo.ComboboxVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -42,11 +43,11 @@ public class ColumnController extends ErpBaseController {
     ) {
         List<Column> list = columnService.listAll();
 
-        List<ComboboxVO> comboboxVOList = new ArrayList<>();
+        List<ComboboxStringVO> comboboxVOList = new ArrayList<>();
         if(list != null && list.size()>0){
             for(Column column : list){
-                ComboboxVO vo = new ComboboxVO();
-                vo.setKey(column.getId());
+                ComboboxStringVO vo = new ComboboxStringVO();
+                vo.setKey(column.getColumnCode());
                 vo.setValue(column.getColumnName());
                 comboboxVOList.add(vo);
             }

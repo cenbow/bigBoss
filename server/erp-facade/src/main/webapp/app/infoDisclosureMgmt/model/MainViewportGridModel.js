@@ -40,6 +40,12 @@ Ext.define('InformationMgmt.model.MainViewportGridModel', {
       }
     },
     {
+      name: 'createBy'
+    },
+    {
+      name: 'createName'
+    },
+    {
       type: 'date',
       name: 'createDate',
       convert: function (value) {
@@ -51,6 +57,9 @@ Ext.define('InformationMgmt.model.MainViewportGridModel', {
     },
     {
       name: 'companyCode'
+    },
+    {
+      name: 'columnId'
     }
   ]
 });

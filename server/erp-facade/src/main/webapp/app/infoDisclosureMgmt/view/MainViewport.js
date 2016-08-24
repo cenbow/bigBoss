@@ -5,7 +5,6 @@ Ext.define('InformationMgmt.view.MainViewport', {
     requires: [
         'InformationMgmt.view.MainViewportViewController',
         'InformationMgmt.view.MainViewportViewModel',
-        'InformationMgmt.store.ColumnComboboxStore',
         'Common.ux.CommandColumn'
     ],
 
@@ -129,7 +128,7 @@ Ext.define('InformationMgmt.view.MainViewport', {
                     dataIndex: 'publishDate',
                     text: '发布日期',
                     width: 200,
-                    formatter: 'date("Y/m/d")',
+                    formatter: 'date("Y/m/d")'
                 }, {
                     xtype: 'gridcolumn',
                     tdCls: 'grid-switch',

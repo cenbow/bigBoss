@@ -50,19 +50,19 @@ public class CategoryController extends ErpBaseController {
             HttpServletResponse response
     ) {
         int columnCode = 0;
-        if(code != null && code != ""){
+        if (code != null && code != "") {
             columnCode = Integer.valueOf(code);
         }
         Column column = columnService.selectByCode(code);
         List<Category> list = new ArrayList<>();
-        if(column != null ){
-           list = categoryService.listCategoryByColumnCode(column.getId());
+        if (column != null) {
+            list = categoryService.listCategoryByColumnCode(column.getId());
         }
         List<ComboboxVO> comboboxVOList = new ArrayList<>();
-        if(list != null && list.size()>0){
-            for(Category category : list){
+        if (list != null && list.size() > 0) {
+            for (Category category : list) {
                 //二级分类不显示
-                if(category.getLeaf()!=2){
+                if (category.getLeaf() != 2) {
                     ComboboxVO vo = new ComboboxVO();
                     vo.setKey(category.getId());
                     vo.setValue(category.getName());
@@ -77,33 +77,60 @@ public class CategoryController extends ErpBaseController {
         success(response, comboboxVOList);
     }
 
-    @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public void addCategory(CategoryVO vo,HttpServletRequest request,HttpServletResponse response){
+    @RequestMapping(value = "/listByUpClassId", method = RequestMethod.GET)
+    public void listByUpClassId(
+            Integer id,
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
+        if (id == null) {
+            return;
+        }
+        List<Category> categories = categoryService.listCategoryByUpClassId(id);
+        List<ComboboxVO> comboboxVOList = new ArrayList<>();
+        if (categories != null && categories.size() > 0) {
+            for (Category category : categories) {
+                ComboboxVO vo = new ComboboxVO();
+                vo.setKey(category.getId());
+                vo.setValue(category.getName());
+                comboboxVOList.add(vo);
+            }
+        }
+
+        ComboboxVO vo = new ComboboxVO();
+        vo.setKey(null);
+        vo.setValue("无");
+        comboboxVOList.add(vo);
+        success(response, comboboxVOList);
+    }
+
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public void addCategory(CategoryVO vo, HttpServletRequest request, HttpServletResponse response) {
         String voName = vo.getName();
         String nameList[] = voName.split(";");
         vo.setName("");
-        for(String name : nameList){
+        for (String name : nameList) {
             Category category = new Category();
-            if(vo != null){
+            if (vo != null) {
                 category = vo.convertVOToPO();
                 category.setName(name);
 
                 //todo createBy 从前台获取
                 category.setCreateBy(1);
                 category.setCreateDate(new Date());
-                if(vo.getColumnCode()!=null){
+                if (vo.getColumnCode() != null) {
                     Column column = columnService.selectByCode(vo.getColumnCode());
                     category.setColumnId(column.getId());
                 }
                 //查重
-                int exist =  categoryService.selectIsExistName(name,category.getColumnId());
-                if(exist > 0){
-                    error(response,"分类名重复");
+                int exist = categoryService.selectIsExistName(name, category.getColumnId());
+                if (exist > 0) {
+                    error(response, "分类名重复");
                     return;
                 }
-                if(category.getUpClassId()!=null && category.getUpClassId()!=0){
+                if (category.getUpClassId() != null && category.getUpClassId() != 0) {
                     category.setLeaf(2);
-                }else {
+                } else {
                     category.setLeaf(1);
                 }
                 category.setStatus(1);
@@ -144,10 +171,10 @@ public class CategoryController extends ErpBaseController {
         success(response, vo);
     }
 
-    @RequestMapping(value = "/update",method = RequestMethod.POST)
-    public void updateCategory(CategoryVO vo,HttpServletRequest request,HttpServletResponse response){
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public void updateCategory(CategoryVO vo, HttpServletRequest request, HttpServletResponse response) {
         Category category = new Category();
-        if(vo != null){
+        if (vo != null) {
             category = vo.convertVOToPO();
         }
         categoryService.update(category);

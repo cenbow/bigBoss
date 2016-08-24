@@ -107,7 +107,6 @@ Ext.define('CategoryMgmt.view.MainViewport', {
                     renderer: function (value) {
                         var store = Ext.StoreMgr.get('ColumnComboboxStore');
                         var columnName = "";
-                        console.log(22222)
                         store.each(function (record) {
                             if (value == record.getData().key) {
                                 columnName = record.getData().value;

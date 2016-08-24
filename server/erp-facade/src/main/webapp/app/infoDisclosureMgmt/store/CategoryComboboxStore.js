@@ -13,9 +13,9 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('InformationMgmt.store.ColumnComboboxStore', {
+Ext.define('InformationMgmt.store.CategoryComboboxStore', {
   extend: 'Ext.data.ArrayStore',
-  alias: 'store.columncomboboxstore',
+  alias: 'store.categorycomboboxstore',
 
   requires: [
     'Ext.data.proxy.Ajax',
@@ -26,12 +26,15 @@ Ext.define('InformationMgmt.store.ColumnComboboxStore', {
     var me = this;
     cfg = cfg || {};
     me.callParent([Ext.apply({
-      storeId:'ColumnComboboxStore',
+      storeId:'CategoryComboboxStore',
       fields:['key','value'],
-        autoLoad:true,
+      autoLoad:true,
       proxy: {
-        url: FACADE_URL+'/column/comboList',
+        url: FACADE_URL+'/category/listByColumnCode',
         type: 'ajax',
+        extraParams:{
+          code:'0001'
+        },
         reader: {
           type: 'json',
           rootProperty: 'data'

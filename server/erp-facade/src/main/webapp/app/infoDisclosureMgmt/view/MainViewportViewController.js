@@ -19,11 +19,10 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
 
     requires: [
         'InformationMgmt.view.InfoDialog',
-        'InformationMgmt.store.InformationComboboxStore'
     ],
 
     init: function () {
-        var store = Ext.create('InformationMgmt.store.ColumnComboboxStore');
+        var store = Ext.create('InformationMgmt.store.CategoryComboboxStore');
 
     },
 
@@ -89,7 +88,6 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
         dialog.show();
     },
 
-    /**private***********************/
 
     /**
      * 信息窗口：修改
@@ -107,56 +105,21 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
         if (type == 'view') {
             dialogViewModel.set("isView", true);
         }
-        Ext.Ajax.request({
-            url: FACADE_URL + '/infoDisclosure/view/' + record.getData().id,
-            params: {},
-            method: 'GET',
-            success: function (response) {
-                var formData = dialogViewModel.get("formData");
-                var editData = Ext.decode(response.responseText).data;
-                if (formData) {
-                    for (property in editData) {
-                        if (formData[property] !== undefined) {
-                            formData[property] = editData[property];
-                        }
-                    }
-                }
+        var store = Ext.StoreMgr.get('CategoryComboboxStore');
+        console.log(1123123123123123)
+        var formData = dialogViewModel.get("formData");
+        formData.name = record.getData().name;
+        formData.levelOne = record.getData().levelOne;
+        formData.levelTwo = record.getData().levelTwo;
 
-                var store = Ext.StoreMgr.get('ColumnComboboxStore');
-                var columnName = "";
-                store.each(function (m) {
-                    if (record.data.columnId == m.getData().key) {
-                        columnName = m.getData().value;
-                        return false;
-                    }
-                });
-                formData.columnName = columnName;
-                formData.status = record.data.status;
-                formData.leaf = record.data.leaf;
-                /*var upClassName = "";
-                 if (record.data.upClassId) {
-                 store.each(function (m) {
-                 if (m.id == record.data.upClassId) {
-                 upClassName = m.getData().name;
-                 return false;
-                 }
-                 })
-                 }
-                 formData.upClassName = upClassName;*/
-                var store = dialog.getViewModel().getStore('infoDisclosurecomboboxstore');
-                if (store) {
-                    store.load({
-                        params: {code: record.data.columnCode}
-                    });
-                }
-
-                dialog.getViewModel().set("formData", formData);//数据回现
-            },
-            failure: function (response, options) {
-                Ext.Msg.alert('错误', Ext.util.JSON.decode(response.responseText));
-            }
-        });
-
+        var store = dialog.getViewModel().getStore('categorybyupclassidcomboboxstore');
+        if (store) {
+            store.load({
+                params: {id: record.data.levelOne}
+            });
+        }
+        //formData.columnName = record.getData().columnName;
+        dialog.getViewModel().set("formData", formData);//数据回现
         dialog.show();
     },
 
@@ -176,7 +139,7 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
         if(tableview.getGridColumns()[cellIndex].dataIndex == "name"){
             //下载
             //window.location.href = "http://localhost:8080/facade/information/download";
-            window.open(FACADE_URL+'/generic/web/viewer.html?file='+ FACADE_URL +'/information/download/许伟伟个人借款','PDF','width:50%;height:50%;top:100;left:100;');
+            window.open(FACADE_URL+'/generic/web/viewer.html?file='+ FACADE_URL +'/information/download/Node即学即用','PDF','width:50%;height:50%;top:100;left:100;');
         }else if (tableview.getGridColumns()[cellIndex].dataIndex == "status") {
             Ext.Msg.confirm("温馨提示", "确定要更新分类状态吗?",
                 function (btn) {

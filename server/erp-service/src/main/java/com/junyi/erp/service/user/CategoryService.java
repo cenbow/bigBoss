@@ -19,7 +19,10 @@ public interface CategoryService {
 
 	List<Category> listCategoryByColumnCode(Integer columnId);
 
+	List<Category> listCategoryByUpClassId(Integer id);
+
 	int selectIsExistName(String name, int columnId);
 
 	Page<Category> selectCategoryByFiltersPage(PageRequest request);
+
 }
