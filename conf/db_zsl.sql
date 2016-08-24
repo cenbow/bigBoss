@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50171
 File Encoding         : 65001
 
-Date: 2016-08-17 21:32:43
+Date: 2016-08-25 01:17:12
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -75,18 +75,23 @@ CREATE TABLE `category` (
   `UPDATE_DATE` datetime DEFAULT NULL,
   `LEAF` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of category
 -- ----------------------------
-INSERT INTO `category` VALUES ('1', '一级分类', '1', null, '1', '1', null, null, null, '1');
-INSERT INTO `category` VALUES ('2', '二级分类', '1', '1', '1', '1', null, null, null, '2');
-INSERT INTO `category` VALUES ('3', '123', '1', '0', '0', null, '2016-08-16 23:13:09', null, null, '0');
-INSERT INTO `category` VALUES ('4', '1111', '2', '0', '1', null, '2016-08-16 23:14:45', null, null, '1');
+INSERT INTO `category` VALUES ('1', '一级分类1', '1', '6', '1', '1', null, null, null, '2');
+INSERT INTO `category` VALUES ('2', '二级分类', '1', '12', '0', '1', null, null, null, '2');
+INSERT INTO `category` VALUES ('4', '22222', '2', '0', '1', null, '2016-08-16 23:14:45', null, null, '1');
 INSERT INTO `category` VALUES ('5', '123', '1', '3', '1', null, '2016-08-16 23:14:58', null, null, '2');
-INSERT INTO `category` VALUES ('6', 'aaa', '1', '0', '1', null, '2016-08-16 23:15:06', null, null, '1');
-INSERT INTO `category` VALUES ('7', 'sc', '3', '0', '1', null, '2016-08-16 23:15:18', null, null, '1');
+INSERT INTO `category` VALUES ('6', 'aaa', '1', '0', '0', null, '2016-08-16 23:15:06', null, null, '1');
+INSERT INTO `category` VALUES ('7', 'sc', '3', '0', '0', null, '2016-08-16 23:15:18', null, null, '1');
+INSERT INTO `category` VALUES ('8', 'fenlei', '2', '4', '1', '1', '2016-08-17 22:10:47', null, null, '2');
+INSERT INTO `category` VALUES ('9', 'fenlei1', '2', '4', '1', '1', '2016-08-17 22:10:52', null, null, '2');
+INSERT INTO `category` VALUES ('10', 'fenlei', '3', '0', '0', '1', '2016-08-17 22:11:50', null, null, '1');
+INSERT INTO `category` VALUES ('11', 'wahahah', '4', '0', '1', '1', '2016-08-17 23:58:57', null, null, '1');
+INSERT INTO `category` VALUES ('12', '呜呜呜呜呜呜', '1', '0', '1', '1', '2016-08-19 23:51:52', null, null, '1');
+INSERT INTO `category` VALUES ('13', '新增分类22', '1', '6', '0', '1', '2016-08-20 00:43:21', null, null, '2');
 
 -- ----------------------------
 -- Table structure for column
@@ -139,6 +144,34 @@ INSERT INTO `company` VALUES ('1', '智康信息科技', '0001', '智康', '医�
 INSERT INTO `company` VALUES ('2', '苹果公司', '0002', '苹果', 'iphone', '美国', '0322-12334223', '1', '2016-08-14 01:51:50', null, null, null, null, null);
 INSERT INTO `company` VALUES ('3', '智康二号', '000432', '智康2', '2222', '123123', '18502335456', '1', '2016-08-14 20:36:32', null, null, null, null, null);
 INSERT INTO `company` VALUES ('4', 'company', '123123caed', 'zhang', 'jklhasjkjkl', 'asdas', '18515445214', '1', '2016-08-15 21:43:22', null, null, '3123123123', null, null);
+
+-- ----------------------------
+-- Table structure for information
+-- ----------------------------
+DROP TABLE IF EXISTS `information`;
+CREATE TABLE `information` (
+  `ID` int(11) NOT NULL AUTO_INCREMENT,
+  `NAME` varchar(255) DEFAULT NULL COMMENT '信息标题',
+  `LEVEL_ONE` int(11) DEFAULT NULL,
+  `LEVEL_TWO` int(11) DEFAULT NULL,
+  `PUBLISH_DATE` datetime DEFAULT NULL,
+  `STATUS` int(11) DEFAULT NULL,
+  `CREATE_BY` int(11) DEFAULT NULL,
+  `CREATE_DATE` datetime DEFAULT NULL,
+  `UPDATE_BY` int(11) DEFAULT NULL,
+  `UPDATE_DATE` datetime DEFAULT NULL,
+  `COMPANY_ID` int(11) DEFAULT NULL,
+  `COLUMN_ID` int(11) DEFAULT NULL,
+  `TEXT` varchar(255) DEFAULT NULL,
+  `URL` varchar(255) DEFAULT NULL COMMENT 'pdf保存地址(现在是文件名)',
+  PRIMARY KEY (`ID`)
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+
+-- ----------------------------
+-- Records of information
+-- ----------------------------
+INSERT INTO `information` VALUES ('1', '放假', '6', '1', '2016-08-22 17:19:10', '1', '1', '2016-08-22 17:19:14', null, null, '1', '1', null, null);
+INSERT INTO `information` VALUES ('2', '123', '1', '1', '2016-08-25 00:57:00', '1', '1', '2016-08-25 00:57:00', '1', null, '1', '1', '1', '1');
 
 -- ----------------------------
 -- Table structure for role
