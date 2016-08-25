@@ -39,7 +39,8 @@ Ext.define('InformationMgmt.view.MainViewportViewModel', {
           read  : FACADE_URL+'/information/filter'
         },
         extraParams: {
-          text: '{searchData.text}'
+          text: '{searchData.text}',
+          code: '0001'
         },
         reader: {
           type: 'json',

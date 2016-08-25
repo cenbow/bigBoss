@@ -26,6 +26,10 @@ Ext.define('InformationMgmt.view.InfoDialogViewModel', {
         categorybyupclassidcomboboxstore: {
             type: 'categorybyupclassidcomboboxstore',
             autoLoad: true
+        },
+        companycomboboxstore: {
+            type: 'companycomboboxstore',
+            autoLoad: true
         }
     }
 });

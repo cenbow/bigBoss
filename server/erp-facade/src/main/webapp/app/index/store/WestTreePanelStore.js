@@ -30,21 +30,21 @@ Ext.define('Index.store.WestTreePanelStore', {
               {
                 text: '学习园地',
                 qtip: '学习园地',
-                url: 'app-productRecycled.html',
+                url: 'html/app/studyGardenMgmt.html',
                 id: 'studyGarden',
                 leaf: true
               },
               {
                 text: '市场资讯',
                 qtip: '市场资讯',
-                url: 'app-productRecycled.html',
+                url: 'html/app/marketInfoMgmt.html',
                 id: 'marketInfo',
                 leaf: true
               },
               {
                 text: '通知公告',
                 qtip: '通知公告',
-                url: 'app-productRecycled.html',
+                url: 'html/app/noticeShowMgmt.html',
                 id: 'noticeShow',
                 leaf: true
               }

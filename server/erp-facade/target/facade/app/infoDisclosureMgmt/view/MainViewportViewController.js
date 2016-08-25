@@ -152,15 +152,16 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
     if (type == 'view') {
       dialogViewModel.set("isView", true);
       var fileName = record.get('url');
-      var str = fileName.substr(fileName.indexOf('-')+1)+'.pdf';
-      var href = FACADE_URL + '/generic/web/viewer.html?file=' + FACADE_URL + '/information/download/' + fileName;
-      var displayfield = new Ext.form.DisplayField({
-        name:"content",
-        fieldLabel:"附件",
-        value:"<a href='" +href+"' target='_blank'>" + str +"</a>"
-      });
-
-      dialog.lookupReference('form').add(displayfield);
+      if(fileName){
+        var str = fileName.substr(fileName.indexOf('-')+1)+'.pdf';
+        var href = FACADE_URL + '/generic/web/viewer.html?file=' + FACADE_URL + '/information/download/' + fileName;
+        var displayfield = new Ext.form.DisplayField({
+          name:"content",
+          fieldLabel:"附件",
+          value:"<a href='" +href+"' target='_blank'>" + str +"</a>"
+        });
+        dialog.lookupReference('form').add(displayfield);
+      }
     }
 
     var formData = dialogViewModel.get("formData");
@@ -168,6 +169,8 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
     formData.name = record.getData().name;
     formData.levelOne = record.getData().levelOne;
     formData.levelTwo = record.getData().levelTwo;
+    formData.companyId = record.getData().companyId;
+    formData.companyName = record.getData().companyName;
     formData.text = record.getData().text;
     var store = dialog.getViewModel().getStore('categorybyupclassidcomboboxstore');
     if (store) {

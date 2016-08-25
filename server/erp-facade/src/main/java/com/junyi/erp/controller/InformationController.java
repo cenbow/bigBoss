@@ -49,11 +49,14 @@ public class InformationController extends ErpBaseController {
     @RequestMapping(value = "/filter", method = RequestMethod.POST)
     public void filter(
             AccountSearchParam param,
+            String code,
             HttpServletRequest request,
             HttpServletResponse response
     ) {
 
         PageRequest pageRequest = param.toPageRequest();
+        Column column = columnService.selectByCode(code);
+        pageRequest.putFilterIfNotNull("columnId",column.getId());
         Page<Information> pages = informationService.selectInformationByFiltersPage(pageRequest);
         PageVO<InformationVO> resultPageVO = PageVO.create(pages, InformationVO.class);
         success(response, resultPageVO);
@@ -128,6 +131,7 @@ public class InformationController extends ErpBaseController {
             @RequestParam( value = "name")String name,
             @RequestParam( value = "levelOne")Integer levelOne,
             @RequestParam( value = "levelTwo")Integer levelTwo,
+            @RequestParam( value = "companyId")Integer companyId,
             @RequestParam( value = "text")String text,
             @RequestParam( value = "columnCode")String columnCode,
             Integer id,
@@ -137,8 +141,7 @@ public class InformationController extends ErpBaseController {
         information.setName(name);
         information.setLevelOne(levelOne);
         information.setLevelTwo(levelTwo);
-        //todo company
-        information.setCompanyId(1);
+        information.setCompanyId(companyId);
         //todo text不能存html代码
         information.setText(text);
         if(id == null || id == 0 ){
@@ -160,8 +163,10 @@ public class InformationController extends ErpBaseController {
             return;
         }else{
             //todo updateBy
+            information.setId(id);
             information.setUpdateBy(1);
             information.setUpdateDate(new Date());
+            informationService.update(information);
             success(response, "更新成功");
             return;
         }

@@ -20,7 +20,8 @@ Ext.define('InformationMgmt.view.InfoDialog', {
         'InformationMgmt.view.InfoDialogViewController',
         'InformationMgmt.view.InfoDialogViewModel',
         'Common.ux.CustomVTypes',
-        'InformationMgmt.store.CategoryByUpClassIdComboboxStore'
+        'InformationMgmt.store.CategoryByUpClassIdComboboxStore',
+        'InformationMgmt.store.CompanyComboboxStore'
     ],
 
     controller: 'infodialog',
@@ -56,6 +57,22 @@ Ext.define('InformationMgmt.view.InfoDialog', {
                     bind: {
                         value: "{formData.name}",
                         readOnly: '{isView}'
+                    }
+                },
+                {
+                    xtype:'combobox',
+                    fieldLabel: '所属公司<span style="color:red">*</span>',
+                    emptyText: "请选择",
+                    editable: false,
+                    allowBlank: false,
+                    name:'companyId',
+                    displayField:'value',
+                    valueField:'key',
+                    itemId: 'companyId',
+                    bind:{
+                        store:'{companycomboboxstore}',
+                        value: "{formData.companyId}",
+                        readOnly:'{isView}'
                     }
                 },
                 {

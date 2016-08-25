@@ -29,7 +29,9 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
       levelTwo:'',
       text:'',
       columnId:'',
-      columnName: ''
+      columnName: '',
+      companyId:'',
+      companyName:''
     });
 
   },
