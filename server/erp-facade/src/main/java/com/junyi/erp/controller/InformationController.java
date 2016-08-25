@@ -63,38 +63,14 @@ public class InformationController extends ErpBaseController {
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     public void upload(
             @RequestParam( value = "file") MultipartFile file,
-            @RequestParam( value = "name")String name,
-            @RequestParam( value = "levelOne")Integer levelOne,
-            @RequestParam( value = "levelTwo")Integer levelTwo,
-            @RequestParam( value = "text")String text,
-            @RequestParam( value = "columnCode")String columnCode,
+            Integer id,
             HttpServletRequest request,
             HttpServletResponse response){
-        Information information = new Information();
-        information.setName(name);
-        information.setLevelOne(levelOne);
-        information.setLevelTwo(levelTwo);
-        //todo createBy
-        information.setCreateBy(1);
-        Date date = new Date();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
-        simpleDateFormat.format(date.getTime());
-        information.setCreateDate(date);
-
-        information.setPublishDate(date);
-        information.setStatus(1);
-        //todo company
-        information.setCompanyId(1);
-        Column column = columnService.selectByCode(columnCode);
-        if(column!=null){
-            information.setColumnId(column.getId());
-        }else {
-            error(response, "栏目编码不存在");
+        Information information = informationService.selectInformationByPK(id);
+        if(information.getUrl()!=null){
+            error(response,"已存在附件，请先删除附件再上传");
             return;
         }
-        //todo text不能存html代码
-        information.setText(text);
-
         /**
          * 处理文件上传
          */
@@ -110,7 +86,7 @@ public class InformationController extends ErpBaseController {
         }
         //时间戳，加到文件名前
         long time = System.currentTimeMillis();
-        fileName = String.valueOf(time) + fileName;
+        fileName = String.valueOf(time) + "-" + fileName;
         String path =  "D:/savePDF/";
         System.out.print(path);
         File dir = new File(path);
@@ -126,9 +102,99 @@ public class InformationController extends ErpBaseController {
                 return ;
             }
         }
-        information.setUrl(fileName);
-        informationService.insert(information);
+        information.setUrl(fileName.substring(0,fileName.lastIndexOf(".")));
+        informationService.insertUrl(information);
         success(response, "上传成功");
+    }
+
+    @RequestMapping(value = "/deleteFile", method = RequestMethod.POST)
+    public void deleteFile(
+            Integer id,
+            HttpServletRequest request,
+            HttpServletResponse response){
+        Information information = informationService.selectInformationByPK(id);
+        String fileName = information.getUrl();
+        String path =  "D:/savePDF/";
+        File existFile = new File(path+fileName+".pdf");
+        if(existFile.exists()){
+            existFile.delete();
+        }
+        informationService.deleteUrl(id);
+        success(response, "删除成功");
+    }
+
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public void update(
+            @RequestParam( value = "name")String name,
+            @RequestParam( value = "levelOne")Integer levelOne,
+            @RequestParam( value = "levelTwo")Integer levelTwo,
+            @RequestParam( value = "text")String text,
+            @RequestParam( value = "columnCode")String columnCode,
+            Integer id,
+            HttpServletRequest request,
+            HttpServletResponse response){
+        Information information = new Information();
+        information.setName(name);
+        information.setLevelOne(levelOne);
+        information.setLevelTwo(levelTwo);
+        //todo company
+        information.setCompanyId(1);
+        //todo text不能存html代码
+        information.setText(text);
+        if(id == null || id == 0 ){
+            //todo createBy
+            information.setCreateBy(1);
+            Date date = new Date();
+            information.setCreateDate(date);
+            information.setPublishDate(date);
+            information.setStatus(1);
+            Column column = columnService.selectByCode(columnCode);
+            if(column!=null){
+                information.setColumnId(column.getId());
+            }else {
+                error(response, "栏目编码不存在");
+                return;
+            }
+            informationService.insert(information);
+            success(response, "新增成功");
+            return;
+        }else{
+            //todo updateBy
+            information.setUpdateBy(1);
+            information.setUpdateDate(new Date());
+            success(response, "更新成功");
+            return;
+        }
+
+
+
+
+    }
+
+
+    @RequestMapping(value = "/changeStatus",method = RequestMethod.POST)
+    public void changeStatus(
+            @RequestParam(value = "id")Integer id,
+            @RequestParam(value = "status")Integer status,
+            HttpServletRequest request,
+            HttpServletResponse response){
+        Information info = null;
+        if(id!=0){
+            info = informationService.selectInformationByPK(id);
+        }else {
+            return;
+        }
+        info.setStatus(status);
+        info.setUpdateDate(new Date());
+        //todo updateBy
+        info.setUpdateBy(1);
+        informationService.update(info);
+        success(response,"更新成功");
+    }
+
+
+    public boolean uploadFile(MultipartFile file,Integer id){
+        return true;
     }
 
     /** *//**保存文件
@@ -180,5 +246,8 @@ public class InformationController extends ErpBaseController {
         os.flush();
         os.close();
     }
+
+
+
 }
 

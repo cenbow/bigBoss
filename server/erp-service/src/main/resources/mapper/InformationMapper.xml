@@ -1,116 +1,133 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
-<mapper namespace="com.junyi.erp.domain.Information" >
-  <resultMap id="InformationMap" type="Information" >
-    <id column="ID" property="id" jdbcType="INTEGER" />
-    <result column="NAME" property="name" jdbcType="VARCHAR" />
-    <result column="LEVEL_ONE" property="levelOne" jdbcType="INTEGER" />
-    <result column="LEVEL_TWO" property="levelTwo" jdbcType="INTEGER" />
-    <result column="PUBLISH_DATE" property="publishDate" jdbcType="TIMESTAMP" />
-    <result column="STATUS" property="status" jdbcType="INTEGER" />
-    <result column="CREATE_BY" property="createBy" jdbcType="INTEGER" />
-    <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP" />
-    <result column="UPDATE_BY" property="updateBy" jdbcType="INTEGER" />
-    <result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP" />
-    <result column="COMPANY_ID" property="companyId" jdbcType="INTEGER" />
-    <result column="COLUMN_ID" property="companyId" jdbcType="INTEGER" />
-    <result column="TEXT" property="companyId" jdbcType="VARCHAR" />
-    <result column="URL" property="companyId" jdbcType="VARCHAR" />
-  </resultMap>
+<mapper namespace="com.junyi.erp.domain.Information">
+    <resultMap id="InformationMap" type="Information">
+        <id column="ID" property="id" jdbcType="INTEGER"/>
+        <result column="NAME" property="name" jdbcType="VARCHAR"/>
+        <result column="LEVEL_ONE" property="levelOne" jdbcType="INTEGER"/>
+        <result column="LEVEL_TWO" property="levelTwo" jdbcType="INTEGER"/>
+        <result column="PUBLISH_DATE" property="publishDate" jdbcType="TIMESTAMP"/>
+        <result column="STATUS" property="status" jdbcType="INTEGER"/>
+        <result column="CREATE_BY" property="createBy" jdbcType="INTEGER"/>
+        <result column="CREATE_DATE" property="createDate" jdbcType="TIMESTAMP"/>
+        <result column="UPDATE_BY" property="updateBy" jdbcType="INTEGER"/>
+        <result column="UPDATE_DATE" property="updateDate" jdbcType="TIMESTAMP"/>
+        <result column="COMPANY_ID" property="companyId" jdbcType="INTEGER"/>
+        <result column="COLUMN_ID" property="columnId" jdbcType="INTEGER"/>
+        <result column="TEXT" property="text" jdbcType="VARCHAR"/>
+        <result column="URL" property="url" jdbcType="VARCHAR"/>
+    </resultMap>
 
-  <sql id="Base_Column_List" >
+    <sql id="Base_Column_List">
     ID, NAME, LEVEL_ONE, LEVEL_TWO, PUBLISH_DATE, STATUS, CREATE_BY, CREATE_DATE,
     UPDATE_BY, UPDATE_DATE, COMPANY_ID, COLUMN_ID, TEXT, URL
   </sql>
 
-  <select id="selectInformationByPK" resultMap="InformationMap" parameterType="java.lang.Integer" >
-    select 
-    <include refid="Base_Column_List" />
-    from information
-    where ID = #{id,jdbcType=INTEGER}
-  </select>
+    <select id="selectInformationByPK" resultMap="InformationMap" parameterType="java.lang.Integer">
+        select
+        <include refid="Base_Column_List"/>
+        from information
+        where ID = #{id,jdbcType=INTEGER}
+    </select>
 
 
-  <delete id="deleteInformationByPK" parameterType="java.lang.Integer" >
+    <delete id="deleteInformationByPK" parameterType="java.lang.Integer">
     delete from information
     where ID = #{id,jdbcType=INTEGER}
   </delete>
 
 
-  <insert id="insertInformation" parameterType="Information" >
+    <insert id="insertInformation" parameterType="Information">
     insert into information (ID, NAME, LEVEL_ONE,
       LEVEL_TWO, PUBLISH_DATE, STATUS, CREATE_BY,
       CREATE_DATE, UPDATE_BY, UPDATE_DATE, COMPANY_ID,
       COLUMN_ID, TEXT, URL
       )
-    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{levelOne,jdbcType=INTEGER}, #{levelTwo,jdbcType=INTEGER}
+    values (#{id,jdbcType=INTEGER}, #{name,jdbcType=VARCHAR}, #{levelOne,jdbcType=INTEGER}, #{levelTwo,jdbcType=INTEGER},
       #{publishDate,jdbcType=TIMESTAMP}, #{status,jdbcType=INTEGER}, #{createBy,jdbcType=INTEGER},
       #{createDate,jdbcType=TIMESTAMP}, #{updateBy,jdbcType=INTEGER}, #{updateDate,jdbcType=TIMESTAMP},
       #{companyId,jdbcType=INTEGER},#{columnId,jdbcType=INTEGER}, #{text,jdbcType=VARCHAR}, #{url,jdbcType=VARCHAR}
       )
   </insert>
 
+    <update id="insertUrl" parameterType="Information">
+        update information
+        <set>
+            <if test="url != null">
+                URL = #{url,jdbcType=VARCHAR}
+            </if>
+        </set>
+        where ID = #{id,jdbcType=INTEGER}
+    </update>
 
-  <update id="updateInformation" parameterType="Information" >
-    update information
-    <set >
-      <if test="name != null" >
-        NAME = #{name,jdbcType=VARCHAR},
-      </if>
-      <if test="levelOne != null" >
-        LEVEL_ONE = #{levelOne,jdbcType=INTEGER},
-      </if>
-      <if test="levelTwo != null" >
-        LEVEL_TWO = #{levelTwo,jdbcType=INTEGER},
-      </if>
-      <if test="publishDate != null" >
-        PUBLISH_DATE = #{publishDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="status != null" >
-        STATUS = #{status,jdbcType=INTEGER},
-      </if>
-      <if test="createBy != null" >
-        CREATE_BY = #{createBy,jdbcType=INTEGER},
-      </if>
-      <if test="createDate != null" >
-        CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="updateBy != null" >
-        UPDATE_BY = #{updateBy,jdbcType=INTEGER},
-      </if>
-      <if test="updateDate != null" >
-        UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
-      </if>
-      <if test="companyId != null" >
-        COMPANY_ID = #{companyId,jdbcType=INTEGER},
-      </if>
-      <if test="columnId != null" >
-        COLUMN_ID = #{columnId,jdbcType=INTEGER},
-      </if>
-      <if test="url != null" >
-        URL = #{url,jdbcType=VARCHAR},
-      </if>
-      <if test="text != null" >
-        TEXT = #{text,jdbcType=VARCHAR},
-      </if>
-    </set>
-    where ID = #{id,jdbcType=VARCHAR}
-  </update>
+    <update id="deleteUrl" parameterType="Integer">
+        update information
+        set URL = NULL
+        where ID = #{id,jdbcType=INTEGER}
+    </update>
 
-  <select id="selectInformationByFiltersPage" resultMap="InformationMap" parameterType="Map">
-    select i.*,c.name companyName,c.code companyCode,one.name levelOneName,two.name levelTwoName,a.name createName
-    from information i
-    LEFT JOIN category one on i.LEVEL_ONE = one.id
-    LEFT JOIN category two on i.LEVEL_TWO = two.id
-    LEFT JOIN company c on i.COMPANY_ID = c.id
-    LEFT JOIN account a on i.CREATE_BY = a.id
 
-    <where>
-      <if test="text != null and text != ''">
-        ( i.NAME LIKE CONCAT ('%', #{text,jdbcType=VARCHAR}, '%')
-        )
-      </if>
-    </where>
-    order by i.ID asc
-  </select>
+
+    <update id="updateInformation" parameterType="Information">
+        update information
+        <set>
+            <if test="name != null">
+                NAME = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="levelOne != null">
+                LEVEL_ONE = #{levelOne,jdbcType=INTEGER},
+            </if>
+            <if test="levelTwo != null">
+                LEVEL_TWO = #{levelTwo,jdbcType=INTEGER},
+            </if>
+            <if test="publishDate != null">
+                PUBLISH_DATE = #{publishDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="status != null">
+                STATUS = #{status,jdbcType=INTEGER},
+            </if>
+            <if test="createBy != null">
+                CREATE_BY = #{createBy,jdbcType=INTEGER},
+            </if>
+            <if test="createDate != null">
+                CREATE_DATE = #{createDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="updateBy != null">
+                UPDATE_BY = #{updateBy,jdbcType=INTEGER},
+            </if>
+            <if test="updateDate != null">
+                UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="companyId != null">
+                COMPANY_ID = #{companyId,jdbcType=INTEGER},
+            </if>
+            <if test="columnId != null">
+                COLUMN_ID = #{columnId,jdbcType=INTEGER},
+            </if>
+            <if test="url != null">
+                URL = #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="text != null">
+                TEXT = #{text,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where ID = #{id,jdbcType=VARCHAR}
+    </update>
+
+    <select id="selectInformationByFiltersPage" resultMap="InformationMap" parameterType="Map">
+        select i.*,c.name companyName,c.code companyCode,one.name levelOneName,two.name levelTwoName,a.name createName
+        from information i
+        LEFT JOIN category one on i.LEVEL_ONE = one.id
+        LEFT JOIN category two on i.LEVEL_TWO = two.id
+        LEFT JOIN company c on i.COMPANY_ID = c.id
+        LEFT JOIN account a on i.CREATE_BY = a.id
+
+        <where>
+            <if test="text != null and text != ''">
+                ( i.NAME LIKE CONCAT ('%', #{text,jdbcType=VARCHAR}, '%')
+                )
+            </if>
+        </where>
+        order by i.ID asc
+    </select>
 </mapper>

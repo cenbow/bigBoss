@@ -10,5 +10,11 @@ public interface InformationService {
 
 	void update(Information information);
 
+	Information selectInformationByPK(Integer pk);
+
 	Page<Information> selectInformationByFiltersPage(PageRequest request);
+
+	void insertUrl(Information information);
+
+	void deleteUrl(Integer id);
 }

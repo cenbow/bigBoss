@@ -22,7 +22,8 @@ Ext.define('InformationMgmt.view.MainViewportViewModel', {
       text: ""
     },
     addFlag: true,  // 添加/修改窗口标志位
-    mainViewportController: {} // 窗口保存回调
+    mainViewportController: {}, // 窗口保存回调，
+    columnCode: '0001'
   },
 
   stores: {

@@ -45,26 +45,27 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
     if (!formCmp.isValid()) {
       return;
     }
+
     formCmp.getForm().submit({
-      url: FACADE_URL+'/information/upload',
+      url: FACADE_URL+'/information/update',
       waitTitle : '提示',//标题
       waitMsg : '正在提交数据请稍后...',//提示信息
       success : function(form, action) {
         var flag=action.result.success;
         if(flag) {
-          Ext.getStore('GridStore').reload();
+          TipsUtil.showTips('提示', action.result.data,TipsUtil.WARING);
+          var viewportCtr = viewCtr.getViewModel().get('mainViewportController');
+          viewportCtr.getViewModel().getStore('gridstore').load();
           viewCtr.getView().close();
         } else {
-          TipsUtil.showTips('错误', json.result.error.message);
+          TipsUtil.showTips('错误', action.result.data);
         }
       },
       failure : function(form,action) {
         TipsUtil.showTips('错误', action.result.error.message||'提交失败');
       }
     });
-
   },
-
 
   /**
    * 取消
@@ -81,10 +82,12 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
         view = viewCtr.getView();
     var store = viewModel.getStore('categorybyupclassidcomboboxstore');
     if (store) {
-      Ext.getCmp('levelTwo').clearValue();
-      store.load({
-        params: {id: value}
-      });
+      if(!viewModel.get('isView')){
+        Ext.getCmp('levelTwo').clearValue();
+        store.load({
+          params: {id: value}
+        });
+      }
     }
   }
 

@@ -54,7 +54,8 @@ Ext.define('InformationMgmt.view.InfoDialog', {
                     allowBlank: false,
                     name: 'name',
                     bind: {
-                        value: "{formData.name}"
+                        value: "{formData.name}",
+                        readOnly: '{isView}'
                     }
                 },
                 {
@@ -71,7 +72,8 @@ Ext.define('InformationMgmt.view.InfoDialog', {
                         change:'changeLevelOne'
                     },
                     bind: {
-                        value: '{formData.levelOne}'
+                        value: '{formData.levelOne}',
+                        readOnly: '{isView}'
                     }
                 },
                 {
@@ -85,27 +87,36 @@ Ext.define('InformationMgmt.view.InfoDialog', {
                     name: 'levelTwo',
                     bind: {
                         store: '{categorybyupclassidcomboboxstore}',
-                        value: '{formData.levelTwo}'
+                        value: '{formData.levelTwo}',
+                        readOnly: '{isView}'
                     }
                 },
-                {
+                /*{
                     xtype: 'filefield',
                     fieldLabel: '上传文件',
                     name: 'file'
-                },
+                },*/
                 {
                     xtype: 'htmleditor',
                     fieldLabel: '正文',
                     height: 200,
                     name: 'text',
                     bind: {
-                        value: '{formData.text}'
+                        value: '{formData.text}',
+                        readOnly: '{isView}'
                     }
                 },{
                     xtype:'textfield',
                     name:'columnCode',
                     value:"0001",
                     hidden:true
+                },{
+                    xtype:'textfield',
+                    name:'id',
+                    hidden:true,
+                    bind: {
+                        value: "{formData.id}"
+                    }
                 }
 
             ]

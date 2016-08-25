@@ -60,6 +60,9 @@ Ext.define('InformationMgmt.model.MainViewportGridModel', {
     },
     {
       name: 'columnId'
+    },
+    {
+      name: 'url'
     }
   ]
 });

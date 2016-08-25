@@ -33,7 +33,24 @@ public class InformationServiceImpl implements InformationService {
 	}
 
 	@Override
+	public Information selectInformationByPK(Integer pk) {
+		return myBatisDAO.findForObject("selectInformationByPK", pk);
+	}
+
+	@Override
 	public Page<Information> selectInformationByFiltersPage(PageRequest request) {
 		return myBatisDAO.findForPage("selectInformationByFiltersPage",request);
 	}
+
+	@Override
+	public void insertUrl(Information information) {
+		myBatisDAO.update("insertUrl", information);
+	}
+
+	@Override
+	public void deleteUrl(Integer id) {
+		myBatisDAO.update("deleteUrl",id);
+	}
+
+
 }

@@ -13,9 +13,9 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('InformationMgmt.view.InfoDialogViewController', {
+Ext.define('InformationMgmt.view.PDFDialogViewController', {
   extend: 'Ext.app.ViewController',
-  alias: 'controller.infodialog',
+  alias: 'controller.pdfdialog',
 
   requires: [
 
@@ -24,17 +24,11 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
   init: function() {
     this.getViewModel().set("formData", {
       id:'',
-      name:'',
-      levelOne:'',
-      levelTwo:'',
-      text:'',
-      columnId:'',
-      columnName: ''
     });
 
   },
   /**
-   * 更新
+   * 附件上传
    */
   onSaveButtonClick: function (button, e, eOpts) {
     var viewCtr = this,
@@ -45,15 +39,14 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
     if (!formCmp.isValid()) {
       return;
     }
-
     formCmp.getForm().submit({
-      url: FACADE_URL+'/information/update',
+      url: FACADE_URL+'/information/upload',
       waitTitle : '提示',//标题
       waitMsg : '正在提交数据请稍后...',//提示信息
       success : function(form, action) {
         var flag=action.result.success;
         if(flag) {
-          TipsUtil.showTips('提示', action.result.data,TipsUtil.WARING);
+          TipsUtil.showTips('提示', action.result.data, TipsUtil.WARING);
           var viewportCtr = viewCtr.getViewModel().get('mainViewportController');
           viewportCtr.getViewModel().getStore('gridstore').load();
           viewCtr.getView().close();
@@ -65,7 +58,9 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
         TipsUtil.showTips('错误', action.result.error.message||'提交失败');
       }
     });
+
   },
+
 
   /**
    * 取消
@@ -74,21 +69,6 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
     var viewCtr = this;
 
     viewCtr.getView().close();
-  },
-
-  changeLevelOne:function(field, value){
-    var viewCtr = this,
-        viewModel = viewCtr.getViewModel(),
-        view = viewCtr.getView();
-    var store = viewModel.getStore('categorybyupclassidcomboboxstore');
-    if (store) {
-      if(!viewModel.get('isView')){
-        Ext.getCmp('levelTwo').clearValue();
-        store.load({
-          params: {id: value}
-        });
-      }
-    }
   }
 
 });
