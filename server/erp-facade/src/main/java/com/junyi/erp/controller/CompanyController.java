@@ -21,6 +21,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -72,7 +73,9 @@ public class CompanyController extends ErpBaseController {
         if(vo != null){
             company = vo.convertVOToPO();
         }
-        company.setCreateBy(1);
+        HttpSession session = request.getSession();
+        Integer userId = (Integer) session.getAttribute("userId");
+        company.setCreateBy(userId);
         company.setCreateDate(new Date());
         companyService.insert(company);
         success(response, "新增成功");
@@ -98,6 +101,10 @@ public class CompanyController extends ErpBaseController {
         if(vo != null){
             company = vo.convertVOToPO();
         }
+        HttpSession session = request.getSession();
+        Integer userId = (Integer) session.getAttribute("userId");
+        company.setUpdateBy(userId);
+        company.setUpdateDate(new Date());
         companyService.update(company);
         success(response, "更新成功");
     }

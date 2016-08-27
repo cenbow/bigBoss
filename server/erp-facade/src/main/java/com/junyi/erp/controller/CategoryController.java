@@ -25,6 +25,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
@@ -114,9 +115,9 @@ public class CategoryController extends ErpBaseController {
             if (vo != null) {
                 category = vo.convertVOToPO();
                 category.setName(name);
-
-                //todo createBy 从前台获取
-                category.setCreateBy(1);
+                HttpSession session = request.getSession();
+                Integer userId = (Integer) session.getAttribute("userId");
+                category.setCreateBy(userId);
                 category.setCreateDate(new Date());
                 if (vo.getColumnCode() != null) {
                     Column column = columnService.selectByCode(vo.getColumnCode());
@@ -177,6 +178,10 @@ public class CategoryController extends ErpBaseController {
         if (vo != null) {
             category = vo.convertVOToPO();
         }
+        HttpSession session = request.getSession();
+        Integer userId = (Integer) session.getAttribute("userId");
+        category.setUpdateBy(userId);
+        category.setUpdateDate(new Date());
         categoryService.update(category);
         success(response, "更新成功");
 

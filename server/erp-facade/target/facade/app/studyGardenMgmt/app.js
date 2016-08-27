@@ -36,6 +36,7 @@ Ext.application({
     },
 
     launch: function () {
+
         Ext.create('StudyGardenMgmt.view.MainViewport');
     }
 

@@ -21,7 +21,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Created by xww on 2016/8/13.
@@ -83,7 +86,10 @@ public class AccountController extends ErpBaseController {
             account = vo.convertVOToPO();
         }
         account.setStatus(1);
-        account.setCreateBy(1);
+//        account.setCreateBy(1);
+        HttpSession session = request.getSession();
+        Integer userId = (Integer) session.getAttribute("userId");
+        account.setCreateBy(userId);
         account.setCreateDate(new Date());
         accountService.insert(account);
         success(response, "新增成功");
@@ -101,6 +107,26 @@ public class AccountController extends ErpBaseController {
         }
 
 
+    }
+
+    @RequestMapping(value = "/login", method = RequestMethod.POST)
+    public void login(
+            String username,
+            String password,
+            HttpServletRequest request,
+            HttpServletResponse response
+    ){
+        Map map = new HashMap();
+        map.put("username",username);
+        map.put("password",password);
+        Account account = accountService.selectByUNAndPs(map);
+        if(account == null){
+            error(response,"账号或密码错误，请重试");
+        }else {
+            HttpSession session = request.getSession();
+            session.setAttribute("userId", account.getId());
+            success(response,account.getId());
+        }
     }
 
 }

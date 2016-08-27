@@ -24,7 +24,10 @@ Ext.define('CategoryMgmt.view.MainViewportViewController', {
 
     init: function () {
         var store = Ext.create('CategoryMgmt.store.ColumnComboboxStore');
-
+        var login = JSON.parse(localStorage.getItem("login"));
+        if(!login){
+            window.location.replace(FACADE_URL+'/login.html');
+        }
     },
 
     /**

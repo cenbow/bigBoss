@@ -1,4 +1,3 @@
-<!DOCTYPE HTML>
 <html>
 <head>
   <meta charset="UTF-8">
@@ -6,6 +5,7 @@
   <script src="js/artTemplate/dist/template-native-debug.js"></script>
   <script src="js/extjs/ext-all-debug.js"></script>
   <script src="js/extjs/resources/classic/locale/locale-zh_CN.js"></script>
+  <script type="text/javascript" src="app/config.js"></script>
   <script src="app/index/app.js"></script>
   <link rel="stylesheet" type="text/css" href="css/app.css"/>
   <link rel="stylesheet" type="text/css" href="js/extjs/resources/classic/theme-gray/resources/theme-gray-all.css" />
@@ -28,12 +28,19 @@
   <div style="height:75px;">
     <div style="float:left;background-image: url('images/banner_left.jpg');width:400px;height:75px;"></div>
     <div style="float:right;background-image: url('images/banner_right.jpg');width:200px;height:75px;">
-      <div style="float:right;margin:18px 30px 0 0;"><a href="/passport-logout.html"></a></div>
-      <!--<div style="float:right;margin:18px 30px 0 0;"><a href="javascript:void(0)" target="_blank"></a></div>-->
+      <div style="float:right;margin:18px 30px 0 0;"><a href="javascript:logout()" target="_blank"></a></div>
+
     </div>
   </div>
 </div>
+<script type="text/javascript">
+  function logout(){
+    localStorage.setItem("login",false);
+    localStorage.setItem("accountId",null);
+    window.location.replace(FACADE_URL+'/login.html');
+  }
 
+</script>
 </body>
 </html>
 

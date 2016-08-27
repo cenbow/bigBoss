@@ -24,6 +24,7 @@ import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -145,8 +146,9 @@ public class InformationController extends ErpBaseController {
         //todo text不能存html代码
         information.setText(text);
         if(id == null || id == 0 ){
-            //todo createBy
-            information.setCreateBy(1);
+            HttpSession session = request.getSession();
+            Integer userId = (Integer) session.getAttribute("userId");
+            information.setCreateBy(userId);
             Date date = new Date();
             information.setCreateDate(date);
             information.setPublishDate(date);
@@ -162,9 +164,10 @@ public class InformationController extends ErpBaseController {
             success(response, "新增成功");
             return;
         }else{
-            //todo updateBy
             information.setId(id);
-            information.setUpdateBy(1);
+            HttpSession session = request.getSession();
+            Integer userId = (Integer) session.getAttribute("userId");
+            information.setUpdateBy(userId);
             information.setUpdateDate(new Date());
             informationService.update(information);
             success(response, "更新成功");
@@ -191,8 +194,9 @@ public class InformationController extends ErpBaseController {
         }
         info.setStatus(status);
         info.setUpdateDate(new Date());
-        //todo updateBy
-        info.setUpdateBy(1);
+        HttpSession session = request.getSession();
+        Integer userId = (Integer) session.getAttribute("userId");
+        info.setUpdateBy(userId);
         informationService.update(info);
         success(response,"更新成功");
     }

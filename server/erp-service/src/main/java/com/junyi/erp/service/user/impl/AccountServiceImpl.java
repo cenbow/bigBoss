@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.Map;
+
 @Service("accountService")
 @Transactional
 public class AccountServiceImpl implements AccountService {
@@ -32,6 +34,11 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public Account selectByPk(Integer pk) {
 		return myBatisDAO.findForObject("selectAccountByPK", pk);
+	}
+
+	@Override
+	public Account selectByUNAndPs(Map map) {
+		return myBatisDAO.findForObject("selectByUNAndPs",map);
 	}
 
 	@Override

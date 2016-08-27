@@ -44,6 +44,11 @@ Ext.application({
   init: function() {
     var me = this;
     me.setDefaultToken('all');
+
+    var login = JSON.parse(localStorage.getItem("login"));
+    if(!login){
+      window.location.replace(FACADE_URL+'/login.html');
+    }
   }
 
 });

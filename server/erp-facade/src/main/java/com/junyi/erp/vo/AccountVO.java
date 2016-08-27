@@ -8,6 +8,7 @@ import com.junyi.erp.domain.Account;
  * Created by xww on 2016/8/13.
  */
 public class AccountVO extends Account implements BaseVO {
+
     @Override
     public void convertPOToVO(Object o) {
         if(o instanceof Account){

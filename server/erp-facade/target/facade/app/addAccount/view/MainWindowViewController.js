@@ -18,6 +18,10 @@ Ext.define('addAccount.view.MainWindowViewController', {
   alias: 'controller.mainwindow',
 
   init: function () {
+    var login = JSON.parse(localStorage.getItem("login"));
+    if(!login){
+      window.location.replace(FACADE_URL+'/login.html');
+    }
   },
 
   /**
@@ -35,6 +39,7 @@ Ext.define('addAccount.view.MainWindowViewController', {
     var formData = formCmp.getForm().getValues();
     formData.companyName = viewModel.get('companyName');
     formData.roleName = viewModel.get('roleName');
+    //formData.userId = JSON.parse(localStorage.getItem('accountId'));
     var url = FACADE_URL+'/account/add';
       Ext.Ajax.request({
         method: 'POST',

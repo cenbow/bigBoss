@@ -23,7 +23,11 @@ Ext.define('StudyGardenMgmt.view.MainViewportViewController', {
 
   init: function () {
     var store = Ext.create('StudyGardenMgmt.store.CategoryComboboxStore');
-
+    var login = JSON.parse(localStorage.getItem("login"));
+    console.log(login)
+    if(!login){
+      window.location.replace(FACADE_URL+'/login.html');
+    }
   },
 
   /**

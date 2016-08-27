@@ -4,6 +4,8 @@ import com.junyi.ecommerce.core.mybatis.page.Page;
 import com.junyi.ecommerce.core.mybatis.page.PageRequest;
 import com.junyi.erp.domain.Account;
 
+import java.util.Map;
+
 public interface AccountService {
 
 	void insert(Account account);
@@ -11,6 +13,8 @@ public interface AccountService {
 	void update(Account account);
 
 	Account selectByPk(Integer pk);
+
+	Account selectByUNAndPs(Map map);
 
 	void deleteByPk(Integer pk);
 

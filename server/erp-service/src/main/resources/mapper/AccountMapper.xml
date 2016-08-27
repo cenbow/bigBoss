@@ -30,6 +30,14 @@
     from account
     where ID = #{id,jdbcType=INTEGER}
   </select>
+
+  <select id="selectByUNAndPs" resultMap="AccountMap" parameterType="Map">
+    select
+    <include refid="Base_Column_List" />
+    from account
+    where USER_NAME = #{username,jdbcType=VARCHAR} AND PASSWORD = #{password,jdbcType=VARCHAR} AND ROLE_ID = 1
+  </select>
+
   <delete id="deleteAccountByPK" parameterType="java.lang.Integer" >
     delete from account
     where ID = #{id,jdbcType=INTEGER}
