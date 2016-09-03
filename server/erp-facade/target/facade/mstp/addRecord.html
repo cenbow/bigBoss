@@ -51,6 +51,49 @@
                 </button>
                 <a class="navbar-brand" href="index.html">BIG&nbsp;&nbsp;BOSS&nbsp;&nbsp;CMS</a>
             </div>
+            <div class="navbar-collapse collapse ">
+                <ul class="nav navbar-nav">
+                    <li ><a href="index.html">首页</a></li>
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                           data-close-others="false" onclick="showPage(1)">信息披露 <b class=" icon-angle-down"></b></a>
+                        <ul id="infoDisclosure" class="dropdown-menu">
+
+                        </ul>
+                    </li>
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                           data-close-others="false" onclick="showPage(2)">学习园地 <b class=" icon-angle-down"></b></a>
+                        <ul id="infoStudy" class="dropdown-menu">
+
+                        </ul>
+                    </li>
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                           data-close-others="false" onclick="showPage(3)">市场资讯 <b class=" icon-angle-down"></b></a>
+                        <ul id="infoMarket" class="dropdown-menu">
+
+                        </ul>
+                    </li>
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                           data-close-others="false" onclick="showPage(4)">通知公告 <b class=" icon-angle-down"></b></a>
+                        <ul id="infoNotice" class="dropdown-menu">
+
+                        </ul>
+                    </li>
+                    <div style=" position: relative;float: left;margin-left: 40px;padding-top:42px;cursor:pointer">
+                        <a id="account" href="#" onclick="gotoAccount()"></a>
+                    </div>
+                    <div id="headAction" style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer" >
+
+                    </div>
+                    <div style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer" onclick="logout()">
+                        <img src="../images/exit.png" style="width: 20px;height: 20px;">
+                    </div>
+
+                </ul>
+            </div>
         </div>
     </div>
 </header>
@@ -61,12 +104,12 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-4">
-                <h1>编辑信息</h1>
+                <h1>新增信息</h1>
             </div>
             <div class="col-lg-8 col-sm-8">
                 <ol class="breadcrumb pull-right">
                     <li><a href="index.html">首页</a></li>
-                    <li class="active">编辑信息</li>
+                    <li class="active">新增信息</li>
                 </ol>
             </div>
         </div>
@@ -136,7 +179,7 @@
 <!--container end-->
 
 <!--footer start-->
-<footer class="footer" style="position:fixed;bottom:0;height: 114px;z-index: 1000">
+<footer class="footer" style="position:fixed;bottom:0;height: 80px;padding: 10px 0;z-index: 1000">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-3">
@@ -146,7 +189,8 @@
                 </address>
             </div>
             <div class="col-lg-5 col-sm-5" style="position: absolute;right: 0;">
-                建议使用浏览器： Chrome、Firefox、IE8+ (标准模式)
+                Copyright©1999-2015 All Rights Reserved   版权所有，未经授权，禁止转载
+                <br>备案序号:京ICP备05047877号    <br>建议使用浏览器： Chrome、Firefox、IE8+ (标准模式)   分辨率1024*768”
             </div>
             <div class="col-lg-3 col-sm-3 col-lg-offset-1">
 
@@ -170,9 +214,11 @@
 <script src="js/common-scripts.js"></script>
 
 <script src="../app/config.js"></script>
-
+<script src="js/common.js"></script>
 
 <script>
+    loadHead();
+
     var levelOne = 0;
     var levelTwo = 0;
     var code = "";

@@ -66,7 +66,7 @@ p {line-height: 22px}
 
 .header-frontend .navbar-collapse  ul.navbar-nav {
     float: right;
-    margin-right: 0;
+    margin-right: 45px;
 }
 
 .header-frontend .navbar-default{
@@ -116,7 +116,7 @@ p {line-height: 22px}
 }
 
 .header-frontend .navbar-nav > li  {
-    padding-left: 30px;
+    padding-left: 20px;
     padding-bottom: 30px;
     padding-top: 30px;
 }
@@ -134,6 +134,8 @@ p {line-height: 22px}
     -ms-transition: all .3s ease;
     -o-transition: all .3s ease;
     transition: all .3s ease;
+
+    font-weight: 600;
 }
 
 
@@ -1814,4 +1816,21 @@ input, textarea, select {
     width:167px;
     /*width: 13.4%;*/
     margin: 0 4% 0 0;
+}
+
+
+.overText{
+    overflow: hidden; /*自动隐藏文字*/
+    text-overflow: ellipsis;/*文字隐藏后添加省略号*/
+    white-space: nowrap;/*强制不换行*/
+    width: 20em;/*不允许出现半汉字截断*/
+    width:625px
+}
+
+.overText2{
+    width:90%;
+    white-space:nowrap;
+    text-overflow:ellipsis;
+    -o-text-overflow:ellipsis;
+    overflow: hidden;
 }

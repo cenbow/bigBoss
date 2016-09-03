@@ -27,6 +27,7 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet"/>
 
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -36,12 +37,13 @@
     <script src="js/index.js"></script>
     <script src="../app/config.js"></script>
     <script src="js/common.js"></script>
+
 </head>
 
 <body>
 <!--header start-->
 <header class="header-frontend">
-    <div class="navbar navbar-default navbar-static-top" id="headAction">
+    <div class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -56,55 +58,45 @@
                     <li class="active"><a href="index.html">首页</a></li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">信息披露 <b class=" icon-angle-down"></b></a>
+                           data-close-others="false" onclick="showPage(1)">信息披露 <b class=" icon-angle-down"></b></a>
                         <ul id="infoDisclosure" class="dropdown-menu">
 
                         </ul>
                     </li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">学习园地 <b class=" icon-angle-down"></b></a>
+                           data-close-others="false" onclick="showPage(2)">学习园地 <b class=" icon-angle-down"></b></a>
                         <ul id="infoStudy" class="dropdown-menu">
 
                         </ul>
                     </li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">市场资讯 <b class=" icon-angle-down"></b></a>
+                           data-close-others="false" onclick="showPage(3)">市场资讯 <b class=" icon-angle-down"></b></a>
                         <ul id="infoMarket" class="dropdown-menu">
 
                         </ul>
                     </li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">通知公告 <b class=" icon-angle-down"></b></a>
+                           data-close-others="false" onclick="showPage(4)">通知公告 <b class=" icon-angle-down"></b></a>
                         <ul id="infoNotice" class="dropdown-menu">
 
                         </ul>
                     </li>
-                    <!--<li class="dropdown ">
-                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0" data-close-others="false">Feature <b class=" icon-angle-down"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="typography.html">Typography</a></li>
-                            <li><a href="button.html">Buttons</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="price.html">Price</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><input type="text" placeholder=" Search" class="form-control search"></li>-->
+                    <div style=" position: relative;float: left;margin-left: 40px;padding-top:42px;cursor:pointer">
+                        <a id="account" href="#" onclick="gotoAccount()"></a>
+                    </div>
+                    <div id="headAction" style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer" >
+
+                    </div>
+                    <div style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer" onclick="logout()">
+                        <img src="../images/exit.png" style="width: 20px;height: 20px;">
+                    </div>
+
                 </ul>
             </div>
         </div>
-        <div style=" position: absolute; top: 42px; right: 72px;">
-            <a id="account" href="#" onclick="gotoAccount()"></a>
-        </div>
-        <div style="position: absolute;top: 42px;right: 115px;cursor:pointer" onclick="logout()">
-            <img src="../images/exit.png" style="width: 20px;height: 20px;">
-        </div>
-
-
     </div>
 </header>
 <!--header end-->
@@ -310,7 +302,7 @@
 
             <!--<p>Professional html Template Perfect for Admin Dashboard</p>-->
         </div>
-        <div class="col-lg-4 col-sm-4" style="width: 50%">
+        <div class="col-lg-4 col-sm-4" style="width: 50%;cursor:pointer" onclick="showPage(1)">
             <section id="about">
                 <div class="f-box" style="min-height: 80px;padding: 10px">
                     <!--<i class=" icon-desktop" style=""></i>-->
@@ -320,7 +312,7 @@
                     laudantium, totam rem aperiam, eaque ipsa quae ablic jiener.</p>-->
             </section>
         </div>
-        <div class="col-lg-4 col-sm-4" style="width: 50%">
+        <div class="col-lg-4 col-sm-4" style="width: 50%;cursor:pointer" onclick="showPage(2)">
             <section id="study">
                 <div class="f-box " style="min-height: 80px;padding: 10px">
                     <h2 style="font-weight: 800">学习园地</h2>
@@ -338,7 +330,7 @@
             <!--<p>Professional html Template Perfect for Admin Dashboard</p>-->
         </div>
 
-        <div class="col-lg-4 col-sm-4" style="width: 50%">
+        <div class="col-lg-4 col-sm-4" style="width: 50%;cursor:pointer" onclick="showPage(3)">
             <section id="market">
                 <div class="f-box" style="min-height: 80px;padding: 10px">
                     <h2 style="font-weight: 800">市场资讯</h2>
@@ -347,7 +339,7 @@
             </section>
         </div>
 
-        <div class="col-lg-4 col-sm-4" style="width: 50%">
+        <div class="col-lg-4 col-sm-4" style="width: 50%;cursor:pointer" onclick="showPage(4)">
             <section id="notice">
                 <div class="f-box" style="min-height: 80px;padding: 10px">
                     <h2 style="font-weight: 800">通知公告</h2>
@@ -761,24 +753,6 @@
 
 
 <script>
-    var accountId;
-    $(function () {
-        var login = JSON.parse(localStorage.getItem("login"));
-        var roleId = JSON.parse(localStorage.getItem("roleId"));
-        if (!login || !roleId) {
-            window.location.replace(FACADE_URL + '/login.html');
-        }
-        accountId = JSON.parse(localStorage.getItem("accountId"));
-
-        if(roleId != 1){
-            $("#headAction").append('<button class="btn btn-danger" style="position: absolute;top: 35px;right: 5px;cursor:pointer" type="button" onclick="publish()">发布</button>')
-        }
-        else {
-            $("#headAction").append(' <div style="position: absolute;top: 42px;right: 143px;cursor:pointer" onclick="changeHoutai()"><img src="../images/change.png" style="width: 20px;height: 20px;"> </div>')
-        }
-
-
-    })
 
     loadHead();
 

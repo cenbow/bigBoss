@@ -48,6 +48,7 @@
     <link href="css/about.css" rel="stylesheet">
     <script src="../app/config.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/common.js"></script>
 
 </head>
 
@@ -66,34 +67,45 @@
             </div>
             <div class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav">
-                    <li><a href="index.html">首页</a></li>
-                    <li class="dropdown active">
+                    <li ><a href="index.html">首页</a></li>
+                    <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">信息披露 <b class=" icon-angle-down"></b></a>
+                           data-close-others="false" onclick="showPage(1)">信息披露 <b class=" icon-angle-down"></b></a>
                         <ul id="infoDisclosure" class="dropdown-menu">
+
                         </ul>
                     </li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">学习园地 <b class=" icon-angle-down"></b></a>
+                           data-close-others="false" onclick="showPage(2)">学习园地 <b class=" icon-angle-down"></b></a>
                         <ul id="infoStudy" class="dropdown-menu">
 
                         </ul>
                     </li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">市场资讯 <b class=" icon-angle-down"></b></a>
+                           data-close-others="false" onclick="showPage(3)">市场资讯 <b class=" icon-angle-down"></b></a>
                         <ul id="infoMarket" class="dropdown-menu">
 
                         </ul>
                     </li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">通知公告 <b class=" icon-angle-down"></b></a>
+                           data-close-others="false" onclick="showPage(4)">通知公告 <b class=" icon-angle-down"></b></a>
                         <ul id="infoNotice" class="dropdown-menu">
 
                         </ul>
                     </li>
+                    <div style=" position: relative;float: left;margin-left: 40px;padding-top:42px;cursor:pointer">
+                        <a id="account" href="#" onclick="gotoAccount()"></a>
+                    </div>
+                    <div id="headAction" style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer" >
+
+                    </div>
+                    <div style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer" onclick="logout()">
+                        <img src="../images/exit.png" style="width: 20px;height: 20px;">
+                    </div>
+
                 </ul>
             </div>
         </div>
@@ -219,6 +231,8 @@
 
 
 <script>
+    loadHead();
+
     function showInfoDisclosure(levelOne) {
         localStorage.setItem("infoLevelOne", JSON.stringify(levelOne));
         window.location.href = 'about.html';
@@ -253,17 +267,22 @@
             var fileName = infoDetail.url;
             var str = fileName.substr(fileName.indexOf('-') + 1) + '.pdf';
             var href = FACADE_URL + '/generic/web/viewer.html?file=' + FACADE_URL + '/information/download/' + fileName;
-            $('#url').append('<a href=" ' + href + ' " target="_blank"><image style="width:20px" src="../images/pdf_pic.jpg"/><span style="color: red">' + str + '</span></a>')
+            $('#url').append('<a href=" ' + href + ' " target="_blank"><image style="width:20px" src="../images/pdf_pic.png"/><span style="color: red">' + str + '</span></a>')
         }
 
+
         if (infoDetail.columnId == 1) {
-            $('.twoName').html('信息披露')
+            $('.twoName').html('<a href="about.html">信息披露</a>')
+            $('#infoDisclosure').parent().addClass('active');
         } else if (infoDetail.columnId == 2) {
-            $('.twoName').html('学习园地')
+            $('.twoName').html('<a href="study.html">学习园地</a>')
+            $('#infoStudy').parent().addClass('active');
         } else if (infoDetail.columnId == 3) {
-            $('.twoName').html('市场资讯')
+            $('.twoName').html('<a href="market.html">市场资讯</a>')
+            $('#infoMarket').parent().addClass('active');
         } else if (infoDetail.columnId == 4) {
-            $('.twoName').html('通知公告')
+            $('.twoName').html('<a href="notice.html">通知公告</a>')
+            $('#infoNotice').parent().addClass('active');
         }
     })
 

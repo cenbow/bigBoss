@@ -61,7 +61,7 @@
 <body>
 <!--header start-->
 <header class="header-frontend">
-    <div class="navbar navbar-default navbar-static-top" id="headAction">
+    <div class="navbar navbar-default navbar-static-top">
         <div class="container">
             <div class="navbar-header">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
@@ -76,42 +76,47 @@
                     <li><a href="index.html">首页</a></li>
                     <li class="dropdown active">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">信息披露 <b class=" icon-angle-down"></b></a>
+                           data-close-others="false" onclick="showPage(1)">信息披露 <b class=" icon-angle-down"></b></a>
                         <ul id="infoDisclosure" class="dropdown-menu">
+
                         </ul>
                     </li>
-                    <!--<li class="active"><a href="about.html"></a></li>-->
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">学习园地 <b class=" icon-angle-down"></b></a>
+                           data-close-others="false" onclick="showPage(2)">学习园地 <b class=" icon-angle-down"></b></a>
                         <ul id="infoStudy" class="dropdown-menu">
 
                         </ul>
                     </li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">市场资讯 <b class=" icon-angle-down"></b></a>
+                           data-close-others="false" onclick="showPage(3)">市场资讯 <b class=" icon-angle-down"></b></a>
                         <ul id="infoMarket" class="dropdown-menu">
 
                         </ul>
                     </li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">通知公告 <b class=" icon-angle-down"></b></a>
+                           data-close-others="false" onclick="showPage(4)">通知公告 <b class=" icon-angle-down"></b></a>
                         <ul id="infoNotice" class="dropdown-menu">
 
                         </ul>
                     </li>
+                    <div style=" position: relative;float: left;margin-left: 40px;padding-top:42px;cursor:pointer">
+                        <a id="account" href="#" onclick="gotoAccount()"></a>
+                    </div>
+                    <div id="headAction"
+                         style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer">
+
+                    </div>
+                    <div style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer"
+                         onclick="logout()">
+                        <img src="../images/exit.png" style="width: 20px;height: 20px;">
+                    </div>
+
                 </ul>
             </div>
         </div>
-        <div style=" position: absolute; top: 42px; right: 72px;">
-            <a id="account" href="#" onclick="gotoAccount()"></a>
-        </div>
-        <div style="position: absolute;top: 42px;right: 115px;cursor:pointer" onclick="logout()">
-            <img src="../images/exit.png" style="width: 20px;height: 20px;">
-        </div>
-
     </div>
 </header>
 <!--header end-->
@@ -163,7 +168,7 @@
         </div>
         <div class="ax_default table_cell" style="position: relative">
             <div style="" class="text" style="visibility: visible;">
-                <a href="informationDetail.html"><p><span style="color:#8F000B;">■</span><span>  </span></p></a>
+                <a href="informationDetail.html"><p><span style="color:#ff6c60;">■</span><span>  </span></p></a>
 
             </div>
 
@@ -186,8 +191,8 @@
                 </address>
             </div>
             <div class="col-lg-5 col-sm-5" style="position: absolute;right: 0;">
-                Copyright©1999-2015 All Rights Reserved   版权所有，未经授权，禁止转载
-                <br>备案序号:京ICP备05047877号    <br>建议使用浏览器： Chrome、Firefox、IE8+ (标准模式)   分辨率1024*768”
+                Copyright©1999-2015 All Rights Reserved 版权所有，未经授权，禁止转载
+                <br>备案序号:京ICP备05047877号 <br>建议使用浏览器： Chrome、Firefox、IE8+ (标准模式) 分辨率1024*768”
             </div>
             <div class="col-lg-3 col-sm-3 col-lg-offset-1">
 
@@ -199,33 +204,19 @@
 
 
 <script>
-    $(function(){
-        var login = JSON.parse(localStorage.getItem("login"));
-        var roleId = JSON.parse(localStorage.getItem("roleId"));
-        if(!login || !roleId ){
-            window.location.replace(FACADE_URL+'/login.html');
-        }
-
-        if(roleId != 1){
-            $("#headAction").append('<button class="btn btn-danger" style="position: absolute;top: 35px;right: 5px;cursor:pointer" type="button" onclick="publish()">发布</button>')
-        }else {
-            $("#headAction").append(' <div style="position: absolute;top: 42px;right: 143px;cursor:pointer" onclick="changeHoutai()"><img src="../images/change.png" style="width: 20px;height: 20px;"> </div>')
-        }
-    })
-
     jQuery(document).ready(function () {
         $.datetimepicker.setLocale('ch');//设置中文
         $('#datetimepicker1').datetimepicker({
             lang: 'ch',
             timepicker: false,
             format: 'Y-m-d',
-            formatDate: 'Y-m-d',
+            formatDate: 'Y-m-d'
         });
         $('#datetimepicker2').datetimepicker({
             lang: 'ch',
             timepicker: false,
             format: 'Y-m-d',
-            formatDate: 'Y-m-d',
+            formatDate: 'Y-m-d'
         });
     });
 
@@ -282,25 +273,26 @@
                         var dateStr = publishDate.getFullYear() + '-' + (parseInt(publishDate.getMonth()) + 1) + '-' + publishDate.getDay();
                         if (item.text) {
                             $('#list').append('<div class="ax_default table_cell"">' +
-                                    '<div class="text" style="visibility: visible;"> ' +
-                                    '<a href="#" onclick="goToInfoDetail(this)" data-rel="'+ item.id+'">' +
-                                    '<p><span style="color:#8F000B;">■</span><span style="color: #999">'+ '&lt;' +item.companyName + '&gt;'+ item.name + ' </span></p></a>' +
-                                    '</div><div style="position: absolute;right: 10px;top: 4px">' +
-                                    '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
+                            '<div class="text" style="visibility: visible;cursor:pointer" onclick="goToInfoDetail(this)" data-rel="' + item.id + '"> ' +
+                            '<div style="width: 20px;float: left;"><p><span style="color:#ff6c60;">■</span></div>' +
+                            '<div class="overText" style="float: left;"><span style="color: #999">' + '[' + item.companyName + ']&nbsp;' + item.name + ' </span></div></p></a>' +
+                            '</div><div style="position: absolute;right: 10px;top: 4px">' +
+                            '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
                         } else {
-                            if(item.url){
+                            if (item.url) {
                                 $('#list').append('<div class="ax_default table_cell">' +
-                                        '<div class="text" style="visibility: visible;"> ' +
-                                        '<a href=" ' + href + ' " target="_blank">' +
-                                        '<p><span style="color:#8F000B;">■</span><span style="color: #999"> '+ '&lt;'+item.companyName + '&gt;' + item.name + ' </span><image style="width:20px" src="../images/pdf_pic.jpg"/></p></a>' +
-                                        '</div><div style="position: absolute;right: 10px;top: 4px">' +
-                                        '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
-                            }else{
+                                '<div class="text" style="visibility: visible;cursor:pointer"> ' +
+                                '<div style="width: 20px;float: left;"><p><span style="color:#ff6c60;">■</span></div>' +
+                                '<div class="overText" style="float: left;" ><a href=" ' + href + ' " target="_blank"><span style="color: #999"> ' + '[' + item.companyName + ']&nbsp;' + item.name + ' </span></a></div><image style="width:20px" src="../images/pdf_pic.png"/></p></a>' +
+                                '</div><div style="position: absolute;right: 10px;top: 4px">' +
+                                '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
+                            } else {
                                 $('#list').append('<div class="ax_default table_cell">' +
-                                        '<div class="text" style="visibility: visible;"> ' +
-                                        '<p><span style="color:#8F000B;">■</span><span style="color: #999"> '+ '&lt;'+item.companyName + '&gt;' + item.name + ' </span></p>' +
-                                        '</div><div style="position: absolute;right: 10px;top: 4px">' +
-                                        '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
+                                '<div class="text" style="visibility: visible;cursor:pointer"> ' +
+                                '<div style="width: 20px;float: left;"><p><span style="color:#ff6c60;">■</span></div>' +
+                                '<div class="overText" style="float: left;"><span style="color: #999"> ' + '[' + item.companyName + ']&nbsp;' + item.name + ' </span></div></p>' +
+                                '</div><div style="position: absolute;right: 10px;top: 4px">' +
+                                '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
                             }
 
                         }
@@ -314,14 +306,14 @@
         })
     }
 
-    function goToInfoDetail(el){
+    function goToInfoDetail(el) {
         var id = $(el).attr('data-rel');
         var data = localStorage.getItem("infoDisclosure");
         var array = JSON.parse(data);
 
-        $.each(array,function(i,item){
-            if(item.id == id){
-                localStorage.setItem("infoDetail",JSON.stringify(item));
+        $.each(array, function (i, item) {
+            if (item.id == id) {
+                localStorage.setItem("infoDetail", JSON.stringify(item));
                 return false;
             }
         })
@@ -346,6 +338,7 @@
                 temp.push(item.levelOne);
                 $('#infoDisclosure').append('<li><a onclick="showInfoDisclosure(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
             })
+
         }
 
         loadHead();
@@ -353,13 +346,13 @@
 
         if (list.length > 0) {
             $.each(list, function (i, item) {
-                if(item.levelTwo) {
+                if (item.levelTwo) {
                     $('#filters').append('<li data-ref="' + item.levelTwo + '"><a onclick="selectLevelTwo(this)">' + item.levelTwoName + '</a></li>')
                 }
                 /*$('#list').append('<div class="ax_default table_cell">' +
-                        '<div class="text" style="visibility: visible;"> ' +
-                        '<p><span style="color:#8F000B;">■</span>' +
-                        '<span> ' + item.name + '</span></p></div></div>')*/
+                 '<div class="text" style="visibility: visible;"> ' +
+                 '<p><span style="color:#ff6c60;">■</span>' +
+                 '<span> ' + item.name + '</span></p></div></div>')*/
             })
         }
     })
