@@ -44,35 +44,14 @@
             <if test="levelTwo != null">
                 AND LEVEL_TWO = #{levelTwo,jdbcType=INTEGER}
             </if>
-            <if test="publishDate != null">
-                AND PUBLISH_DATE = #{publishDate,jdbcType=TIMESTAMP}
-            </if>
             <if test="status != null">
                 AND STATUS = #{status,jdbcType=INTEGER}
             </if>
-            <if test="createBy != null">
-                AND CREATE_BY = #{createBy,jdbcType=INTEGER}
+            <if test="startDate != null">
+                AND PUBLISH_DATE &gt;= #{startDate,jdbcType=TIMESTAMP}
             </if>
-            <if test="createDate != null">
-                AND CREATE_DATE = #{createDate,jdbcType=TIMESTAMP}
-            </if>
-            <if test="updateBy != null">
-                AND UPDATE_BY = #{updateBy,jdbcType=INTEGER}
-            </if>
-            <if test="updateDate != null">
-                AND UPDATE_DATE = #{updateDate,jdbcType=TIMESTAMP}
-            </if>
-            <if test="companyId != null">
-                AND COMPANY_ID = #{companyId,jdbcType=INTEGER}
-            </if>
-            <if test="columnId != null">
-                AND COLUMN_ID = #{columnId,jdbcType=INTEGER}
-            </if>
-            <if test="url != null">
-                AND URL = #{url,jdbcType=VARCHAR}
-            </if>
-            <if test="text != null">
-                AND TEXT = #{text,jdbcType=VARCHAR}
+            <if test="endDate != null">
+                AND PUBLISH_DATE &lt;= #{endDate,jdbcType=TIMESTAMP}
             </if>
         </where>
 

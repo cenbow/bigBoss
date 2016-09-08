@@ -22,10 +22,6 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <processorPath useClasspath="true" />
-        <module name="erp-assist" />
-        <module name="erp-domain" />
-        <module name="erp-facade" />
-        <module name="erp-service" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

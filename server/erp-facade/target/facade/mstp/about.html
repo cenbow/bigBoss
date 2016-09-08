@@ -24,16 +24,37 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet"/>
 
-
-
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
     <script src="js/respond.min.js"></script>
     <![endif]-->
+
+
+    <!-- js placed at the end of the document so the pages load faster -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="js/hover-dropdown.js"></script>
+    <script type="text/javascript" src="assets/bxslider/jquery.bxslider.js"></script>
+    <script defer src="js/jquery.flexslider.js"></script>
+
+    <script src="js/jquery.easing.min.js"></script>
+    <script src="js/link-hover.js"></script>
+
+    <!--common script for all pages-->
+    <script src="js/common-scripts.js"></script>
+
+
+    <!-- 时间控件 -->
+    <link href="css/jquery.datetimepicker.css" rel="stylesheet">
+    <script src="js/jquery.datetimepicker.full.js"></script>
+    <!--<script src="js/jquery.datetimepicker.js"></script>-->
+
+
     <link href="css/about.css" rel="stylesheet">
     <script src="../app/config.js"></script>
     <script src="js/index.js"></script>
+
 </head>
 
 <body>
@@ -52,12 +73,10 @@
             <div class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav">
                     <li><a href="index.html">首页</a></li>
-                    <li class="dropdown active" >
+                    <li class="dropdown active">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
                            data-close-others="false">信息披露 <b class=" icon-angle-down"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="about.html">Typography</a></li>
-                            <li><a href="about.html">Buttons</a></li>
+                        <ul id="infoDisclosure" class="dropdown-menu">
                         </ul>
                     </li>
                     <!--<li class="active"><a href="about.html"></a></li>-->
@@ -74,7 +93,7 @@
                     <li><a href="price.html">Price</a></li>
                     <li><a href="blog.html">Blog</a></li>
                     <li><a href="contact.html">Contact</a></li>
-                    <li><input type="text" placeholder=" Search" class="form-control search"></li>
+                    <!--<li><input type="text" placeholder=" Search" class="form-control search"></li>-->
                 </ul>
             </div>
         </div>
@@ -91,7 +110,9 @@
             </div>
             <div class="col-lg-8 col-sm-8">
                 <ol class="breadcrumb pull-right">
-                    <input type="text" placeholder=" Search" class="form-control search">
+                    <li><a href="index.html">首页</a></li>
+                    <li>信息披露</li>
+                    <!--<input type="text" placeholder=" Search" class="form-control search">-->
                 </ol>
             </div>
         </div>
@@ -101,19 +122,37 @@
 
 <!--container start-->
 <div class="container">
-    <div class="gallery-container">
+    <div class="gallery-container" style="margin: 0 auto 4px auto;">
         <ul id="filters" class="list-unstyled">
-
+            <li class="active" data-ref="0"><a onclick="selectLevelTwo(this)">所有</a></li>
         </ul>
 
     </div>
-    <div class="row" style="margin-top: -20px;margin-left: 10px" id="list">
-        <div class="ax_default table_cell">
-            <div class="text" style="visibility: visible;">
-                <!--<p><span style="color:#8F000B;">■</span><span> 中共中央办公厅 国务院办公厅印发《关于进一步完善中央财政科研项目资金管理等政策的若干意见》</span></p>-->
-            </div>
-        </div>
 
+    <div class="row" style="margin: 10px auto 10px auto">
+        <div class="search-condition">
+            <input id="name" name="" type="text" class="input-stock" maxlength="6" placeholder="请输入信息标题">
+        </div>
+        <div class="search-condition">
+            <input id="datetimepicker1" type="text" placeholder="请输入起始日期">
+        </div>
+        <div class="search-condition">
+            <input id="datetimepicker2" type="text" placeholder="请输入结束日期">
+        </div>
+        <button class="btn btn-danger" style="margin-top: 3px" type="button" onclick="search()">搜索</button>
+    </div>
+
+    <div class="row" style="margin-top: -20px;margin-left: 10px;margin-bottom: 170px" id="list">
+        <div class="ax_default table_cell">
+
+        </div>
+        <div class="ax_default table_cell" style="position: relative">
+            <div style="" class="text" style="visibility: visible;">
+                <a href="informationDetail.html"><p><span style="color:#8F000B;">■</span><span> 22222 </span></p></a>
+
+            </div>
+
+        </div>
 
     </div>
 
@@ -122,117 +161,173 @@
 <!--container end-->
 
 <!--footer start-->
-<footer class="footer">
+<footer class="footer" style="position:fixed;bottom:0;height: 114px">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-3">
-                <h1>contact info</h1>
+                <h1>bigBoss CMS</h1>
                 <address>
-                    <p>Address: No.28-63877 street</p>
-
-                    <p>lorem ipsum city, Country</p>
-
-                    <p>Phone : (123) 456-7890</p>
-
-                    <p>Fax : (123) 456-7890</p>
-
-                    <p>Email : <a href="javascript:;">support@vectorlab.com</a></p>
+                    <p></p>
                 </address>
             </div>
             <div class="col-lg-5 col-sm-5">
-                <h1>latest tweet</h1>
-                More Templates <a href="http://www.cssmoban.com/" target="_blank" title="模板之家">模板之家</a> - Collect from
-                <a href="http://www.cssmoban.com/" title="网页模板" target="_blank">网页模板</a>
+                建议使用浏览器： Chrome、Firefox、IE8+ (标准模式)
             </div>
             <div class="col-lg-3 col-sm-3 col-lg-offset-1">
-                <h1>stay connected</h1>
-                <ul class="social-link-footer list-unstyled">
-                    <li><a href="#"><i class="icon-facebook"></i></a></li>
-                    <li><a href="#"><i class="icon-google-plus"></i></a></li>
-                    <li><a href="#"><i class="icon-dribbble"></i></a></li>
-                    <li><a href="#"><i class="icon-linkedin"></i></a></li>
-                    <li><a href="#"><i class="icon-twitter"></i></a></li>
-                    <li><a href="#"><i class="icon-skype"></i></a></li>
-                    <li><a href="#"><i class="icon-github"></i></a></li>
-                    <li><a href="#"><i class="icon-youtube"></i></a></li>
-                </ul>
+
             </div>
         </div>
     </div>
 </footer>
 <!--footer end-->
 
-<!-- js placed at the end of the document so the pages load faster -->
-<script src="js/jquery.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="js/hover-dropdown.js"></script>
-<script type="text/javascript" src="assets/bxslider/jquery.bxslider.js"></script>
-<script defer src="js/jquery.flexslider.js"></script>
-
-<script src="js/jquery.easing.min.js"></script>
-<script src="js/link-hover.js"></script>
-
-
-<!--common script for all pages-->
-<script src="js/common-scripts.js"></script>
-
 
 <script>
-    $(window).load(function(){
-        var levelOne = JSON.parse(localStorage.getItem("infoLevelOne"));
+    jQuery(document).ready(function () {
+        $.datetimepicker.setLocale('ch');//设置中文
+        $('#datetimepicker1').datetimepicker({
+            lang: 'ch',
+            timepicker: false,
+            format: 'Y-m-d',
+            formatDate: 'Y-m-d',
+        });
+        $('#datetimepicker2').datetimepicker({
+            lang: 'ch',
+            timepicker: false,
+            format: 'Y-m-d',
+            formatDate: 'Y-m-d',
+        });
+    });
 
-        /*$.ajax({
-            url:FACADE_URL+'/information/selectByLevelOne',
-            data:{
-                code:'0001',
-                levelOne:levelOne
+    function clearSearch() {
+        $('#name').val("");
+        $('#datetimepicker1').val("");
+        $('#datetimepicker2').val("");
+
+    }
+
+    function showInfoDisclosure(levelOne) {
+        localStorage.setItem("infoLevelOne", JSON.stringify(levelOne));
+        window.location.href = 'about.html';
+    }
+
+    function selectLevelTwo(el) {
+        var btn = $(el).parent();
+        btn.parent().find('li').removeClass('active');
+        btn.addClass('active');
+        var levelTwo = btn.attr('data-rel');
+        clearSearch();
+        search();
+    }
+
+    function search() {
+        var name = $('#name').val(), startDate = $('#datetimepicker1').val(), endDate = $('#datetimepicker2').val();
+        /*if (!name && !startDate && !endDate) {
+         return;
+         }*/
+        var levelOne = JSON.parse(localStorage.getItem("infoLevelOne"));
+        var levelTwo = $('#filters').find('li.active').attr('data-ref');
+
+        $.ajax({
+            url: FACADE_URL + '/information/searchInfo',
+            data: {
+                code: '0001',
+                levelOne: levelOne,
+                levelTwo: levelTwo,
+                name: name,
+                startDate: startDate,
+                endDate: endDate
             },
-            type:'POST',
-            success:function(response){
+            type: 'POST',
+            success: function (response) {
                 var data = response.data;
-                if(data && data.length > 0){
-                    $.each(array,function(i,item){
-                        $('#list').append('<div class="ax_default table_cell">' +
-                        '<div class="text" style="visibility: visible;"> ' +
-                        '<p><span style="color:#8F000B;">■</span>' +
-                        '<span> ' + item.name +'</span></p></div></div>')
+                $('#list').html("");
+                $('#list').append('<div class="ax_default table_cell"><div class="text" style="visibility: visible;"> </div> </div>');
+                if (data && data.length > 0) {
+                    $.each(data, function (i, item) {
+                        var fileName = item.url;
+//                            var str = fileName.substr(fileName.indexOf('-')+1)+'.pdf';
+                        var href = FACADE_URL + '/generic/web/viewer.html?file=' + FACADE_URL + '/information/download/' + fileName;
+                        var publishDate = new Date(item.publishDate);
+                        var dateStr = publishDate.getFullYear() + '-' + (parseInt(publishDate.getMonth()) + 1) + '-' + publishDate.getDay();
+                        if (item.text) {
+                            $('#list').append('<div class="ax_default table_cell"">' +
+                                    '<div class="text" style="visibility: visible;"> ' +
+                                    '<a onclick="goToInfoDetail(this)" data-rel="'+ item.id+'">' +
+                                    '<p><span style="color:#8F000B;">■</span><span> ' + item.name + ' </span></p></a>' +
+                                    '</div><div style="position: absolute;right: 10px;top: 4px">' +
+                                    '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
+                        } else {
+                            if(item.url){
+                                $('#list').append('<div class="ax_default table_cell">' +
+                                        '<div class="text" style="visibility: visible;"> ' +
+                                        '<a href=" ' + href + ' " target="_blank">' +
+                                        '<p><span style="color:#8F000B;">■</span><span> ' + item.name + ' </span></p></a>' +
+                                        '</div><div style="position: absolute;right: 10px;top: 4px">' +
+                                        '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
+                            }else{
+                                $('#list').append('<div class="ax_default table_cell">' +
+                                        '<div class="text" style="visibility: visible;"> ' +
+                                        '<p><span style="color:#8F000B;">■</span><span> ' + item.name + ' </span></p>' +
+                                        '</div><div style="position: absolute;right: 10px;top: 4px">' +
+                                        '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
+                            }
+
+                        }
+
                     })
                 }
-
             },
-            error:function(err){
-
+            error: function (err) {
+                console.log("error")
             }
-        })*/
+        })
+    }
 
+    function goToInfoDetail(el){
+        var id = $(el).attr('data-rel');
+        var data = localStorage.getItem("infoDisclosure");
+        var array = JSON.parse(data);
+
+        $.each(array,function(i,item){
+            if(item.id == id){
+                localStorage.setItem("infoDetail",JSON.stringify(item));
+                return false;
+            }
+        })
+        window.location.href = 'informationDetail.html';
+
+    }
+
+    $(window).load(function () {
+        var levelOne = JSON.parse(localStorage.getItem("infoLevelOne"));
         var data = localStorage.getItem("infoDisclosure");
         var array = JSON.parse(data);
         var list = [];
-        if(array && array.length > 0){
-            $.each(array,function(i,item){
-                if(levelOne == item.levelOne ){
+        if (array && array.length > 0) {
+            var temp = [];
+            $.each(array, function (i, item) {
+                if (levelOne == item.levelOne) {
                     list.push(item);
                 }
+                if (temp.indexOf(item.levelOne) > -1) {
+                    return;
+                }
+                temp.push(item.levelOne);
+                $('#infoDisclosure').append('<li><a onclick="showInfoDisclosure(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
             })
         }
 
-        if(list.length > 0){
-
-
-
-            $.each(list,function(i,value){
-                $('#filters').append('<li><a href="#" data-filter=".design">' + value.levelTwoName +'</a></li>')
+        if (list.length > 0) {
+            $.each(list, function (i, item) {
+                $('#filters').append('<li data-ref="' + item.levelTwo + '"><a onclick="selectLevelTwo(this)">' + item.levelTwoName + '</a></li>')
 
                 $('#list').append('<div class="ax_default table_cell">' +
-                '<div class="text" style="visibility: visible;"> ' +
-                '<p><span style="color:#8F000B;">■</span>' +
-                '<span> ' + value.name +'</span></p></div></div>')
+                        '<div class="text" style="visibility: visible;"> ' +
+                        '<p><span style="color:#8F000B;">■</span>' +
+                        '<span> ' + item.name + '</span></p></div></div>')
             })
         }
-
-
-
-
     })
 
     $(window).load(function () {

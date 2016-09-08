@@ -1786,3 +1786,29 @@ ul#filters > .active > span {
 .mbot50 {
     margin-bottom: 50px;
 }
+
+input[type="text"], input[type="password"], textarea, select {
+    margin: 0 0 8px 0;
+    font: 14px 微软雅黑, sans-serif;
+    height: 40px;
+    line-height: 40px;
+    padding: 6px;
+    box-shadow: 1px 1px 5px #efefef inset;
+    -moz-box-shadow: 1px 1px 5px #efefef inset;
+    -webkit-box-shadow: 1px 1px 5px #efefef inset;
+    COLOR: #3f3f3f;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
+
+input, textarea, select {
+    border: 1px solid #c8c8c8;
+}
+
+.search-condition {
+    position: relative;
+    float: left;
+    width: 13.4%;
+    margin: 0 4% 0 0;
+}

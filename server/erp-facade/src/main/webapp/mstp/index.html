@@ -58,7 +58,6 @@
                                data-close-others="false">信息披露 <b class=" icon-angle-down"></b></a>
                             <ul id="infoDisclosure" class="dropdown-menu">
 
-                                <li><a href="about.html">Buttons</a></li>
                             </ul>
                         </li>
                         <li><a onclick="getInfoDisclosure()">学习园地</a></li>
@@ -714,6 +713,21 @@
       jQuery(".fancybox").fancybox();
 
       $(window).load(function(){
+          Array.prototype.unique = function()
+          {
+              var n = {},r=[]; //n为hash表，r为临时数组
+              for(var i = 0; i < this.length; i++) //遍历当前数组
+              {
+                  if (!n[this[i]]) //如果hash表中没有当前项
+                  {
+                      n[this[i]] = true; //存入hash表
+                      r.push(this[i]); //把当前数组的当前项push到临时数组里面
+                  }
+              }
+              return r;
+          }
+
+
           //信息披露
           $.ajax({
               url:FACADE_URL+'/information/filter',
@@ -724,8 +738,13 @@
               success:function(response){
                   var data = response.data.pageData;
                   localStorage.setItem("infoDisclosure",JSON.stringify(data));
+                  var temp = [];
                   if(data && data.length > 0){
                       $.each(data,function(i,item){
+                          if(temp.indexOf(item.levelOne) > -1){
+                              return;
+                          }
+                          temp.push(item.levelOne);
                           $('#infoDisclosure').append('<li><a onclick="showInfoDisclosure(' + item.levelOne +')" >'+ item.levelOneName +'</a></li>')
                       })
                   }

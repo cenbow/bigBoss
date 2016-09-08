@@ -14,6 +14,7 @@ import com.junyi.erp.vo.InformationVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -75,6 +76,48 @@ public class InformationController extends ErpBaseController {
         Column column = columnService.selectByCode(code);
         param.put("columnId", column.getId());
         param.put("status", 1);
+        List<Information> informations = informationService.selectByParam(param);
+        List<InformationVO> voList = new ArrayList<>();
+        if (informations != null && informations.size() > 0) {
+            for (Information info : informations) {
+                InformationVO vo = new InformationVO();
+                vo.convertPOToVO(info);
+                voList.add(vo);
+            }
+        }
+        success(response, voList);
+
+    }
+
+    @RequestMapping(value = "/searchInfo", method = RequestMethod.POST)
+    public void searchInfo(
+            String code,
+            Integer levelOne,
+            Integer levelTwo,
+            String name,
+            @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate,
+            @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate,
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
+        Map param = new HashMap();
+        param.put("levelOne", levelOne);
+        Column column = columnService.selectByCode(code);
+        param.put("columnId", column.getId());
+        param.put("status", 1);
+        if(levelTwo!=0){
+            param.put("levelTwo", levelTwo);
+        }
+        if(name!=null && !name.isEmpty()){
+            param.put("name", name);
+        }
+        if(startDate!=null){
+            param.put("startDate", startDate);
+        }
+        if(endDate!=null){
+            param.put("endDate", endDate);
+        }
+
         List<Information> informations = informationService.selectByParam(param);
         List<InformationVO> voList = new ArrayList<>();
         if (informations != null && informations.size() > 0) {
