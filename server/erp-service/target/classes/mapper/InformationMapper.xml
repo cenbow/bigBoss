@@ -36,7 +36,7 @@
         from information
         <where>
             <if test="name != null">
-                AND NAME = #{name,jdbcType=VARCHAR}
+                AND NAME  LIKE CONCAT ('%', #{name,jdbcType=VARCHAR}, '%')
             </if>
             <if test="levelOne != null">
                 AND LEVEL_ONE = #{levelOne,jdbcType=INTEGER}
@@ -46,6 +46,9 @@
             </if>
             <if test="status != null">
                 AND STATUS = #{status,jdbcType=INTEGER}
+            </if>
+            <if test="companyId != null">
+                AND COMPANY_ID = #{companyId,jdbcType=INTEGER}
             </if>
             <if test="startDate != null">
                 AND PUBLISH_DATE &gt;= #{startDate,jdbcType=TIMESTAMP}
@@ -151,6 +154,9 @@
         <where>
             <if test="text != null and text != ''">
                  i.NAME LIKE CONCAT ('%', #{text,jdbcType=VARCHAR}, '%')
+            </if>
+            <if test="status != null">
+                and i.STATUS = #{status,jdbcType=INTEGER}
             </if>
             <if test="columnId != null">
                 and i.COLUMN_ID = #{columnId,jdbcType=INTEGER}

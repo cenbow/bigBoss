@@ -125,7 +125,13 @@ public class AccountController extends ErpBaseController {
         }else {
             HttpSession session = request.getSession();
             session.setAttribute("userId", account.getId());
-            success(response,account.getId());
+            session.setAttribute("companyId", account.getCompanyId());
+            session.setAttribute("roleId", account.getRoleId());
+            Map result = new HashMap();
+            result.put("accountId",account.getId());
+            result.put("roleId",account.getRoleId());
+            result.put("companyId",account.getCompanyId());
+            success(response, result);
         }
     }
 

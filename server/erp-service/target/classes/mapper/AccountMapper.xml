@@ -35,7 +35,7 @@
     select
     <include refid="Base_Column_List" />
     from account
-    where USER_NAME = #{username,jdbcType=VARCHAR} AND PASSWORD = #{password,jdbcType=VARCHAR} AND ROLE_ID = 1
+    where USER_NAME = #{username,jdbcType=VARCHAR} AND PASSWORD = #{password,jdbcType=VARCHAR}
   </select>
 
   <delete id="deleteAccountByPK" parameterType="java.lang.Integer" >

@@ -54,6 +54,7 @@
     <link href="css/about.css" rel="stylesheet">
     <script src="../app/config.js"></script>
     <script src="js/index.js"></script>
+    <script src="js/common.js"></script>
 
 </head>
 
@@ -89,17 +90,18 @@
                     </li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
-                           data-close-others="false">Feature <b class=" icon-angle-down"></b></a>
-                        <ul class="dropdown-menu">
-                            <li><a href="typography.html">Typography</a></li>
-                            <li><a href="button.html">Buttons</a></li>
+                           data-close-others="false">市场咨询 <b class=" icon-angle-down"></b></a>
+                        <ul id="infoMarket" class="dropdown-menu">
+
                         </ul>
                     </li>
-                    <li><a href="portfolio.html">Portfolio</a></li>
-                    <li><a href="price.html">Price</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <!--<li><input type="text" placeholder=" Search" class="form-control search"></li>-->
+                    <li class="dropdown ">
+                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
+                           data-close-others="false">通知公告 <b class=" icon-angle-down"></b></a>
+                        <ul id="infoNotice" class="dropdown-menu">
+
+                        </ul>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -176,7 +178,7 @@
                     <p></p>
                 </address>
             </div>
-            <div class="col-lg-5 col-sm-5">
+            <div class="col-lg-5 col-sm-5" style="position: absolute;right: 0;">
                 建议使用浏览器： Chrome、Firefox、IE8+ (标准模式)
             </div>
             <div class="col-lg-3 col-sm-3 col-lg-offset-1">
@@ -189,6 +191,14 @@
 
 
 <script>
+    $(function(){
+        var login = JSON.parse(localStorage.getItem("commonLogin"));
+        var roleId = JSON.parse(localStorage.getItem("roleId"));
+        if(!login || !roleId || roleId == 1){
+            window.location.replace(FACADE_URL+'/login.html');
+        }
+    })
+
     jQuery(document).ready(function () {
         $.datetimepicker.setLocale('ch');//设置中文
         $('#datetimepicker1').datetimepicker({
@@ -259,7 +269,7 @@
                         if (item.text) {
                             $('#list').append('<div class="ax_default table_cell"">' +
                                     '<div class="text" style="visibility: visible;"> ' +
-                                    '<a onclick="goToInfoDetail(this)" data-rel="'+ item.id+'">' +
+                                    '<a href="#" onclick="goToInfoDetail(this)" data-rel="'+ item.id+'">' +
                                     '<p><span style="color:#8F000B;">■</span><span style="color: #999"> ' + item.name + ' </span></p></a>' +
                                     '</div><div style="position: absolute;right: 10px;top: 4px">' +
                                     '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
@@ -324,12 +334,14 @@
             })
         }
 
-        search()
+        loadHead();
+        search();
 
         if (list.length > 0) {
             $.each(list, function (i, item) {
-                $('#filters').append('<li data-ref="' + item.levelTwo + '"><a onclick="selectLevelTwo(this)">' + item.levelTwoName + '</a></li>')
-
+                if(item.levelTwo) {
+                    $('#filters').append('<li data-ref="' + item.levelTwo + '"><a onclick="selectLevelTwo(this)">' + item.levelTwoName + '</a></li>')
+                }
                 /*$('#list').append('<div class="ax_default table_cell">' +
                         '<div class="text" style="visibility: visible;"> ' +
                         '<p><span style="color:#8F000B;">■</span>' +
@@ -352,7 +364,6 @@
     });
 
     $(window).load(function () {
-
         $('.flexslider').flexslider({
             animation: "slide",
             start: function (slider) {
@@ -360,90 +371,6 @@
             }
         });
     });
-
-    $(window).load(function(){
-        Array.prototype.unique = function()
-        {
-            var n = {},r=[]; //n为hash表，r为临时数组
-            for(var i = 0; i < this.length; i++) //遍历当前数组
-            {
-                if (!n[this[i]]) //如果hash表中没有当前项
-                {
-                    n[this[i]] = true; //存入hash表
-                    r.push(this[i]); //把当前数组的当前项push到临时数组里面
-                }
-            }
-            return r;
-        }
-
-
-        //信息披露
-        $.ajax({
-            url:FACADE_URL+'/information/filter',
-            data:{
-                code:'0001'
-            },
-            type:'POST',
-            success:function(response){
-                var data = response.data.pageData;
-                localStorage.setItem("infoDisclosure",JSON.stringify(data));
-                var temp = [];
-                $('#infoDisclosure').html("");
-                if(data && data.length > 0){
-                    $.each(data,function(i,item){
-                        if(temp.indexOf(item.levelOne) > -1){
-                            return;
-                        }
-                        temp.push(item.levelOne);
-                        $('#infoDisclosure').append('<li><a onclick="showInfoDisclosure(' + item.levelOne +')" >'+ item.levelOneName +'</a></li>')
-                    })
-                }
-
-            },
-            error:function(err){
-                console.log("error")
-            }
-        })
-
-        //学习园地
-        $.ajax({
-            url:FACADE_URL+'/information/filter',
-            data:{
-                code:'0002'
-            },
-            type:'POST',
-            success:function(response){
-                var data = response.data.pageData;
-                localStorage.setItem("infoStudy",JSON.stringify(data));
-                var temp = [];
-                $('#infoStudy').html("");
-                if(data && data.length > 0){
-                    $.each(data,function(i,item){
-                        if(temp.indexOf(item.levelOne) > -1){
-                            return;
-                        }
-                        temp.push(item.levelOne);
-                        $('#infoStudy').append('<li><a onclick="showInfoStudy(' + item.levelOne +')" >'+ item.levelOneName +'</a></li>')
-                    })
-                }
-
-            },
-            error:function(err){
-                console.log("error")
-            }
-        })
-
-    })
-
-    function showInfoDisclosure(levelOne){
-        localStorage.setItem("infoLevelOne",JSON.stringify(levelOne));
-        window.location.href = 'about.html';
-    }
-
-    function showInfoStudy(levelOne){
-        localStorage.setItem("infoLevelOne",JSON.stringify(levelOne));
-        window.location.href = 'study.html';
-    }
 
 
 </script>

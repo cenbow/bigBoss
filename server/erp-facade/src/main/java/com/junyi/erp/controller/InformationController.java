@@ -54,14 +54,22 @@ public class InformationController extends ErpBaseController {
             HttpServletRequest request,
             HttpServletResponse response
     ) {
-
         PageRequest pageRequest = param.toPageRequest();
         Column column = columnService.selectByCode(code);
         pageRequest.putFilterIfNotNull("columnId", column.getId());
+
+        HttpSession session = request.getSession();
+        Integer roleId = (Integer) session.getAttribute("roleId");
+        if(roleId == null) {
+            error(response,"session过期，请重新登录!");
+        }
+        if(roleId!=1){
+            pageRequest.putFilterIfNotNull("status", 1);
+            pageRequest.setPageSize(Integer.MAX_VALUE);
+        }
         Page<Information> pages = informationService.selectInformationByFiltersPage(pageRequest);
         PageVO<InformationVO> resultPageVO = PageVO.create(pages, InformationVO.class);
         success(response, resultPageVO);
-
     }
 
     @RequestMapping(value = "/selectByLevelOne", method = RequestMethod.POST)
@@ -86,7 +94,6 @@ public class InformationController extends ErpBaseController {
             }
         }
         success(response, voList);
-
     }
 
     @RequestMapping(value = "/searchInfo", method = RequestMethod.POST)
@@ -105,6 +112,9 @@ public class InformationController extends ErpBaseController {
         Column column = columnService.selectByCode(code);
         param.put("columnId", column.getId());
         param.put("status", 1);
+        HttpSession session = request.getSession();
+        Integer companyId = (Integer) session.getAttribute("companyId");
+        param.put("companyId", companyId);
         if(levelTwo!=0){
             param.put("levelTwo", levelTwo);
         }
