@@ -55,10 +55,11 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	@Override
-	public int selectIsExistName(String name, int columnId) {
+	public int selectIsExistName(String name, int columnId, int upClassId) {
 		Map map = new HashMap();
 		map.put("name",name);
 		map.put("columnId",columnId);
+		map.put("upClassId",upClassId);
 		return myBatisDAO.findForObject("selectIsExistName",map);
 	}
 

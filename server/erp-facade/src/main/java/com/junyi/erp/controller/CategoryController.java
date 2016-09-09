@@ -124,7 +124,7 @@ public class CategoryController extends ErpBaseController {
                     category.setColumnId(column.getId());
                 }
                 //查重
-                int exist = categoryService.selectIsExistName(name, category.getColumnId());
+                int exist = categoryService.selectIsExistName(name, category.getColumnId(), vo.getUpClassId());
                 if (exist > 0) {
                     error(response, "分类名重复");
                     return;

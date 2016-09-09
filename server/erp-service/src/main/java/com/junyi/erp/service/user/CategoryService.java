@@ -21,7 +21,7 @@ public interface CategoryService {
 
 	List<Category> listCategoryByUpClassId(Integer id);
 
-	int selectIsExistName(String name, int columnId);
+	int selectIsExistName(String name, int columnId, int upClassId);
 
 	Page<Category> selectCategoryByFiltersPage(PageRequest request);
 

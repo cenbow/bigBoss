@@ -110,7 +110,7 @@
   <select id="selectIsExistName" resultType="Integer" parameterType="java.util.HashMap" >
     select count(ID)
     from category
-    where COLUMN_ID = #{columnId,jdbcType=INTEGER} AND NAME = #{name,jdbcType=VARCHAR}
+    where COLUMN_ID = #{columnId,jdbcType=INTEGER} AND NAME = #{name,jdbcType=VARCHAR} AND UP_CLASS_ID = #{upClassId,jdbcType=INTEGER}
   </select>
 
 
