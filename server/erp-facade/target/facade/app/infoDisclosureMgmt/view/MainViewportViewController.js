@@ -176,8 +176,8 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
     formData.companyId = record.getData().companyId;
     formData.companyName = record.getData().companyName;
     formData.text = record.getData().text;
-    //var store = dialog.getViewModel().getStore('categorybyupclassidcomboboxstore');
-    var store = Ext.StoreMgr.get('CategoryByUpClassIdComboboxStore');
+    var store = dialog.getViewModel().getStore('categorybyupclassidcomboboxstore');
+    //var store = Ext.StoreMgr.get('CategoryByUpClassIdComboboxStore');
       store.load({
         params: {id: record.data.levelOne}
       });

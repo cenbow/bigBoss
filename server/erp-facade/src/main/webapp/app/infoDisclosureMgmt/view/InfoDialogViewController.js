@@ -83,18 +83,23 @@ Ext.define('InformationMgmt.view.InfoDialogViewController', {
         viewModel = viewCtr.getViewModel(),
         view = viewCtr.getView();
     //var store = Ext.StoreMgr.get('CategoryByUpClassIdComboboxStore')
-    var store = viewModel.getStore('categorybyupclassidcomboboxstore');
+    var levelTwo = field.up("form").down("#levelTwo");
+    levelTwo.clearValue();
+    levelTwo.store.load({
+      params: {id: value}
+    })
+    /*var store = viewModel.getStore('categorybyupclassidcomboboxstore');
     if (store) {
       if(!viewModel.get('isView')){
         console.log(value)
-       /* if(!isNaN(value)){
+       /!* if(!isNaN(value)){
           Ext.getCmp('levelTwo').clearValue();
-        }*/
+        }*!/
         store.load({
           params: {id: value}
         });
       }
-    }
+    }*/
   }
 
 });

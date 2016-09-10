@@ -46,6 +46,9 @@ function loadHead() {
         indexSection(data);
       } else {
         alert(response.error.message);
+        if(response.error.message == 'session过期，请重新登录!'){
+          window.location.href = FACADE_URL + '/login.html';
+        }
       }
 
     },
