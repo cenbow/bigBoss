@@ -2,21 +2,21 @@
 Navicat MySQL Data Transfer
 
 Source Server         : localhost
-Source Server Version : 50171
+Source Server Version : 50610
 Source Host           : localhost:3306
 Source Database       : db_zsl
 
 Target Server Type    : MYSQL
-Target Server Version : 50171
+Target Server Version : 50610
 File Encoding         : 65001
 
-Date: 2016-08-25 01:17:12
+Date: 2016-09-11 09:39:25
 */
 
 SET FOREIGN_KEY_CHECKS=0;
 
 -- ----------------------------
--- Table structure for account
+-- Table structure for `account`
 -- ----------------------------
 DROP TABLE IF EXISTS `account`;
 CREATE TABLE `account` (
@@ -36,31 +36,16 @@ CREATE TABLE `account` (
   `USER_NAME` varchar(100) DEFAULT NULL,
   `PASSWORD` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=29 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of account
 -- ----------------------------
-INSERT INTO `account` VALUES ('1', '张三12213', '职务', '1389871234', '1', '智康信息科技', '000001', '2', '普通管理员', '1', '2016-08-13 21:41:41', '1', 'MEIYOU', 'admin1', '1234563');
-INSERT INTO `account` VALUES ('7', 'sdasd', 'sadasd', '18566254455', '2', null, '0002', '3', null, null, null, null, null, 'asdasdsd', '123123123');
-INSERT INTO `account` VALUES ('9', 'hangsd', 'asdasd', '18502554655', '2', '', '0002', '2', '0002', null, null, null, null, '23123', '123123213');
-INSERT INTO `account` VALUES ('11', 'aslkjdkldasj ', 'asdasdas', '18522223333', '1', '智康信息科技', '0001', '2', '普通管理员', null, null, null, null, '5461564654', '32135135');
-INSERT INTO `account` VALUES ('12', '3123', '123123', '18566554456', '2', '苹果公司', '0002', '3', '普通用户', '1', '2016-08-14 16:25:57', '1', '4213', '123asdasd', '123123123');
-INSERT INTO `account` VALUES ('13', 'sadsadsa', '1213545', '18500255514', '2', '苹果公司', '0002', '3', '普通用户', '1', '2016-08-14 16:27:27', '1', '1231232132', '12312312', '123123123');
-INSERT INTO `account` VALUES ('14', '1111111', '1111111', '18500554455', '1', '智康信息科技', '0001', '2', '普通管理员', '1', '2016-08-14 16:29:44', '1', 'sadasdasdasd', '12312312', '331231231');
-INSERT INTO `account` VALUES ('15', '1111111', '1111111', '18500554455', '1', '智康信息科技', '0001', '2', '普通管理员', '1', '2016-08-14 16:29:53', '1', 'sadasdasdasd', '12312312', '331231231');
-INSERT INTO `account` VALUES ('16', '1111111', '1111111', '18500554455', '1', '智康信息科技', '0001', '3', '普通用户', '1', '2016-08-14 16:29:58', '1', 'sadasdasdasd', '12312312', '331231231');
-INSERT INTO `account` VALUES ('17', '1111111', '1111111', '18500554455', '1', '智康信息科技', '0001', '2', '普通管理员', '1', '2016-08-14 16:30:02', '1', 'sadasdasdasd', '12312312', '331231231');
-INSERT INTO `account` VALUES ('18', '1111111', '1111111', '18500554455', '2', '苹果公司', '0002', '2', '普通管理员', '1', '2016-08-14 16:30:04', '1', 'sadasdasdasd', '12312312', '331231231');
-INSERT INTO `account` VALUES ('19', '1111111', 'dasdasdasdasd', '18500554455', '2', '苹果公司', '0002', '2', '普通管理员', '1', '2016-08-14 16:30:07', '1', 'sadasdasdasd', '12312312', '331231231');
-INSERT INTO `account` VALUES ('20', '111111123adsdas1', 'dasdasdasdasd', '18500554455', '2', '苹果公司', '0002', '2', '普通管理员', '1', '2016-08-14 16:30:11', '1', 'sadasdasdasd', '12312312', '331231231');
-INSERT INTO `account` VALUES ('21', '111111123adsdas1', 'dasdasdasdasd', '18500554455', '2', '苹果公司', '0002', '2', '普通管理员', '1', '2016-08-14 16:30:14', '1', 'sadasdasdasd', 'asdasasd', '331231231');
-INSERT INTO `account` VALUES ('22', '111111123adsdas1', 'dasdasdasdasd', '18500554455', '2', '苹果公司', '0002', '2', '普通管理员', '1', '2016-08-14 16:30:40', '1', 'sadasdasdasd', 'asdasasd', '331231231');
-INSERT INTO `account` VALUES ('23', '312312', '123123', '18525544466', '2', '苹果公司', '0002', '3', '普通用户', '1', '2016-08-14 16:32:37', '1', '123123123', '123123', '123123');
-INSERT INTO `account` VALUES ('24', '456465', 'asdasd', '18522664455', '1', '智康信息科技', '0001', '2', '普通管理员', '1', '2016-08-14 16:33:54', '1', '123123213', '12312', '123123');
+INSERT INTO `account` VALUES ('1', '张三', '总经理', '1389871234', '1', '5', '001', '1', 'MEIYOU', '1', '2016-08-13 21:41:41', '1', 'MEIYOU', 'admin', '123456');
+INSERT INTO `account` VALUES ('27', '陆燕', '', '', '5', 'BIG BOSS 集团股份有限公司', 'BB集团', '3', '普通用户', '1', '2016-09-10 16:49:27', '1', '', 'luyan', '123456');
 
 -- ----------------------------
--- Table structure for category
+-- Table structure for `category`
 -- ----------------------------
 DROP TABLE IF EXISTS `category`;
 CREATE TABLE `category` (
@@ -75,26 +60,51 @@ CREATE TABLE `category` (
   `UPDATE_DATE` datetime DEFAULT NULL,
   `LEAF` int(11) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of category
 -- ----------------------------
-INSERT INTO `category` VALUES ('1', '一级分类1', '1', '6', '1', '1', null, null, null, '2');
-INSERT INTO `category` VALUES ('2', '二级分类', '1', '12', '0', '1', null, null, null, '2');
-INSERT INTO `category` VALUES ('4', '22222', '2', '0', '1', null, '2016-08-16 23:14:45', null, null, '1');
-INSERT INTO `category` VALUES ('5', '123', '1', '3', '1', null, '2016-08-16 23:14:58', null, null, '2');
-INSERT INTO `category` VALUES ('6', 'aaa', '1', '0', '0', null, '2016-08-16 23:15:06', null, null, '1');
-INSERT INTO `category` VALUES ('7', 'sc', '3', '0', '0', null, '2016-08-16 23:15:18', null, null, '1');
-INSERT INTO `category` VALUES ('8', 'fenlei', '2', '4', '1', '1', '2016-08-17 22:10:47', null, null, '2');
-INSERT INTO `category` VALUES ('9', 'fenlei1', '2', '4', '1', '1', '2016-08-17 22:10:52', null, null, '2');
-INSERT INTO `category` VALUES ('10', 'fenlei', '3', '0', '0', '1', '2016-08-17 22:11:50', null, null, '1');
-INSERT INTO `category` VALUES ('11', 'wahahah', '4', '0', '1', '1', '2016-08-17 23:58:57', null, null, '1');
-INSERT INTO `category` VALUES ('12', '呜呜呜呜呜呜', '1', '0', '1', '1', '2016-08-19 23:51:52', null, null, '1');
-INSERT INTO `category` VALUES ('13', '新增分类22', '1', '6', '0', '1', '2016-08-20 00:43:21', null, null, '2');
+INSERT INTO `category` VALUES ('14', '一季度报告', '1', '0', '1', null, '2016-09-08 17:13:13', null, null, '1');
+INSERT INTO `category` VALUES ('15', '三季度报告', '1', '0', '1', null, '2016-09-08 17:13:25', null, null, '1');
+INSERT INTO `category` VALUES ('16', '半年度报告', '1', '0', '1', null, '2016-09-08 17:13:34', null, null, '1');
+INSERT INTO `category` VALUES ('17', '全年度报告', '1', '0', '1', null, '2016-09-09 16:43:31', null, null, '1');
+INSERT INTO `category` VALUES ('18', '核查报告', '1', '0', '1', null, '2016-09-09 16:45:04', null, null, '1');
+INSERT INTO `category` VALUES ('19', '股东会', '1', '0', '1', null, '2016-09-09 16:45:04', null, null, '1');
+INSERT INTO `category` VALUES ('20', '董事会', '1', '0', '1', null, '2016-09-09 16:45:04', null, null, '1');
+INSERT INTO `category` VALUES ('21', '监事会', '1', '0', '1', null, '2016-09-09 16:45:04', null, null, '1');
+INSERT INTO `category` VALUES ('22', '重大事项', '1', '0', '1', null, '2016-09-09 16:45:04', null, null, '1');
+INSERT INTO `category` VALUES ('23', '其他', '1', '0', '1', null, '2016-09-09 16:45:04', null, null, '1');
+INSERT INTO `category` VALUES ('24', '审计', '2', '0', '1', null, '2016-09-09 16:46:45', null, null, '1');
+INSERT INTO `category` VALUES ('25', '税务', '2', '0', '1', null, '2016-09-09 16:46:45', null, null, '1');
+INSERT INTO `category` VALUES ('26', '会计准则', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('27', '并购重组', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('28', 'IPO', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('29', '三板', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('30', '房地产业', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('31', '建筑业', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('32', '交通运输、仓储和邮政业', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('33', '教育', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('34', '农、林、牧、渔业', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('35', '批发和零售业', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('36', '文化、体育和娱乐业', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('37', '信息传输、软件和信息技术服务业', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('38', '制造业', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('39', '租赁和商务服务业', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('40', '其他', '2', '24', '1', null, '2016-09-09 16:48:16', null, null, '2');
+INSERT INTO `category` VALUES ('41', '增值税', '2', '25', '1', null, '2016-09-09 16:59:03', null, null, '2');
+INSERT INTO `category` VALUES ('42', '企业所得税', '2', '25', '1', null, '2016-09-09 16:59:03', null, null, '2');
+INSERT INTO `category` VALUES ('43', '个人所得税', '2', '25', '1', null, '2016-09-09 16:59:03', null, null, '2');
+INSERT INTO `category` VALUES ('44', '财产税', '2', '25', '1', null, '2016-09-09 16:59:03', null, null, '2');
+INSERT INTO `category` VALUES ('45', '行为税', '2', '25', '1', null, '2016-09-09 16:59:03', null, null, '2');
+INSERT INTO `category` VALUES ('46', '国际税收', '2', '25', '1', null, '2016-09-09 16:59:03', null, null, '2');
+INSERT INTO `category` VALUES ('47', '行业资讯', '3', '0', '1', null, '2016-09-09 17:25:01', null, null, '1');
+INSERT INTO `category` VALUES ('48', '新闻资讯', '3', '0', '1', null, '2016-09-09 17:25:01', null, null, '1');
+INSERT INTO `category` VALUES ('49', '时事评论', '3', '0', '1', null, '2016-09-09 17:25:01', null, null, '1');
+INSERT INTO `category` VALUES ('50', '其他', '2', '25', '1', null, '2016-09-11 01:04:14', null, null, '2');
 
 -- ----------------------------
--- Table structure for column
+-- Table structure for `column`
 -- ----------------------------
 DROP TABLE IF EXISTS `column`;
 CREATE TABLE `column` (
@@ -116,7 +126,7 @@ INSERT INTO `column` VALUES ('3', '0003', '市场咨询', null, null, null);
 INSERT INTO `column` VALUES ('4', '0004', '通知公告', null, null, null);
 
 -- ----------------------------
--- Table structure for company
+-- Table structure for `company`
 -- ----------------------------
 DROP TABLE IF EXISTS `company`;
 CREATE TABLE `company` (
@@ -135,18 +145,22 @@ CREATE TABLE `company` (
   `RESERVE1` varchar(100) DEFAULT NULL,
   `RESERVE2` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of company
 -- ----------------------------
-INSERT INTO `company` VALUES ('1', '智康信息科技', '0001', '智康', '医疗公司', '计量大厦', '18987221322', '1', '2016-08-14 01:50:44', null, null, '123123', null, null);
-INSERT INTO `company` VALUES ('2', '苹果公司', '0002', '苹果', 'iphone', '美国', '0322-12334223', '1', '2016-08-14 01:51:50', null, null, null, null, null);
-INSERT INTO `company` VALUES ('3', '智康二号', '000432', '智康2', '2222', '123123', '18502335456', '1', '2016-08-14 20:36:32', null, null, null, null, null);
-INSERT INTO `company` VALUES ('4', 'company', '123123caed', 'zhang', 'jklhasjkjkl', 'asdas', '18515445214', '1', '2016-08-15 21:43:22', null, null, '3123123123', null, null);
+INSERT INTO `company` VALUES ('5', 'BIG BOSS 集团股份有限公司', 'BB集团', '', '', '', '', null, '2016-09-09 23:31:36', '1', '2016-09-11 01:11:53', '', null, null);
+INSERT INTO `company` VALUES ('6', 'BIG STAR普通合伙企业', 'BS公司', '', '', '', '', null, '2016-09-09 23:33:23', '1', '2016-09-10 21:49:27', '', null, null);
+INSERT INTO `company` VALUES ('7', 'BIG TALENT公司', 'BT公司', '', '', '', '', null, '2016-09-09 23:33:39', '1', '2016-09-10 21:49:31', '', null, null);
+INSERT INTO `company` VALUES ('8', '缤果酒业股份有限公司', 'BG公司', '', '', '', '', null, '2016-09-09 23:33:54', '1', '2016-09-10 21:49:34', '', null, null);
+INSERT INTO `company` VALUES ('9', '杭州博爱化工有限公司', 'BL公司', '', '', '', '', null, '2016-09-09 23:34:12', '1', '2016-09-10 21:49:37', '', null, null);
+INSERT INTO `company` VALUES ('10', 'BIG PRINCE动漫有限公司', 'BP公司', '', '', '', '', null, '2016-09-09 23:36:36', '1', '2016-09-10 21:49:46', '', null, null);
+INSERT INTO `company` VALUES ('11', '星未来教育发展有限公司', 'BF公司', '', '', '', '', null, '2016-09-09 23:37:44', '1', '2016-09-10 21:49:51', '', null, null);
+INSERT INTO `company` VALUES ('12', '浙江康乐农业有限责任公司', 'BH公司', '', '', '', '', null, '2016-09-09 23:38:35', '1', '2016-09-10 21:49:55', '', null, null);
 
 -- ----------------------------
--- Table structure for information
+-- Table structure for `information`
 -- ----------------------------
 DROP TABLE IF EXISTS `information`;
 CREATE TABLE `information` (
@@ -156,6 +170,7 @@ CREATE TABLE `information` (
   `LEVEL_TWO` int(11) DEFAULT NULL,
   `PUBLISH_DATE` datetime DEFAULT NULL,
   `STATUS` int(11) DEFAULT NULL,
+  `TOP_STATUS` int(11) DEFAULT NULL,
   `CREATE_BY` int(11) DEFAULT NULL,
   `CREATE_DATE` datetime DEFAULT NULL,
   `UPDATE_BY` int(11) DEFAULT NULL,
@@ -165,16 +180,19 @@ CREATE TABLE `information` (
   `TEXT` varchar(255) DEFAULT NULL,
   `URL` varchar(255) DEFAULT NULL COMMENT 'pdf保存地址(现在是文件名)',
   PRIMARY KEY (`ID`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of information
 -- ----------------------------
-INSERT INTO `information` VALUES ('1', '放假', '6', '1', '2016-08-22 17:19:10', '1', '1', '2016-08-22 17:19:14', null, null, '1', '1', null, null);
-INSERT INTO `information` VALUES ('2', '123', '1', '1', '2016-08-25 00:57:00', '1', '1', '2016-08-25 00:57:00', '1', null, '1', '1', '1', '1');
+INSERT INTO `information` VALUES ('3', 'BIG BOSS CMS系统试运营', null, '0', '2016-09-10 16:33:50', '1', '0', '1', '2016-09-10 16:33:50', null, null, '5', '4', '请大家多方面测试后提交问题。', null);
+INSERT INTO `information` VALUES ('4', '第一次股东大会', '19', '0', '2016-09-10 16:37:52', '1', '0', '1', '2016-09-10 16:37:52', null, null, '5', '1', '', null);
+INSERT INTO `information` VALUES ('5', '第一次董事会', '20', '0', '2016-09-10 16:41:46', '1', '0', '1', '2016-09-10 16:41:46', null, null, '5', '1', '', null);
+INSERT INTO `information` VALUES ('6', '财政部就《企业会计准则第37号——金融工具列报（修订）》征求意见', '24', '26', '2016-09-10 16:45:28', '1', '0', '1', '2016-09-10 16:45:28', '1', '2016-09-10 16:47:21', '5', '2', '如题', null);
+INSERT INTO `information` VALUES ('7', '[9月9日海口晚报]钢铁价格下调 销量不佳', '47', '0', '2016-09-10 16:46:56', '1', '0', '1', '2016-09-10 16:46:56', null, null, '5', '3', 'RT', null);
 
 -- ----------------------------
--- Table structure for role
+-- Table structure for `role`
 -- ----------------------------
 DROP TABLE IF EXISTS `role`;
 CREATE TABLE `role` (
@@ -192,7 +210,7 @@ INSERT INTO `role` VALUES ('2', 'ADMINISTRATOR', '普通管理员');
 INSERT INTO `role` VALUES ('3', 'NORMAL', '普通用户');
 
 -- ----------------------------
--- Table structure for user
+-- Table structure for `user`
 -- ----------------------------
 DROP TABLE IF EXISTS `user`;
 CREATE TABLE `user` (
