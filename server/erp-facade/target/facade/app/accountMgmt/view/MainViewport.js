@@ -25,7 +25,7 @@ Ext.define('AccountMgmt.view.MainViewport', {
         dockedItems: [{
             xtype: 'toolbar',
             dock: 'top',
-            height:32,
+            height:35,
             items: [
                 {
                     xtype: 'tbfill'
@@ -35,8 +35,6 @@ Ext.define('AccountMgmt.view.MainViewport', {
                     fieldLabel: '快速搜索',
                     labelAlign: 'right',
                     labelWidth: 60,
-                    labelHeight:28,
-                    height:28,
                     emptyText: '输入用户名/姓名/公司名称/公司代码',
                     enableKeyEvents: true,
                     listeners: {

@@ -13,9 +13,9 @@
  * Do NOT hand edit this file.
  */
 
-Ext.define('addCategory.store.CategoryComboboxStore', {
+Ext.define('CategoryMgmt.store.CategoryAllComboboxStore', {
   extend: 'Ext.data.ArrayStore',
-  alias: 'store.categorycomboboxstore',
+  alias: 'store.categoryallcomboboxstore',
 
   requires: [
     'Ext.data.proxy.Ajax',
@@ -26,16 +26,17 @@ Ext.define('addCategory.store.CategoryComboboxStore', {
     var me = this;
     cfg = cfg || {};
     me.callParent([Ext.apply({
-      storeId:'CategoryComboboxStore',
+      storeId:'CategoryAllComboboxStore',
       fields:['key','value'],
       proxy: {
-        url: FACADE_URL+'/category/listByColumnCode1',
+        url: FACADE_URL+'/category/listAll',
         type: 'ajax',
         reader: {
           type: 'json',
           rootProperty: 'data'
         }
-      }
+      },
+      autoLoad:true
     }, cfg)]);
   }
 });

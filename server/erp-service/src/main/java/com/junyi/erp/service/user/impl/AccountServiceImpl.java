@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import java.util.List;
 import java.util.Map;
 
 @Service("accountService")
@@ -49,5 +50,16 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public Page<Account> selectAccountByFiltersPage(PageRequest pageRequest) {
 		return myBatisDAO.findForPage("selectAccountByFiltersPage", pageRequest);
+	}
+
+	@Override
+	public Boolean isExistUserName(String userName) {
+		List list = myBatisDAO.findForList("selectByUserName", userName);
+		if(list!=null && list.size()>0){
+			return true;
+		}else {
+			return false;
+		}
+
 	}
 }

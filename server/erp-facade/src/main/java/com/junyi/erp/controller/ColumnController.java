@@ -52,6 +52,10 @@ public class ColumnController extends ErpBaseController {
                 comboboxVOList.add(vo);
             }
         }
+        ComboboxStringVO vo = new ComboboxStringVO();
+        vo.setKey(null);
+        vo.setValue("无");
+        comboboxVOList.add(vo);
         success(response, comboboxVOList);
     }
 

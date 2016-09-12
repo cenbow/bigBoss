@@ -82,7 +82,14 @@ Ext.define('StudyGardenMgmt.view.InfoDialogViewController', {
     var viewCtr = this,
         viewModel = viewCtr.getViewModel(),
         view = viewCtr.getView();
-    var store = viewModel.getStore('categorybyupclassidcomboboxstore');
+
+    var levelTwo = field.up("form").down("#levelTwo");
+    levelTwo.clearValue();
+    levelTwo.store.load({
+      params: {id: value}
+    })
+
+    /*var store = viewModel.getStore('categorybyupclassidcomboboxstore');
     if (store) {
       if(!viewModel.get('isView')){
         Ext.getCmp('levelTwo').clearValue();
@@ -90,7 +97,7 @@ Ext.define('StudyGardenMgmt.view.InfoDialogViewController', {
           params: {id: value}
         });
       }
-    }
+    }*/
   }
 
 });

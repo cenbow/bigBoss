@@ -6,41 +6,55 @@ import org.apache.commons.lang3.StringUtils;
 
 public class CategorySearchParam extends PageParam {
 
-	/**
-	 * 用户名
-	 */
-	private String text;
+    /**
+     * 用户名
+     */
+    private String text;
 
-	/**
-	 *
-	 * @return
-	 */
-	private Integer columnId;
+    /**
+     * @return
+     */
+    private Integer columnId;
 
-	public Integer getColumnId() {
-		return columnId;
-	}
+    private Integer upClassId;
 
-	public void setColumnId(Integer columnId) {
-		this.columnId = columnId;
-	}
+    public Integer getUpClassId() {
+        return upClassId;
+    }
 
-	public String getText() {
-		return text;
-	}
+    public void setUpClassId(Integer upClassId) {
+        this.upClassId = upClassId;
+    }
 
-	public void setText(String text) {
-		this.text = text;
-	}
+    public Integer getColumnId() {
+        return columnId;
+    }
 
-	@Override
-	public PageRequest toPageRequest() {
-		PageRequest pageRequest = super.toPageRequest();
-		pageRequest.putFilterIfNotNull("text", this.text);
-		pageRequest.putFilterIfNotNull("columnId", this.columnId);
-		if (StringUtils.isNotBlank(this.text)) {
-			pageRequest.putFilterIfNotNull("lowerText", this.text.toLowerCase());
-		}
-		return pageRequest;
-	}
+    public void setColumnId(Integer columnId) {
+        this.columnId = columnId;
+    }
+
+    public String getText() {
+        return text;
+    }
+
+    public void setText(String text) {
+        this.text = text;
+    }
+
+    @Override
+    public PageRequest toPageRequest() {
+        PageRequest pageRequest = super.toPageRequest();
+        pageRequest.putFilterIfNotNull("text", this.text);
+        if (this.columnId != null && this.columnId != 0) {
+            pageRequest.putFilterIfNotNull("columnId", this.columnId);
+        }
+        if (this.upClassId != null && this.upClassId != 0) {
+            pageRequest.putFilterIfNotNull("upClassId", this.upClassId);
+        }
+        if (StringUtils.isNotBlank(this.text)) {
+            pageRequest.putFilterIfNotNull("lowerText", this.text.toLowerCase());
+        }
+        return pageRequest;
+    }
 }

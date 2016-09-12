@@ -119,7 +119,7 @@ Ext.define('AccountMgmt.view.InfoDialog', {
           queryMode:'local',
           itemId: 'roleId',
           bind: {
-            value: "{formData.roleName}",
+            value: "{formData.roleId}",
             readOnly:'{isView}'
           }
         },

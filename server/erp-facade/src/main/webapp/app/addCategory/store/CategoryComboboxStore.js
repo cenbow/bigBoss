@@ -29,7 +29,7 @@ Ext.define('addCategory.store.CategoryComboboxStore', {
       storeId:'CategoryComboboxStore',
       fields:['key','value'],
       proxy: {
-        url: FACADE_URL+'/category/listByColumnCode',
+        url: FACADE_URL+'/category/listByColumnCode1',
         type: 'ajax',
         reader: {
           type: 'json',

@@ -19,7 +19,9 @@ Ext.define('CategoryMgmt.view.MainViewportViewModel', {
 
   data: {
     searchData: { // 查询条件
-      text: ""
+      text: "",
+      upClassId:0,
+      columnId:0
     },
     addFlag: true,  // 添加/修改窗口标志位
     mainViewportController: {} // 窗口保存回调
@@ -39,14 +41,25 @@ Ext.define('CategoryMgmt.view.MainViewportViewModel', {
         },
         //url: FACADE_URL+'/category/filter',
         extraParams: {
-          text: '{searchData.text}'
+          text: '{searchData.text}',
+          columnId:'{searchData.columnId}',
+          upClassId:'{searchData.upClassId}'
         },
         reader: {
           type: 'json',
           rootProperty: 'data.pageData',
           totalProperty: 'data.totalCount'
         }
-      }
+      },
+
+    },
+    columncomboboxstore:{
+      type:'columncomboboxstore',
+      autoLoad:true
+    },
+    upclassallstore:{
+      type:'categoryallcomboboxstore',
+      autoLoad:true
     }
   }
 });

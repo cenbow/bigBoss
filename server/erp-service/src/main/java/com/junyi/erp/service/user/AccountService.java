@@ -20,4 +20,5 @@ public interface AccountService {
 
 	Page<Account> selectAccountByFiltersPage(PageRequest pageRequest);
 
+	Boolean isExistUserName(String userName);
 }

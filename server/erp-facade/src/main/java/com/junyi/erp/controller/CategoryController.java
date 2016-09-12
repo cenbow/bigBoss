@@ -26,9 +26,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.ArrayList;
-import java.util.Date;
-import java.util.List;
+import java.util.*;
 
 /**
  * Created by xww on 2016/8/13.
@@ -44,21 +42,104 @@ public class CategoryController extends ErpBaseController {
     @Autowired
     private ColumnService columnService;
 
+    @RequestMapping(value = "/listAll", method = RequestMethod.GET)
+    public void listCategoryAll(
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
+
+        List<Category> list = new ArrayList<>();
+        list = categoryService.listAll();
+
+        List<ComboboxVO> comboboxVOList = new ArrayList<>();
+        if (list != null && list.size() > 0) {
+            for (Category category : list) {
+                ComboboxVO vo = new ComboboxVO();
+                vo.setKey(category.getId());
+                vo.setValue(category.getName());
+                comboboxVOList.add(vo);
+            }
+        }
+        ComboboxVO vo = new ComboboxVO();
+        vo.setKey(0);
+        vo.setValue("无");
+        comboboxVOList.add(vo);
+        success(response, comboboxVOList);
+    }
+
+
     @RequestMapping(value = "/listByColumnCode", method = RequestMethod.GET)
     public void listCategoryByColumnCode(
+            String code,
+            String currentId,
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
+        int columnCode = 0;
+        Map params = new HashMap();
+        if (code == null || currentId == null) {
+            return;
+        }
+        if (code != null && code != "") {
+            columnCode = Integer.valueOf(code);
+        }
+        if (currentId != null && currentId != "") {
+            params.put("currentId", Integer.valueOf(currentId));
+        }
+        Column column = columnService.selectByCode(code);
+        List<Category> list = new ArrayList<>();
+
+        if (column != null) {
+            params.put("columnId", column.getId());
+            list = categoryService.listCategoryByColumnCode(params);
+        }
+
+        List<ComboboxVO> comboboxVOList = new ArrayList<>();
+        if (list != null && list.size() > 0) {
+            for (Category category : list) {
+                //二级分类不显示
+                if (category.getLeaf() != 2 && category.getId() != params.get("currentId")) {
+                    ComboboxVO vo = new ComboboxVO();
+                    vo.setKey(category.getId());
+                    vo.setValue(category.getName());
+                    comboboxVOList.add(vo);
+                }
+            }
+        }
+        ComboboxVO vo = new ComboboxVO();
+        vo.setKey(0);
+        vo.setValue("无");
+        comboboxVOList.add(vo);
+        success(response, comboboxVOList);
+    }
+
+    /**
+     * 不需要currentId的，如新增分类，不想改了，复制下
+     * @param code
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value = "/listByColumnCode1", method = RequestMethod.GET)
+    public void listCategoryByColumnCode1(
             String code,
             HttpServletRequest request,
             HttpServletResponse response
     ) {
         int columnCode = 0;
+        Map params = new HashMap();
+
         if (code != null && code != "") {
             columnCode = Integer.valueOf(code);
         }
+
         Column column = columnService.selectByCode(code);
         List<Category> list = new ArrayList<>();
+
         if (column != null) {
-            list = categoryService.listCategoryByColumnCode(column.getId());
+            params.put("columnId", column.getId());
+            list = categoryService.listCategoryByColumnCode(params);
         }
+
         List<ComboboxVO> comboboxVOList = new ArrayList<>();
         if (list != null && list.size() > 0) {
             for (Category category : list) {
@@ -72,7 +153,7 @@ public class CategoryController extends ErpBaseController {
             }
         }
         ComboboxVO vo = new ComboboxVO();
-        vo.setKey(null);
+        vo.setKey(0);
         vo.setValue("无");
         comboboxVOList.add(vo);
         success(response, comboboxVOList);
@@ -110,6 +191,12 @@ public class CategoryController extends ErpBaseController {
         String voName = vo.getName();
         String nameList[] = voName.split(";");
         vo.setName("");
+        for(String name : nameList){
+            if(name.trim().equals("")){
+                error(response,"分类名不能为空格");
+                return;
+            }
+        }
         for (String name : nameList) {
             Category category = new Category();
             if (vo != null) {
@@ -124,9 +211,13 @@ public class CategoryController extends ErpBaseController {
                     category.setColumnId(column.getId());
                 }
                 //查重
-                int exist = categoryService.selectIsExistName(name, category.getColumnId(), vo.getUpClassId());
-                if (exist > 0) {
-                    error(response, "分类名重复");
+                Category exist = categoryService.selectIsExistName(name, category.getColumnId(), vo.getUpClassId());
+                if (exist !=null) {
+                    if(nameList.length == 1){
+                        error(response, "分类名"+ exist.getName() +"重复");
+                    }else{
+                        error(response, "分类名"+ exist.getName() +"重复,"+ exist.getName() +"之前的分类已为您添加成功");
+                    }
                     return;
                 }
                 if (category.getUpClassId() != null && category.getUpClassId() != 0) {
@@ -178,6 +269,31 @@ public class CategoryController extends ErpBaseController {
         if (vo != null) {
             category = vo.convertVOToPO();
         }
+
+        if (category.getUpClassId() != 0) {
+            List<Category> list = categoryService.listCategoryByUpClassId(category.getId());
+            if (list != null && list.size() > 0) {
+                error(response, "该分类下有二级分类，无法降级");
+                return;
+            }
+        }
+
+        if (category.getStatus() == 0) {
+            List<Category> list = categoryService.listCategoryByUpClassId(category.getId());
+            if (list != null && list.size() > 0) {
+                error(response, "该分类下有二级分类，无法停用");
+                return;
+            }
+        }
+
+        if(category.getStatus() == 1 && category.getUpClassId()!=0){
+            Category ca = categoryService.selectByPk(category.getUpClassId());
+            if(ca == null || ca.getStatus() == 0){
+                error(response, "该一级分类已停用，请启用后再启用该二级分类");
+                return;
+            }
+        }
+
         HttpSession session = request.getSession();
         Integer userId = (Integer) session.getAttribute("userId");
         category.setUpdateBy(userId);

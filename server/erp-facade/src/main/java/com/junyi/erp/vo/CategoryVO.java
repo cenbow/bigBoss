@@ -21,6 +21,8 @@ public class CategoryVO implements BaseVO {
 
     private int leaf;
 
+    private String categoryName;
+
     public int getId() {
         return id;
     }
@@ -77,6 +79,14 @@ public class CategoryVO implements BaseVO {
         this.leaf = leaf;
     }
 
+    public String getCategoryName() {
+        return categoryName;
+    }
+
+    public void setCategoryName(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
     @Override
     public void convertPOToVO(Object o) {
         if(o instanceof Category){
@@ -90,6 +100,7 @@ public class CategoryVO implements BaseVO {
             this.status = category.getStatus();
             this.leaf = category.getLeaf();
             this.columnCode = category.getColumnCode();
+            this.categoryName = category.getCategoryName();
         }
     }
 

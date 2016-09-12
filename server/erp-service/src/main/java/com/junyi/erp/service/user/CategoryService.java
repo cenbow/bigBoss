@@ -6,6 +6,7 @@ import com.junyi.erp.domain.Account;
 import com.junyi.erp.domain.Category;
 
 import java.util.List;
+import java.util.Map;
 
 public interface CategoryService {
 
@@ -17,11 +18,13 @@ public interface CategoryService {
 
 	void deleteByPk(Integer pk);
 
-	List<Category> listCategoryByColumnCode(Integer columnId);
+	List<Category> listAll();
+
+	List<Category> listCategoryByColumnCode(Map params);
 
 	List<Category> listCategoryByUpClassId(Integer id);
 
-	int selectIsExistName(String name, int columnId, int upClassId);
+	Category selectIsExistName(String name, int columnId, int upClassId);
 
 	Page<Category> selectCategoryByFiltersPage(PageRequest request);
 

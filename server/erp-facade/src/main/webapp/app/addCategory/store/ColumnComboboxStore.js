@@ -39,7 +39,7 @@ Ext.define('addCategory.store.ColumnComboboxStore', {
         },
         {
           key: '0003',
-          value: '市场咨询'
+          value: '市场资讯'
         },
         {
           key: '0004',

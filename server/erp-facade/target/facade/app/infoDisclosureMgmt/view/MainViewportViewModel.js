@@ -47,6 +47,21 @@ Ext.define('InformationMgmt.view.MainViewportViewModel', {
           rootProperty: 'data.pageData',
           totalProperty: 'data.totalCount'
         }
+      },
+      listeners:{
+        beforeload:function(store,records,successful,operation,opts){
+
+        },
+        load:function(store,records,successful,operation,opts){
+
+          if(successful){
+            //Ext.Msg.alert('提示','数据加载成功!');
+
+          }else{
+            Ext.Msg.alert('提示','session过期，请重新登录!');
+
+          }
+        }
       }
     }
   }

@@ -89,7 +89,7 @@ function loadHead() {
     }
   })
 
-  //市场咨询
+  //市场资讯
   $.ajax({
     url: FACADE_URL + '/information/filter',
     data: {

@@ -24,8 +24,7 @@ Ext.define('CategoryMgmt.view.InfoDialogViewModel', {
 
   stores: {
     categorycomboboxstore: {
-      type: 'categorycomboboxstore',
-      autoLoad: true
+      type: 'categorycomboboxstore'
     }
   }
 });

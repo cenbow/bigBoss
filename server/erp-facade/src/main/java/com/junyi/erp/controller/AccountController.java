@@ -94,6 +94,12 @@ public class AccountController extends ErpBaseController {
         if(vo != null){
             account = vo.convertVOToPO();
         }
+
+        Boolean exist = accountService.isExistUserName(vo.getUserName());
+        if(exist){
+            error(response,"用户名重复，请重新输入");
+            return;
+        }
         account.setStatus(1);
 //        account.setCreateBy(1);
         HttpSession session = request.getSession();

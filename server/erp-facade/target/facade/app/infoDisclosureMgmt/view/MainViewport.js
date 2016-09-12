@@ -25,7 +25,7 @@ Ext.define('InformationMgmt.view.MainViewport', {
     dockedItems: [{
       xtype: 'toolbar',
       dock: 'top',
-      height:32,
+      height:35,
       items: [{
         xtype: 'button',
         text: '发布',
@@ -43,8 +43,6 @@ Ext.define('InformationMgmt.view.MainViewport', {
           fieldLabel: '快速搜索',
           labelAlign: 'right',
           labelWidth: 60,
-          labelHeight:28,
-          height:28,
           emptyText: '输入分类名称',
           enableKeyEvents: true,
           listeners: {

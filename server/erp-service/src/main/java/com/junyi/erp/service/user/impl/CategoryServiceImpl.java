@@ -45,8 +45,13 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	@Override
-	public List<Category> listCategoryByColumnCode(Integer columnId) {
-		return myBatisDAO.findForList("selectCategoryByColumnId",columnId);
+	public List<Category> listAll() {
+		return myBatisDAO.findForList("selectAllCategory");
+	}
+
+	@Override
+	public List<Category> listCategoryByColumnCode(Map params) {
+		return myBatisDAO.findForList("selectCategoryByColumnId",params);
 	}
 
 	@Override
@@ -55,7 +60,7 @@ public class CategoryServiceImpl implements CategoryService {
 	}
 
 	@Override
-	public int selectIsExistName(String name, int columnId, int upClassId) {
+	public Category selectIsExistName(String name, int columnId, int upClassId) {
 		Map map = new HashMap();
 		map.put("name",name);
 		map.put("columnId",columnId);
