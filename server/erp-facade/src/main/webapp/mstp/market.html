@@ -190,9 +190,9 @@
 
 <script>
     $(function(){
-        var login = JSON.parse(localStorage.getItem("commonLogin"));
+        var login = JSON.parse(localStorage.getItem("login"));
         var roleId = JSON.parse(localStorage.getItem("roleId"));
-        if(!login || !roleId || roleId == 1){
+        if(!login || !roleId ){
             window.location.replace(FACADE_URL+'/login.html');
         }
     })

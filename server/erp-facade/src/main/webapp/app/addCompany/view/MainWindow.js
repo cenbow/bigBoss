@@ -76,7 +76,8 @@ Ext.define('addCompany.view.MainWindow', {
             {
               xtype: 'textfield',
               name:'code',
-              fieldLabel: '公&nbsp;司&nbsp;代&nbsp;码<span style="color:red">*</span>'
+              fieldLabel: '公&nbsp;司&nbsp;代&nbsp;码<span style="color:red">*</span>',
+              allowBlank: false
             },
             {
               xtype: 'textfield',
