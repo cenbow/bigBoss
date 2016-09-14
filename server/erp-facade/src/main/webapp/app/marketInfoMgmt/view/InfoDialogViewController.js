@@ -45,6 +45,7 @@ Ext.define('MarketInfoMgmt.view.InfoDialogViewController', {
         formCmp = currWin.down("form");
 
     if (!formCmp.isValid()) {
+      TipsUtil.showTips('提示', "市场资讯信息填写不完整");
       return;
     }
 

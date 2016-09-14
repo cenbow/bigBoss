@@ -33,37 +33,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="CategoryController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/CategoryController.java">
+      <file leaf-file-name="InformationController.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/InformationController.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+            <state vertical-scroll-proportion="1.1764706">
+              <caret line="188" column="35" selection-start-line="188" selection-start-column="27" selection-end-line="188" selection-end-column="35" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainWindow.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/view/MainWindow.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="104" column="63" selection-start-line="104" selection-start-column="63" selection-end-line="104" selection-end-column="63" />
-              <folding>
-                <marker date="1473675550626" expanded="true" signature="1726:1735" placeholder="..." />
-                <marker date="1473675550626" expanded="true" signature="2597:2606" placeholder="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MainWindowViewController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/view/MainWindowViewController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.61990213">
-              <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -85,28 +60,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/config.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/resources/jdbc.properties" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/js/login.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/index/store/WestTreePanelStore.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/accountMgmt/store/RoleComboboxStore.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/InfoDialogViewController.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialogViewController.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/InfoDialogViewController.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/index.html" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/CategoryComboboxStore.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/InfoDialogViewModel.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/accountMgmt/view/InfoDialog.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/accountMgmt/view/MainViewport.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/companyMgmt/view/MainViewport.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewport.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/MainViewport.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/MainViewport.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/MainViewport.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/addAccount/view/MainWindowViewController.js" />
-        <option value="$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/AccountService.java" />
-        <option value="$PROJECT_DIR$/erp-service/src/main/resources/mapper/AccountMapper.xml" />
-        <option value="$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/impl/AccountServiceImpl.java" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/AccountController.java" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/store/ColumnComboboxStore.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/InfoDialogViewController.js" />
@@ -117,25 +70,47 @@
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/market.html" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/notice.html" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/study.html" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/CategoryAllComboboxStore.js" />
         <option value="$PROJECT_DIR$/erp-domain/src/main/java/com/junyi/erp/domain/Category.java" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/vo/CategoryVO.java" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewportViewController.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewport.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/param/CategorySearchParam.java" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewportViewModel.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/ColumnController.java" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/store/CategoryComboboxStore.js" />
-        <option value="$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/impl/CategoryServiceImpl.java" />
         <option value="$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/CategoryService.java" />
-        <option value="$PROJECT_DIR$/erp-service/src/main/resources/mapper/CategoryMapper.xml" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/CategoryController.java" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewportViewModel.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/MainViewportViewModel.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/MainViewportViewModel.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/MainViewportViewModel.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/view/MainWindow.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/view/MainWindowViewController.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/store/CategoryComboboxStore.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/store/CategoryComboboxStore.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/store/CategoryComboboxStore.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/store/CategoryComboboxStore.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/InfoDialogViewController.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/InfoDialogViewController.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialogViewController.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/InfoDialogViewController.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/CategoryAllComboboxStore.js" />
+        <option value="$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/impl/CategoryServiceImpl.java" />
+        <option value="$PROJECT_DIR$/erp-service/src/main/resources/mapper/CategoryMapper.xml" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewportViewModel.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/CategoryByUpClassIdComboboxStore.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewport.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewportViewController.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/CategoryController.java" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/InfoDialog.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/InfoDialog.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialog.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/InfoDialog.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewport.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/MainViewport.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/MainViewport.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/MainViewport.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewportViewController.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/MainViewportViewController.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/MainViewportViewController.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/MainViewportViewController.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/InformationController.java" />
       </list>
     </option>
   </component>
@@ -225,8 +200,9 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
+      <pane id="Scope" />
       <pane id="PackagesPane" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -309,41 +285,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="method" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.springframework:spring-web:3.2.13.RELEASE" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="spring-web-3.2.13.RELEASE.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="springframework" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="web" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="method" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="support" />
+              <option name="myItemId" value="multipart" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -379,15 +321,25 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.springframework:spring-aop:3.2.13.RELEASE" />
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="External Libraries" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="spring-aop-3.2.13.RELEASE.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="aop" />
+              <option name="myItemId" value="rt.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -401,19 +353,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.springframework:spring-aop:3.2.13.RELEASE" />
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="spring-aop-3.2.13.RELEASE.jar" />
+              <option name="myItemId" value="rt.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="aop" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="framework" />
+              <option name="myItemId" value="java" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -427,209 +375,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: org.springframework:spring-aop:3.2.13.RELEASE" />
+              <option name="myItemId" value="&lt; 1.7 &gt;" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="spring-aop-3.2.13.RELEASE.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: com.junyi.base:ecommerce-core:1.0.14" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecommerce-core-1.0.14.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: com.junyi.base:ecommerce-core:1.0.14" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecommerce-core-1.0.14.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: com.junyi.base:ecommerce-core:1.0.14" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecommerce-core-1.0.14.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="External Libraries" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ExternalLibrariesNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="Maven: com.junyi.base:ecommerce-core:1.0.14" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.NamedLibraryElementNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="ecommerce-core-1.0.14.jar" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="core" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="util" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="rest" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="mapper" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
+              <option name="myItemId" value="rt.jar" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -637,7 +387,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="erp" />
+              <option name="myItemId" value="lang" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -648,68 +398,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-service" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="user" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="impl" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -750,70 +438,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-facade" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-facade" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="extjs" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -877,7 +501,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="addCategory" />
+              <option name="myItemId" value="studyGardenMgmt" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -911,7 +535,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="addCategory" />
+              <option name="myItemId" value="studyGardenMgmt" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -941,7 +565,219 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="noticeShowMgmt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="noticeShowMgmt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="marketInfoMgmt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="marketInfoMgmt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="infoDisclosureMgmt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="infoDisclosureMgmt" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="view" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -972,44 +808,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="erp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="vo" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-facade" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="java" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="param" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1057,7 +855,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="erp-domain" />
+              <option name="myItemId" value="erp-assist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1071,7 +869,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="erp-domain" />
+              <option name="myItemId" value="erp-assist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1101,7 +899,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="erp-domain" />
+              <option name="myItemId" value="erp-assist" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
@@ -1121,13 +919,12 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -1540,16 +1337,18 @@
       <workItem from="1473494687209" duration="1049000" />
       <workItem from="1473558145914" duration="1400000" />
       <workItem from="1473600150776" duration="7169000" />
-      <workItem from="1473645637291" duration="26021000" />
+      <workItem from="1473645637291" duration="26618000" />
+      <workItem from="1473730891432" duration="1831000" />
+      <workItem from="1473817384324" duration="16063000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="205169000" />
+    <option name="totallyTimeSpent" value="223660000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1696" height="1026" extended-state="6" />
-    <editor active="true" />
+    <frame x="-8" y="-8" width="1696" height="1026" extended-state="0" />
+    <editor active="false" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1561,7 +1360,7 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960895" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.28268155" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.37877095" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -1631,7 +1430,7 @@
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
-      <option name="time" value="54" />
+      <option name="time" value="59" />
     </breakpoint-manager>
     <watches-manager>
       <configuration name="#com.intellij.j2ee.web.tomcat.TomcatRunConfigurationFactory">
@@ -1646,354 +1445,63 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/InfoDialogViewModel.js">
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.13.RELEASE/spring-web-3.2.13.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="13" selection-start-line="20" selection-start-column="13" selection-end-line="20" selection-end-column="13" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
+          <caret line="214" column="0" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/accountMgmt/view/InfoDialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="121" column="36" selection-start-line="121" selection-start-column="36" selection-end-line="121" selection-end-column="36" />
-          <folding>
-            <marker date="1473662034948" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473662034948" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473662034948" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473662034948" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473662034948" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/companyMgmt/view/MainViewport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="31" selection-start-line="37" selection-start-column="31" selection-end-line="37" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/MainViewport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="27" column="16" selection-start-line="27" selection-start-column="16" selection-end-line="27" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/addAccount/view/MainWindowViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="29" column="37" selection-start-line="29" selection-start-column="37" selection-end-line="29" selection-end-column="37" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-service/src/main/resources/mapper/AccountMapper.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-24.928572">
-          <caret line="147" column="50" selection-start-line="147" selection-start-column="50" selection-end-line="147" selection-end-column="50" />
-          <folding>
-            <marker date="1473663384624" expanded="true" signature="-1:-1" placeholder="select from ..account..." />
-            <marker date="1473663384624" expanded="true" signature="-1:-1" placeholder="select from ..account..." />
-            <marker date="1473663384624" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1473663384624" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1473663384624" expanded="true" signature="-1:-1" placeholder="update accou..." />
-            <marker date="1473663384624" expanded="true" signature="-1:-1" placeholder="update accou..." />
-            <marker date="1473663384624" expanded="true" signature="-1:-1" placeholder="select from ..account..." />
-            <marker date="1473663384624" expanded="true" signature="-1:-1" placeholder="select from ..account..." />
-            <marker date="1473663384624" expanded="true" signature="-1:-1" placeholder="select from ..account..." />
-            <marker date="1473663384624" expanded="true" signature="-1:-1" placeholder="select from ..account..." />
-            <marker date="1473663384624" expanded="true" signature="-1:-1" placeholder="select from ..account..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/AccountService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-12.857142">
-          <caret line="22" column="45" selection-start-line="22" selection-start-column="45" selection-end-line="22" selection-end-column="45" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/impl/AccountServiceImpl.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/AccountController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.85450345">
-          <caret line="108" column="30" selection-start-line="108" selection-start-column="30" selection-end-line="108" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/store/ColumnComboboxStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2251732">
-          <caret line="41" column="18" selection-start-line="41" selection-start-column="18" selection-end-line="41" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/InfoDialogViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2251732">
-          <caret line="107" column="25" selection-start-line="107" selection-start-column="25" selection-end-line="107" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.724138">
-          <caret line="92" column="53" selection-start-line="92" selection-start-column="53" selection-end-line="92" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-6.413793">
-          <caret line="331" column="24" selection-start-line="331" selection-start-column="24" selection-end-line="331" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/informationDetail.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5937873">
-          <caret line="263" column="32" selection-start-line="263" selection-start-column="32" selection-end-line="263" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2251732">
-          <caret line="91" column="4" selection-start-line="91" selection-start-column="4" selection-end-line="91" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/market.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.22222222">
-          <caret line="119" column="24" selection-start-line="119" selection-start-column="24" selection-end-line="119" selection-end-column="24" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/notice.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.23297492">
-          <caret line="90" column="53" selection-start-line="90" selection-start-column="53" selection-end-line="90" selection-end-column="53" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/study.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="1.4038231">
-          <caret line="116" column="18" selection-start-line="116" selection-start-column="18" selection-end-line="116" selection-end-column="18" />
-          <folding>
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473663977149" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/accountMgmt/view/MainViewport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="35" selection-start-line="102" selection-start-column="32" selection-end-line="102" selection-end-column="35" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-domain/src/main/java/com/junyi/erp/domain/Category.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.5">
-          <caret line="59" column="37" selection-start-line="59" selection-start-column="37" selection-end-line="59" selection-end-column="37" />
-          <folding>
-            <element signature="e#771#772#0" expanded="false" />
-            <element signature="e#827#828#0" expanded="false" />
-            <element signature="e#875#876#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/vo/CategoryVO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="102" column="59" selection-start-line="102" selection-start-column="59" selection-end-line="102" selection-end-column="59" />
-          <folding>
-            <element signature="e#1420#1421#0" expanded="false" />
-            <element signature="e#1455#1456#0" expanded="false" />
-            <element signature="e#1511#1512#0" expanded="false" />
-            <element signature="e#1559#1560#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/CategoryComboboxStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="40" column="3" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/addAccount/view/MainWindow.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="100" column="18" selection-start-line="100" selection-start-column="18" selection-end-line="100" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/InfoDialogViewModel.js">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/PDFDialog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/MainViewportViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6786297">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/MainViewportViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.5106036">
+          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/MainViewportViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6411093">
+          <caret line="60" column="11" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewportViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.54323">
+          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/view/MainWindow.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="104" column="63" selection-start-line="104" selection-start-column="63" selection-end-line="104" selection-end-column="63" />
           <folding>
-            <element signature="n#!!doc" expanded="false" />
+            <marker date="1473675550626" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1473675550626" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/InfoDialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.266666">
-          <caret line="86" column="48" selection-start-line="86" selection-start-column="27" selection-end-line="86" selection-end-column="48" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1473471186104" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473471186104" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1473471186104" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/InfoDialogViewController.js">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/view/MainWindowViewController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="21" column="4" selection-start-line="21" selection-start-column="4" selection-end-line="21" selection-end-column="4" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/CategoryAllComboboxStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="17" column="40" selection-start-line="17" selection-start-column="16" selection-end-line="17" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewportViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="5" selection-start-line="42" selection-start-column="5" selection-end-line="42" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/param/CategorySearchParam.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
-          <folding>
-            <element signature="e#437#438#0" expanded="false" />
-            <element signature="e#488#489#0" expanded="false" />
-            <element signature="e#530#531#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewportViewModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="45" column="42" selection-start-line="45" selection-start-column="42" selection-end-line="45" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="43" column="51" selection-start-line="43" selection-start-column="51" selection-end-line="43" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/ColumnController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="7" selection-start-line="42" selection-start-column="7" selection-end-line="42" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/ColumnComboboxStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8256351">
-          <caret line="58" column="16" selection-start-line="58" selection-start-column="16" selection-end-line="58" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.023094688">
-          <caret line="131" column="34" selection-start-line="131" selection-start-column="22" selection-end-line="131" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewportViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/view/MainWindowViewModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <caret line="90" column="35" selection-start-line="90" selection-start-column="35" selection-end-line="90" selection-end-column="35" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
           </folding>
@@ -2003,17 +1511,129 @@
     <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/store/CategoryComboboxStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="52" selection-start-line="31" selection-start-column="52" selection-end-line="31" selection-end-column="52" />
+          <caret line="31" column="35" selection-start-line="31" selection-start-column="35" selection-end-line="31" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/store/CategoryComboboxStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="52" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="52" />
           <folding>
             <element signature="n#!!doc" expanded="false" />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/store/CategoryComboboxStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/store/CategoryComboboxStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="52" selection-start-line="32" selection-start-column="52" selection-end-line="32" selection-end-column="52" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/store/CategoryComboboxStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="52" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="52" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/store/MainViewportGridStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/InfoDialogViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialogViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/InfoDialogViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="47" column="35" selection-start-line="47" selection-start-column="35" selection-end-line="47" selection-end-column="35" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/InfoDialogViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/InfoDialogViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="6" selection-start-line="90" selection-start-column="6" selection-end-line="90" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/lang/Override.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.62355655">
+          <caret line="50" column="18" selection-start-line="50" selection-start-column="18" selection-end-line="50" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/CategoryService.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="26" column="12" selection-start-line="26" selection-start-column="12" selection-end-line="26" selection-end-column="12" />
+          <caret line="22" column="19" selection-start-line="22" selection-start-column="19" selection-end-line="22" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-service/src/main/resources/mapper/CategoryMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5">
+          <caret line="95" column="40" selection-start-line="95" selection-start-column="16" selection-end-line="95" selection-end-column="40" />
           <folding />
         </state>
       </provider>
@@ -2021,122 +1641,262 @@
     <entry file="file://$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/impl/CategoryServiceImpl.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="62" column="19" selection-start-line="62" selection-start-column="11" selection-end-line="62" selection-end-column="19" />
+          <caret line="63" column="32" selection-start-line="63" selection-start-column="32" selection-end-line="63" selection-end-column="32" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-service/src/main/resources/mapper/CategoryMapper.xml">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/store/CategoryByUpClassIdComboboxStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="121" column="44" selection-start-line="121" selection-start-column="44" selection-end-line="121" selection-end-column="44" />
-          <folding>
-            <marker date="1473674294538" expanded="true" signature="-1:-1" placeholder="select from ..category..." />
-            <marker date="1473674294538" expanded="true" signature="-1:-1" placeholder="delete from ..." />
-            <marker date="1473674294538" expanded="true" signature="-1:-1" placeholder="insert into ..." />
-            <marker date="1473674294538" expanded="true" signature="-1:-1" placeholder="update categ..." />
-            <marker date="1473674294538" expanded="true" signature="-1:-1" placeholder="update categ..." />
-            <marker date="1473674294538" expanded="true" signature="-1:-1" placeholder="select from ..category..." />
-            <marker date="1473674294538" expanded="true" signature="-1:-1" placeholder="select from ..category..." />
-            <marker date="1473674294538" expanded="true" signature="-1:-1" placeholder="select * fro..category..." />
-            <marker date="1473674294538" expanded="true" signature="-1:-1" placeholder="select * fro..category..." />
-            <marker date="1473674294538" expanded="true" signature="-1:-1" placeholder="select c.* ,..category..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.13.RELEASE/spring-web-3.2.13.RELEASE-sources.jar!/org/springframework/web/method/support/InvocableHandlerMethod.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="214" column="0" selection-start-line="214" selection-start-column="0" selection-end-line="214" selection-end-column="0" />
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="50" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/PDFDialog.js">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/InfoDialog.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
+            <marker date="1471915335852" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1471915335852" expanded="true" signature="-1:-1" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/MainViewport.js">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/InfoDialogViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.032626428">
-          <caret line="58" column="11" selection-start-line="58" selection-start-column="11" selection-end-line="58" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="51" selection-start-line="26" selection-start-column="19" selection-end-line="26" selection-end-column="51" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/MainViewportViewModel.js">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewportViewModel.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6786297">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="63" column="44" selection-start-line="63" selection-start-column="44" selection-end-line="63" selection-end-column="44" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/MainViewportViewModel.js">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/CategoryAllComboboxStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.5106036">
-          <caret line="57" column="0" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="15" column="24" selection-start-line="15" selection-start-column="12" selection-end-line="15" selection-end-column="24" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/MainViewportViewModel.js">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/CategoryComboboxStore.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6411093">
-          <caret line="60" column="11" selection-start-line="60" selection-start-column="11" selection-end-line="60" selection-end-column="11" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="30" column="14" selection-start-line="30" selection-start-column="14" selection-end-line="30" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/CategoryByUpClassIdComboboxStore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="32" column="50" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="90" column="37" selection-start-line="90" selection-start-column="28" selection-end-line="90" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewportViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="4" selection-start-line="68" selection-start-column="4" selection-end-line="68" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-assist/src/main/java/com/junyi/erp/controller/ErpBaseController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="26" column="16" selection-start-line="26" selection-start-column="8" selection-end-line="26" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/lang/AbstractStringBuilder.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="865" column="18" selection-start-line="865" selection-start-column="18" selection-end-line="865" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://C:/Program Files/Java/jdk1.7.0_79/src.zip!/java/lang/StringBuffer.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="411" column="28" selection-start-line="411" selection-start-column="28" selection-end-line="411" selection-end-column="28" />
+          <folding>
+            <element signature="e#12505#12506#0" expanded="false" />
+            <element signature="e#12555#12556#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/CategoryController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.32398316">
+          <caret line="248" column="46" selection-start-line="248" selection-start-column="46" selection-end-line="248" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/InfoDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="118" column="71" selection-start-line="118" selection-start-column="71" selection-end-line="118" selection-end-column="83" />
+          <folding>
+            <marker date="1473843952965" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1473843952965" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1473843952965" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/InfoDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="49" selection-start-line="98" selection-start-column="49" selection-end-line="98" selection-end-column="49" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1473844044438" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1473844044438" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1473844044438" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="98" column="49" selection-start-line="98" selection-start-column="49" selection-end-line="98" selection-end-column="49" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1473844044430" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1473844044430" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1473844044430" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/InfoDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="38" selection-start-line="54" selection-start-column="38" selection-end-line="54" selection-end-column="38" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <marker date="1473844044420" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1473844044420" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1473844044420" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="116" column="13" selection-start-line="116" selection-start-column="13" selection-end-line="121" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/MainViewport.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.9249592">
-          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="121" column="13" selection-start-line="121" selection-start-column="13" selection-end-line="121" selection-end-column="13" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewportViewModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.54323">
-          <caret line="59" column="0" selection-start-line="59" selection-start-column="0" selection-end-line="59" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/CategoryController.java">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/MainViewport.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="193" column="0" selection-start-line="193" selection-start-column="0" selection-end-line="193" selection-end-column="0" />
+          <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/view/MainWindow.js">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/MainViewport.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="104" column="63" selection-start-line="104" selection-start-column="63" selection-end-line="104" selection-end-column="63" />
-          <folding>
-            <marker date="1473675550626" expanded="true" signature="1726:1735" placeholder="..." />
-            <marker date="1473675550626" expanded="true" signature="2597:2606" placeholder="..." />
-          </folding>
+          <caret line="84" column="20" selection-start-line="84" selection-start-column="20" selection-end-line="84" selection-end-column="20" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/view/MainWindowViewController.js">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/MainViewportViewController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.61990213">
-          <caret line="73" column="21" selection-start-line="73" selection-start-column="21" selection-end-line="73" selection-end-column="21" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/MainViewportViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="94" column="5" selection-start-line="94" selection-start-column="5" selection-end-line="94" selection-end-column="5" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/MainViewportViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="213" column="0" selection-start-line="213" selection-start-column="0" selection-end-line="213" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewportViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="85" column="38" selection-start-line="85" selection-start-column="38" selection-end-line="85" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$MAVEN_REPOSITORY$/org/springframework/spring-web/3.2.13.RELEASE/spring-web-3.2.13.RELEASE-sources.jar!/org/springframework/web/multipart/MultipartFile.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.33256352">
+          <caret line="52" column="11" selection-start-line="52" selection-start-column="11" selection-end-line="52" selection-end-column="11" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/InformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="1.1764706">
+          <caret line="188" column="35" selection-start-line="188" selection-start-column="27" selection-end-line="188" selection-end-column="35" />
+          <folding />
         </state>
       </provider>
     </entry>

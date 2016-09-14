@@ -45,6 +45,7 @@ Ext.define('NoticeShowMgmt.view.InfoDialogViewController', {
         formCmp = currWin.down("form");
 
     if (!formCmp.isValid()) {
+      TipsUtil.showTips('提示', "通知公告信息填写不完整");
       return;
     }
 

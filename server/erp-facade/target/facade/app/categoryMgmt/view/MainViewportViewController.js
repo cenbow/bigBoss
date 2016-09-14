@@ -38,6 +38,36 @@ Ext.define('CategoryMgmt.view.MainViewportViewController', {
 
   },
 
+  changeColumn: function (field, value) {
+    var viewCtr = this,
+      viewModel = viewCtr.getViewModel(),
+      view = viewCtr.getView();
+    //var store = Ext.StoreMgr.get('CategoryByUpClassIdComboboxStore')
+    var upClassStore = field.up("toolbar").down("#upClassStore");
+    upClassStore.clearValue();
+    upClassStore.store.load({
+      params: {code: value, status: 0}
+    })
+  },
+
+  changeLevelOne: function (field, value) {
+    var viewCtr = this,
+      viewModel = viewCtr.getViewModel(),
+      view = viewCtr.getView();
+    //var store = Ext.StoreMgr.get('CategoryByUpClassIdComboboxStore')
+    var levelTwoStore = field.up("toolbar").down("#levelTwoStore");
+    levelTwoStore.clearValue();
+    levelTwoStore.store.load({
+      params: {id: value}
+    })
+  },
+
+  clearSearch: function (field) {
+    field.up("toolbar").down("#columnStore").clearValue();
+    field.up("toolbar").down("#upClassStore").clearValue();
+    field.up("toolbar").down("#fastSearch").setValue("");
+  },
+
   /**
    * 快速搜索
    */
@@ -148,7 +178,7 @@ Ext.define('CategoryMgmt.view.MainViewportViewController', {
           store.load({
             params: {
               code: record.data.columnCode,
-              currentId:record.get("id")
+              currentId: record.get("id")
             }
           });
         }

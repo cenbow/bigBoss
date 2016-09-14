@@ -30,7 +30,7 @@ Ext.define('StudyGardenMgmt.store.CategoryComboboxStore', {
       fields:['key','value'],
       autoLoad:true,
       proxy: {
-        url: FACADE_URL+'/category/listByColumnCode',
+        url: FACADE_URL+'/category/listByColumnCode1',
         type: 'ajax',
         extraParams:{
           code:'0002'

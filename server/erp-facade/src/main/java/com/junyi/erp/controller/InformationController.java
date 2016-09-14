@@ -166,10 +166,12 @@ public class InformationController extends ErpBaseController {
             error(response, "只能上传pdf类型的文件");
             return;
         }
+        //todo 生成唯一随机数作为文件别名保存到数据库，下载和查看都使用这个
+
         //时间戳，加到文件名前
         long time = System.currentTimeMillis();
         fileName = String.valueOf(time) + "-" + fileName;
-        String path = "D:/savePDF/";
+        String path = "C:/savePDF/";
         System.out.print(path);
         File dir = new File(path);
         if (!dir.exists()) {
@@ -196,7 +198,7 @@ public class InformationController extends ErpBaseController {
             HttpServletResponse response) {
         Information information = informationService.selectInformationByPK(id);
         String fileName = information.getUrl();
-        String path = "D:/savePDF/";
+        String path = "C:/savePDF/";
         File existFile = new File(path + fileName + ".pdf");
         if (existFile.exists()) {
             existFile.delete();
@@ -340,7 +342,7 @@ public class InformationController extends ErpBaseController {
             error(response, "没有文件名");
             return;
         }
-        String path = "D:/savePDF/" + fileName + ".pdf";
+        String path = "C:/savePDF/" + fileName + ".pdf";
         File file = new File(path);// path是根据日志路径和文件名拼接出来的
         String filename = file.getName();// 获取日志文件名称
         InputStream fis = new BufferedInputStream(new FileInputStream(path));

@@ -58,8 +58,10 @@ Ext.define('CategoryMgmt.view.MainViewportViewModel', {
       autoLoad:true
     },
     upclassallstore:{
-      type:'categoryallcomboboxstore',
-      autoLoad:true
+      type:'categoryallcomboboxstore'
+    },
+    categorybyupclassidcomboboxstore:{
+      type:'categorybyupclassidcomboboxstore'
     }
   }
 });

@@ -29,7 +29,7 @@ Ext.define('CategoryMgmt.store.CategoryAllComboboxStore', {
       storeId:'CategoryAllComboboxStore',
       fields:['key','value'],
       proxy: {
-        url: FACADE_URL+'/category/listAll',
+        url: FACADE_URL+'/category/listByColumnCode1',
         type: 'ajax',
         reader: {
           type: 'json',

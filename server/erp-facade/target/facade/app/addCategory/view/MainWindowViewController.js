@@ -105,7 +105,6 @@ Ext.define('addCategory.view.MainWindowViewController', {
 
   roleChange:function(field, newValue, oldValue, eOpts){
     var viewModel = this.getViewModel();
-
     viewModel.set('roleName',field.lastMutatedValue);
     console.info(field);
   }

@@ -93,7 +93,7 @@
     where ID = #{id,jdbcType=INTEGER}
   </update>
 
-    <select id="selectCategoryByColumnId" resultMap="CategoryMap" parameterType="java.lang.Integer">
+    <select id="selectCategoryByColumnId" resultMap="CategoryMap" parameterType="Map">
         select
         <include refid="Base_Column_List"/>
         from category
@@ -101,14 +101,18 @@
             <if test="columnId != null">
                 COLUMN_ID = #{columnId,jdbcType=INTEGER}
             </if>
-            and STATUS = 1
+            <if test="status != null">
+                and STATUS = #{status,jdbcType=INTEGER}
+            </if>
+
         </where>
     </select>
 
-    <select id="selectAllCategory" resultMap="CategoryMap" >
+    <select id="selectAllCategory" resultMap="CategoryMap" parameterType="java.lang.Integer">
         select
         <include refid="Base_Column_List"/>
         from category
+
     </select>
 
 
@@ -120,10 +124,12 @@
     </select>
 
     <select id="selectIsExistName" resultMap="CategoryMap" parameterType="java.util.HashMap">
-    select <include refid="Base_Column_List"/>
-    from category
-    where COLUMN_ID = #{columnId,jdbcType=INTEGER} AND NAME = #{name,jdbcType=VARCHAR} AND UP_CLASS_ID = #{upClassId,jdbcType=INTEGER}
-  </select>
+        select
+        <include refid="Base_Column_List"/>
+        from category
+        where COLUMN_ID = #{columnId,jdbcType=INTEGER} AND NAME = #{name,jdbcType=VARCHAR} AND UP_CLASS_ID =
+        #{upClassId,jdbcType=INTEGER}
+    </select>
 
 
     <select id="selectCategoryByFiltersPage" resultMap="CategoryMap" parameterType="Map">

@@ -83,7 +83,17 @@ Ext.define('StudyGardenMgmt.view.MainViewportViewController', {
       viewCtr._openInfoDialog(record, 'update');
     } else if (command == 'View') {
       viewCtr._openInfoDialog(record, 'view');
-    } else if (command == 'Delete') {
+    } else if (command == 'ViewPDF') {
+      var fileName = record.get('url');
+      if (fileName) {
+        var str = fileName.substr(fileName.indexOf('-') + 1) + '.pdf';
+        var href = FACADE_URL + '/generic/web/viewer.html?file=' + FACADE_URL + '/information/download/' + fileName;
+        window.open(href, "_blank");
+      }else {
+        TipsUtil.showTips('错误', '该信息暂无附件，请重新上传');
+        return;
+      }
+    }else if (command == 'Delete') {
       viewCtr._deleteRecord(record);
     } else if (command == 'AddPDF') {
       viewCtr._openPDFDialog(record);

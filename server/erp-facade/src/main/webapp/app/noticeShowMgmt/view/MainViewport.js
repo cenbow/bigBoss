@@ -43,7 +43,7 @@ Ext.define('NoticeShowMgmt.view.MainViewport', {
           fieldLabel: '快速搜索',
           labelAlign: 'right',
           labelWidth: 60,
-          emptyText: '输入分类名称',
+          emptyText: '输入信息标题',
           enableKeyEvents: true,
           listeners: {
             specialKey: 'onFastSearchTextFieldSpecialKey'
@@ -82,7 +82,7 @@ Ext.define('NoticeShowMgmt.view.MainViewport', {
         {
           text: '操作',
           xtype: 'widgetcolumn',
-          width: 360,
+          width: 464,
           tdCls: 'btngroup',
           dataIndex: 'progress',
           widget: {
@@ -114,14 +114,19 @@ Ext.define('NoticeShowMgmt.view.MainViewport', {
                 command: "DeletePDF",
                 iconCls: "btn-delete",
                 text: "删除附件"
-              }]
+              }, {
+              xtype: "button",
+              command: "ViewPDF",
+              iconCls: "btn-search",
+              text: "浏览附件"
+            }]
           }
         },
         {
           xtype: 'gridcolumn',
           dataIndex: 'name',
           text: '信息标题',
-          width: 200
+          width: 380
         }, {
           xtype: 'gridcolumn',
           dataIndex: 'levelOneName',
@@ -144,7 +149,7 @@ Ext.define('NoticeShowMgmt.view.MainViewport', {
           align: 'center',
           dataIndex: 'status',
           text: '是否启用',
-          width: 200,
+          width: 80,
           renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
             if (value === 1) {
               return '<img src="../../images/SwitchOn.png" />';
@@ -158,7 +163,7 @@ Ext.define('NoticeShowMgmt.view.MainViewport', {
           align: 'center',
           dataIndex: 'topStatus',
           text: '是否置顶',
-          width: 200,
+          width: 80,
           renderer: function (value, metadata, record, rowIndex, colIndex, store, view) {
             if (value === 1) {
               return '<img src="../../images/SwitchOn.png" />';
@@ -170,17 +175,17 @@ Ext.define('NoticeShowMgmt.view.MainViewport', {
           xtype: 'gridcolumn',
           dataIndex: 'createName',
           text: '录入人',
-          width: 200
+          width: 150
         }, {
           xtype: 'gridcolumn',
           dataIndex: 'companyName',
           text: '公司名称',
-          width: 200
+          width: 220
         }, {
           xtype: 'gridcolumn',
           dataIndex: 'companyCode',
           text: '公司代码',
-          width: 200
+          width: 150
         }, {
           xtype: 'gridcolumn',
           dataIndex: 'url',

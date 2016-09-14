@@ -91,6 +91,7 @@ public class CategoryController extends ErpBaseController {
 
         if (column != null) {
             params.put("columnId", column.getId());
+            params.put("status", 1);
             list = categoryService.listCategoryByColumnCode(params);
         }
 
@@ -122,6 +123,7 @@ public class CategoryController extends ErpBaseController {
     @RequestMapping(value = "/listByColumnCode1", method = RequestMethod.GET)
     public void listCategoryByColumnCode1(
             String code,
+            Integer status,
             HttpServletRequest request,
             HttpServletResponse response
     ) {
@@ -137,6 +139,9 @@ public class CategoryController extends ErpBaseController {
 
         if (column != null) {
             params.put("columnId", column.getId());
+            if(status == null || status == 1){
+                params.put("status", 1);
+            }
             list = categoryService.listCategoryByColumnCode(params);
         }
 
@@ -197,6 +202,9 @@ public class CategoryController extends ErpBaseController {
                 return;
             }
         }
+
+        StringBuffer existStr = new StringBuffer();
+        Boolean flag = true;
         for (String name : nameList) {
             Category category = new Category();
             if (vo != null) {
@@ -213,26 +221,34 @@ public class CategoryController extends ErpBaseController {
                 //查重
                 Category exist = categoryService.selectIsExistName(name, category.getColumnId(), vo.getUpClassId());
                 if (exist !=null) {
+                    flag = false;
                     if(nameList.length == 1){
                         error(response, "分类名"+ exist.getName() +"重复");
+                        return;
                     }else{
-                        error(response, "分类名"+ exist.getName() +"重复,"+ exist.getName() +"之前的分类已为您添加成功");
+                        existStr.append(exist.getName()+"、");
+//                        error(response, "分类名" + exist.getName() + "重复," + exist.getName() +"之前的分类已为您添加成功");
                     }
-                    return;
-                }
-                if (category.getUpClassId() != null && category.getUpClassId() != 0) {
-                    category.setLeaf(2);
-                } else {
-                    category.setLeaf(1);
-                }
-                category.setStatus(1);
+//                    return;
+                } else{
+                    if (category.getUpClassId() != null && category.getUpClassId() != 0) {
+                        category.setLeaf(2);
+                    } else {
+                        category.setLeaf(1);
+                    }
+                    category.setStatus(1);
 
-                categoryService.insert(category);
+                    categoryService.insert(category);
+                }
             }
         }
+        if(flag){
+            success(response, "新增成功");
+        }else {
+            String str = existStr.substring(0, existStr.length() - 1);
+            error(response, "分类名" + str + "重复,请重新添加，其他分类已添加成功" );
+        }
 
-
-        success(response, "新增成功");
     }
 
 

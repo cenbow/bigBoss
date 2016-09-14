@@ -45,6 +45,7 @@ Ext.define('StudyGardenMgmt.view.InfoDialogViewController', {
         formCmp = currWin.down("form");
 
     if (!formCmp.isValid()) {
+      TipsUtil.showTips('提示', "学习园地信息填写不完整");
       return;
     }
 

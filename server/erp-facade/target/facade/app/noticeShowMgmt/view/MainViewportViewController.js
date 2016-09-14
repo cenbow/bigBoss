@@ -24,8 +24,8 @@ Ext.define('NoticeShowMgmt.view.MainViewportViewController', {
   init: function () {
     var store = Ext.create('NoticeShowMgmt.store.CategoryComboboxStore');
     var login = JSON.parse(localStorage.getItem("login"));
-    if(!login){
-      window.location.replace(FACADE_URL+'/login.html');
+    if (!login) {
+      window.location.replace(FACADE_URL + '/login.html');
     }
   },
 
@@ -82,6 +82,16 @@ Ext.define('NoticeShowMgmt.view.MainViewportViewController', {
       viewCtr._openInfoDialog(record, 'update');
     } else if (command == 'View') {
       viewCtr._openInfoDialog(record, 'view');
+    } else if (command == 'ViewPDF') {
+      var fileName = record.get('url');
+      if (fileName) {
+        var str = fileName.substr(fileName.indexOf('-') + 1) + '.pdf';
+        var href = FACADE_URL + '/generic/web/viewer.html?file=' + FACADE_URL + '/information/download/' + fileName;
+        window.open(href, "_blank");
+      } else {
+        TipsUtil.showTips('错误', '该记录没有附件');
+        return;
+      }
     } else if (command == 'Delete') {
       viewCtr._deleteRecord(record);
     } else if (command == 'AddPDF') {
@@ -89,11 +99,11 @@ Ext.define('NoticeShowMgmt.view.MainViewportViewController', {
     } else if (command == 'DeletePDF') {
       var id = record.getData().id;
       var fileName = record.get('url');
-      if(fileName == null){
+      if (fileName == null) {
         TipsUtil.showTips('错误', '该记录没有附件');
         return;
       }
-      var str = fileName.substr(fileName.indexOf('-')+1)+'.pdf';
+      var str = fileName.substr(fileName.indexOf('-') + 1) + '.pdf';
       Ext.MessageBox.confirm('提示', '确认删除附件:【' + str + '】吗？', function (option) {
         if (option === 'yes') {
           Ext.Ajax.request({
@@ -155,13 +165,13 @@ Ext.define('NoticeShowMgmt.view.MainViewportViewController', {
     if (type == 'view') {
       dialogViewModel.set("isView", true);
       var fileName = record.get('url');
-      if(fileName){
-        var str = fileName.substr(fileName.indexOf('-')+1)+'.pdf';
+      if (fileName) {
+        var str = fileName.substr(fileName.indexOf('-') + 1) + '.pdf';
         var href = FACADE_URL + '/generic/web/viewer.html?file=' + FACADE_URL + '/information/download/' + fileName;
         var displayfield = new Ext.form.DisplayField({
-          name:"content",
-          fieldLabel:"附件",
-          value:"<a href='" +href+"' target='_blank'>" + str +"</a>"
+          name: "content",
+          fieldLabel: "附件",
+          value: "<a href='" + href + "' target='_blank'>" + str + "</a>"
         });
         dialog.lookupReference('form').add(displayfield);
       }
@@ -195,11 +205,11 @@ Ext.define('NoticeShowMgmt.view.MainViewportViewController', {
       //下载
       //window.location.href = "http://localhost:8080/facade/information/download";
       /*var url = record.getData().url;
-      if (url) {
-        window.open(FACADE_URL + '/generic/web/viewer.html?file=' + FACADE_URL + '/information/download/' + url, 'PDF', 'width:50%;height:50%;top:100;left:100;');
-      } else {
-        TipsUtil.showTips("错误", '未上传附件或附件已删除');
-      }*/
+       if (url) {
+       window.open(FACADE_URL + '/generic/web/viewer.html?file=' + FACADE_URL + '/information/download/' + url, 'PDF', 'width:50%;height:50%;top:100;left:100;');
+       } else {
+       TipsUtil.showTips("错误", '未上传附件或附件已删除');
+       }*/
 
     } else if (tableview.getGridColumns()[cellIndex].dataIndex == "status") {
       Ext.Msg.confirm("温馨提示", "确定要更新状态吗?",
@@ -226,31 +236,31 @@ Ext.define('NoticeShowMgmt.view.MainViewportViewController', {
             });
           }
         });
-    }else if(tableview.getGridColumns()[cellIndex].dataIndex == "topStatus"){
+    } else if (tableview.getGridColumns()[cellIndex].dataIndex == "topStatus") {
       Ext.Msg.confirm("温馨提示", "确定要更改置顶状态吗?",
-          function (btn) {
-            if (btn == 'yes') {
-              Ext.Ajax.request({
-                url: FACADE_URL + '/information/changeTopStatus',
-                params: {
-                  id: record.get("id"),
-                  topStatus: record.get("topStatus") === 1 ? 0 : 1
-                },
-                method: 'POST',
-                success: function (response) {
-                  if (response.responseText) {
-                    var json = Ext.decode(response.responseText);
-                    if (json.success) {
-                      record.set('topStatus', record.get("topStatus") === 1 ? 0 : 1);
-                      viewModel.getStore('gridstore').load();
-                    } else {
-                      TipsUtil.showTips("错误", json.error.message || "服务器错误！");
-                    }
+        function (btn) {
+          if (btn == 'yes') {
+            Ext.Ajax.request({
+              url: FACADE_URL + '/information/changeTopStatus',
+              params: {
+                id: record.get("id"),
+                topStatus: record.get("topStatus") === 1 ? 0 : 1
+              },
+              method: 'POST',
+              success: function (response) {
+                if (response.responseText) {
+                  var json = Ext.decode(response.responseText);
+                  if (json.success) {
+                    record.set('topStatus', record.get("topStatus") === 1 ? 0 : 1);
+                    viewModel.getStore('gridstore').load();
+                  } else {
+                    TipsUtil.showTips("错误", json.error.message || "服务器错误！");
                   }
                 }
-              });
-            }
-          });
+              }
+            });
+          }
+        });
     }
   },
 
