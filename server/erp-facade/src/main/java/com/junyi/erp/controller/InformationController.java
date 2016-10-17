@@ -8,6 +8,7 @@ import com.junyi.erp.domain.Column;
 import com.junyi.erp.domain.Company;
 import com.junyi.erp.domain.Information;
 import com.junyi.erp.param.AccountSearchParam;
+import com.junyi.erp.param.InformationSearchParam;
 import com.junyi.erp.service.user.AccountService;
 import com.junyi.erp.service.user.ColumnService;
 import com.junyi.erp.service.user.CompanyService;
@@ -78,6 +79,39 @@ public class InformationController extends ErpBaseController {
         success(response, resultPageVO);
     }
 
+
+    /**
+     * 信息披露搜索
+     * @param param
+     * @param request
+     * @param response
+     */
+    @RequestMapping(value = "/filterInfo", method = RequestMethod.POST)
+    public void filterInfo(
+            InformationSearchParam param,
+            String code,
+            HttpServletRequest request,
+            HttpServletResponse response
+    ) {
+        PageRequest pageRequest = param.toPageRequest();
+        Column column = columnService.selectByCode(code);
+        pageRequest.putFilterIfNotNull("columnId", column.getId());
+
+        HttpSession session = request.getSession();
+        Integer roleId = (Integer) session.getAttribute("roleId");
+        if (roleId == null) {
+            error(response, "session过期，请重新登录!");
+            return;
+        }
+        if (roleId != 1) {
+            pageRequest.putFilterIfNotNull("status", 1);
+            pageRequest.setPageSize(Integer.MAX_VALUE);
+        }
+        Page<Information> pages = informationService.selectInformationByFiltersPage(pageRequest);
+        PageVO<InformationVO> resultPageVO = PageVO.create(pages, InformationVO.class);
+        success(response, resultPageVO);
+    }
+
     @RequestMapping(value = "/selectByLevelOne", method = RequestMethod.POST)
     public void selectByLevelOne(
             String code,
@@ -121,6 +155,7 @@ public class InformationController extends ErpBaseController {
             Integer accountId,
             @DateTimeFormat(pattern = "yyyy-MM-dd") Date startDate,
             @DateTimeFormat(pattern = "yyyy-MM-dd") Date endDate,
+            Integer companyIdByInfo,
             HttpServletRequest request,
             HttpServletResponse response
     ) {
@@ -128,7 +163,10 @@ public class InformationController extends ErpBaseController {
 
         param.put("status", 1);
         HttpSession session = request.getSession();
-        Integer companyId = (Integer) session.getAttribute("companyId");
+//        Integer companyId = (Integer) session.getAttribute("companyId");
+        if(companyIdByInfo != null && companyIdByInfo != 0){
+            param.put("companyId", companyIdByInfo);
+        }
         if (levelOne != 0) {
             param.put("levelOne", levelOne);
         }
@@ -151,6 +189,7 @@ public class InformationController extends ErpBaseController {
         if (accountId != null) {
             param.put("createBy", accountId);
         }
+
         List<Information> informations = informationService.selectByParam(param);
         List<InformationVO> voList = new ArrayList<>();
         if (informations != null && informations.size() > 0) {
@@ -158,6 +197,7 @@ public class InformationController extends ErpBaseController {
                 Company company = companyService.selectByPk(info.getCompanyId());
                 if(company!=null){
                     info.setCompanyName(company.getName());
+                    info.setCompanyCode(company.getCode());
                 }
                 InformationVO vo = new InformationVO();
                 vo.convertPOToVO(info);

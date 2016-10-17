@@ -48,6 +48,12 @@ Ext.application({
     var login = JSON.parse(localStorage.getItem("login"));
     if(!login){
       window.location.replace(FACADE_URL+'/login.html');
+      return;
+    }
+    var roleId = JSON.parse(localStorage.getItem("roleId"));
+    if(roleId!=1){
+      window.location.replace(FACADE_URL+'/login.html');
+      return;
     }
   }
 

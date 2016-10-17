@@ -67,7 +67,8 @@ function loadHead() {
                         }
                         if (item.levelOne) {
                             temp.push(item.levelOne);
-                            $('#infoDisclosure').append('<li><a onclick="showInfoDisclosure(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+                            var name = item.levelOneName+"";
+                            $('#infoDisclosure').append('<li><a href="#" onclick="showInfoDisclosure(' + item.levelOne + ','+ name +')" >' + item.levelOneName + '</a></li>')
                         }
 
                     })
@@ -107,7 +108,7 @@ function loadHead() {
 
                         if (item.levelOne) {
                             temp.push(item.levelOne);
-                            $('#infoStudy').append('<li><a onclick="showInfoStudy(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+                            $('#infoStudy').append('<li><a href="#" onclick="showInfoStudy(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
                         }
 
                     })
@@ -142,7 +143,7 @@ function loadHead() {
                         }
                         if (item.levelOne) {
                             temp.push(item.levelOne);
-                            $('#infoMarket').append('<li><a onclick="showInfoMarket(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+                            $('#infoMarket').append('<li><a href="#" onclick="showInfoMarket(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
                         }
                     })
                 }
@@ -175,7 +176,7 @@ function loadHead() {
                         }
                         if (item.levelOne) {
                             temp.push(item.levelOne);
-                            $('#infoNotice').append('<li><a onclick="showInfoNotice(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+                            $('#infoNotice').append('<li><a href="#" onclick="showInfoNotice(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
                         }
                     })
                 }
@@ -194,7 +195,8 @@ function addAccountHtml(roleName, userName) {
     $('#account').html('<span style="color: red"> ' + roleName + '：' + userName + '</span>');
 }
 
-function showInfoDisclosure(levelOne) {
+function showInfoDisclosure(levelOne,levelOneName) {
+    localStorage.setItem("levelOneName",JSON.stringify(levelOneName));
     localStorage.setItem("infoLevelOne", JSON.stringify(levelOne));
     window.location.href = 'about.html';
 }

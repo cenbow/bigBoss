@@ -49,6 +49,17 @@ Ext.define('StudyGardenMgmt.view.InfoDialogViewController', {
       return;
     }
 
+
+    var formData = formCmp.getValues();
+    if(formData.levelOne == 0 ){
+      TipsUtil.showTips('提示', "请选择正确的一级分类");
+      return;
+    }
+    if(formData.levelTwo == 0){
+      TipsUtil.showTips('提示', "请选择正确的二级分类");
+      return;
+    }
+
     formCmp.getForm().submit({
       url: FACADE_URL+'/information/update',
       waitTitle : '提示',//标题

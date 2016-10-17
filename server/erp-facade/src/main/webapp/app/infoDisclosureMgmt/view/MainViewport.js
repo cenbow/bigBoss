@@ -37,7 +37,85 @@ Ext.define('InformationMgmt.view.MainViewport', {
             },
                 {
                     xtype: 'tbfill'
-                }, {
+                },
+                {
+                    xtype:'textfield',
+                    fieldLabel:'信息标题',
+                    labelWidth: 60,
+                    emptyText: '输入信息标题',
+                    id:'text',
+                    bind:{
+                        value:"{searchData.text}"
+                    }
+                },
+                {
+                    xtype:'label',
+                    text:'公司名称：',
+                    margin: '0 0 0 10'
+                },
+                {
+                    xtype:'combobox',
+                    emptyText: "请选择",
+                    editable: false,
+                    displayField:'value',
+                    valueField:'key',
+                    id:'companyStore',
+                    bind:{
+                        store:'{companycomboboxstore}',
+                        value:'{searchData.companyId}'
+                    },
+
+                },
+                {
+                    xtype:'label',
+                    text:'一级分类：',
+                    margin: '0 0 0 10'
+                },
+                {
+                    xtype:'combobox',
+                    emptyText: "请选择",
+                    editable: false,
+                    displayField:'value',
+                    valueField:'key',
+                    id:'firstLevelStore',
+                    bind:{
+                        store:'{categorycomboboxstore}',
+                        value:'{searchData.firstLevel}'
+                    },
+                    listeners:{
+                        change:'changeFirstLevel'
+                    },
+
+                },
+                {
+                    xtype:'label',
+                    text:'二级分类：',
+                    margin: '0 0 0 10'
+                },
+                {
+                    xtype:'combobox',
+                    emptyText: "请选择",
+                    editable: false,
+                    displayField:'value',
+                    valueField:'key',
+                    id:'secondLevelStore',
+                    bind:{
+                        store:'{secondlevelstore}',
+                        value:'{searchData.secondLevel}'
+                    },
+
+                },
+                {
+                    xtype:'button',
+                    text:'搜索',
+                    handler:'searchData'
+                },
+                {
+                    xtype:'button',
+                    text:'重置',
+                    handler:'revert'
+                }
+                /* {
                     xtype: 'textfield',
                     width: 400,
                     fieldLabel: '快速搜索',
@@ -57,7 +135,7 @@ Ext.define('InformationMgmt.view.MainViewport', {
                     bind: {
                         value: "{searchData.text}"
                     }
-                }]
+                }*/]
         }, {
             xtype: 'pagingcustomtoolbar',
             dock: 'bottom',

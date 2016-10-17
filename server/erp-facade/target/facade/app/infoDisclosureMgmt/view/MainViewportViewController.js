@@ -38,12 +38,57 @@ Ext.define('InformationMgmt.view.MainViewportViewController', {
   },
 
   /**
+   * 搜索
+   */
+  searchData:function(button, e){
+    var viewCtr = this,
+      viewModel = viewCtr.getViewModel(),
+      view = viewCtr.getView();
+
+    var searchData = viewModel.get("searchData");
+    viewModel.getStore('gridstore').load({
+       params:{
+         text:searchData.text,
+         companyId:searchData.companyId,
+         firstLevel:searchData.firstLevel,
+         secondLevel:searchData.secondLevel
+       }
+      });
+  },
+
+  revert:function(button, e){
+    var viewCtr = this,
+      viewModel = viewCtr.getViewModel(),
+      view = viewCtr.getView();
+
+
+    button.up("toolbar").down("#text").reset();
+    button.up("toolbar").down("#companyStore").clearValue();
+    button.up("toolbar").down("#firstLevelStore").clearValue();
+    button.up("toolbar").down("#secondLevelStore").clearValue();
+
+    this.searchData();
+  },
+
+  /**
    * 快速搜索
    */
   onFastQueryButtonClick: function (field, trigger, e) {
     var viewCtr = this,
       viewModel = viewCtr.getViewModel();
     viewModel.getStore('gridstore').load();
+  },
+
+  changeFirstLevel:function(field, value){
+    var viewCtr = this,
+      viewModel = viewCtr.getViewModel(),
+      view = viewCtr.getView();
+    //var store = Ext.StoreMgr.get('CategoryByUpClassIdComboboxStore')
+    var secondLevelStore = field.up("toolbar").down("#secondLevelStore");
+    secondLevelStore.clearValue();
+    secondLevelStore.store.load({
+      params: {id: value}
+    })
   },
 
   /**

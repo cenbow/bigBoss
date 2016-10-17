@@ -23,7 +23,7 @@ Ext.define('InformationMgmt.view.MainViewportViewModel', {
     },
     addFlag: true,  // 添加/修改窗口标志位
     mainViewportController: {}, // 窗口保存回调，
-    columnCode: '0001'
+    columnCode: '0001',
   },
 
   stores: {
@@ -36,10 +36,9 @@ Ext.define('InformationMgmt.view.MainViewportViewModel', {
           read   : 'POST'
         },
         api: {
-          read  : FACADE_URL+'/information/filter'
+          read  : FACADE_URL+'/information/filterInfo'
         },
         extraParams: {
-          text: '{searchData.text}',
           code: '0001'
         },
         reader: {
@@ -63,6 +62,17 @@ Ext.define('InformationMgmt.view.MainViewportViewModel', {
           }
         }
       }
+    },
+    companycomboboxstore:{
+      type:'companycomboboxstore',
+      autoLoad:true
+    },
+    categorycomboboxstore:{
+      type:'categorycomboboxstore',
+      autoLoad:true
+    },
+    secondlevelstore:{
+      type:'categorybyupclassidcomboboxstore',
     }
   }
 });

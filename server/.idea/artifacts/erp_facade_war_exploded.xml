@@ -87,7 +87,7 @@
         </element>
       </element>
       <element id="directory" name="META-INF">
-        <element id="file-copy" path="F:\workspace\bigBoss\server\erp-facade\target/MANIFEST.MF" />
+        <element id="file-copy" path="$PROJECT_DIR$/erp-facade/target/facade/META-INF/MANIFEST.MF" />
       </element>
       <element id="javaee-facet-resources" facet="erp-facade/web/Web" />
     </root>

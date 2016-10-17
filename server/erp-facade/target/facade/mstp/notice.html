@@ -141,7 +141,7 @@
 <div class="container">
     <div class="gallery-container" style="margin: 0 auto 4px auto;">
         <ul id="filters" class="list-unstyled">
-            <li class="active" data-ref="0"><a onclick="selectLevelTwo(this)">所有</a></li>
+            <li class="active" data-ref="0"><a href="#" onclick="selectLevelTwo(this)">所有</a></li>
         </ul>
 
     </div>
@@ -340,7 +340,7 @@
         if (list.length > 0) {
             $.each(list, function (i, item) {
                 if(item.levelTwo){
-                    $('#filters').append('<li data-ref="' + item.levelTwo + '"><a onclick="selectLevelTwo(this)">' + item.levelTwoName + '</a></li>')
+                    $('#filters').append('<li data-ref="' + item.levelTwo + '"><a href="#" onclick="selectLevelTwo(this)">' + item.levelTwoName + '</a></li>')
                 }
 
                 /*$('#list').append('<div class="ax_default table_cell">' +

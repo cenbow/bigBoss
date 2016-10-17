@@ -66,8 +66,8 @@ public class AccountController extends ErpBaseController {
             HttpServletResponse response
     ) {
         Account account = accountService.selectByPk(accountId);
-        if (account  == null) {
-            error(response,"该账号不存在");
+        if (account == null) {
+            error(response, "该账号不存在");
             return;
         }
 
@@ -76,25 +76,25 @@ public class AccountController extends ErpBaseController {
         success(response, vo);
     }
 
-    @RequestMapping(value = "/updatePassword",method = RequestMethod.POST)
+    @RequestMapping(value = "/updatePassword", method = RequestMethod.POST)
     public void changePassword(
 //            String userName,
             String password,
             String newPassword
-            ,HttpServletRequest request,HttpServletResponse response){
+            , HttpServletRequest request, HttpServletResponse response) {
         HttpSession session = request.getSession();
         Integer accountId = (Integer) session.getAttribute("userId");
         Account account = accountService.selectByPk(accountId);
-        if(account==null){
-            error(response,"缓存已过期，请重新登录");
+        if (account == null) {
+            error(response, "缓存已过期，请重新登录");
             return;
         }
        /* if(!account.getUserName().equals(userName)){
             error(response,"缓存已过期，请重新登录");
             return;
         }*/
-        if(!account.getPassword().equals(password)){
-            error(response,"原密码错误，请重新输入");
+        if (!account.getPassword().equals(password)) {
+            error(response, "原密码错误，请重新输入");
             return;
         }
         account.setPassword(newPassword);
@@ -102,10 +102,10 @@ public class AccountController extends ErpBaseController {
         success(response, "更新成功");
     }
 
-    @RequestMapping(value = "/update",method = RequestMethod.POST)
-    public void updateAccount(AccountVO vo,HttpServletRequest request,HttpServletResponse response){
+    @RequestMapping(value = "/update", method = RequestMethod.POST)
+    public void updateAccount(AccountVO vo, HttpServletRequest request, HttpServletResponse response) {
         Account account = new Account();
-        if(vo != null){
+        if (vo != null) {
             account = vo.convertVOToPO();
         }
         Integer roleId = account.getRoleId();
@@ -115,16 +115,16 @@ public class AccountController extends ErpBaseController {
         success(response, "更新成功");
     }
 
-    @RequestMapping(value = "/add",method = RequestMethod.POST)
-    public void addAccount(AccountVO vo,HttpServletRequest request,HttpServletResponse response){
+    @RequestMapping(value = "/add", method = RequestMethod.POST)
+    public void addAccount(AccountVO vo, HttpServletRequest request, HttpServletResponse response) {
         Account account = new Account();
-        if(vo != null){
+        if (vo != null) {
             account = vo.convertVOToPO();
         }
 
         Boolean exist = accountService.isExistUserName(vo.getUserName());
-        if(exist){
-            error(response,"用户名重复，请重新输入");
+        if (exist) {
+            error(response, "用户名重复，请重新输入");
             return;
         }
         account.setStatus(1);
@@ -143,9 +143,9 @@ public class AccountController extends ErpBaseController {
             HttpServletRequest request,
             HttpServletResponse response
     ) {
-        if(accountId != 0){
+        if (accountId != 0) {
             accountService.deleteByPk(accountId);
-            success(response,"删除成功");
+            success(response, "删除成功");
         }
     }
 
@@ -155,24 +155,24 @@ public class AccountController extends ErpBaseController {
             String password,
             HttpServletRequest request,
             HttpServletResponse response
-    ){
+    ) {
         Map map = new HashMap();
-        map.put("username",username);
-        map.put("password",password);
+        map.put("username", username);
+        map.put("password", password);
         Account account = accountService.selectByUNAndPs(map);
-        if(account == null){
-            error(response,"账号或密码错误，请重试");
-        } else if(account.getStatus()!= 1){
-            error(response,"账号已被禁用，请联系管理员");
-        }else {
+        if (account == null) {
+            error(response, "账号或密码错误，请重试");
+        } else if (account.getStatus() != 1) {
+            error(response, "账号已被禁用，请联系管理员");
+        } else {
             HttpSession session = request.getSession();
             session.setAttribute("userId", account.getId());
             session.setAttribute("companyId", account.getCompanyId());
             session.setAttribute("roleId", account.getRoleId());
             Map result = new HashMap();
-            result.put("accountId",account.getId());
-            result.put("roleId",account.getRoleId());
-            result.put("companyId",account.getCompanyId());
+            result.put("accountId", account.getId());
+            result.put("roleId", account.getRoleId());
+            result.put("companyId", account.getCompanyId());
             success(response, result);
         }
     }

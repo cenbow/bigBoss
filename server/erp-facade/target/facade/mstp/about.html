@@ -127,6 +127,7 @@
         <div class="row">
             <div class="col-lg-4 col-sm-4">
                 <h1>信息披露</h1>
+                <h1 id="firstLevelName"></h1>
             </div>
             <div class="col-lg-8 col-sm-8">
                 <ol class="breadcrumb pull-right">
@@ -144,7 +145,7 @@
 <div class="container">
     <div class="gallery-container" style="margin: 0 auto 4px auto;">
         <ul id="filters" class="list-unstyled">
-            <li class="active" data-ref="0"><a onclick="selectLevelTwo(this)">所有</a></li>
+            <li class="active" data-ref="0"><a href="#" onclick="selectLevelTwo(this)">所有</a></li>
         </ul>
 
     </div>
@@ -152,6 +153,12 @@
     <div class="row" style="margin: 10px auto 10px auto">
         <div class="search-condition">
             <input id="name" name="" type="text" class="input-stock" maxlength="6" placeholder="请输入信息标题">
+        </div>
+        <div class="search-condition">
+            <select style="width: 167px" id="companySelect"
+                    onchange="changeCompany(this.options[this.options.selectedIndex].value)">
+                <option value="">所有公司</option>
+            </select>
         </div>
         <div class="search-condition">
             <input id="datetimepicker1" type="text" placeholder="请输入起始日期">
@@ -204,6 +211,7 @@
 
 
 <script>
+    var companyId = null;
     jQuery(document).ready(function () {
         $.datetimepicker.setLocale('ch');//设置中文
         $('#datetimepicker1').datetimepicker({
@@ -218,7 +226,37 @@
             format: 'Y-m-d',
             formatDate: 'Y-m-d'
         });
+
+        var levelOneName = JSON.parse(localStorage.getItem("levelOneName"));
+        $("#firstLevelName").html("-"+levelOneName);
+
+        $.ajax({
+            url: FACADE_URL + '/company/list',
+            type: 'GET',
+            success: function (response) {
+                if (response.success) {
+                    var data = response.data;
+                    if (data && data.length > 0) {
+                        var str = '<option value="">所有公司</option>';
+                        $.each(data, function (i, item) {
+                            if (item.key && item.key != 0) {
+                                str += '<option value="' + item.key + '">' + item.value + '</option>'
+                            }
+                        });
+                        $('#companySelect').html(str);
+                    }
+                }
+
+            },
+            error: function (err) {
+                console.log("error")
+            }
+        })
     });
+
+    function changeCompany(value){
+        companyId = value;
+    }
 
     function clearSearch() {
         $('#name').val("");
@@ -257,7 +295,8 @@
                 levelTwo: levelTwo,
                 name: name,
                 startDate: startDate,
-                endDate: endDate
+                endDate: endDate,
+                companyIdByInfo: companyId
             },
             type: 'POST',
             success: function (response) {
@@ -275,7 +314,7 @@
                             $('#list').append('<div class="ax_default table_cell"">' +
                             '<div class="text" style="visibility: visible;cursor:pointer" onclick="goToInfoDetail(this)" data-rel="' + item.id + '"> ' +
                             '<div style="width: 20px;float: left;"><p><span style="color:#ff6c60;">■</span></div>' +
-                            '<div class="overText" style="float: left;"><span style="color: #999">' + '[' + item.companyName + ']&nbsp;' + item.name + ' </span></div></p></a>' +
+                            '<div class="overText" style="float: left;"><span style="color: #999">' + '[' + item.companyCode + ']&nbsp;' + item.name + ' </span></div></p></a>' +
                             '</div><div style="position: absolute;right: 10px;top: 4px">' +
                             '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
                         } else {
@@ -283,14 +322,14 @@
                                 $('#list').append('<div class="ax_default table_cell">' +
                                 '<div class="text" style="visibility: visible;cursor:pointer"> ' +
                                 '<div style="width: 20px;float: left;"><p><span style="color:#ff6c60;">■</span></div>' +
-                                '<div class="overText" style="float: left;" ><a href=" ' + href + ' " target="_blank"><span style="color: #999"> ' + '[' + item.companyName + ']&nbsp;' + item.name + ' </span></a></div><image style="width:20px" src="../images/pdf_pic.png"/></p></a>' +
+                                '<div class="overText" style="float: left;" ><a href=" ' + href + ' " target="_blank"><span style="color: #999"> ' + '[' + item.companyCode + ']&nbsp;' + item.name + ' </span></a></div><image style="width:20px" src="../images/pdf_pic.png"/></p></a>' +
                                 '</div><div style="position: absolute;right: 10px;top: 4px">' +
                                 '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
                             } else {
                                 $('#list').append('<div class="ax_default table_cell">' +
                                 '<div class="text" style="visibility: visible;cursor:pointer"> ' +
                                 '<div style="width: 20px;float: left;"><p><span style="color:#ff6c60;">■</span></div>' +
-                                '<div class="overText" style="float: left;"><span style="color: #999"> ' + '[' + item.companyName + ']&nbsp;' + item.name + ' </span></div></p>' +
+                                '<div class="overText" style="float: left;"><span style="color: #999"> ' + '[' + item.companyCode + ']&nbsp;' + item.name + ' </span></div></p>' +
                                 '</div><div style="position: absolute;right: 10px;top: 4px">' +
                                 '<span style="color:#c8c8c8;">' + dateStr + '</span></div></div>')
                             }
@@ -347,7 +386,7 @@
         if (list.length > 0) {
             $.each(list, function (i, item) {
                 if (item.levelTwo) {
-                    $('#filters').append('<li data-ref="' + item.levelTwo + '"><a onclick="selectLevelTwo(this)">' + item.levelTwoName + '</a></li>')
+                    $('#filters').append('<li data-ref="' + item.levelTwo + '"><a href="#" onclick="selectLevelTwo(this)">' + item.levelTwoName + '</a></li>')
                 }
                 /*$('#list').append('<div class="ax_default table_cell">' +
                  '<div class="text" style="visibility: visible;"> ' +
