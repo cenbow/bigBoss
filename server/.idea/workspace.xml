@@ -98,26 +98,112 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InformationController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/InformationController.java">
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="189" column="64" selection-start-line="189" selection-start-column="64" selection-end-line="189" selection-end-column="64" />
+            <state vertical-scroll-proportion="4.387097">
+              <caret line="348" column="27" selection-start-line="348" selection-start-column="13" selection-end-line="348" selection-end-column="27" />
               <folding>
-                <element signature="imports" expanded="true" />
+                <marker date="1476858114326" expanded="true" signature="11566:11603" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="12528:12552" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="12570:12584" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="12662:12674" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="12689:12700" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="12829:12868" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="12916:12930" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="13194:13228" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="13280:13304" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="13322:13336" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="13418:13430" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="13487:13498" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="13587:13597" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="13691:13730" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="13782:13796" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="14020:14054" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="14106:14130" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="14148:14162" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="14244:14256" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="14271:14282" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="14412:14451" placeholder="..." />
+                <marker date="1476858114326" expanded="true" signature="14503:14517" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InformationServiceImpl.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/impl/InformationServiceImpl.java">
+      <file leaf-file-name="market.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/market.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="56" column="63" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="63" />
+            <state vertical-scroll-proportion="-7.225806">
+              <caret line="320" column="8" selection-start-line="320" selection-start-column="8" selection-end-line="320" selection-end-column="46" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notice.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/notice.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.645161">
+              <caret line="320" column="7" selection-start-line="320" selection-start-column="7" selection-end-line="320" selection-end-column="46" />
               <folding>
-                <element signature="e#1608#1609#0" expanded="true" />
-                <element signature="e#1678#1679#0" expanded="true" />
+                <marker date="1476858114355" expanded="true" signature="10016:10036" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="10961:10985" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="11003:11017" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="11095:11107" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="11122:11133" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="11225:11264" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="11312:11326" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="11588:11622" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="11674:11698" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="11716:11730" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="11812:11824" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="11881:11892" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="11907:11918" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="11970:11980" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="12074:12113" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="12165:12179" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="12401:12435" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="12487:12511" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="12529:12543" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="12625:12637" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="12652:12663" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="12756:12795" placeholder="..." />
+                <marker date="1476858114355" expanded="true" signature="12847:12861" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="study.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/study.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.38351256">
+              <caret line="322" column="46" selection-start-line="322" selection-start-column="46" selection-end-line="322" selection-end-column="46" />
+              <folding>
+                <marker date="1476858114364" expanded="true" signature="10018:10038" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="10963:10987" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="11005:11019" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="11097:11109" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="11124:11135" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="11227:11266" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="11314:11328" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="11590:11624" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="11676:11700" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="11718:11732" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="11814:11826" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="11883:11894" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="11909:11920" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="11972:11982" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="12076:12115" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="12167:12181" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="12403:12437" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="12489:12513" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="12531:12545" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="12627:12639" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="12654:12665" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="12758:12797" placeholder="..." />
+                <marker date="1476858114364" expanded="true" signature="12849:12863" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -127,7 +213,7 @@
         <entry file="file://$PROJECT_DIR$/erp-service/src/main/resources/mapper/InformationMapper.xml">
           <provider selected="true" editor-type-id="text-editor">
             <state vertical-scroll-proportion="0.0">
-              <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+              <caret line="45" column="56" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
               <folding>
                 <marker date="1476846388274" expanded="true" signature="1694:1811" placeholder="select from ..information..." />
                 <marker date="1476846388274" expanded="true" signature="1925:3313" placeholder="select from ..information..." />
@@ -137,36 +223,6 @@
                 <marker date="1476846388274" expanded="true" signature="4890:6601" placeholder="update infor..." />
                 <marker date="1476846388274" expanded="true" signature="6721:7926" placeholder="select i.*,c..information..." />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/config.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jdbc.properties" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/resources/jdbc.properties">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.4157044">
-              <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InformationService.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/InformationService.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
-              <folding />
             </state>
           </provider>
         </entry>
@@ -224,10 +280,6 @@
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/js/common.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/css/style.css" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/informationDetail.html" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/notice.html" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/market.html" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/about.html" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/study.html" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/account.html" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/footer.html" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/header.html" />
@@ -239,6 +291,10 @@
         <option value="$PROJECT_DIR$/erp-service/src/main/resources/mapper/InformationMapper.xml" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/config.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/resources/jdbc.properties" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/about.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/market.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/notice.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/study.html" />
       </list>
     </option>
   </component>
@@ -639,6 +695,160 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="mstp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="webapp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="server" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp-facade" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="main" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="java" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="erp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controller" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -1178,16 +1388,16 @@
       <workItem from="1471874353069" duration="34000" />
       <workItem from="1476668364902" duration="325000" />
       <workItem from="1476668736737" duration="50364000" />
-      <workItem from="1476840477010" duration="6922000" />
+      <workItem from="1476840477010" duration="13999000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="344134000" />
+    <option name="totallyTimeSpent" value="351211000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="2" width="1932" height="1045" extended-state="0" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1208,7 +1418,7 @@
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.27092275" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925472" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21888413" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.21888413" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4988864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
@@ -1466,33 +1676,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/market.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6896552">
-          <caret line="181" column="30" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#1;n#div#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#a#0;n#div#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/notice.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6896552">
-          <caret line="181" column="30" selection-start-line="181" selection-start-column="30" selection-end-line="181" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#1;n#div#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#a#0;n#div#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/portfolio.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-3.016129">
@@ -1514,40 +1697,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/study.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.6896552">
-          <caret line="182" column="30" selection-start-line="182" selection-start-column="30" selection-end-line="182" selection-end-column="30" />
-          <folding>
-            <element signature="n#style#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#1;n#div#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#p#0;n#a#0;n#div#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/typography.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/about.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.724138">
-          <caret line="204" column="14" selection-start-line="204" selection-start-column="14" selection-end-line="204" selection-end-column="14" />
-          <folding>
-            <element signature="n#style#0;n#img#0;n#div#2;n#ul#0;n#div#1;n#div#0;n#div#0;n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#h1#0;n#div#0;n#div#0;n#div#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1628,6 +1781,67 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/InformationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/resources/jdbc.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.4157044">
+          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.023094688">
+          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/impl/InformationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.74595845">
+          <caret line="56" column="63" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="63" />
+          <folding>
+            <element signature="e#1608#1609#0" expanded="true" />
+            <element signature="e#1678#1679#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/InformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38106236">
+          <caret line="189" column="64" selection-start-line="189" selection-start-column="64" selection-end-line="189" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-service/src/main/resources/mapper/InformationMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="45" column="56" selection-start-line="45" selection-start-column="56" selection-end-line="45" selection-end-column="56" />
+          <folding>
+            <marker date="1476846388274" expanded="true" signature="1694:1811" placeholder="select from ..information..." />
+            <marker date="1476846388274" expanded="true" signature="1925:3313" placeholder="select from ..information..." />
+            <marker date="1476846388274" expanded="true" signature="3407:3468" placeholder="delete from ..." />
+            <marker date="1476846388274" expanded="true" signature="4452:4641" placeholder="update infor..." />
+            <marker date="1476846388274" expanded="true" signature="4717:4800" placeholder="update infor..." />
+            <marker date="1476846388274" expanded="true" signature="4890:6601" placeholder="update infor..." />
+            <marker date="1476846388274" expanded="true" signature="6721:7926" placeholder="select i.*,c..information..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/publish.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.6896552">
@@ -1688,64 +1902,106 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/InformationController.java">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="189" column="64" selection-start-line="189" selection-start-column="64" selection-end-line="189" selection-end-column="64" />
+        <state vertical-scroll-proportion="4.387097">
+          <caret line="348" column="27" selection-start-line="348" selection-start-column="13" selection-end-line="348" selection-end-column="27" />
           <folding>
-            <element signature="imports" expanded="true" />
+            <marker date="1476858114326" expanded="true" signature="11566:11603" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="12528:12552" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="12570:12584" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="12662:12674" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="12689:12700" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="12829:12868" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="12916:12930" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="13194:13228" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="13280:13304" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="13322:13336" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="13418:13430" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="13487:13498" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="13587:13597" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="13691:13730" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="13782:13796" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="14020:14054" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="14106:14130" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="14148:14162" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="14244:14256" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="14271:14282" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="14412:14451" placeholder="..." />
+            <marker date="1476858114326" expanded="true" signature="14503:14517" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/InformationService.java">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/market.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="23" column="22" selection-start-line="23" selection-start-column="22" selection-end-line="23" selection-end-column="22" />
+        <state vertical-scroll-proportion="-7.225806">
+          <caret line="320" column="8" selection-start-line="320" selection-start-column="8" selection-end-line="320" selection-end-column="46" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/impl/InformationServiceImpl.java">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/notice.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="56" column="63" selection-start-line="56" selection-start-column="39" selection-end-line="56" selection-end-column="63" />
+        <state vertical-scroll-proportion="-4.645161">
+          <caret line="320" column="7" selection-start-line="320" selection-start-column="7" selection-end-line="320" selection-end-column="46" />
           <folding>
-            <element signature="e#1608#1609#0" expanded="true" />
-            <element signature="e#1678#1679#0" expanded="true" />
+            <marker date="1476858114355" expanded="true" signature="10016:10036" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="10961:10985" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="11003:11017" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="11095:11107" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="11122:11133" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="11225:11264" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="11312:11326" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="11588:11622" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="11674:11698" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="11716:11730" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="11812:11824" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="11881:11892" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="11907:11918" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="11970:11980" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="12074:12113" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="12165:12179" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="12401:12435" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="12487:12511" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="12529:12543" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="12625:12637" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="12652:12663" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="12756:12795" placeholder="..." />
+            <marker date="1476858114355" expanded="true" signature="12847:12861" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-service/src/main/resources/mapper/InformationMapper.xml">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/study.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="59" column="24" selection-start-line="59" selection-start-column="24" selection-end-line="59" selection-end-column="24" />
+        <state vertical-scroll-proportion="0.38351256">
+          <caret line="322" column="46" selection-start-line="322" selection-start-column="46" selection-end-line="322" selection-end-column="46" />
           <folding>
-            <marker date="1476846388274" expanded="true" signature="1694:1811" placeholder="select from ..information..." />
-            <marker date="1476846388274" expanded="true" signature="1925:3313" placeholder="select from ..information..." />
-            <marker date="1476846388274" expanded="true" signature="3407:3468" placeholder="delete from ..." />
-            <marker date="1476846388274" expanded="true" signature="4452:4641" placeholder="update infor..." />
-            <marker date="1476846388274" expanded="true" signature="4717:4800" placeholder="update infor..." />
-            <marker date="1476846388274" expanded="true" signature="4890:6601" placeholder="update infor..." />
-            <marker date="1476846388274" expanded="true" signature="6721:7926" placeholder="select i.*,c..information..." />
+            <marker date="1476858114364" expanded="true" signature="10018:10038" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="10963:10987" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="11005:11019" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="11097:11109" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="11124:11135" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="11227:11266" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="11314:11328" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="11590:11624" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="11676:11700" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="11718:11732" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="11814:11826" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="11883:11894" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="11909:11920" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="11972:11982" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="12076:12115" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="12167:12181" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="12403:12437" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="12489:12513" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="12531:12545" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="12627:12639" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="12654:12665" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="12758:12797" placeholder="..." />
+            <marker date="1476858114364" expanded="true" signature="12849:12863" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="23" selection-start-line="1" selection-start-column="23" selection-end-line="1" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/resources/jdbc.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.4157044">
-          <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
