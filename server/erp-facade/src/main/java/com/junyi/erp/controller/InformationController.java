@@ -3,16 +3,10 @@ package com.junyi.erp.controller;
 import com.junyi.ecommerce.core.mybatis.page.Page;
 import com.junyi.ecommerce.core.mybatis.page.PageRequest;
 import com.junyi.ecommerce.core.util.vo.PageVO;
-import com.junyi.erp.domain.Account;
-import com.junyi.erp.domain.Column;
-import com.junyi.erp.domain.Company;
-import com.junyi.erp.domain.Information;
+import com.junyi.erp.domain.*;
 import com.junyi.erp.param.AccountSearchParam;
 import com.junyi.erp.param.InformationSearchParam;
-import com.junyi.erp.service.user.AccountService;
-import com.junyi.erp.service.user.ColumnService;
-import com.junyi.erp.service.user.CompanyService;
-import com.junyi.erp.service.user.InformationService;
+import com.junyi.erp.service.user.*;
 import com.junyi.erp.vo.InformationVO;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -52,6 +46,9 @@ public class InformationController extends ErpBaseController {
 
     @Autowired
     private ColumnService columnService;
+
+    @Autowired
+    private CategoryService categoryService;
 
     @RequestMapping(value = "/filter", method = RequestMethod.POST)
     public void filter(
@@ -199,10 +196,20 @@ public class InformationController extends ErpBaseController {
                     info.setCompanyName(company.getName());
                     info.setCompanyCode(company.getCode());
                 }
+                if(info.getLevelOne()!= null && info.getLevelOne()>0){
+                    Category category = categoryService.selectByPk(info.getLevelOne());
+                    info.setLevelOneName(category.getName());
+                }
+                if(info.getLevelTwo()!=null && info.getLevelTwo()>0){
+                    Category category = categoryService.selectByPk(info.getLevelTwo());
+                    info.setLevelTwoName(category.getName());
+                }
+
                 InformationVO vo = new InformationVO();
                 vo.convertPOToVO(info);
                 voList.add(vo);
             }
+
         }
         success(response, voList);
 
@@ -216,12 +223,6 @@ public class InformationController extends ErpBaseController {
             HttpServletRequest request,
             HttpServletResponse response) {
         Information information = informationService.selectInformationByPK(id);
-        /*if(!(overWrite!=null && overWrite ==1)){
-            if (information.getUrl() != null) {
-                error(response, "已存在附件，请先删除附件再上传");
-                return;
-            }
-        }*/
         /**
          * 处理文件上传
          */
@@ -319,7 +320,7 @@ public class InformationController extends ErpBaseController {
                 return;
             }
             int recordId = informationService.insert(information);
-            success(response,"发布成功");
+            success(response,information.getId());
             return;
         } else {
             information.setId(id);

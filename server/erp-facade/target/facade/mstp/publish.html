@@ -24,6 +24,11 @@
     <link href="css/style.css" rel="stylesheet">
     <link href="css/style-responsive.css" rel="stylesheet"/>
 
+
+<!--    <script src="./js/react.js"></script>
+    <script src="./js/react-dom.min.js"></script>
+    <script src="./js/browser.min.js"></script>-->
+
     <!-- HTML5 shim and Respond.js IE8 support of HTML5 tooltipss and media queries -->
     <!--[if lt IE 9]>
     <script src="js/html5shiv.js"></script>
@@ -73,7 +78,7 @@
             </div>
             <div class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav">
-                    <li ><a href="index.html">首页</a></li>
+                    <li><a href="index.html">首页</a></li>
                     <li class="dropdown ">
                         <a href="#" class="dropdown-toggle " data-toggle="dropdown" data-hover="dropdown" data-delay="0"
                            data-close-others="false" onclick="showPage(1)">信息披露 <b class=" icon-angle-down"></b></a>
@@ -105,10 +110,12 @@
                     <div style=" position: relative;float: left;margin-left: 40px;padding-top:42px;cursor:pointer">
                         <a id="account" href="#" onclick="gotoAccount()"></a>
                     </div>
-                    <div id="headAction" style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer" >
+                    <div id="headAction"
+                         style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer">
 
                     </div>
-                    <div style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer" onclick="logout()">
+                    <div style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer"
+                         onclick="logout()">
                         <img src="../images/exit.png" style="width: 20px;height: 20px;">
                     </div>
 
@@ -141,9 +148,7 @@
 <!--container start-->
 <div class="container">
     <div class="gallery-container" style="margin: 0 auto 4px auto;">
-        <ul id="filters" class="list-unstyled">
-            <!--<li class="active" data-ref="0"><a onclick="selectLevelTwo(this)">所有</a></li>-->
-        </ul>
+
 
     </div>
 
@@ -178,7 +183,8 @@
             </select>
         </div>
         <button class="btn btn-danger" style="margin-top: 3px" type="button" onclick="search()">搜索</button>
-        <button class="btn btn-danger" style="margin-top: 3px;margin-left: 30px" type="button" onclick="addInfo()">新增</button>
+        <button class="btn btn-danger" style="margin-top: 3px;margin-left: 30px" type="button" onclick="addInfo()">新增
+        </button>
     </div>
 
     <div class="row" style="margin-top: -20px;margin-left: 10px;margin-bottom: 170px" id="list">
@@ -195,12 +201,13 @@
 
     </div>
 
+
 </div>
 
 <!--container end-->
 
 <!--footer start-->
-<footer class="footer" style="position:fixed;bottom:0;height: 80px;padding: 10px 0">
+<footer class="footer" style="bottom:0;height: 80px;padding: 10px 0">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-3">
@@ -210,8 +217,8 @@
                 </address>
             </div>
             <div class="col-lg-5 col-sm-5" style="position: absolute;right: 0;">
-                Copyright©1999-2015 All Rights Reserved   版权所有，未经授权，禁止转载
-                <br>备案序号:京ICP备05047877号    <br>建议使用浏览器： Chrome、Firefox、IE8+ (标准模式)   分辨率1024*768”
+                Copyright©1999-2015 All Rights Reserved 版权所有，未经授权，禁止转载
+                <br>备案序号:京ICP备05047877号 <br>建议使用浏览器： Chrome、Firefox、IE8+ (标准模式) 分辨率1024*768”
             </div>
             <div class="col-lg-3 col-sm-3 col-lg-offset-1">
 
@@ -222,8 +229,12 @@
 <!--footer end-->
 
 
+<!--<script type="text/babel">-->
 <script>
-
+    /* ReactDOM.render(
+     <h1>Hello, world!</h1>,
+     document.getElementById('example')
+     );*/
     var levelOne = 0;
     var levelTwo = 0;
     var code = "";
@@ -236,9 +247,9 @@
             return;
         }
         //todo 换成2
-        if(roleId == 2){
+        if (roleId == 2) {
             $('#columnSelect').html('<option value="">所有栏目</option> <option value="0001">信息披露</option><option value="0002">学习园地</option><option value="0003">市场资讯</option> <option value="0004">通知公告</option>')
-        }else if(roleId == 3){
+        } else if (roleId == 3) {
             $('#columnSelect').html('<option value="">所有栏目</option><option value="0002">学习园地</option><option value="0003">市场资讯</option> <option value="0004">通知公告</option>')
         }
     })
@@ -294,7 +305,7 @@
         $.ajax({
             url: FACADE_URL + '/information/searchInfo',
             data: {
-                code:code,
+                code: code,
                 levelOne: levelOne,
                 levelTwo: levelTwo,
                 name: name,
@@ -305,9 +316,21 @@
             type: 'POST',
             success: function (response) {
                 var data = response.data;
-               localStorage.setItem("infomations", JSON.stringify(response.data));
+                localStorage.setItem("infomations", JSON.stringify(response.data));
                 $('#list').html("");
                 $('#list').append('<div class="ax_default table_cell"><div class="text" style="visibility: visible;"> </div> </div>');
+                $('#list').append('<div class="ax_default table_cell" style="width: 1000px">' +
+                        '<div class="text" style="visibility: visible;width:500px;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"> ' +
+                        '<p style="margin-left: 20px"><span style="color: #999;">信息标题</span>' +
+                        '</p>' +
+                        '</div><div style="position: absolute;right: 0px;top: 4px">' +
+                        '<span style="color:#c8c8c8;">发布日期</span></div>' +
+                        '<div style="position: absolute;right: 300px;top: 4px">' +
+                        '<span style="color:#c8c8c8;">一级分类</span></div>' +
+                        '<div style="position: absolute;right: 150px;top: 4px">' +
+                        '<span style="color:#c8c8c8;">二级分类</span></div>' +
+                        '</div>');
+                $('#list').append('<div style="border-top: #c8c8c8 1px dotted;margin-bottom: 20px"></div>');
                 if (data && data.length > 0) {
                     $.each(data, function (i, item) {
                         var fileName = item.url;
@@ -315,36 +338,54 @@
                         var href = FACADE_URL + '/generic/web/viewer.html?file=' + FACADE_URL + '/information/download/' + fileName;
                         var publishDate = new Date(item.publishDate);
                         var dateStr = publishDate.getFullYear() + '-' + (parseInt(publishDate.getMonth()) + 1) + '-' + publishDate.getDay();
+                        var levelOneName = item.levelOneName?item.levelOneName:"无";
+                        var levelTwoName = item.levelTwoName?item.levelTwoName:"无";
+
                         if (item.text) {
+
                             $('#list').append('<div class="ax_default table_cell" style="width: 1000px" ">' +
-                            '<div class="text" style="visibility: visible;"> ' +
-                            '<a href="#" onclick="goToInfoDetail(this)" data-rel="' + item.id + '">' +
-                            '<p><span style="color:#ff6c60;">■</span><span style="color: #999"> ' + item.name + ' </span></p></a>' +
-                            '</div><div style="position: absolute;right: 250px;top: 4px">' +
-                            '<span style="color:#c8c8c8;">' + dateStr + '</span></div>' +
-                            '<button class="btn btn-danger" style="margin-top: -5px;right: 0px;top:0;position: absolute" type="button" onclick="editRecode('+ item.id +')">编辑</button>' +
+                                    '<div class="text" style="visibility: visible;width:500px;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"> ' +
+                                    '<a href="#" onclick="goToInfoDetail(this)" data-rel="' + item.id + '">' +
+                                    '<p><span style="color:#ff6c60;">■</span><span style="color: #999"> ' + item.name + ' </span></p></a>' +
+                                    '</div><div style="position: absolute;right: 0px;top: 4px">' +
+                                    '<span style="color:#c8c8c8;">' + dateStr + '</span></div>' +
+                                    '<div style="position: absolute;right: 300px;top: 4px">' +
+                                    '<span style="color:#c8c8c8;">'+ levelOneName +'</span></div>' +
+                                    '<div style="position: absolute;right: 150px;top: 4px">' +
+                                    '<span style="color:#c8c8c8;">'+ levelTwoName+'</span></div>' +
+                                    '<button class="btn btn-danger" style="margin-top: -5px;right: -100px;top:0;position: absolute" type="button" onclick="editRecode(' + item.id + ')">编辑</button>' +
 //                            '<button class="btn btn-danger" style="margin-top: -5px;right: 88px;top:0;position: absolute" type="button" onclick="deleteRecode('+ item.id +')">删除</button>' +
-                            '</div>')
+                                    '</div>')
                         } else {
                             if (item.url) {
                                 $('#list').append('<div class="ax_default table_cell" style="width: 1000px">' +
-                                '<div class="text" style="visibility: visible;"> ' +
-                                '<a href=" ' + href + ' " target="_blank">' +
-                                '<p><span style="color:#ff6c60;">■</span><span style="color: #999"> ' + item.name + ' </span><image style="width:20px" src="../images/pdf_pic.png"/></p></a>' +
-                                '</div><div style="position: absolute;right: 250px;top: 4px">' +
-                                '<span style="color:#c8c8c8;">' + dateStr + '</span></div>' +
-                                '<button class="btn btn-danger" style="margin-top: -5px;right: 0px;top:0;position: absolute" type="button" onclick="editRecode('+ item.id +')">编辑</button>' +
+                                        '<div class="text" style="visibility: visible;width:500px;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"> ' +
+                                        '<a href=" ' + href + ' " target="_blank">' +
+                                        '<p><span style="color:#ff6c60;">■</span><span style="color: #999"> ' + item.name + ' </span><image style="width:20px" src="../images/pdf_pic.png"/></p></a>' +
+                                        '</div><div style="position: absolute;right: 0px;top: 4px">' +
+                                        '<span style="color:#c8c8c8;">' + dateStr + '</span></div>' +
+                                        '<div style="position: absolute;right: 300px;top: 4px">' +
+                                        '<span style="color:#c8c8c8;">'+ levelOneName +'</span></div>' +
+                                        '<div style="position: absolute;right: 150px;top: 4px">' +
+                                        '<span style="color:#c8c8c8;">'+ levelTwoName+'</span></div>' +
+                                        '<button class="btn btn-danger" style="margin-top: -5px;right: -100px;top:0;position: absolute" type="button" onclick="editRecode(' + item.id + ')">编辑</button>' +
 //                                '<button class="btn btn-danger" style="margin-top: -5px;right: 88px;top:0;position: absolute" type="button" onclick="deleteRecode('+ item.id +')">删除</button>' +
-                                '</div>')
+                                        '</div>')
                             } else {
+
                                 $('#list').append('<div class="ax_default table_cell" style="width: 1000px">' +
-                                '<div class="text" style="visibility: visible;"> ' +
-                                '<p><span style="color:#ff6c60;">■</span><span style="color: #999"> ' + item.name + ' </span></p>' +
-                                '</div><div style="position: absolute;right: 250px;top: 4px">' +
-                                '<span style="color:#c8c8c8;">' + dateStr + '</span></div>' +
-                                '<button class="btn btn-danger" style="margin-top: -5px;right: 0px;top:0;position: absolute" type="button" onclick="editRecode('+ item.id +')">编辑</button>' +
+                                        '<div class="text" style="visibility: visible;width:500px;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"> ' +
+                                        '<p><span style="color:#ff6c60;">■</span><span style="color: #999;"> ' + item.name + ' </span>' +
+                                        '</p>' +
+                                        '</div><div style="position: absolute;right: 0px;top: 4px">' +
+                                        '<span style="color:#c8c8c8;">' + dateStr + '</span></div>' +
+                                        '<div style="position: absolute;right: 300px;top: 4px">' +
+                                        '<span style="color:#c8c8c8;">'+ levelOneName +'</span></div>' +
+                                        '<div style="position: absolute;right: 150px;top: 4px">' +
+                                        '<span style="color:#c8c8c8;">'+ levelTwoName+'</span></div>' +
+                                        '<button class="btn btn-danger" style="margin-top: -5px;right: -100px;top:0;position: absolute" type="button" onclick="editRecode(' + item.id + ')">编辑</button>' +
 //                                '<button class="btn btn-danger" style="margin-top: -5px;right: 88px;top:0;position: absolute" type="button" onclick="deleteRecode('+ item.id +')">删除</button>' +
-                                '</div>')
+                                        '</div>')
                             }
 
                         }
@@ -484,16 +525,16 @@
 
     }
 
-    function editRecode(id){
-        JSON.stringify(localStorage.setItem("recordId",id));
+    function editRecode(id) {
+        JSON.stringify(localStorage.setItem("recordId", id));
         window.location.href = 'editRecord.html';
     }
 
-    function deleteRecord(id){
+    function deleteRecord(id) {
 
     }
 
-    function addInfo(){
+    function addInfo() {
         window.location.href = 'addRecord.html';
     }
 </script>

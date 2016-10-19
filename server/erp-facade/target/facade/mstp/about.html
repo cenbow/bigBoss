@@ -126,8 +126,9 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-4">
-                <h1>信息披露</h1>
+                <h1 style="float: left">信息披露</h1>
                 <h1 id="firstLevelName"></h1>
+
             </div>
             <div class="col-lg-8 col-sm-8">
                 <ol class="breadcrumb pull-right">
@@ -170,16 +171,13 @@
     </div>
 
     <div class="row" style="margin-top: -20px;margin-left: 10px;margin-bottom: 170px" id="list">
-        <div class="ax_default table_cell">
-
+        <div class="ax_default table_cell" style="margin-top: 40px">
+            <div style="float: left;margin-left: 20px;"><span style="color: #999;">公司代码</span></div>
+            <div style="float: left;margin-left: 40px"><span style="color: #999;">信息标题</span></div>
+            <div style="float: right;margin-right: 20px"><span style="color: #999;">发布日期</span></div>
         </div>
-        <div class="ax_default table_cell" style="position: relative">
-            <div style="" class="text" style="visibility: visible;">
-                <a href="informationDetail.html"><p><span style="color:#ff6c60;">■</span><span>  </span></p></a>
+        <div style="height: 2px;background-color: #999"></div>
 
-            </div>
-
-        </div>
 
     </div>
 
@@ -188,7 +186,7 @@
 <!--container end-->
 
 <!--footer start-->
-<footer class="footer" style="position:fixed;bottom:0;height: 80px;padding: 10px 0">
+<footer class="footer" style="bottom:0;height: 80px;padding: 10px 0">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-3">
@@ -227,8 +225,11 @@
             formatDate: 'Y-m-d'
         });
 
-        var levelOneName = JSON.parse(localStorage.getItem("levelOneName"));
-        $("#firstLevelName").html("-"+levelOneName);
+        var levelOneName = JSON.parse(localStorage.getItem("infoLevelOneName"));
+        if(levelOneName){
+            $("#firstLevelName").html("-"+levelOneName);
+        }
+
 
         $.ajax({
             url: FACADE_URL + '/company/list',
@@ -265,10 +266,10 @@
 
     }
 
-    function showInfoDisclosure(levelOne) {
+   /* function showInfoDisclosure(levelOne) {
         localStorage.setItem("infoLevelOne", JSON.stringify(levelOne));
         window.location.href = 'about.html';
-    }
+    }*/
 
     function selectLevelTwo(el) {
         var btn = $(el).parent();
@@ -301,8 +302,8 @@
             type: 'POST',
             success: function (response) {
                 var data = response.data;
-                $('#list').html("");
-                $('#list').append('<div class="ax_default table_cell"><div class="text" style="visibility: visible;"> </div> </div>');
+//                $('#list').html("");
+                $('#list').append('<div class="ax_default table_cell"><div class="text" style="visibility: visible;margin-top: -10px"> </div> </div>');
                 if (data && data.length > 0) {
                     $.each(data, function (i, item) {
                         var fileName = item.url;

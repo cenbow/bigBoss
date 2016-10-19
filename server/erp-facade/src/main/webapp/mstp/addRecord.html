@@ -168,7 +168,8 @@
                     <label for="phone">Message</label>
                     <textarea placeholder="" rows="5" class="form-control"></textarea>
                 </div>-->
-                <button class="btn btn-danger" onclick="save()">确认</button>
+                <button class="btn btn-danger" style="margin-top: 20px;" onclick="save()">确认</button>
+                <button class="btn btn-danger" style="margin-top: 20px;margin-left: 20px" onclick="history.go(-1)">返回</button>
                 <div style="height: 200px"></div>
 
             </div>
@@ -179,7 +180,7 @@
 <!--container end-->
 
 <!--footer start-->
-<footer class="footer" style="position:fixed;bottom:0;height: 80px;padding: 10px 0;z-index: 1000">
+<footer class="footer" style="bottom:0;height: 80px;padding: 10px 0;z-index: 1000">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-3">
@@ -374,17 +375,17 @@
                     if ($(":file").val()) {
                         var id = response.data;
                         $('#pageForm').append('<input id="id" name="id" value="' + id + '" hidden="hidden"/>');
-
                         $("#pageForm").ajaxSubmit({
                             type: "POST",
                             url: FACADE_URL + '/information/upload',
                             dataType: "json",
                             success: function (data) {
+                                $('#pageForm').children().last().remove()
                                 if (data.success) {
                                     alert("新增成功");
                                     clearInputs();
                                 } else {
-                                    alert(data.error.message);
+                                    alert("信息新增成功，文件上传异常，错误原因为："+data.error.message);
                                 }
                             }
                         });

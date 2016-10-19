@@ -143,7 +143,7 @@
                         <tbody>
                         <tr>
                             <td align="center" style="line-height:24px; padding-top:0px">
-                                <div class="title_title"></div>
+
                                 <br></td>
                         </tr>
                         <tr>
@@ -153,7 +153,12 @@
                                         style="FONT-FAMILY: 黑体"><span id="title"
                                                                       style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"></span></font></span>
                                 </p>
-
+                                    <p style="margin-top: 20px;text-align: center">
+                                        <span id="publishDate">发布日期：</span>
+                                        <span style="margin: 0 30px 0 30px">访问次数：30</span>
+                                        <span id="createBy">录入人：</span>
+                                    </p>
+                                    <div style="border-top:1px dotted #000"></div>
                                     <p><span
                                             style="WIDOWS: 1; TEXT-TRANSFORM: none; BACKGROUND-COLOR: rgb(255,255,255); TEXT-INDENT: 0px; DISPLAY: inline !important; FONT: 24px/20px 宋体; WHITE-SPACE: normal; FLOAT: none; LETTER-SPACING: normal; COLOR: rgb(0,0,0); WORD-SPACING: 0px; -webkit-text-stroke-width: 0px"><font
                                             style="FONT-FAMILY: 黑体"></font></span>&nbsp;</p>
@@ -209,7 +214,7 @@
 <!--container end-->
 
 <!--footer start-->
-<footer class="footer" style="position:fixed;bottom:0;height: 114px">
+<footer class="footer" style="bottom:0;height: 80px;padding: 10px 0">
     <div class="container">
         <div class="row">
             <div class="col-lg-3 col-sm-3">
@@ -218,8 +223,9 @@
                     <p></p>
                 </address>
             </div>
-            <div class="col-lg-5 col-sm-5">
-                建议使用浏览器： Chrome、Firefox、IE8+ (标准模式)
+            <div class="col-lg-5 col-sm-5" style="position: absolute;right: 0;">
+                Copyright©1999-2015 All Rights Reserved 版权所有，未经授权，禁止转载
+                <br>备案序号:京ICP备05047877号 <br>建议使用浏览器： Chrome、Firefox、IE8+ (标准模式) 分辨率1024*768”
             </div>
             <div class="col-lg-3 col-sm-3 col-lg-offset-1">
 
@@ -261,6 +267,33 @@
         var infoDetail = JSON.parse(localStorage.getItem("infoDetail"));
         $('#detailId').html(infoDetail.name);
         $('#title').append(infoDetail.name);
+        var date = new Date(infoDetail.publishDate);
+
+        Date.prototype.format = function(format){
+            var o = {
+                "M+" : this.getMonth()+1, //month
+                "d+" : this.getDate(), //day
+                "h+" : this.getHours(), //hour
+                "m+" : this.getMinutes(), //minute
+                "s+" : this.getSeconds(), //second
+                "q+" : Math.floor((this.getMonth()+3)/3), //quarter
+                "S" : this.getMilliseconds() //millisecond
+            }
+
+            if(/(y+)/.test(format)) {
+                format = format.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+            }
+
+            for(var k in o) {
+                if(new RegExp("("+ k +")").test(format)) {
+                    format = format.replace(RegExp.$1, RegExp.$1.length==1 ? o[k] : ("00"+ o[k]).substr((""+ o[k]).length));
+                }
+            }
+            return format;
+        }
+        var nowStr = date.format("yyyy-MM-dd hh:mm:ss");
+        $('#publishDate').append(nowStr);
+        $('#createBy').append(infoDetail.createName);
         $('#text').append(infoDetail.text);
 
         if (infoDetail.url) {
