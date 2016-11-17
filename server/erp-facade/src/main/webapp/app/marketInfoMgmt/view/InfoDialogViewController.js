@@ -62,7 +62,7 @@ Ext.define('MarketInfoMgmt.view.InfoDialogViewController', {
       success : function(form, action) {
         var flag=action.result.success;
         if(flag) {
-          TipsUtil.showTips('提示', action.result.data,TipsUtil.WARING);
+          TipsUtil.showTips('提示', "保存成功",TipsUtil.WARING);
           var viewportCtr = viewCtr.getViewModel().get('mainViewportController');
           viewportCtr.getViewModel().getStore('gridstore').load();
           viewCtr.getView().close();

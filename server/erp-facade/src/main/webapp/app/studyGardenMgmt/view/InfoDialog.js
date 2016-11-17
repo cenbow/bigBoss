@@ -59,23 +59,7 @@ Ext.define('StudyGardenMgmt.view.InfoDialog', {
                         readOnly: '{isView}'
                     }
                 },
-                {
-                    xtype:'combobox',
-                    fieldLabel: '所属公司<span style="color:red">*</span>',
-                    emptyText: "请选择",
-                    editable: false,
-                    allowBlank: false,
-                    name:'companyId',
-                    displayField:'value',
-                    valueField:'key',
-                    itemId: 'companyId',
-                    bind:{
-                        store:'{companycomboboxstore}',
-                        value: "{formData.companyId}",
-                        readOnly:'{isView}',
-                        hidden:"{hiddenCompany}"
-                    }
-                },
+
                 {
                     xtype: 'combobox',
                     fieldLabel: '一级分类<span style="color:red">*</span>',

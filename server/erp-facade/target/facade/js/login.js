@@ -1,3 +1,4 @@
+var FACADE_URL = ""
 $(function () {
     var inIframe;
     try {
@@ -68,7 +69,7 @@ $(function () {
         $(".lg-error").html('');
         $.ajax({
             method: 'POST',
-            url: FACADE_URL + '/account/login',
+            url: 'account/login',
             data: {
                 //company: $.trim($company.val()),
                 username: $.trim($username.val()),
@@ -80,6 +81,7 @@ $(function () {
             if (result.success) {
                 var accountId = result.data.accountId,
                     roleId = result.data.roleId;
+                FACADE_URL = result.data.facade_url;
                 localStorage.setItem("accountId",accountId);
                 localStorage.setItem("roleId",roleId);
                 localStorage.setItem("login",true);

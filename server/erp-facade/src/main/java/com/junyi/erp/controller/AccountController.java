@@ -173,6 +173,11 @@ public class AccountController extends ErpBaseController {
             result.put("accountId", account.getId());
             result.put("roleId", account.getRoleId());
             result.put("companyId", account.getCompanyId());
+            String requestUrl = request.getScheme() //当前链接使用的协议
+                    +"://" + request.getServerName()//服务器地址
+                    + ":" + request.getServerPort() //端口号
+                    + request.getContextPath();
+            result.put("facade_url",requestUrl);
             success(response, result);
         }
     }

@@ -49,7 +49,6 @@ Ext.define('StudyGardenMgmt.view.InfoDialogViewController', {
       return;
     }
 
-
     var formData = formCmp.getValues();
     if(formData.levelOne == 0 ){
       TipsUtil.showTips('提示', "请选择正确的一级分类");
@@ -67,7 +66,7 @@ Ext.define('StudyGardenMgmt.view.InfoDialogViewController', {
       success : function(form, action) {
         var flag=action.result.success;
         if(flag) {
-          TipsUtil.showTips('提示', action.result.data,TipsUtil.WARING);
+          TipsUtil.showTips('提示', "保存成功",TipsUtil.WARING);
           var viewportCtr = viewCtr.getViewModel().get('mainViewportController');
           viewportCtr.getViewModel().getStore('gridstore').load();
           viewCtr.getView().close();
