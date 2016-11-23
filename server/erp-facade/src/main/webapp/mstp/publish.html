@@ -74,7 +74,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">BIG&nbsp;&nbsp;BOSS&nbsp;&nbsp;CMS</a>
+                <div class="bigBossBg"></div>
+                <!--<a class="navbar-brand" href="index.html">BIG&nbsp;&nbsp;BOSS&nbsp;&nbsp;CMS</a>-->
             </div>
             <div class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav">
@@ -107,11 +108,11 @@
 
                         </ul>
                     </li>
-                    <div style=" position: relative;float: left;margin-left: 40px;padding-top:42px;cursor:pointer">
+                    <div class="accountStyle">
                         <a id="account" href="#" onclick="gotoAccount()"></a>
                     </div>
-                    <div id="headAction"
-                         style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer">
+                    <div id="headAction" class="headAction"
+                         >
 
                     </div>
                     <div style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer"
@@ -209,20 +210,13 @@
 <!--footer start-->
 <footer class="footer" style="bottom:0;height: 80px;padding: 10px 0">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-sm-3">
-                <h1>bigBoss CMS</h1>
-                <address>
-                    <p></p>
-                </address>
+        <div class="row" style="text-align: center">
+            <div class="">
+                <span>放飞梦想  版权所有，未经授权，禁止转载</span><br>
+                <span>备案序号:浙ICP备16040293号</span><br>
+                <span>建议使用浏览器： Chrome、Firefox、IE8+ （标准模式）   分辨率1024*768</span>
             </div>
-            <div class="col-lg-5 col-sm-5" style="position: absolute;right: 0;">
-                Copyright©1999-2015 All Rights Reserved 版权所有，未经授权，禁止转载
-                <br>备案序号:京ICP备05047877号 <br>建议使用浏览器： Chrome、Firefox、IE8+ (标准模式) 分辨率1024*768”
-            </div>
-            <div class="col-lg-3 col-sm-3 col-lg-offset-1">
 
-            </div>
         </div>
     </div>
 </footer>
@@ -271,6 +265,11 @@
 
 
     });
+
+    $(window).load(function () {
+        loadHead();
+        search();
+    })
 
     function clearSearch() {
         $('#name').val("");
@@ -321,14 +320,14 @@
                 $('#list').append('<div class="ax_default table_cell"><div class="text" style="visibility: visible;"> </div> </div>');
                 $('#list').append('<div class="ax_default table_cell" style="width: 1000px">' +
                         '<div class="text" style="visibility: visible;width:500px;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"> ' +
-                        '<p style="margin-left: 20px"><span style="color: #999;">信息标题</span>' +
+                        '<p style="margin-left: 20px"><span>信息标题</span>' +
                         '</p>' +
                         '</div><div style="position: absolute;right: 0px;top: 4px">' +
-                        '<span style="color:#c8c8c8;">发布日期</span></div>' +
+                        '<span >发布日期</span></div>' +
                         '<div style="position: absolute;right: 300px;top: 4px">' +
-                        '<span style="color:#c8c8c8;">一级分类</span></div>' +
+                        '<span >一级分类</span></div>' +
                         '<div style="position: absolute;right: 150px;top: 4px">' +
-                        '<span style="color:#c8c8c8;">二级分类</span></div>' +
+                        '<span >二级分类</span></div>' +
                         '</div>');
                 $('#list').append('<div style="border-top: #c8c8c8 1px dotted;margin-bottom: 20px"></div>');
                 if (data && data.length > 0) {
@@ -337,7 +336,7 @@
 //                            var str = fileName.substr(fileName.indexOf('-')+1)+'.pdf';
                         var href = FACADE_URL + '/generic/web/viewer.html?file=' + FACADE_URL + '/information/download/' + fileName;
                         var publishDate = new Date(item.publishDate);
-                        var dateStr = publishDate.getFullYear() + '-' + (parseInt(publishDate.getMonth()) + 1) + '-' + publishDate.getDay();
+                        var dateStr = publishDate.getFullYear() + '-' + (parseInt(publishDate.getMonth()) + 1) + '-' + publishDate.getDate();
                         var levelOneName = item.levelOneName?item.levelOneName:"无";
                         var levelTwoName = item.levelTwoName?item.levelTwoName:"无";
 
@@ -346,13 +345,13 @@
                             $('#list').append('<div class="ax_default table_cell" style="width: 1000px" ">' +
                                     '<div class="text" style="visibility: visible;width:500px;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"> ' +
                                     '<a href="#" onclick="goToInfoDetail(this)" data-rel="' + item.id + '">' +
-                                    '<p><span style="color:#ff6c60;">■</span><span style="color: #999"> ' + item.name + ' </span></p></a>' +
+                                    '<p><span style="color:#ff6c60;">■</span><span style=""> ' + item.name + ' </span></p></a>' +
                                     '</div><div style="position: absolute;right: 0px;top: 4px">' +
-                                    '<span style="color:#c8c8c8;">' + dateStr + '</span></div>' +
+                                    '<span style="">' + dateStr + '</span></div>' +
                                     '<div style="position: absolute;right: 300px;top: 4px">' +
-                                    '<span style="color:#c8c8c8;">'+ levelOneName +'</span></div>' +
+                                    '<span style="">'+ levelOneName +'</span></div>' +
                                     '<div style="position: absolute;right: 150px;top: 4px">' +
-                                    '<span style="color:#c8c8c8;">'+ levelTwoName+'</span></div>' +
+                                    '<span style="">'+ levelTwoName+'</span></div>' +
                                     '<button class="btn btn-danger" style="margin-top: -5px;right: -100px;top:0;position: absolute" type="button" onclick="editRecode(' + item.id + ')">编辑</button>' +
 //                            '<button class="btn btn-danger" style="margin-top: -5px;right: 88px;top:0;position: absolute" type="button" onclick="deleteRecode('+ item.id +')">删除</button>' +
                                     '</div>')
@@ -361,13 +360,13 @@
                                 $('#list').append('<div class="ax_default table_cell" style="width: 1000px">' +
                                         '<div class="text" style="visibility: visible;width:500px;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"> ' +
                                         '<a href=" ' + href + ' " target="_blank">' +
-                                        '<p><span style="color:#ff6c60;">■</span><span style="color: #999"> ' + item.name + ' </span><image style="width:20px" src="../images/pdf_pic.png"/></p></a>' +
+                                        '<p><span style="color:#ff6c60;">■</span><span style=""> ' + item.name + ' </span><image style="width:20px" src="../images/pdf_pic.png"/></p></a>' +
                                         '</div><div style="position: absolute;right: 0px;top: 4px">' +
-                                        '<span style="color:#c8c8c8;">' + dateStr + '</span></div>' +
+                                        '<span style="">' + dateStr + '</span></div>' +
                                         '<div style="position: absolute;right: 300px;top: 4px">' +
-                                        '<span style="color:#c8c8c8;">'+ levelOneName +'</span></div>' +
+                                        '<span style="">'+ levelOneName +'</span></div>' +
                                         '<div style="position: absolute;right: 150px;top: 4px">' +
-                                        '<span style="color:#c8c8c8;">'+ levelTwoName+'</span></div>' +
+                                        '<span style="">'+ levelTwoName+'</span></div>' +
                                         '<button class="btn btn-danger" style="margin-top: -5px;right: -100px;top:0;position: absolute" type="button" onclick="editRecode(' + item.id + ')">编辑</button>' +
 //                                '<button class="btn btn-danger" style="margin-top: -5px;right: 88px;top:0;position: absolute" type="button" onclick="deleteRecode('+ item.id +')">删除</button>' +
                                         '</div>')
@@ -375,14 +374,14 @@
 
                                 $('#list').append('<div class="ax_default table_cell" style="width: 1000px">' +
                                         '<div class="text" style="visibility: visible;width:500px;display:block;white-space:nowrap; overflow:hidden; text-overflow:ellipsis;"> ' +
-                                        '<p><span style="color:#ff6c60;">■</span><span style="color: #999;"> ' + item.name + ' </span>' +
+                                        '<p><span style="color:#ff6c60;">■</span><span style=""> ' + item.name + ' </span>' +
                                         '</p>' +
                                         '</div><div style="position: absolute;right: 0px;top: 4px">' +
-                                        '<span style="color:#c8c8c8;">' + dateStr + '</span></div>' +
+                                        '<span >' + dateStr + '</span></div>' +
                                         '<div style="position: absolute;right: 300px;top: 4px">' +
-                                        '<span style="color:#c8c8c8;">'+ levelOneName +'</span></div>' +
+                                        '<span >'+ levelOneName +'</span></div>' +
                                         '<div style="position: absolute;right: 150px;top: 4px">' +
-                                        '<span style="color:#c8c8c8;">'+ levelTwoName+'</span></div>' +
+                                        '<span >'+ levelTwoName+'</span></div>' +
                                         '<button class="btn btn-danger" style="margin-top: -5px;right: -100px;top:0;position: absolute" type="button" onclick="editRecode(' + item.id + ')">编辑</button>' +
 //                                '<button class="btn btn-danger" style="margin-top: -5px;right: 88px;top:0;position: absolute" type="button" onclick="deleteRecode('+ item.id +')">删除</button>' +
                                         '</div>')
@@ -414,10 +413,7 @@
 
     }
 
-    $(window).load(function () {
-        loadHead();
-        search();
-    })
+
 
     $(window).load(function () {
         $('[data-zlname = reverse-effect]').mateHover({

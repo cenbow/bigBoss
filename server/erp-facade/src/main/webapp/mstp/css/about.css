@@ -1,7 +1,7 @@
 .ax_default.table_cell {
     left: 0px;
     top: 0px;
-    width: 760px;
+    /*width: 760px;*/
     height: 40px;
     font-size: 16px;
     text-align: left;
@@ -24,7 +24,7 @@
     width: 756px;
     word-wrap: break-word;
     font-size: 16px;
-    color: #999;
+    /*color: #999;*/
 }
 
 
@@ -91,4 +91,16 @@
 
 .co_content p {
     text-indent: 2em;
+}
+
+.twoName{
+
+}
+
+.twoNameFont{
+    color: #fff;
+}
+
+.footer{
+    position: fixed;
 }

@@ -232,7 +232,7 @@ public class InformationController extends ErpBaseController {
         }
         String fileName = file.getOriginalFilename();
         String suffix = fileName.substring(fileName.lastIndexOf("."));
-        if (!suffix.equals(".pdf")) {
+        if (!(suffix.toLowerCase().equals(".pdf"))) {
             error(response, "只能上传pdf类型的文件");
             return;
         }

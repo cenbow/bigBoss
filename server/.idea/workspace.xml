@@ -46,71 +46,157 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InformationController.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/InformationController.java">
+      <file leaf-file-name="about.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/about.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="322" column="50" selection-start-line="322" selection-start-column="50" selection-end-line="322" selection-end-column="50" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InfoDialogViewController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/InfoDialogViewController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="68" column="39" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
+            <state vertical-scroll-proportion="0.88530463">
+              <caret line="133" column="23" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="23" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
+                <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1479882889178" expanded="true" signature="11221:11258" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="12184:12208" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="12226:12240" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="12318:12330" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="12470:12509" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="12823:12857" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="12909:12933" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="13082:13096" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="13178:13190" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="13291:13301" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="13391:13430" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="13707:13741" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="13793:13817" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="13835:13849" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="13931:13943" placeholder="..." />
+                <marker date="1479882889178" expanded="true" signature="14084:14123" placeholder="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InfoDialogViewController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/InfoDialogViewController.js">
+      <file leaf-file-name="addRecord.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/addRecord.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="64" column="58" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InfoDialogViewController.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialogViewController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.30023095">
-              <caret line="64" column="40" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="InfoDialog.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/InfoDialog.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state vertical-scroll-proportion="-8.5161295">
+              <caret line="195" column="17" selection-start-line="195" selection-start-column="17" selection-end-line="195" selection-end-column="17" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1479375036692" expanded="true" signature="1559:1568" placeholder="..." />
-                <marker date="1479375036692" expanded="true" signature="1926:1935" placeholder="..." />
+                <element signature="n#style#0;n#select#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InfoDialog.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/InfoDialog.js">
+      <file leaf-file-name="editRecord.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/editRecord.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+            <state vertical-scroll-proportion="-4.172414">
+              <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="192" selection-end-column="17" />
               <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1479374918181" expanded="true" signature="1564:1573" placeholder="..." />
-                <marker date="1479374918181" expanded="true" signature="1931:1940" placeholder="..." />
+                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="informationDetail.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/informationDetail.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.0">
+              <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+              <folding>
+                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="market.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/market.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.5161295">
+              <caret line="194" column="17" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="17" />
+              <folding>
+                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="notice.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/notice.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.5161295">
+              <caret line="194" column="17" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="17" />
+              <folding>
+                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="publish.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/publish.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.5161295">
+              <caret line="222" column="17" selection-start-line="222" selection-start-column="17" selection-end-line="222" selection-end-column="17" />
+              <folding>
+                <element signature="n#style#0;n#span#0;n#p#0;n#a#0;n#div#0;n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="study.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/study.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-2.7931035">
+              <caret line="93" column="56" selection-start-line="93" selection-start-column="56" selection-end-line="93" selection-end-column="56" />
+              <folding>
+                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <marker date="1479883618057" expanded="true" signature="9687:9707" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="10633:10657" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="10675:10689" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="10767:10779" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="10882:10921" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="11231:11265" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="11317:11341" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="11359:11373" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="11455:11467" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="11576:11586" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="11676:11715" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="11989:12023" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="12075:12099" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="12117:12131" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="12213:12225" placeholder="..." />
+                <marker date="1479883618057" expanded="true" signature="12329:12368" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="account.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/account.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-8.5161295">
+              <caret line="166" column="17" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+              <folding>
+                <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -133,21 +219,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/addAccount/view/MainWindowViewController.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/store/CategoryComboboxStore.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCategory/view/MainWindowViewController.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCompany/store/CompanyComboboxStore.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/addCompany/view/MainWindowViewController.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/CategoryAllComboboxStore.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/CategoryByUpClassIdComboboxStore.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/CategoryComboboxStore.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/store/ColumnComboboxStore.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/InfoDialogViewController.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewportViewController.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewportViewModel.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/companyMgmt/store/CompanyComboboxStore.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/companyMgmt/view/InfoDialogViewController.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/companyMgmt/view/MainViewportViewController.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/companyMgmt/view/MainViewportViewModel.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/editAccount/store/CompanyComboboxStore.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/editAccount/view/MainWindowViewController.js" />
@@ -177,13 +248,28 @@
         <option value="$PROJECT_DIR$/erp-facade/src/main/resources/jdbc.properties" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/js/login.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/InfoDialogViewController.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialog.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/InfoDialog.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/InfoDialogViewController.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/InfoDialogViewController.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/InfoDialog.js" />
-        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/config.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/InformationController.java" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/js/common.js" />
+        <option value="$PROJECT_DIR$/erp-service/src/main/resources/mapper/InformationMapper.xml" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialog.js" />
         <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialogViewController.js" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/css/about.css" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/css/style.css" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/index.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/about.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/account.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/addRecord.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/editRecord.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/informationDetail.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/market.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/notice.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/publish.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/study.html" />
+        <option value="$PROJECT_DIR$/erp-facade/src/main/webapp/app/config.js" />
       </list>
     </option>
   </component>
@@ -307,7 +393,9 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -640,7 +728,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
+              <option name="myItemId" value="mstp" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -671,48 +759,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studyGardenMgmt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="server" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="erp-facade" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="src" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="webapp" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="studyGardenMgmt" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="view" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -807,10 +853,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="main" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resources" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -958,8 +1000,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -998,11 +1038,11 @@
       <recent name="com.junyi.erp.vo" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\bigBoss\server\erp-facade\src\main\webapp\images" />
       <recent name="F:\bigBoss\server\erp-facade\src\main\webapp\mstp\js" />
       <recent name="F:\workspace\bigBoss\server\erp-facade\src\main\webapp\images" />
       <recent name="F:\workspace\bigBoss\server\erp-facade\src\main\webapp\mstp\js" />
       <recent name="F:\workspace\bigBoss\server\erp-facade\src\main\webapp\mstp" />
-      <recent name="F:\workspace\bigBoss\server\erp-facade\src\main\webapp\app" />
     </key>
   </component>
   <component name="RunManager" selected="Tomcat Server.facade">
@@ -1420,12 +1460,14 @@
       <workItem from="1478584467890" duration="875000" />
       <workItem from="1479172161040" duration="6199000" />
       <workItem from="1479188421381" duration="7000" />
-      <workItem from="1479373689966" duration="1605000" />
+      <workItem from="1479373689966" duration="38770000" />
+      <workItem from="1479779128383" duration="5000" />
+      <workItem from="1479779152595" duration="6483000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="381125000" />
+    <option name="totallyTimeSpent" value="424778000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-7" y="2" width="1932" height="1045" extended-state="0" />
@@ -1434,14 +1476,13 @@
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="UI Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294621" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3294621" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42538977" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32960895" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41648108" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.54565704" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
@@ -1455,11 +1496,12 @@
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4988864" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299356" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299356" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Coverage" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3299356" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42538977" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -1477,25 +1519,6 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/addRecord.html</url>
-          <line>375</line>
-          <option name="timeStamp" value="83" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/InformationController.java</url>
-          <line>321</line>
-          <properties />
-          <option name="timeStamp" value="87" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/InformationController.java</url>
-          <line>290</line>
-          <properties />
-          <option name="timeStamp" value="89" />
-        </line-breakpoint>
-      </breakpoints>
       <breakpoints-dialog>
         <breakpoints-dialog />
       </breakpoints-dialog>
@@ -1519,125 +1542,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewportViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="253" column="18" selection-start-line="253" selection-start-column="18" selection-end-line="253" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/categoryMgmt/view/MainViewportViewModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="39" column="19" selection-start-line="39" selection-start-column="19" selection-end-line="39" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/companyMgmt/store/CompanyComboboxStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/companyMgmt/view/InfoDialogViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="53" column="15" selection-start-line="53" selection-start-column="15" selection-end-line="53" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/companyMgmt/view/MainViewportViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="152" column="18" selection-start-line="152" selection-start-column="18" selection-end-line="152" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/companyMgmt/view/MainViewportViewModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="37" column="19" selection-start-line="37" selection-start-column="19" selection-end-line="37" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/editAccount/store/CompanyComboboxStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/editAccount/view/MainWindowViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="108" column="15" selection-start-line="108" selection-start-column="15" selection-end-line="108" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/index/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="54" column="6" selection-start-line="54" selection-start-column="6" selection-end-line="54" selection-end-column="44" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/store/CategoryByUpClassIdComboboxStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/store/CategoryComboboxStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/store/CompanyComboboxStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="34" column="14" selection-start-line="34" selection-start-column="14" selection-end-line="34" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/store/InformationComboboxStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="31" column="14" selection-start-line="31" selection-start-column="14" selection-end-line="31" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewportViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="324" column="18" selection-start-line="324" selection-start-column="18" selection-end-line="324" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewportViewModel.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="38" column="19" selection-start-line="38" selection-start-column="19" selection-end-line="38" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/PDFDialogViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="42" column="12" selection-start-line="42" selection-start-column="12" selection-end-line="42" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/store/CategoryByUpClassIdComboboxStore.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="32" column="14" selection-start-line="32" selection-start-column="14" selection-end-line="32" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/store/CategoryComboboxStore.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1708,13 +1612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/MainViewportViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="88" column="67" selection-start-line="88" selection-start-column="67" selection-end-line="88" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/PDFDialogViewController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -1757,26 +1654,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/js/common.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="5" column="9" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="764" column="30" selection-start-line="764" selection-start-column="30" selection-end-line="764" selection-end-column="30" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/CategoryController.java">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="187" column="24" selection-start-line="187" selection-start-column="24" selection-end-line="187" selection-end-column="24" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1784,7 +1665,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="168" column="28" selection-start-line="168" selection-start-column="28" selection-end-line="168" selection-end-column="28" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1792,7 +1672,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1800,12 +1679,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1477554261724" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1477554261724" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1477554261724" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1813,7 +1686,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="65" column="50" selection-start-line="65" selection-start-column="50" selection-end-line="65" selection-end-column="50" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1821,19 +1693,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="2" selection-start-line="2" selection-start-column="2" selection-end-line="2" selection-end-column="2" />
-          <folding>
-            <marker date="1479374289453" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1479374289453" expanded="true" signature="-1:-1" placeholder="..." />
-            <marker date="1479374289453" expanded="true" signature="-1:-1" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1841,7 +1700,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="18" column="0" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1849,11 +1707,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1479374918181" expanded="true" signature="1564:1573" placeholder="..." />
-            <marker date="1479374918181" expanded="true" signature="1931:1940" placeholder="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1861,10 +1714,236 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="61" column="0" selection-start-line="61" selection-start-column="0" selection-end-line="61" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/InfoDialogViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="64" column="58" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/MainViewport.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="34" column="26" selection-start-line="34" selection-start-column="18" selection-end-line="34" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/infoDisclosureMgmt/view/MainViewportViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="177" column="10" selection-start-line="177" selection-start-column="2" selection-end-line="177" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialogViewModel.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="20" column="16" selection-start-line="20" selection-start-column="8" selection-end-line="20" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/InfoDialogViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="68" column="39" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/MainViewportViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-50.303032">
+          <caret line="138" column="42" selection-start-line="138" selection-start-column="42" selection-end-line="138" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/js/common.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5757575">
+          <caret line="56" column="38" selection-start-line="56" selection-start-column="38" selection-end-line="56" selection-end-column="38" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/InformationService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="17" column="22" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-service/src/main/java/com/junyi/erp/service/user/impl/InformationServiceImpl.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="41" column="69" selection-start-line="41" selection-start-column="39" selection-end-line="41" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-service/src/main/resources/mapper/InformationMapper.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="188" column="16" selection-start-line="188" selection-start-column="16" selection-end-line="188" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="155" column="49" selection-start-line="155" selection-start-column="32" selection-end-line="155" selection-end-column="49" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <marker date="1479375036692" expanded="true" signature="1559:1568" placeholder="..." />
-            <marker date="1479375036692" expanded="true" signature="1926:1935" placeholder="..." />
+            <marker date="1479880485303" expanded="true" signature="-1:-1" placeholder="..." />
+            <marker date="1479880485303" expanded="true" signature="-1:-1" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialogViewController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="54" column="13" selection-start-line="54" selection-start-column="13" selection-end-line="54" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/css/about.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.272727">
+          <caret line="80" column="19" selection-start-line="80" selection-start-column="19" selection-end-line="80" selection-end-column="19" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/InformationController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="282" column="62" selection-start-line="282" selection-start-column="54" selection-end-line="282" selection-end-column="62" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-21.60606">
+          <caret line="1870" column="1" selection-start-line="1870" selection-start-column="1" selection-end-line="1870" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.1612904">
+          <caret line="713" column="0" selection-start-line="713" selection-start-column="0" selection-end-line="726" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/editRecord.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.172414">
+          <caret line="179" column="0" selection-start-line="179" selection-start-column="0" selection-end-line="192" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/addRecord.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5161295">
+          <caret line="195" column="17" selection-start-line="195" selection-start-column="17" selection-end-line="195" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#select#0;n#div#2;n#div#0;n#div#0;n#div#0;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/account.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5161295">
+          <caret line="166" column="17" selection-start-line="166" selection-start-column="17" selection-end-line="166" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/informationDetail.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.0">
+          <caret line="215" column="0" selection-start-line="215" selection-start-column="0" selection-end-line="215" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/market.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5161295">
+          <caret line="194" column="17" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/notice.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5161295">
+          <caret line="194" column="17" selection-start-line="194" selection-start-column="17" selection-end-line="194" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/publish.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5161295">
+          <caret line="222" column="17" selection-start-line="222" selection-start-column="17" selection-end-line="222" selection-end-column="17" />
+          <folding>
+            <element signature="n#style#0;n#span#0;n#p#0;n#a#0;n#div#0;n#div#1;n#div#3;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/study.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-2.7931035">
+          <caret line="93" column="56" selection-start-line="93" selection-start-column="56" selection-end-line="93" selection-end-column="56" />
+          <folding>
+            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1479883618057" expanded="true" signature="9687:9707" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="10633:10657" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="10675:10689" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="10767:10779" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="10882:10921" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="11231:11265" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="11317:11341" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="11359:11373" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="11455:11467" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="11576:11586" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="11676:11715" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="11989:12023" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="12075:12099" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="12117:12131" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="12213:12225" placeholder="..." />
+            <marker date="1479883618057" expanded="true" signature="12329:12368" placeholder="..." />
           </folding>
         </state>
       </provider>
@@ -1877,37 +1956,35 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/java/com/junyi/erp/controller/InformationController.java">
+    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/mstp/about.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="322" column="50" selection-start-line="322" selection-start-column="50" selection-end-line="322" selection-end-column="50" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/studyGardenMgmt/view/InfoDialogViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="68" column="39" selection-start-line="68" selection-start-column="39" selection-end-line="68" selection-end-column="39" />
+        <state vertical-scroll-proportion="0.88530463">
+          <caret line="133" column="23" selection-start-line="133" selection-start-column="23" selection-end-line="133" selection-end-column="23" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#style#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#0;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#span#0;n#div#2;n#div#0;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#div#2;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#footer#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+            <marker date="1479882889178" expanded="true" signature="11221:11258" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="12184:12208" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="12226:12240" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="12318:12330" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="12470:12509" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="12823:12857" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="12909:12933" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="13082:13096" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="13178:13190" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="13291:13301" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="13391:13430" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="13707:13741" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="13793:13817" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="13835:13849" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="13931:13943" placeholder="..." />
+            <marker date="1479882889178" expanded="true" signature="14084:14123" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/marketInfoMgmt/view/InfoDialogViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="64" column="58" selection-start-line="64" selection-start-column="58" selection-end-line="64" selection-end-column="58" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/erp-facade/src/main/webapp/app/noticeShowMgmt/view/InfoDialogViewController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.30023095">
-          <caret line="64" column="40" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="40" />
-          <folding />
         </state>
       </provider>
     </entry>

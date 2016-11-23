@@ -72,15 +72,14 @@ Ext.define('NoticeShowMgmt.view.InfoDialog', {
                     bind:{
                         store:'{companycomboboxstore}',
                         value: "{formData.companyId}",
-                        readOnly:'{isView}',
-                        hiddenCompany:'{hiddenCompany}'
+                        readOnly:'{isView}'
                     }
                 },
                 {
                     xtype: 'combobox',
-                    fieldLabel: '一级分类<span style="color:red">*</span>',
+                    fieldLabel: '一级分类',
                     editable: false,
-                    allowBlank: false,
+                    //allowBlank: false,
                     name: 'levelOne',
                     queryMode: 'local',
                     displayField: 'value',

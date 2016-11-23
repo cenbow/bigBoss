@@ -63,7 +63,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">BIG&nbsp;&nbsp;BOSS&nbsp;&nbsp;CMS</a>
+                <div class="bigBossBg"></div>
+                <!--<a class="navbar-brand" href="index.html">BIG&nbsp;&nbsp;BOSS&nbsp;&nbsp;CMS</a>-->
             </div>
             <div class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav">
@@ -96,10 +97,10 @@
 
                         </ul>
                     </li>
-                    <div style=" position: relative;float: left;margin-left: 40px;padding-top:42px;cursor:pointer">
+                    <div class="accountStyle">
                         <a id="account" href="#" onclick="gotoAccount()"></a>
                     </div>
-                    <div id="headAction" style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer" >
+                    <div id="headAction" class="headAction" >
 
                     </div>
                     <div style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer" onclick="logout()">
@@ -118,7 +119,7 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-4 col-sm-4">
-                <h1 class="twoName"></h1>
+                <h1 class="twoName1"></h1>
             </div>
             <div class="col-lg-8 col-sm-8">
                 <ol class="breadcrumb pull-right">
@@ -216,20 +217,13 @@
 <!--footer start-->
 <footer class="footer" style="bottom:0;height: 80px;padding: 10px 0">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-sm-3">
-                <h1>bigBoss CMS</h1>
-                <address>
-                    <p></p>
-                </address>
+        <div class="row" style="text-align: center">
+            <div class="">
+                <span>放飞梦想  版权所有，未经授权，禁止转载</span><br>
+                <span>备案序号:浙ICP备16040293号</span><br>
+                <span>建议使用浏览器： Chrome、Firefox、IE8+ （标准模式）   分辨率1024*768</span>
             </div>
-            <div class="col-lg-5 col-sm-5" style="position: absolute;right: 0;">
-                Copyright©1999-2015 All Rights Reserved 版权所有，未经授权，禁止转载
-                <br>备案序号:京ICP备05047877号 <br>建议使用浏览器： Chrome、Firefox、IE8+ (标准模式) 分辨率1024*768”
-            </div>
-            <div class="col-lg-3 col-sm-3 col-lg-offset-1">
 
-            </div>
         </div>
     </div>
 </footer>
@@ -249,19 +243,23 @@
         var data = localStorage.getItem("infoDisclosure");
         var array = JSON.parse(data);
         var list = [];
-        if (array && array.length > 0) {
+
+       /* if (array && array.length > 0) {
             var temp = [];
             $.each(array, function (i, item) {
+                console.log(item.levelOne)
                 if (levelOne == item.levelOne) {
                     list.push(item);
                 }
                 if (temp.indexOf(item.levelOne) > -1) {
                     return;
+                }else{
+                    temp.push(item.levelOne);
+                    $('#infoDisclosure').append('<li><a onclick="showInfoDisclosure(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
                 }
-                temp.push(item.levelOne);
-                $('#infoDisclosure').append('<li><a onclick="showInfoDisclosure(' + item.levelOne + ')" >' + item.levelOneName + '</a></li>')
+
             })
-        }
+        }*/
 
 
         var infoDetail = JSON.parse(localStorage.getItem("infoDetail"));
@@ -305,17 +303,39 @@
 
 
         if (infoDetail.columnId == 1) {
-            $('.twoName').html('<a href="about.html">信息披露</a>')
+            var str = "信息披露";
+            $('.twoName1').html('<a href="about.html" class="twoNameFont">'+ str +'</a>');
+            str = appendTwoName(str);
+            $('.twoName').html('<a href="about.html" class="twoNameFont">'+ str +'</a>')
             $('#infoDisclosure').parent().addClass('active');
         } else if (infoDetail.columnId == 2) {
-            $('.twoName').html('<a href="study.html">学习园地</a>')
+            var str = "学习园地";
+            $('.twoName1').html('<a href="about.html" class="twoNameFont">'+ str +'</a>');
+            str = appendTwoName(str);
+            $('.twoName').html('<a href="study.html" class="twoNameFont">'+ str +'</a>')
             $('#infoStudy').parent().addClass('active');
         } else if (infoDetail.columnId == 3) {
-            $('.twoName').html('<a href="market.html">市场资讯</a>')
+            var str = "市场资讯";
+            $('.twoName1').html('<a href="about.html" class="twoNameFont">'+ str +'</a>');
+            str = appendTwoName(str);
+            $('.twoName').html('<a href="market.html" class="twoNameFont">'+ str +'</a>')
             $('#infoMarket').parent().addClass('active');
         } else if (infoDetail.columnId == 4) {
-            $('.twoName').html('<a href="notice.html">通知公告</a>')
+            var str = "通知公告";
+            $('.twoName1').html('<a href="about.html" class="twoNameFont">'+ str +'</a>');
+            str = appendTwoName(str);
+            $('.twoName').html('<a href="notice.html" class="twoNameFont">'+ str +'</a>')
             $('#infoNotice').parent().addClass('active');
+        }
+
+        function appendTwoName(str){
+            if(infoDetail.levelOneName){
+                str+="&nbsp;&nbsp;<span style='color: #ccc;'>/</span>&nbsp;&nbsp;"+infoDetail.levelOneName;
+                if(infoDetail.levelTwoName){
+                    str+="&nbsp;&nbsp;<span style='color: #ccc;'>/</span>&nbsp;&nbsp;"+infoDetail.levelTwoName;
+                }
+            }
+            return str;
         }
     })
 

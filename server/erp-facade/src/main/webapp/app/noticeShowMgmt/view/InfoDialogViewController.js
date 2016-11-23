@@ -50,10 +50,10 @@ Ext.define('NoticeShowMgmt.view.InfoDialogViewController', {
     }
 
     var formData = formCmp.getValues();
-    if(formData.levelOne == 0 ){
+    /*if(formData.levelOne == 0 ){
       TipsUtil.showTips('提示', "请选择正确的一级分类");
       return;
-    }
+    }*/
 
     formCmp.getForm().submit({
       url: FACADE_URL+'/information/update',

@@ -51,7 +51,8 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">BIG&nbsp;&nbsp;BOSS&nbsp;&nbsp;CMS</a>
+                <div class="bigBossBg"></div>
+                <!--<a class="navbar-brand" href="index.html">BIG&nbsp;&nbsp;BOSS&nbsp;&nbsp;CMS</a>-->
             </div>
             <div class="navbar-collapse collapse ">
                 <ul class="nav navbar-nav">
@@ -84,10 +85,10 @@
 
                         </ul>
                     </li>
-                    <div style=" position: relative;float: left;margin-left: 40px;padding-top:42px;cursor:pointer">
+                    <div class="accountStyle">
                         <a id="account" href="#" onclick="gotoAccount()"></a>
                     </div>
-                    <div id="headAction" style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer" >
+                    <div id="headAction" class="headAction">
 
                     </div>
                     <div style="position: relative;float: left;margin-left: 15px;padding-top:40px;cursor:pointer" onclick="logout()">
@@ -177,22 +178,15 @@
 <!--container end-->
 
 <!--footer start-->
-<footer class="footer" style="bottom:0;height: 80px;padding: 10px 0;z-index: 1000">
+<footer class="footer" style="bottom:0;height: 80px;padding: 10px 0">
     <div class="container">
-        <div class="row">
-            <div class="col-lg-3 col-sm-3">
-                <h1>bigBoss CMS</h1>
-                <address>
-                    <p></p>
-                </address>
+        <div class="row" style="text-align: center">
+            <div class="">
+                <span>放飞梦想  版权所有，未经授权，禁止转载</span><br>
+                <span>备案序号:浙ICP备16040293号</span><br>
+                <span>建议使用浏览器： Chrome、Firefox、IE8+ （标准模式）   分辨率1024*768</span>
             </div>
-            <div class="col-lg-5 col-sm-5" style="position: absolute;right: 0;">
-                Copyright©1999-2015 All Rights Reserved   版权所有，未经授权，禁止转载
-                <br>备案序号:京ICP备05047877号    <br>建议使用浏览器： Chrome、Firefox、IE8+ (标准模式)   分辨率1024*768”
-            </div>
-            <div class="col-lg-3 col-sm-3 col-lg-offset-1">
 
-            </div>
         </div>
     </div>
 </footer>
@@ -298,6 +292,9 @@
                             });
                             $('#levelOneSelect').html(str);
                         }
+                        var str1 = '<option value=0>无</option>';
+                        levelTwo = 0;
+                        $('#levelTwoSelect').html(str1);
 
                     }
 
@@ -416,9 +413,23 @@
             alert("请输入信息标题");
             return;
         }
-        if(levelOne == 0){
-            alert("请选择一级分类");
+        if(columnCode == 0){
+            alert("请选择所属栏目");
             return;
+        }
+
+        if(columnCode == "0002"){
+            if(levelTwo == 0){
+                alert("学习园地需要选择二级分类");
+                return;
+            }
+        }
+
+        if(columnCode != "0004"){
+            if(levelOne == 0){
+                alert("请选择一级分类");
+                return;
+            }
         }
 
         $.ajax({
@@ -449,6 +460,7 @@
                         });
                     } else {
                         alert("修改成功");
+                        history.go(-1);
                     }
 
                 } else {

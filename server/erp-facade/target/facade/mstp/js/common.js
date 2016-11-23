@@ -59,7 +59,7 @@ function loadHead() {
                 var data = response.data.pageData;
                 localStorage.setItem("infoDisclosure", JSON.stringify(data));
                 var temp = [];
-                $('#infoDisclosure').html("")
+                $('#infoDisclosure').html("");
                 if (data && data.length > 0) {
                     $.each(data, function (i, item) {
                         if (temp.indexOf(item.levelOne) > -1) {
@@ -253,7 +253,7 @@ function addSection(item) {
     var strWithOutCompany = '<p class="f-text" style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">' +
         '<a href="#" onclick="goToDetail(this)" data-rel="' + item.id + '">' + item.name + ' </a></p>';
     var str = '<p class="f-text" style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;">' +
-        '<a href="#" onclick="goToDetail(this)" data-rel="' + item.id + '">' + '[' + item.companyName + ']&nbsp;' + item.name + ' </a></p>';
+        '<a href="#" onclick="goToDetail(this)" data-rel="' + item.id + '">' + '[' + item.companyCode + ']&nbsp;' + item.name + ' </a></p>';
     if (item.columnId == 1) {
         $('#about').append(str)
     } else if (item.columnId == 2) {
